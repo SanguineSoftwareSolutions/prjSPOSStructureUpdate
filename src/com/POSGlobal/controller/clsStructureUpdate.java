@@ -15,63 +15,63 @@ public class clsStructureUpdate
 	try
 	{
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblpromotionmaster` (\n"
-		    + "	`strPromoCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strBuyPropmoItemCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strBuyOperator` VARCHAR(3) NOT NULL,\n"
-		    + "	`dblBuyQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`dblBuyDiscount` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strGetPromoCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strGetOperator` VARCHAR(3) NOT NULL,\n"
-		    + "	`dblGetQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`dblGetDiscount` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`dteFromDate` DATETIME NOT NULL,\n"
-		    + "	`dteToDate` DATETIME NOT NULL,\n"
-		    + "	`tmeFromTime` VARCHAR(15) NOT NULL,\n"
-		    + "	`tmeToTime` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDays` VARCHAR(200) NOT NULL,\n"
-		    + "	`strPromoNote` VARCHAR(200) NOT NULL DEFAULT '',\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	INDEX `strPromoCode_strClientCode` (`strPromoCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblpromotionmaster` ( "
+		    + "	`strPromoCode` VARCHAR(10) NOT NULL, "
+		    + "	`strBuyPropmoItemCode` VARCHAR(10) NOT NULL, "
+		    + "	`strBuyOperator` VARCHAR(3) NOT NULL, "
+		    + "	`dblBuyQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`dblBuyDiscount` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strGetPromoCode` VARCHAR(10) NOT NULL, "
+		    + "	`strGetOperator` VARCHAR(3) NOT NULL, "
+		    + "	`dblGetQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`dblGetDiscount` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`dteFromDate` DATETIME NOT NULL, "
+		    + "	`dteToDate` DATETIME NOT NULL, "
+		    + "	`tmeFromTime` VARCHAR(15) NOT NULL, "
+		    + "	`tmeToTime` VARCHAR(15) NOT NULL, "
+		    + "	`strDays` VARCHAR(200) NOT NULL, "
+		    + "	`strPromoNote` VARCHAR(200) NOT NULL DEFAULT '', "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	INDEX `strPromoCode_strClientCode` (`strPromoCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblloyaltypoints` (\n"
-		    + "	`strLoyaltyCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblAmount` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`dblLoyaltyPoints` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`dblLoyaltyValue` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strLoyaltyCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblloyaltypoints` ( "
+		    + "	`strLoyaltyCode` VARCHAR(10) NOT NULL, "
+		    + "	`dblAmount` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`dblLoyaltyPoints` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`dblLoyaltyValue` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strLoyaltyCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblareawisedc` (\n"
-		    + "  `strBuildingCode` varchar(15) NOT NULL,\n"
-		    + "  `dblKilometers` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `strSymbol` varchar(3) NOT NULL,\n"
-		    + "  `dblBillAmount` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `dblBillAmount1` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `dblDeliveryCharges` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `strUserCreated` varchar(10) NOT NULL,\n"
-		    + "  `strUserEdited` varchar(10) NOT NULL,\n"
-		    + "  `dteDateCreated` datetime NOT NULL,\n"
-		    + "  `dteDateEdited` datetime NOT NULL,\n"
-		    + "  `strClientCode` varchar(10) NOT NULL\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblareawisedc` ( "
+		    + "  `strBuildingCode` varchar(15) NOT NULL, "
+		    + "  `dblKilometers` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `strSymbol` varchar(3) NOT NULL, "
+		    + "  `dblBillAmount` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `dblBillAmount1` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `dblDeliveryCharges` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `strUserCreated` varchar(10) NOT NULL, "
+		    + "  `strUserEdited` varchar(10) NOT NULL, "
+		    + "  `dteDateCreated` datetime NOT NULL, "
+		    + "  `dteDateEdited` datetime NOT NULL, "
+		    + "  `strClientCode` varchar(10) NOT NULL "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 	    i = ExecuteQuery(sql);
 
@@ -99,15 +99,15 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblqbillhd` ADD COLUMN `dblDeliveryCharges` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strCounterCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tbltempsalesflash` (\n"
-		    + "	`strcode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strname` VARCHAR(50) NOT NULL,\n"
-		    + "	`dblquantity` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblamount` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strposcode` VARCHAR(10) NOT NULL,\n"
-		    + "	`struser` VARCHAR(10) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tbltempsalesflash` ( "
+		    + "	`strcode` VARCHAR(10) NOT NULL, "
+		    + "	`strname` VARCHAR(50) NOT NULL, "
+		    + "	`dblquantity` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblamount` DECIMAL(18,2) NOT NULL, "
+		    + "	`strposcode` VARCHAR(10) NOT NULL, "
+		    + "	`struser` VARCHAR(10) NOT NULL "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 
 	    i = ExecuteQuery(sql);
@@ -121,8 +121,8 @@ public class clsStructureUpdate
 	    sql = "DROP VIEW `vcustomeroffaddress`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vcustomeroffaddress as\n"
-		    + "SELECT * from tblcustomermaster \n"
+	    sql = "create view vcustomeroffaddress as "
+		    + "SELECT * from tblcustomermaster  "
 		    + "WHERE strOfficeAddress='Y' ;";
 	    i = ExecuteQuery(sql);
 
@@ -131,38 +131,38 @@ public class clsStructureUpdate
 		    + "ALTER `strClientCode` DROP DEFAULT; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblhomedelivery` CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(50) NOT NULL AFTER `strBillNo`,\n"
-		    + "	CHANGE COLUMN `dteDate` `dteDate` DATE NULL DEFAULT NULL AFTER `strDPCode`,\n"
-		    + "	CHANGE COLUMN `strCustAddressLine1` `strCustAddressLine1` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strPOSCode`,\n"
-		    + "	CHANGE COLUMN `strCustAddressLine2` `strCustAddressLine2` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine1`,\n"
-		    + "	CHANGE COLUMN `strCustAddressLine3` `strCustAddressLine3` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine2`,\n"
-		    + "	CHANGE COLUMN `strCustAddressLine4` `strCustAddressLine4` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine3`,\n"
-		    + "	CHANGE COLUMN `strCustCity` `strCustCity` VARCHAR(30) NOT NULL DEFAULT '' AFTER `strCustAddressLine4`,\n"
+	    sql = "ALTER TABLE `tblhomedelivery` CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(50) NOT NULL AFTER `strBillNo`, "
+		    + "	CHANGE COLUMN `dteDate` `dteDate` DATE NULL DEFAULT NULL AFTER `strDPCode`, "
+		    + "	CHANGE COLUMN `strCustAddressLine1` `strCustAddressLine1` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strPOSCode`, "
+		    + "	CHANGE COLUMN `strCustAddressLine2` `strCustAddressLine2` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine1`, "
+		    + "	CHANGE COLUMN `strCustAddressLine3` `strCustAddressLine3` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine2`, "
+		    + "	CHANGE COLUMN `strCustAddressLine4` `strCustAddressLine4` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine3`, "
+		    + "	CHANGE COLUMN `strCustCity` `strCustCity` VARCHAR(30) NOT NULL DEFAULT '' AFTER `strCustAddressLine4`, "
 		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(15) NOT NULL AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "                ADD COLUMN `strEditHomeDelivery` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintType`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "                ADD COLUMN `strEditHomeDelivery` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintType`, "
 		    + "                ADD COLUMN `strSlabBasedHDCharges` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strEditHomeDelivery`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbuildingmaster`\n"
-		    + "	ALTER `strBuildingName` DROP DEFAULT,\n"
-		    + "	ALTER `strAddress` DROP DEFAULT,\n"
-		    + "	ALTER `strUserCreated` DROP DEFAULT,\n"
-		    + "	ALTER `strUserEdited` DROP DEFAULT,\n"
-		    + "	ALTER `dteDateCreated` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblbuildingmaster` "
+		    + "	ALTER `strBuildingName` DROP DEFAULT, "
+		    + "	ALTER `strAddress` DROP DEFAULT, "
+		    + "	ALTER `strUserCreated` DROP DEFAULT, "
+		    + "	ALTER `strUserEdited` DROP DEFAULT, "
+		    + "	ALTER `dteDateCreated` DROP DEFAULT, "
 		    + "	ALTER `dteDateEdited` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "       ALTER TABLE `tblbuildingmaster`\n"
-		    + "	CHANGE COLUMN `strBuildingName` `strBuildingName` VARCHAR(200) NOT NULL AFTER `strBuildingCode`,\n"
-		    + "	CHANGE COLUMN `strAddress` `strAddress` VARCHAR(200) NOT NULL AFTER `strBuildingName`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `strAddress`,\n"
-		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`,\n"
-		    + "	CHANGE COLUMN `dteDateEdited` `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`,\n"
-		    + "	CHANGE COLUMN `dblHomeDeliCharge` `dblHomeDeliCharge` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dteDateEdited`;\n"
+	    sql = "       ALTER TABLE `tblbuildingmaster` "
+		    + "	CHANGE COLUMN `strBuildingName` `strBuildingName` VARCHAR(200) NOT NULL AFTER `strBuildingCode`, "
+		    + "	CHANGE COLUMN `strAddress` `strAddress` VARCHAR(200) NOT NULL AFTER `strBuildingName`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `strAddress`, "
+		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`, "
+		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`, "
+		    + "	CHANGE COLUMN `dteDateEdited` `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`, "
+		    + "	CHANGE COLUMN `dblHomeDeliCharge` `dblHomeDeliCharge` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dteDateEdited`; "
 		    + "";
 	    i = ExecuteQuery(sql);
 
@@ -217,34 +217,34 @@ public class clsStructureUpdate
 	    sql = "update tblvoidbilldtl set strKOTNo='' where strKOTNo is NULL;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbilldtl`\n"
-		    + "	ALTER `strItemCode` DROP DEFAULT,\n"
-		    + "	ALTER `strItemName` DROP DEFAULT,\n"
-		    + "	ALTER `strBillNo` DROP DEFAULT,\n"
-		    + "	ALTER `dteBillDate` DROP DEFAULT,\n"
-		    + "	ALTER `strTransType` DROP DEFAULT,\n"
-		    + "	ALTER `dteModifyVoidBill` DROP DEFAULT,\n"
-		    + "	ALTER `strSettlementCode` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblvoidbilldtl` "
+		    + "	ALTER `strItemCode` DROP DEFAULT, "
+		    + "	ALTER `strItemName` DROP DEFAULT, "
+		    + "	ALTER `strBillNo` DROP DEFAULT, "
+		    + "	ALTER `dteBillDate` DROP DEFAULT, "
+		    + "	ALTER `strTransType` DROP DEFAULT, "
+		    + "	ALTER `dteModifyVoidBill` DROP DEFAULT, "
+		    + "	ALTER `strSettlementCode` DROP DEFAULT, "
 		    + "	ALTER `strUserCreated` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbilldtl`\n"
-		    + "	CHANGE COLUMN `strReasonCode` `strReasonCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strPosCode`,\n"
-		    + "	CHANGE COLUMN `strReasonName` `strReasonName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strReasonCode`,\n"
-		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(10) NOT NULL AFTER `strReasonName`,\n"
-		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NOT NULL AFTER `strItemCode`,\n"
-		    + "	CHANGE COLUMN `strBillNo` `strBillNo` VARCHAR(10) NOT NULL AFTER `strItemName`,\n"
-		    + "	CHANGE COLUMN `intQuantity` `intQuantity` INT(11) NOT NULL DEFAULT '0' AFTER `strBillNo`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `intQuantity`,\n"
-		    + "	CHANGE COLUMN `dteBillDate` `dteBillDate` DATETIME NOT NULL AFTER `dblTaxAmount`,\n"
-		    + "	CHANGE COLUMN `strTransType` `strTransType` CHAR(10) NOT NULL AFTER `dteBillDate`,\n"
-		    + "	CHANGE COLUMN `dteModifyVoidBill` `dteModifyVoidBill` DATETIME NOT NULL AFTER `strTransType`,\n"
-		    + "	CHANGE COLUMN `strSettlementCode` `strSettlementCode` VARCHAR(10) NOT NULL AFTER `dteModifyVoidBill`,\n"
-		    + "	CHANGE COLUMN `dblSettlementAmt` `dblSettlementAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strSettlementCode`,\n"
-		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblSettlementAmt`,\n"
-		    + "	CHANGE COLUMN `strTableNo` `strTableNo` VARCHAR(50) NOT NULL DEFAULT 'NA' AFTER `dblPaidAmt`,\n"
-		    + "	CHANGE COLUMN `strWaiterNo` `strWaiterNo` VARCHAR(50) NOT NULL DEFAULT 'NA' AFTER `strTableNo`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `intShiftCode`,\n"
+	    sql = "ALTER TABLE `tblvoidbilldtl` "
+		    + "	CHANGE COLUMN `strReasonCode` `strReasonCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strPosCode`, "
+		    + "	CHANGE COLUMN `strReasonName` `strReasonName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strReasonCode`, "
+		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(10) NOT NULL AFTER `strReasonName`, "
+		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NOT NULL AFTER `strItemCode`, "
+		    + "	CHANGE COLUMN `strBillNo` `strBillNo` VARCHAR(10) NOT NULL AFTER `strItemName`, "
+		    + "	CHANGE COLUMN `intQuantity` `intQuantity` INT(11) NOT NULL DEFAULT '0' AFTER `strBillNo`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `intQuantity`, "
+		    + "	CHANGE COLUMN `dteBillDate` `dteBillDate` DATETIME NOT NULL AFTER `dblTaxAmount`, "
+		    + "	CHANGE COLUMN `strTransType` `strTransType` CHAR(10) NOT NULL AFTER `dteBillDate`, "
+		    + "	CHANGE COLUMN `dteModifyVoidBill` `dteModifyVoidBill` DATETIME NOT NULL AFTER `strTransType`, "
+		    + "	CHANGE COLUMN `strSettlementCode` `strSettlementCode` VARCHAR(10) NOT NULL AFTER `dteModifyVoidBill`, "
+		    + "	CHANGE COLUMN `dblSettlementAmt` `dblSettlementAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strSettlementCode`, "
+		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblSettlementAmt`, "
+		    + "	CHANGE COLUMN `strTableNo` `strTableNo` VARCHAR(50) NOT NULL DEFAULT 'NA' AFTER `dblPaidAmt`, "
+		    + "	CHANGE COLUMN `strWaiterNo` `strWaiterNo` VARCHAR(50) NOT NULL DEFAULT 'NA' AFTER `strTableNo`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `intShiftCode`, "
 		    + "	CHANGE COLUMN `strKOTNo` `strKOTNo` VARCHAR(10) NOT NULL DEFAULT 'N' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
@@ -263,19 +263,19 @@ public class clsStructureUpdate
 	    sql = "update tblvoidbillhd set strUserCreated='' where strUserCreated is NULL;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbillhd`\n"
-		    + "	ALTER `dteBillDate` DROP DEFAULT,\n"
-		    + "	ALTER `dteModifyVoidBill` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblvoidbillhd` "
+		    + "	ALTER `dteBillDate` DROP DEFAULT, "
+		    + "	ALTER `dteModifyVoidBill` DROP DEFAULT, "
 		    + "	ALTER `strUserCreated` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbillhd`\n"
-		    + "	CHANGE COLUMN `strReasonCode` `strReasonCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strPosCode`,\n"
-		    + "	CHANGE COLUMN `strReasonName` `strReasonName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strReasonCode`,\n"
-		    + "	CHANGE COLUMN `dteBillDate` `dteBillDate` DATETIME NOT NULL AFTER `dblModifiedAmount`,\n"
-		    + "	CHANGE COLUMN `strTransType` `strTransType` CHAR(10) NOT NULL DEFAULT '' AFTER `dteBillDate`,\n"
-		    + "	CHANGE COLUMN `dteModifyVoidBill` `dteModifyVoidBill` DATETIME NOT NULL AFTER `strTransType`,\n"
-		    + "	CHANGE COLUMN `intShiftCode` `intShiftCode` INT(11) NOT NULL DEFAULT '0' AFTER `strWaiterNo`,\n"
+	    sql = "ALTER TABLE `tblvoidbillhd` "
+		    + "	CHANGE COLUMN `strReasonCode` `strReasonCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strPosCode`, "
+		    + "	CHANGE COLUMN `strReasonName` `strReasonName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strReasonCode`, "
+		    + "	CHANGE COLUMN `dteBillDate` `dteBillDate` DATETIME NOT NULL AFTER `dblModifiedAmount`, "
+		    + "	CHANGE COLUMN `strTransType` `strTransType` CHAR(10) NOT NULL DEFAULT '' AFTER `dteBillDate`, "
+		    + "	CHANGE COLUMN `dteModifyVoidBill` `dteModifyVoidBill` DATETIME NOT NULL AFTER `strTransType`, "
+		    + "	CHANGE COLUMN `intShiftCode` `intShiftCode` INT(11) NOT NULL DEFAULT '0' AFTER `strWaiterNo`, "
 		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(50) NOT NULL AFTER `intShiftCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -285,8 +285,8 @@ public class clsStructureUpdate
 	    sql = "update tblvoidkot set strReasonCode='' where strReasonCode is NULL;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidkot`\n"
-		    + "	CHANGE COLUMN `strType` `strType` VARCHAR(50) NOT NULL DEFAULT '' AFTER `intPaxNo`,\n"
+	    sql = "ALTER TABLE `tblvoidkot` "
+		    + "	CHANGE COLUMN `strType` `strType` VARCHAR(50) NOT NULL DEFAULT '' AFTER `intPaxNo`, "
 		    + "	CHANGE COLUMN `strReasonCode` `strReasonCode` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strType`;";
 	    i = ExecuteQuery(sql);
 
@@ -308,33 +308,33 @@ public class clsStructureUpdate
 	    sql = "update tblvoidbillsettlementdtl set strGiftVoucherCode='' where strGiftVoucherCode is NULL;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbillsettlementdtl`\n"
-		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblSettlementAmt`,\n"
-		    + "	CHANGE COLUMN `strExpiryDate` `strExpiryDate` VARCHAR(7) NOT NULL DEFAULT '' AFTER `dblPaidAmt`,\n"
-		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strClientCode`,\n"
-		    + "	CHANGE COLUMN `dblActualAmt` `dblActualAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strCustomerCode`,\n"
-		    + "	CHANGE COLUMN `dblRefundAmt` `dblRefundAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblActualAmt`,\n"
+	    sql = "ALTER TABLE `tblvoidbillsettlementdtl` "
+		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblSettlementAmt`, "
+		    + "	CHANGE COLUMN `strExpiryDate` `strExpiryDate` VARCHAR(7) NOT NULL DEFAULT '' AFTER `dblPaidAmt`, "
+		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strClientCode`, "
+		    + "	CHANGE COLUMN `dblActualAmt` `dblActualAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strCustomerCode`, "
+		    + "	CHANGE COLUMN `dblRefundAmt` `dblRefundAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblActualAmt`, "
 		    + "	CHANGE COLUMN `strGiftVoucherCode` `strGiftVoucherCode` VARCHAR(50) NOT NULL DEFAULT '' AFTER `dblRefundAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcustomermaster`\n"
-		    + "	ADD COLUMN `strOfficeBuildingCode` VARCHAR(15) NOT NULL DEFAULT '' AFTER `longAlternateMobileNo`,\n"
+	    sql = "ALTER TABLE `tblcustomermaster` "
+		    + "	ADD COLUMN `strOfficeBuildingCode` VARCHAR(15) NOT NULL DEFAULT '' AFTER `longAlternateMobileNo`, "
 		    + "	CHANGE COLUMN `strOfficeBuilding` `strOfficeBuildingName` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strOfficeBuildingCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblhomedelivery`\n"
-		    + "	CHANGE COLUMN `strCustAddressLine1` `strCustAddressLine1` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strPOSCode`,\n"
-		    + "	CHANGE COLUMN `strCustAddressLine2` `strCustAddressLine2` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine1`,\n"
-		    + "	CHANGE COLUMN `strCustAddressLine3` `strCustAddressLine3` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine2`,\n"
-		    + "	CHANGE COLUMN `strCustAddressLine4` `strCustAddressLine4` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine3`,\n"
+	    sql = "ALTER TABLE `tblhomedelivery` "
+		    + "	CHANGE COLUMN `strCustAddressLine1` `strCustAddressLine1` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strPOSCode`, "
+		    + "	CHANGE COLUMN `strCustAddressLine2` `strCustAddressLine2` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine1`, "
+		    + "	CHANGE COLUMN `strCustAddressLine3` `strCustAddressLine3` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine2`, "
+		    + "	CHANGE COLUMN `strCustAddressLine4` `strCustAddressLine4` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strCustAddressLine3`, "
 		    + "	CHANGE COLUMN `strCustCity` `strCustCity` VARCHAR(30) NOT NULL DEFAULT '' AFTER `strCustAddressLine4`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemmaster`\n"
+	    sql = "ALTER TABLE `tblitemmaster` "
 		    + "	CHANGE COLUMN `strItemImage` `strItemImage` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strSubGroupCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblareawisedc`\n"
+	    sql = "ALTER TABLE `tblareawisedc` "
 		    + "	CHANGE COLUMN `strSymbol` `strSymbol` VARCHAR(3) NOT NULL DEFAULT '' AFTER `dblKilometers`;";
 	    i = ExecuteQuery(sql);
 
@@ -347,8 +347,8 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblcustomermaster` ADD COLUMN `dteAnniversary` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strGender`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblimportexcel`\n"
-		    + "	ADD COLUMN `strCounterName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `dblPriceSaturday`,\n"
+	    sql = "ALTER TABLE `tblimportexcel` "
+		    + "	ADD COLUMN `strCounterName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `dblPriceSaturday`, "
 		    + "	ADD COLUMN `strCounterCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCounterName`;";
 	    i = ExecuteQuery(sql);
 
@@ -356,24 +356,24 @@ public class clsStructureUpdate
 		    + " ADD COLUMN `dblLoyaltyPoints1` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblLoyaltyPoints`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblpointsonbill` (\n"
-		    + "	`strBillNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblBillAmount` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblPointsEarned` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strCustomerCode` VARCHAR(10) NOT NULL DEFAULT '',\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "		PRIMARY KEY (`strBillNo`)\n"
-		    + "	)\n"
-		    + "	COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblpointsonbill` ( "
+		    + "	`strBillNo` VARCHAR(10) NOT NULL, "
+		    + "	`dblBillAmount` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblPointsEarned` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strCustomerCode` VARCHAR(10) NOT NULL DEFAULT '', "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "		PRIMARY KEY (`strBillNo`) "
+		    + "	) "
+		    + "	COLLATE='latin1_swedish_ci' "
 		    + "	ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpointsonbill`\n"
+	    sql = "ALTER TABLE `tblpointsonbill` "
 		    + "	ADD COLUMN `dteBillDate` DATETIME NOT NULL AFTER `strBillNo`;";
 	    i = ExecuteQuery(sql);
 
@@ -398,32 +398,32 @@ public class clsStructureUpdate
 	    }
 	    rsArea.close();
 
-	    sql = "ALTER TABLE `tblpromotionmaster`\n"
-		    + "	DROP COLUMN `strBuyPropmoItemCode`,\n"
-		    + "	DROP COLUMN `strBuyOperator`,\n"
-		    + "	DROP COLUMN `dblBuyQty`,\n"
-		    + "	DROP COLUMN `dblBuyDiscount`,\n"
-		    + "	DROP COLUMN `strGetPromoCode`,\n"
-		    + "	DROP COLUMN `strGetOperator`,\n"
-		    + "	DROP COLUMN `dblGetQty`,\n"
+	    sql = "ALTER TABLE `tblpromotionmaster` "
+		    + "	DROP COLUMN `strBuyPropmoItemCode`, "
+		    + "	DROP COLUMN `strBuyOperator`, "
+		    + "	DROP COLUMN `dblBuyQty`, "
+		    + "	DROP COLUMN `dblBuyDiscount`, "
+		    + "	DROP COLUMN `strGetPromoCode`, "
+		    + "	DROP COLUMN `strGetOperator`, "
+		    + "	DROP COLUMN `dblGetQty`, "
 		    + "	DROP COLUMN `dblGetDiscount`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblpromotionmaster` ADD COLUMN `strPromoItemCode` VARCHAR(10) NOT NULL AFTER `strPromoCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblpromotiondtl` (\n"
-		    + "	`strPromoCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strPromoItemCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strType` VARCHAR(10) NOT NULL,\n"
-		    + "	`strOperator` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblValue` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`dblQuantity` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strDiscountType` VARCHAR(7) NOT NULL DEFAULT 'Percent',\n"
-		    + "	`dblDiscount` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblpromotiondtl` ( "
+		    + "	`strPromoCode` VARCHAR(10) NOT NULL, "
+		    + "	`strPromoItemCode` VARCHAR(10) NOT NULL, "
+		    + "	`strType` VARCHAR(10) NOT NULL, "
+		    + "	`strOperator` VARCHAR(10) NOT NULL, "
+		    + "	`dblValue` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`dblQuantity` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strDiscountType` VARCHAR(7) NOT NULL DEFAULT 'Percent', "
+		    + "	`dblDiscount` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -454,359 +454,359 @@ public class clsStructureUpdate
 	    sql = "update tbladvancereceipthd set intShiftNo=0 where intShiftNo is NULL;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
-		    + "	ALTER `strAdvBookingNo` DROP DEFAULT,\n"
-		    + "	ALTER `dteAdvBookingDate` DROP DEFAULT,\n"
-		    + "	ALTER `dteOrderFor` DROP DEFAULT,\n"
-		    + "	ALTER `strPOSCode` DROP DEFAULT,\n"
-		    + "	ALTER `strSettelmentMode` DROP DEFAULT,\n"
-		    + "	ALTER `dblDiscountAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblDiscountPer` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblSubTotal` DROP DEFAULT,\n"
-		    + "	ALTER `dblGrandTotal` DROP DEFAULT,\n"
-		    + "	ALTER `strUserCreated` DROP DEFAULT,\n"
-		    + "	ALTER `strUserEdited` DROP DEFAULT,\n"
-		    + "	ALTER `dteDateCreated` DROP DEFAULT,\n"
-		    + "	ALTER `dteDateEdited` DROP DEFAULT,\n"
-		    + "	ALTER `strClientCode` DROP DEFAULT,\n"
-		    + "	ALTER `strCustomerCode` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
+		    + "	ALTER `strAdvBookingNo` DROP DEFAULT, "
+		    + "	ALTER `dteAdvBookingDate` DROP DEFAULT, "
+		    + "	ALTER `dteOrderFor` DROP DEFAULT, "
+		    + "	ALTER `strPOSCode` DROP DEFAULT, "
+		    + "	ALTER `strSettelmentMode` DROP DEFAULT, "
+		    + "	ALTER `dblDiscountAmt` DROP DEFAULT, "
+		    + "	ALTER `dblDiscountPer` DROP DEFAULT, "
+		    + "	ALTER `dblTaxAmt` DROP DEFAULT, "
+		    + "	ALTER `dblSubTotal` DROP DEFAULT, "
+		    + "	ALTER `dblGrandTotal` DROP DEFAULT, "
+		    + "	ALTER `strUserCreated` DROP DEFAULT, "
+		    + "	ALTER `strUserEdited` DROP DEFAULT, "
+		    + "	ALTER `dteDateCreated` DROP DEFAULT, "
+		    + "	ALTER `dteDateEdited` DROP DEFAULT, "
+		    + "	ALTER `strClientCode` DROP DEFAULT, "
+		    + "	ALTER `strCustomerCode` DROP DEFAULT, "
 		    + "	ALTER `intShiftCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
-		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(50) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `dteAdvBookingDate` `dteAdvBookingDate` DATETIME NOT NULL AFTER `strAdvBookingNo`,\n"
-		    + "	CHANGE COLUMN `dteOrderFor` `dteOrderFor` DATETIME NOT NULL AFTER `dteAdvBookingDate`,\n"
-		    + "	CHANGE COLUMN `strPOSCode` `strPOSCode` VARCHAR(50) NOT NULL AFTER `dteOrderFor`,\n"
-		    + "	CHANGE COLUMN `strSettelmentMode` `strSettelmentMode` VARCHAR(50) NOT NULL AFTER `strPOSCode`,\n"
-		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,2) NOT NULL AFTER `strSettelmentMode`,\n"
-		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(18,2) NOT NULL AFTER `dblDiscountAmt`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,2) NOT NULL AFTER `dblDiscountPer`,\n"
-		    + "	CHANGE COLUMN `dblSubTotal` `dblSubTotal` DECIMAL(18,2) NOT NULL AFTER `dblTaxAmt`,\n"
-		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` DECIMAL(18,2) NOT NULL AFTER `dblSubTotal`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(50) NOT NULL AFTER `dblGrandTotal`,\n"
-		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(50) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`,\n"
-		    + "	CHANGE COLUMN `dteDateEdited` `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`,\n"
-		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(50) NOT NULL AFTER `dteDateEdited`,\n"
-		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(50) NOT NULL AFTER `strClientCode`,\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
+		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(50) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `dteAdvBookingDate` `dteAdvBookingDate` DATETIME NOT NULL AFTER `strAdvBookingNo`, "
+		    + "	CHANGE COLUMN `dteOrderFor` `dteOrderFor` DATETIME NOT NULL AFTER `dteAdvBookingDate`, "
+		    + "	CHANGE COLUMN `strPOSCode` `strPOSCode` VARCHAR(50) NOT NULL AFTER `dteOrderFor`, "
+		    + "	CHANGE COLUMN `strSettelmentMode` `strSettelmentMode` VARCHAR(50) NOT NULL AFTER `strPOSCode`, "
+		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,2) NOT NULL AFTER `strSettelmentMode`, "
+		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(18,2) NOT NULL AFTER `dblDiscountAmt`, "
+		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,2) NOT NULL AFTER `dblDiscountPer`, "
+		    + "	CHANGE COLUMN `dblSubTotal` `dblSubTotal` DECIMAL(18,2) NOT NULL AFTER `dblTaxAmt`, "
+		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` DECIMAL(18,2) NOT NULL AFTER `dblSubTotal`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(50) NOT NULL AFTER `dblGrandTotal`, "
+		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(50) NOT NULL AFTER `strUserCreated`, "
+		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`, "
+		    + "	CHANGE COLUMN `dteDateEdited` `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`, "
+		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(50) NOT NULL AFTER `dteDateEdited`, "
+		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(50) NOT NULL AFTER `strClientCode`, "
 		    + "	CHANGE COLUMN `intShiftCode` `intShiftCode` INT(11) NOT NULL AFTER `strCustomerCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbilldtl`\n"
-		    + "	ALTER `strItemCode` DROP DEFAULT,\n"
-		    + "	ALTER `strItemName` DROP DEFAULT,\n"
-		    + "	ALTER `strAdvBookingNo` DROP DEFAULT,\n"
-		    + "	ALTER `dblQuantity` DROP DEFAULT,\n"
-		    + "	ALTER `dblAmount` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxAmount` DROP DEFAULT,\n"
-		    + "	ALTER `dteAdvBookingDate` DROP DEFAULT,\n"
-		    + "	ALTER `dteOrderFor` DROP DEFAULT,\n"
-		    + "	ALTER `strClientCode` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvbookbilldtl` "
+		    + "	ALTER `strItemCode` DROP DEFAULT, "
+		    + "	ALTER `strItemName` DROP DEFAULT, "
+		    + "	ALTER `strAdvBookingNo` DROP DEFAULT, "
+		    + "	ALTER `dblQuantity` DROP DEFAULT, "
+		    + "	ALTER `dblAmount` DROP DEFAULT, "
+		    + "	ALTER `dblTaxAmount` DROP DEFAULT, "
+		    + "	ALTER `dteAdvBookingDate` DROP DEFAULT, "
+		    + "	ALTER `dteOrderFor` DROP DEFAULT, "
+		    + "	ALTER `strClientCode` DROP DEFAULT, "
 		    + "	ALTER `strCustomerCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbilldtl`\n"
-		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(50) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NOT NULL AFTER `strItemCode`,\n"
-		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(50) NOT NULL AFTER `strItemName`,\n"
-		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,2) NOT NULL AFTER `strAdvBookingNo`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL AFTER `dblQuantity`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,2) NOT NULL AFTER `dblAmount`,\n"
-		    + "	CHANGE COLUMN `dteAdvBookingDate` `dteAdvBookingDate` DATETIME NOT NULL AFTER `dblTaxAmount`,\n"
-		    + "	CHANGE COLUMN `dteOrderFor` `dteOrderFor` DATE NOT NULL AFTER `dteAdvBookingDate`,\n"
-		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(50) NOT NULL AFTER `dteOrderFor`,\n"
+	    sql = "ALTER TABLE `tbladvbookbilldtl` "
+		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(50) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NOT NULL AFTER `strItemCode`, "
+		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(50) NOT NULL AFTER `strItemName`, "
+		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,2) NOT NULL AFTER `strAdvBookingNo`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL AFTER `dblQuantity`, "
+		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,2) NOT NULL AFTER `dblAmount`, "
+		    + "	CHANGE COLUMN `dteAdvBookingDate` `dteAdvBookingDate` DATETIME NOT NULL AFTER `dblTaxAmount`, "
+		    + "	CHANGE COLUMN `dteOrderFor` `dteOrderFor` DATE NOT NULL AFTER `dteAdvBookingDate`, "
+		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(50) NOT NULL AFTER `dteOrderFor`, "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(50) NOT NULL AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookitemtemp`\n"
-		    + "	ALTER `strSerialno` DROP DEFAULT,\n"
-		    + "	ALTER `strPosCode` DROP DEFAULT,\n"
-		    + "	ALTER `strItemCode` DROP DEFAULT,\n"
-		    + "	ALTER `strItemName` DROP DEFAULT,\n"
-		    + "	ALTER `dblItemQuantity` DROP DEFAULT,\n"
-		    + "	ALTER `dblAmount` DROP DEFAULT,\n"
-		    + "	ALTER `strUserCreated` DROP DEFAULT,\n"
-		    + "	ALTER `strUserEdited` DROP DEFAULT,\n"
-		    + "	ALTER `dteDateCreated` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvbookitemtemp` "
+		    + "	ALTER `strSerialno` DROP DEFAULT, "
+		    + "	ALTER `strPosCode` DROP DEFAULT, "
+		    + "	ALTER `strItemCode` DROP DEFAULT, "
+		    + "	ALTER `strItemName` DROP DEFAULT, "
+		    + "	ALTER `dblItemQuantity` DROP DEFAULT, "
+		    + "	ALTER `dblAmount` DROP DEFAULT, "
+		    + "	ALTER `strUserCreated` DROP DEFAULT, "
+		    + "	ALTER `strUserEdited` DROP DEFAULT, "
+		    + "	ALTER `dteDateCreated` DROP DEFAULT, "
 		    + "	ALTER `dteDateEdited` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookitemtemp`\n"
-		    + "	CHANGE COLUMN `strSerialno` `strSerialno` DECIMAL(10,0) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strPosCode` `strPosCode` VARCHAR(50) NOT NULL AFTER `strSerialno`,\n"
-		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(15) NOT NULL AFTER `strPosCode`,\n"
-		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NOT NULL AFTER `strItemCode`,\n"
-		    + "	CHANGE COLUMN `dblItemQuantity` `dblItemQuantity` VARCHAR(200) NOT NULL AFTER `strItemName`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL AFTER `dblItemQuantity`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(50) NOT NULL AFTER `dblAmount`,\n"
-		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(50) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`,\n"
+	    sql = "ALTER TABLE `tbladvbookitemtemp` "
+		    + "	CHANGE COLUMN `strSerialno` `strSerialno` DECIMAL(10,0) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strPosCode` `strPosCode` VARCHAR(50) NOT NULL AFTER `strSerialno`, "
+		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(15) NOT NULL AFTER `strPosCode`, "
+		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NOT NULL AFTER `strItemCode`, "
+		    + "	CHANGE COLUMN `dblItemQuantity` `dblItemQuantity` VARCHAR(200) NOT NULL AFTER `strItemName`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL AFTER `dblItemQuantity`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(50) NOT NULL AFTER `dblAmount`, "
+		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(50) NOT NULL AFTER `strUserCreated`, "
+		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`, "
 		    + "	CHANGE COLUMN `dteDateEdited` `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbooktaxdtl`\n"
-		    + "	ALTER `strAdvBookingNo` DROP DEFAULT,\n"
-		    + "	ALTER `strTaxCode` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxableAmount` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxAmount` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvbooktaxdtl` "
+		    + "	ALTER `strAdvBookingNo` DROP DEFAULT, "
+		    + "	ALTER `strTaxCode` DROP DEFAULT, "
+		    + "	ALTER `dblTaxableAmount` DROP DEFAULT, "
+		    + "	ALTER `dblTaxAmount` DROP DEFAULT, "
 		    + "	ALTER `strClientCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbooktaxdtl`\n"
-		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strTaxCode` `strTaxCode` VARCHAR(15) NOT NULL AFTER `strAdvBookingNo`,\n"
-		    + "	CHANGE COLUMN `dblTaxableAmount` `dblTaxableAmount` DECIMAL(18,2) NOT NULL AFTER `strTaxCode`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,2) NOT NULL AFTER `dblTaxableAmount`,\n"
-		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(15) NOT NULL AFTER `dblTaxAmount`,\n"
+	    sql = "ALTER TABLE `tbladvbooktaxdtl` "
+		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strTaxCode` `strTaxCode` VARCHAR(15) NOT NULL AFTER `strAdvBookingNo`, "
+		    + "	CHANGE COLUMN `dblTaxableAmount` `dblTaxableAmount` DECIMAL(18,2) NOT NULL AFTER `strTaxCode`, "
+		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,2) NOT NULL AFTER `dblTaxableAmount`, "
+		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(15) NOT NULL AFTER `dblTaxAmount`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbooktaxtemp`\n"
-		    + "	ALTER `strTaxCode` DROP DEFAULT,\n"
-		    + "	ALTER `strTaxName` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxableAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxAmt` DROP DEFAULT,\n"
-		    + "	ALTER `strTaxCal` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvbooktaxtemp` "
+		    + "	ALTER `strTaxCode` DROP DEFAULT, "
+		    + "	ALTER `strTaxName` DROP DEFAULT, "
+		    + "	ALTER `dblTaxableAmt` DROP DEFAULT, "
+		    + "	ALTER `dblTaxAmt` DROP DEFAULT, "
+		    + "	ALTER `strTaxCal` DROP DEFAULT, "
 		    + "	ALTER `strItemName` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbooktaxtemp`\n"
-		    + "	CHANGE COLUMN `strTaxCode` `strTaxCode` VARCHAR(50) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strTaxName` `strTaxName` VARCHAR(50) NOT NULL AFTER `strTaxCode`,\n"
-		    + "	CHANGE COLUMN `dblTaxableAmt` `dblTaxableAmt` DECIMAL(18,2) NOT NULL AFTER `strTaxName`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,2) NOT NULL AFTER `dblTaxableAmt`,\n"
-		    + "	CHANGE COLUMN `strTaxCal` `strTaxCal` VARCHAR(50) NOT NULL AFTER `dblTaxAmt`,\n"
+	    sql = "ALTER TABLE `tbladvbooktaxtemp` "
+		    + "	CHANGE COLUMN `strTaxCode` `strTaxCode` VARCHAR(50) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strTaxName` `strTaxName` VARCHAR(50) NOT NULL AFTER `strTaxCode`, "
+		    + "	CHANGE COLUMN `dblTaxableAmt` `dblTaxableAmt` DECIMAL(18,2) NOT NULL AFTER `strTaxName`, "
+		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,2) NOT NULL AFTER `dblTaxableAmt`, "
+		    + "	CHANGE COLUMN `strTaxCal` `strTaxCal` VARCHAR(50) NOT NULL AFTER `dblTaxAmt`, "
 		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NOT NULL AFTER `strTaxCal`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvordermodifierdtl`\n"
-		    + "	ALTER `strAdvOrderNo` DROP DEFAULT,\n"
-		    + "	ALTER `strItemCode` DROP DEFAULT,\n"
-		    + "	ALTER `strModifierCode` DROP DEFAULT,\n"
-		    + "	ALTER `strModifierName` DROP DEFAULT,\n"
-		    + "	ALTER `dblQuantity` DROP DEFAULT,\n"
-		    + "	ALTER `dblAmount` DROP DEFAULT,\n"
-		    + "	ALTER `strClientCode` DROP DEFAULT,\n"
-		    + "	ALTER `strCustomerCode` DROP DEFAULT,\n"
-		    + "	ALTER `strUserCreated` DROP DEFAULT,\n"
-		    + "	ALTER `strUserEdited` DROP DEFAULT,\n"
-		    + "	ALTER `dteDateCreated` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvordermodifierdtl` "
+		    + "	ALTER `strAdvOrderNo` DROP DEFAULT, "
+		    + "	ALTER `strItemCode` DROP DEFAULT, "
+		    + "	ALTER `strModifierCode` DROP DEFAULT, "
+		    + "	ALTER `strModifierName` DROP DEFAULT, "
+		    + "	ALTER `dblQuantity` DROP DEFAULT, "
+		    + "	ALTER `dblAmount` DROP DEFAULT, "
+		    + "	ALTER `strClientCode` DROP DEFAULT, "
+		    + "	ALTER `strCustomerCode` DROP DEFAULT, "
+		    + "	ALTER `strUserCreated` DROP DEFAULT, "
+		    + "	ALTER `strUserEdited` DROP DEFAULT, "
+		    + "	ALTER `dteDateCreated` DROP DEFAULT, "
 		    + "	ALTER `dteDateEdited` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvordermodifierdtl`\n"
-		    + "	CHANGE COLUMN `strAdvOrderNo` `strAdvOrderNo` VARCHAR(15) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(10) NOT NULL AFTER `strAdvOrderNo`,\n"
-		    + "	CHANGE COLUMN `strModifierCode` `strModifierCode` VARCHAR(4) NOT NULL AFTER `strItemCode`,\n"
-		    + "	CHANGE COLUMN `strModifierName` `strModifierName` VARCHAR(50) NOT NULL AFTER `strModifierCode`,\n"
-		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,2) NOT NULL AFTER `strModifierName`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL AFTER `dblQuantity`,\n"
-		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(10) NOT NULL AFTER `dblAmount`,\n"
-		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL AFTER `strClientCode`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `strCustomerCode`,\n"
-		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`,\n"
-		    + "	CHANGE COLUMN `dteDateEdited` `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`,\n"
+	    sql = "ALTER TABLE `tbladvordermodifierdtl` "
+		    + "	CHANGE COLUMN `strAdvOrderNo` `strAdvOrderNo` VARCHAR(15) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(10) NOT NULL AFTER `strAdvOrderNo`, "
+		    + "	CHANGE COLUMN `strModifierCode` `strModifierCode` VARCHAR(4) NOT NULL AFTER `strItemCode`, "
+		    + "	CHANGE COLUMN `strModifierName` `strModifierName` VARCHAR(50) NOT NULL AFTER `strModifierCode`, "
+		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,2) NOT NULL AFTER `strModifierName`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,2) NOT NULL AFTER `dblQuantity`, "
+		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(10) NOT NULL AFTER `dblAmount`, "
+		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL AFTER `strClientCode`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `strCustomerCode`, "
+		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`, "
+		    + "	CHANGE COLUMN `dteDateCreated` `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`, "
+		    + "	CHANGE COLUMN `dteDateEdited` `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `dteDateEdited`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `intShiftCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbilldtl`\n"
-		    + "	ALTER `strItemCode` DROP DEFAULT,\n"
-		    + "	ALTER `strItemName` DROP DEFAULT,\n"
-		    + "	ALTER `strAdvBookingNo` DROP DEFAULT,\n"
-		    + "	ALTER `strClientCode` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvbookbilldtl` "
+		    + "	ALTER `strItemCode` DROP DEFAULT, "
+		    + "	ALTER `strItemName` DROP DEFAULT, "
+		    + "	ALTER `strAdvBookingNo` DROP DEFAULT, "
+		    + "	ALTER `strClientCode` DROP DEFAULT, "
 		    + "	ALTER `strCustomerCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbilldtl`\n"
-		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(10) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(100) NOT NULL AFTER `strItemCode`,\n"
-		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL AFTER `strItemName`,\n"
-		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(10) NOT NULL AFTER `dteOrderFor`,\n"
-		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL AFTER `strClientCode`,\n"
+	    sql = "ALTER TABLE `tbladvbookbilldtl` "
+		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(10) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strItemName` `strItemName` VARCHAR(100) NOT NULL AFTER `strItemCode`, "
+		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL AFTER `strItemName`, "
+		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(10) NOT NULL AFTER `dteOrderFor`, "
+		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL AFTER `strClientCode`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCustomerCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
-		    + "	ALTER `strAdvBookingNo` DROP DEFAULT,\n"
-		    + "	ALTER `strPOSCode` DROP DEFAULT,\n"
-		    + "	ALTER `strSettelmentMode` DROP DEFAULT,\n"
-		    + "	ALTER `strUserCreated` DROP DEFAULT,\n"
-		    + "	ALTER `strUserEdited` DROP DEFAULT,\n"
-		    + "	ALTER `strClientCode` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
+		    + "	ALTER `strAdvBookingNo` DROP DEFAULT, "
+		    + "	ALTER `strPOSCode` DROP DEFAULT, "
+		    + "	ALTER `strSettelmentMode` DROP DEFAULT, "
+		    + "	ALTER `strUserCreated` DROP DEFAULT, "
+		    + "	ALTER `strUserEdited` DROP DEFAULT, "
+		    + "	ALTER `strClientCode` DROP DEFAULT, "
 		    + "	ALTER `strCustomerCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
-		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strPOSCode` `strPOSCode` VARCHAR(10) NOT NULL AFTER `dteOrderFor`,\n"
-		    + "	CHANGE COLUMN `strSettelmentMode` `strSettelmentMode` VARCHAR(10) NOT NULL AFTER `strPOSCode`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `dblGrandTotal`,\n"
-		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(10) NOT NULL AFTER `dteDateEdited`,\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
+		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strPOSCode` `strPOSCode` VARCHAR(10) NOT NULL AFTER `dteOrderFor`, "
+		    + "	CHANGE COLUMN `strSettelmentMode` `strSettelmentMode` VARCHAR(10) NOT NULL AFTER `strPOSCode`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `dblGrandTotal`, "
+		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`, "
+		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(10) NOT NULL AFTER `dteDateEdited`, "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancereceiptdtl`\n"
-		    + "	ALTER `strSettlementCode` DROP DEFAULT,\n"
-		    + "	ALTER `strCardNo` DROP DEFAULT,\n"
-		    + "	ALTER `strExpirydate` DROP DEFAULT,\n"
-		    + "	ALTER `strChequeNo` DROP DEFAULT,\n"
-		    + "	ALTER `dteCheque` DROP DEFAULT,\n"
-		    + "	ALTER `strBankName` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvancereceiptdtl` "
+		    + "	ALTER `strSettlementCode` DROP DEFAULT, "
+		    + "	ALTER `strCardNo` DROP DEFAULT, "
+		    + "	ALTER `strExpirydate` DROP DEFAULT, "
+		    + "	ALTER `strChequeNo` DROP DEFAULT, "
+		    + "	ALTER `dteCheque` DROP DEFAULT, "
+		    + "	ALTER `strBankName` DROP DEFAULT, "
 		    + "	ALTER `strRemark` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancereceiptdtl`\n"
-		    + "	CHANGE COLUMN `strSettlementCode` `strSettlementCode` VARCHAR(10) NOT NULL AFTER `strReceiptNo`,\n"
-		    + "	CHANGE COLUMN `strCardNo` `strCardNo` VARCHAR(50) NOT NULL AFTER `strSettlementCode`,\n"
-		    + "	CHANGE COLUMN `strExpirydate` `strExpirydate` VARCHAR(50) NOT NULL AFTER `strCardNo`,\n"
-		    + "	CHANGE COLUMN `strChequeNo` `strChequeNo` VARCHAR(50) NOT NULL AFTER `strExpirydate`,\n"
-		    + "	CHANGE COLUMN `dteCheque` `dteCheque` DATE NOT NULL AFTER `strChequeNo`,\n"
-		    + "	CHANGE COLUMN `strBankName` `strBankName` VARCHAR(50) NOT NULL AFTER `dteCheque`,\n"
-		    + "	CHANGE COLUMN `dblAdvDepositesettleAmt` `dblAdvDepositesettleAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strBankName`,\n"
-		    + "	CHANGE COLUMN `strRemark` `strRemark` VARCHAR(50) NOT NULL AFTER `dblAdvDepositesettleAmt`,\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dblPaidAmt`,\n"
+	    sql = "ALTER TABLE `tbladvancereceiptdtl` "
+		    + "	CHANGE COLUMN `strSettlementCode` `strSettlementCode` VARCHAR(10) NOT NULL AFTER `strReceiptNo`, "
+		    + "	CHANGE COLUMN `strCardNo` `strCardNo` VARCHAR(50) NOT NULL AFTER `strSettlementCode`, "
+		    + "	CHANGE COLUMN `strExpirydate` `strExpirydate` VARCHAR(50) NOT NULL AFTER `strCardNo`, "
+		    + "	CHANGE COLUMN `strChequeNo` `strChequeNo` VARCHAR(50) NOT NULL AFTER `strExpirydate`, "
+		    + "	CHANGE COLUMN `dteCheque` `dteCheque` DATE NOT NULL AFTER `strChequeNo`, "
+		    + "	CHANGE COLUMN `strBankName` `strBankName` VARCHAR(50) NOT NULL AFTER `dteCheque`, "
+		    + "	CHANGE COLUMN `dblAdvDepositesettleAmt` `dblAdvDepositesettleAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strBankName`, "
+		    + "	CHANGE COLUMN `strRemark` `strRemark` VARCHAR(50) NOT NULL AFTER `dblAdvDepositesettleAmt`, "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dblPaidAmt`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancereceipthd`\n"
-		    + "	ALTER `strReceiptNo` DROP DEFAULT,\n"
-		    + "	ALTER `strAdvBookingNo` DROP DEFAULT,\n"
-		    + "	ALTER `strPOSCode` DROP DEFAULT,\n"
-		    + "	ALTER `strSettelmentMode` DROP DEFAULT,\n"
-		    + "	ALTER `dtReceiptDate` DROP DEFAULT,\n"
-		    + "	ALTER `intShiftCode` DROP DEFAULT,\n"
-		    + "	ALTER `strUserCreated` DROP DEFAULT,\n"
-		    + "	ALTER `strUserEdited` DROP DEFAULT,\n"
-		    + "	ALTER `dtDateCreated` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvancereceipthd` "
+		    + "	ALTER `strReceiptNo` DROP DEFAULT, "
+		    + "	ALTER `strAdvBookingNo` DROP DEFAULT, "
+		    + "	ALTER `strPOSCode` DROP DEFAULT, "
+		    + "	ALTER `strSettelmentMode` DROP DEFAULT, "
+		    + "	ALTER `dtReceiptDate` DROP DEFAULT, "
+		    + "	ALTER `intShiftCode` DROP DEFAULT, "
+		    + "	ALTER `strUserCreated` DROP DEFAULT, "
+		    + "	ALTER `strUserEdited` DROP DEFAULT, "
+		    + "	ALTER `dtDateCreated` DROP DEFAULT, "
 		    + "	ALTER `dtDateEdited` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancereceipthd`\n"
-		    + "	CHANGE COLUMN `strReceiptNo` `strReceiptNo` VARCHAR(15) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL AFTER `strReceiptNo`,\n"
-		    + "	CHANGE COLUMN `strPOSCode` `strPOSCode` VARCHAR(10) NOT NULL AFTER `strAdvBookingNo`,\n"
-		    + "	CHANGE COLUMN `strSettelmentMode` `strSettelmentMode` VARCHAR(10) NOT NULL AFTER `strPOSCode`,\n"
-		    + "	CHANGE COLUMN `dtReceiptDate` `dtReceiptDate` DATE NOT NULL AFTER `strSettelmentMode`,\n"
-		    + "	CHANGE COLUMN `dblAdvDeposite` `dblAdvDeposite` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dtReceiptDate`,\n"
-		    + "	CHANGE COLUMN `intShiftCode` `intShiftCode` INT(11) NOT NULL AFTER `dblAdvDeposite`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `intShiftCode`,\n"
-		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	CHANGE COLUMN `dtDateCreated` `dtDateCreated` DATETIME NOT NULL AFTER `strUserEdited`,\n"
+	    sql = "ALTER TABLE `tbladvancereceipthd` "
+		    + "	CHANGE COLUMN `strReceiptNo` `strReceiptNo` VARCHAR(15) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(15) NOT NULL AFTER `strReceiptNo`, "
+		    + "	CHANGE COLUMN `strPOSCode` `strPOSCode` VARCHAR(10) NOT NULL AFTER `strAdvBookingNo`, "
+		    + "	CHANGE COLUMN `strSettelmentMode` `strSettelmentMode` VARCHAR(10) NOT NULL AFTER `strPOSCode`, "
+		    + "	CHANGE COLUMN `dtReceiptDate` `dtReceiptDate` DATE NOT NULL AFTER `strSettelmentMode`, "
+		    + "	CHANGE COLUMN `dblAdvDeposite` `dblAdvDeposite` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dtReceiptDate`, "
+		    + "	CHANGE COLUMN `intShiftCode` `intShiftCode` INT(11) NOT NULL AFTER `dblAdvDeposite`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `intShiftCode`, "
+		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`, "
+		    + "	CHANGE COLUMN `dtDateCreated` `dtDateCreated` DATETIME NOT NULL AFTER `strUserEdited`, "
 		    + "	CHANGE COLUMN `dtDateEdited` `dtDateEdited` DATETIME NOT NULL AFTER `dtDateCreated`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancereceipthd`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dtDateEdited`,\n"
+	    sql = "ALTER TABLE `tbladvancereceipthd` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dtDateEdited`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancebookingtemp`\n"
-		    + "	ALTER `strCustomerCode` DROP DEFAULT,\n"
-		    + "	ALTER `strCustomerName` DROP DEFAULT,\n"
-		    + "	ALTER `strAddrLine1` DROP DEFAULT,\n"
-		    + "	ALTER `strAddrLine2` DROP DEFAULT,\n"
-		    + "	ALTER `strAddrLine3` DROP DEFAULT,\n"
-		    + "	ALTER `strCity` DROP DEFAULT,\n"
-		    + "	ALTER `strState` DROP DEFAULT,\n"
-		    + "	ALTER `intPinCode` DROP DEFAULT,\n"
-		    + "	ALTER `intMobileNo` DROP DEFAULT,\n"
-		    + "	ALTER `strUserCreated` DROP DEFAULT,\n"
-		    + "	ALTER `strUserEdited` DROP DEFAULT,\n"
-		    + "	ALTER `dteUserCreated` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tbladvancebookingtemp` "
+		    + "	ALTER `strCustomerCode` DROP DEFAULT, "
+		    + "	ALTER `strCustomerName` DROP DEFAULT, "
+		    + "	ALTER `strAddrLine1` DROP DEFAULT, "
+		    + "	ALTER `strAddrLine2` DROP DEFAULT, "
+		    + "	ALTER `strAddrLine3` DROP DEFAULT, "
+		    + "	ALTER `strCity` DROP DEFAULT, "
+		    + "	ALTER `strState` DROP DEFAULT, "
+		    + "	ALTER `intPinCode` DROP DEFAULT, "
+		    + "	ALTER `intMobileNo` DROP DEFAULT, "
+		    + "	ALTER `strUserCreated` DROP DEFAULT, "
+		    + "	ALTER `strUserEdited` DROP DEFAULT, "
+		    + "	ALTER `dteUserCreated` DROP DEFAULT, "
 		    + "	ALTER `dteUserEdited` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancebookingtemp`\n"
-		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL FIRST,\n"
-		    + "	CHANGE COLUMN `strCustomerName` `strCustomerName` VARCHAR(100) NOT NULL AFTER `strCustomerCode`,\n"
-		    + "	CHANGE COLUMN `strAddrLine1` `strAddrLine1` VARCHAR(50) NOT NULL AFTER `strCustomerName`,\n"
-		    + "	CHANGE COLUMN `strAddrLine2` `strAddrLine2` VARCHAR(50) NOT NULL AFTER `strAddrLine1`,\n"
-		    + "	CHANGE COLUMN `strAddrLine3` `strAddrLine3` VARCHAR(50) NOT NULL AFTER `strAddrLine2`,\n"
-		    + "	CHANGE COLUMN `strCity` `strCity` VARCHAR(50) NOT NULL AFTER `strAddrLine3`,\n"
-		    + "	CHANGE COLUMN `strState` `strState` VARCHAR(50) NOT NULL AFTER `strCity`,\n"
-		    + "	CHANGE COLUMN `intPinCode` `intPinCode` VARCHAR(50) NOT NULL AFTER `strState`,\n"
-		    + "	CHANGE COLUMN `intMobileNo` `intMobileNo` VARCHAR(50) NOT NULL AFTER `intPinCode`,\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `intMobileNo`,\n"
-		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	CHANGE COLUMN `dteUserCreated` `dteUserCreated` DATETIME NOT NULL AFTER `strUserEdited`,\n"
-		    + "	CHANGE COLUMN `dteUserEdited` `dteUserEdited` DATETIME NOT NULL AFTER `dteUserCreated`,\n"
+	    sql = "ALTER TABLE `tbladvancebookingtemp` "
+		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(10) NOT NULL FIRST, "
+		    + "	CHANGE COLUMN `strCustomerName` `strCustomerName` VARCHAR(100) NOT NULL AFTER `strCustomerCode`, "
+		    + "	CHANGE COLUMN `strAddrLine1` `strAddrLine1` VARCHAR(50) NOT NULL AFTER `strCustomerName`, "
+		    + "	CHANGE COLUMN `strAddrLine2` `strAddrLine2` VARCHAR(50) NOT NULL AFTER `strAddrLine1`, "
+		    + "	CHANGE COLUMN `strAddrLine3` `strAddrLine3` VARCHAR(50) NOT NULL AFTER `strAddrLine2`, "
+		    + "	CHANGE COLUMN `strCity` `strCity` VARCHAR(50) NOT NULL AFTER `strAddrLine3`, "
+		    + "	CHANGE COLUMN `strState` `strState` VARCHAR(50) NOT NULL AFTER `strCity`, "
+		    + "	CHANGE COLUMN `intPinCode` `intPinCode` VARCHAR(50) NOT NULL AFTER `strState`, "
+		    + "	CHANGE COLUMN `intMobileNo` `intMobileNo` VARCHAR(50) NOT NULL AFTER `intPinCode`, "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(10) NOT NULL AFTER `intMobileNo`, "
+		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`, "
+		    + "	CHANGE COLUMN `dteUserCreated` `dteUserCreated` DATETIME NOT NULL AFTER `strUserEdited`, "
+		    + "	CHANGE COLUMN `dteUserEdited` `dteUserEdited` DATETIME NOT NULL AFTER `dteUserCreated`, "
 		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dteUserEdited`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
-		    + "	ADD COLUMN `strMessage` VARCHAR(150) NOT NULL DEFAULT '' AFTER `strCustomerCode`,\n"
-		    + "	ADD COLUMN `strShape` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strMessage`,\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
+		    + "	ADD COLUMN `strMessage` VARCHAR(150) NOT NULL DEFAULT '' AFTER `strCustomerCode`, "
+		    + "	ADD COLUMN `strShape` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strMessage`, "
 		    + "	ADD COLUMN `strNote` VARCHAR(300) NOT NULL DEFAULT '' AFTER `strShape`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup` ADD COLUMN `strDirectKOTPrintMakeKOT` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSkipWaiterAndPax`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemrtemp`\n"
+	    sql = "ALTER TABLE `tblitemrtemp` "
 		    + "	ADD COLUMN `strDelBoyCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `tdhComboItemYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkinhd`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dteDateEdited`,\n"
+	    sql = "ALTER TABLE `tblstkinhd` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dteDateEdited`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkouthd`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dteDateEdited`,\n"
+	    sql = "ALTER TABLE `tblstkouthd` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dteDateEdited`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkindtl`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dblAmount`,\n"
+	    sql = "ALTER TABLE `tblstkindtl` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dblAmount`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkoutdtl`\n"
-		    + " ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER \n"
+	    sql = "ALTER TABLE `tblstkoutdtl` "
+		    + " ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER  "
 		    + "`dblAmount`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancereceipthd`\n"
+	    sql = "ALTER TABLE `tbladvancereceipthd` "
 		    + "CHANGE COLUMN `strSettelmentMode` `strSettelmentMode` VARCHAR(15) NOT NULL AFTER `strPOSCode`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblmodifiermaster` ADD COLUMN `strModifierGroupCode` VARCHAR(12) NOT NULL DEFAULT 'NA' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookitemtemp`\n"
+	    sql = "ALTER TABLE `tbladvbookitemtemp` "
 		    + "CHANGE COLUMN `strItemName` `strItemName` VARCHAR(50) NULL DEFAULT NULL AFTER `strItemCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvancereceiptdtl`\n"
+	    sql = "ALTER TABLE `tbladvancereceiptdtl` "
 		    + "ADD COLUMN `dteInstallment` DATETIME NOT NULL AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + "ADD COLUMN `strDeliveryTime` VARCHAR(10) NOT NULL AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblmodifiergrouphd` (\n"
-		    + "  `strModifierGroupCode` varchar(12) NOT NULL,\n"
-		    + "  `strModifierGroupName` varchar(50) NOT NULL,\n"
-		    + "  `strModifierGroupShortName` varchar(14) NOT NULL,\n"
-		    + "  `strApplyItemLimit` varchar(1) NOT NULL,\n"
-		    + "  `intItemLimit` double NOT NULL,\n"
-		    + "  `strOperational` varchar(3) NOT NULL DEFAULT 'YES',\n"
-		    + "  `strUserCreated` varchar(50) NOT NULL,\n"
-		    + "  `strUserEdited` varchar(50) NOT NULL,\n"
-		    + "  `dteDateCreated` datetime NOT NULL,\n"
-		    + "  `dteDateEdited` datetime NOT NULL,\n"
-		    + "  `strClientCode` varchar(11) NOT NULL DEFAULT '',\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  PRIMARY KEY (`strModifierGroupCode`,`strClientCode`)\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblmodifiergrouphd` ( "
+		    + "  `strModifierGroupCode` varchar(12) NOT NULL, "
+		    + "  `strModifierGroupName` varchar(50) NOT NULL, "
+		    + "  `strModifierGroupShortName` varchar(14) NOT NULL, "
+		    + "  `strApplyItemLimit` varchar(1) NOT NULL, "
+		    + "  `intItemLimit` double NOT NULL, "
+		    + "  `strOperational` varchar(3) NOT NULL DEFAULT 'YES', "
+		    + "  `strUserCreated` varchar(50) NOT NULL, "
+		    + "  `strUserEdited` varchar(50) NOT NULL, "
+		    + "  `dteDateCreated` datetime NOT NULL, "
+		    + "  `dteDateEdited` datetime NOT NULL, "
+		    + "  `strClientCode` varchar(11) NOT NULL DEFAULT '', "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  PRIMARY KEY (`strModifierGroupCode`,`strClientCode`) "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
@@ -840,50 +840,50 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblcustomermaster` ADD COLUMN `strEmailId` VARCHAR(50) NOT NULL DEFAULT '' AFTER `dteAnniversary`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblimportexcel`\n"
-		    + "	ADD COLUMN `strCustName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strCounterCode`,\n"
-		    + "	ADD COLUMN `strCustCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCustName`,\n"
-		    + "	ADD COLUMN `strBuildName` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strCustCode`,\n"
+	    sql = "ALTER TABLE `tblimportexcel` "
+		    + "	ADD COLUMN `strCustName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strCounterCode`, "
+		    + "	ADD COLUMN `strCustCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCustName`, "
+		    + "	ADD COLUMN `strBuildName` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strCustCode`, "
 		    + "	ADD COLUMN `strBuildCode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strBuildName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblimportexcel`\n"
-		    + "	ADD COLUMN `strBuildingArea` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strBuildCode`,\n"
-		    + "	ADD COLUMN `strTelephoneNo` VARCHAR(40) NOT NULL DEFAULT '' AFTER `strBuildingArea`,\n"
-		    + "	ADD COLUMN `strEmail` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strTelephoneNo`,\n"
-		    + "	ADD COLUMN `strDOB` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strEmail`;\n";
+	    sql = "ALTER TABLE `tblimportexcel` "
+		    + "	ADD COLUMN `strBuildingArea` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strBuildCode`, "
+		    + "	ADD COLUMN `strTelephoneNo` VARCHAR(40) NOT NULL DEFAULT '' AFTER `strBuildingArea`, "
+		    + "	ADD COLUMN `strEmail` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strTelephoneNo`, "
+		    + "	ADD COLUMN `strDOB` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strEmail`; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbuildingmaster`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dblHomeDeliCharge`,\n"
+	    sql = "ALTER TABLE `tblbuildingmaster` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `dblHomeDeliCharge`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbuildingmaster`\n"
+	    sql = "ALTER TABLE `tblbuildingmaster` "
 		    + "	CHANGE COLUMN `strAddress` `strAddress` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strBuildingName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + " ADD COLUMN `strHomeDelivery` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strWaiterNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + " ADD COLUMN `dblHomeDelCharges` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strHomeDelivery`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "	ADD COLUMN `strLoyaltyOption` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSkipPax`,\n"
-		    + "	ADD COLUMN `strGetWebserviceURL` VARCHAR(300) NOT NULL DEFAULT '' AFTER `strLoyaltyOption`,\n"
-		    + "	ADD COLUMN `strPostWebserviceURL` VARCHAR(300) NOT NULL DEFAULT '' AFTER `strGetWebserviceURL`,\n"
-		    + "	ADD COLUMN `strOutletUID` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strPostWebserviceURL`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strLoyaltyOption` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSkipPax`, "
+		    + "	ADD COLUMN `strGetWebserviceURL` VARCHAR(300) NOT NULL DEFAULT '' AFTER `strLoyaltyOption`, "
+		    + "	ADD COLUMN `strPostWebserviceURL` VARCHAR(300) NOT NULL DEFAULT '' AFTER `strGetWebserviceURL`, "
+		    + "	ADD COLUMN `strOutletUID` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strPostWebserviceURL`, "
 		    + "	ADD COLUMN `strPOSID` VARCHAR(15) NOT NULL DEFAULT '' AFTER `strOutletUID`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	CHANGE COLUMN `strLoyaltyOption` `strSQYCRNIntf` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSkipPax`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	CHANGE COLUMN `strSQYCRNIntf` `strCRMInterface` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strSkipPax`;";
 	    i = ExecuteQuery(sql);
 
@@ -893,20 +893,20 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblstkoutdtl` ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblcrmpoints` (\n"
-		    + "	`strBillNo` VARCHAR(15) NOT NULL,\n"
-		    + "	`dblPoints` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strTransactionId` VARCHAR(100) NOT NULL DEFAULT '',\n"
-		    + "	`strOutletUID` VARCHAR(100) NOT NULL DEFAULT '',\n"
-		    + "	`dblRedeemedAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE `tblcrmpoints` ( "
+		    + "	`strBillNo` VARCHAR(15) NOT NULL, "
+		    + "	`dblPoints` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strTransactionId` VARCHAR(100) NOT NULL DEFAULT '', "
+		    + "	`strOutletUID` VARCHAR(100) NOT NULL DEFAULT '', "
+		    + "	`dblRedeemedAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcrmpoints`\n"
+	    sql = "ALTER TABLE `tblcrmpoints` "
 		    + "	ADD COLUMN `longCustMobileNo` VARCHAR(15) NOT NULL AFTER `dblRedeemedAmt`;";
 	    i = ExecuteQuery(sql);
 
@@ -919,45 +919,45 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblsetup`	CHANGE COLUMN `longCustSeries` `longCustSeries` BIGINT(20) NOT NULL AFTER `strStockInOption`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblareawisedc`\n"
+	    sql = "ALTER TABLE `tblareawisedc` "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbuildingmaster`\n"
+	    sql = "ALTER TABLE `tblbuildingmaster` "
 		    + "	ALTER `strClientCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbuildingmaster`\n"
+	    sql = "ALTER TABLE `tblbuildingmaster` "
 		    + "	CHANGE COLUMN `strClientCode` `strClientCode` VARCHAR(15) NOT NULL AFTER `dblHomeDeliCharge`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup`	DROP COLUMN `strHOPOS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblrecipehd` (\n"
-		    + "	`strRecipeCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strItemCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`dteFromDate` DATETIME NOT NULL,\n"
-		    + "	`dteToDate` DATETIME NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE `tblrecipehd` ( "
+		    + "	`strRecipeCode` VARCHAR(15) NOT NULL, "
+		    + "	`strItemCode` VARCHAR(15) NOT NULL, "
+		    + "	`dteFromDate` DATETIME NOT NULL, "
+		    + "	`dteToDate` DATETIME NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblrecipedtl` (\n"
-		    + "	`strRecipeCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strChildItemCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblQuantity` DECIMAL(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE `tblrecipedtl` ( "
+		    + "	`strRecipeCode` VARCHAR(15) NOT NULL, "
+		    + "	`strChildItemCode` VARCHAR(10) NOT NULL, "
+		    + "	`dblQuantity` DECIMAL(18,2) NOT NULL DEFAULT '0.00', "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -966,34 +966,34 @@ public class clsStructureUpdate
 		    + "ADD COLUMN `dteToDate` DATETIME NOT NULL AFTER `dteFromDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblloyaltypointposdtl` (\n"
-		    + "	`strLoyaltyCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strPOSCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE `tblloyaltypointposdtl` ( "
+		    + "	`strLoyaltyCode` VARCHAR(15) NOT NULL, "
+		    + "	`strPOSCode` VARCHAR(15) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblloyaltypointmenuhddtl` (`strLoyaltyCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strMenuCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N')\n"
+	    sql = "CREATE TABLE `tblloyaltypointmenuhddtl` (`strLoyaltyCode` VARCHAR(15) NOT NULL, "
+		    + "	`strMenuCode` VARCHAR(15) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N') "
 		    + "	COLLATE='latin1_swedish_ci' ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblloyaltypointsubgroupdtl` (	`strLoyaltyCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N')\n"
+	    sql = "CREATE TABLE `tblloyaltypointsubgroupdtl` (	`strLoyaltyCode` VARCHAR(15) NOT NULL, "
+		    + "	`strCode` VARCHAR(15) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N') "
 		    + "	COLLATE='latin1_swedish_ci' ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblloyaltypointcustomerdtl` (	`strLoyaltyCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strCustomerTypeCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N')\n"
+	    sql = "CREATE TABLE `tblloyaltypointcustomerdtl` (	`strLoyaltyCode` VARCHAR(15) NOT NULL, "
+		    + "	`strCustomerTypeCode` VARCHAR(15) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N') "
 		    + "	COLLATE='latin1_swedish_ci' ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -1007,22 +1007,22 @@ public class clsStructureUpdate
 		    + "NOT NULL DEFAULT '2013-01-01 16:49:15' AFTER `strDataSendFrequency`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcrmpoints`\n"
+	    sql = "ALTER TABLE `tblcrmpoints` "
 		    + "	ADD COLUMN `dblValue` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tbldeliverypersonmaster` ALTER `strDPCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `strDPCode` `strDPCode` VARCHAR(10) NOT NULL FIRST;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	ALTER `strDPName` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `strDPName` `strDPName` VARCHAR(100) NOT NULL AFTER `strDPCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1058,87 +1058,87 @@ public class clsStructureUpdate
 		    + "where strDeliveryArea is NULL;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `strAddressLine1` `strAddressLine1` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strDPName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `strAddressLine2` `strAddressLine2` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strAddressLine1`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `strAddressLine3` `strAddressLine3` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strAddressLine2`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `strCity` `strCity` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strAddressLine3`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `strState` `strState` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strCity`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `intPinCode` `intPinCode` BIGINT(20) NOT NULL DEFAULT '0' AFTER `strState`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	CHANGE COLUMN `intMobileNo` `intMobileNo` BIGINT(20) NOT NULL DEFAULT '0' AFTER `intPinCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL AFTER `strOperational`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
-		    + "	CHANGE COLUMN `dtDateCreated` `dteDateCreated` DATETIME NULL DEFAULT NULL AFTER `strUserEdited`,\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
+		    + "	CHANGE COLUMN `dtDateCreated` `dteDateCreated` DATETIME NULL DEFAULT NULL AFTER `strUserEdited`, "
 		    + "	CHANGE COLUMN `dtDateEdited` `dteDateEdited` DATETIME NULL DEFAULT NULL AFTER `dteDateCreated`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblitemmaster` ADD COLUMN `strRawMaterial` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `intProcDay`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemcurrentstk`\n"
-		    + " ADD COLUMN `strGroupName` VARCHAR(100) NOT NULL DEFAULT '' FIRST,\n"
+	    sql = "ALTER TABLE `tblitemcurrentstk` "
+		    + " ADD COLUMN `strGroupName` VARCHAR(100) NOT NULL DEFAULT '' FIRST, "
 		    + " ADD COLUMN `strSubgroupName` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strGroupName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblposmaster`\n"
+	    sql = "ALTER TABLE `tblposmaster` "
 		    + " ADD COLUMN `strDelayedSettlementForDB` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCounterWiseBilling`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "	CHANGE COLUMN `strOutletUID` `strOutletUID` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strPostWebserviceURL`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	CHANGE COLUMN `strOutletUID` `strOutletUID` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strPostWebserviceURL`, "
 		    + "	CHANGE COLUMN `strPOSID` `strPOSID` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strOutletUID`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcustomermaster`\n"
+	    sql = "ALTER TABLE `tblcustomermaster` "
 		    + "	ADD COLUMN `strCRMId` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strEmailId`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcrmpoints`\n"
+	    sql = "ALTER TABLE `tblcrmpoints` "
 		    + "	ADD COLUMN `strCustomerId` VARCHAR(50) NOT NULL DEFAULT '0.00' AFTER `dblValue`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcrmpoints`\n"
+	    sql = "ALTER TABLE `tblcrmpoints` "
 		    + "	CHANGE COLUMN `strCustomerId` `strCustomerId` VARCHAR(50) NOT NULL DEFAULT '' AFTER `dblValue`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblimportexcel`\n"
-		    + "	ADD COLUMN `strSubMenuHeadName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strSubGroupCode`,\n"
+	    sql = "ALTER TABLE `tblimportexcel` "
+		    + "	ADD COLUMN `strSubMenuHeadName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strSubGroupCode`, "
 		    + "	ADD COLUMN `strSubMenuHeadCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strSubMenuHeadName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltaxhd`\n"
+	    sql = "ALTER TABLE `tbltaxhd` "
 		    + "	ADD COLUMN `strAreaCode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dteDateEdited`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltaxhd`\n"
-		    + "	ADD COLUMN `strOperationType` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strAreaCode`,\n"
+	    sql = "ALTER TABLE `tbltaxhd` "
+		    + "	ADD COLUMN `strOperationType` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strAreaCode`, "
 		    + "	ADD COLUMN `strItemType` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strOperationType`;";
 	    i = ExecuteQuery(sql);
 
@@ -1151,69 +1151,69 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblvoidkot` ADD COLUMN `strPrintKOT` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strManualKOTNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `intAdvReceiptPrintCount` INT NOT NULL DEFAULT '0' AFTER `longCustSeries`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + " ADD COLUMN `strHomeDeliverySMS` VARCHAR(300) NOT NULL AFTER `intAdvReceiptPrintCount`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + " ADD COLUMN `strHomeDeliverySMS` VARCHAR(300) NOT NULL AFTER `intAdvReceiptPrintCount`, "
 		    + " ADD COLUMN `strBillStettlementSMS` VARCHAR(300) NOT NULL AFTER `strHomeDeliverySMS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strBillFormatType` VARCHAR(30) NOT NULL DEFAULT '' AFTER `strBillStettlementSMS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblbillpromotiondtl` (\n"
-		    + "	`strBillNo` VARCHAR(20) NOT NULL,\n"
-		    + "	`strItemCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strPromotionCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`dblQuantity` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`dblRate` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE `tblbillpromotiondtl` ( "
+		    + "	`strBillNo` VARCHAR(20) NOT NULL, "
+		    + "	`strItemCode` VARCHAR(15) NOT NULL, "
+		    + "	`strPromotionCode` VARCHAR(20) NOT NULL, "
+		    + "	`dblQuantity` DECIMAL(18,4) NOT NULL, "
+		    + "	`dblRate` DECIMAL(18,4) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(20) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strActivePromotions` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strBillFormatType`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromotionmaster`\n"
+	    sql = "ALTER TABLE `tblpromotionmaster` "
 		    + "	ADD COLUMN `strPromotionOn` VARCHAR(30) NOT NULL AFTER `strPromoCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromotiondtl`\n"
+	    sql = "ALTER TABLE `tblpromotiondtl` "
 		    + "	ADD COLUMN `strPromotionOn` VARCHAR(30) NOT NULL AFTER `strPromoCode`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tbltempvoidkot` ALTER `strItemCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempvoidkot`\n"
+	    sql = "ALTER TABLE `tbltempvoidkot` "
 		    + "	CHANGE COLUMN `strItemCode` `strItemCode` VARCHAR(20) NOT NULL AFTER `strItemName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblnonchargablekot` (\n"
-		    + "	`strTableNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strItemCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`dblQuantity` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`dblRate` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`strKOTNo` VARCHAR(15) NOT NULL,\n"
-		    + "	`strEligibleForVoid` VARCHAR(1) NOT NULL DEFAULT 'Y',\n"
-		    + "	`strClientCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
+	    sql = "CREATE TABLE `tblnonchargablekot` ( "
+		    + "	`strTableNo` VARCHAR(10) NOT NULL, "
+		    + "	`strItemCode` VARCHAR(20) NOT NULL, "
+		    + "	`dblQuantity` DECIMAL(18,4) NOT NULL, "
+		    + "	`dblRate` DECIMAL(18,4) NOT NULL, "
+		    + "	`strKOTNo` VARCHAR(15) NOT NULL, "
+		    + "	`strEligibleForVoid` VARCHAR(1) NOT NULL DEFAULT 'Y', "
+		    + "	`strClientCode` VARCHAR(15) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblitemrtemp` DROP COLUMN `NcKotYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemrtemp`\n"
+	    sql = "ALTER TABLE `tblitemrtemp` "
 		    + " ADD COLUMN `strNCKotYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strDelBoyCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1223,74 +1223,74 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblnonchargablekot` ADD COLUMN `strRemark` VARCHAR(50) NOT NULL AFTER `strReasonCode`; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "	ADD COLUMN `strSendHomeDelSMS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strActivePromotions`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strSendHomeDelSMS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strActivePromotions`, "
 		    + "	ADD COLUMN `strSendBillSettlementSMS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSendHomeDelSMS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilldtl`\n"
+	    sql = "ALTER TABLE `tblbilldtl` "
 		    + "	ADD COLUMN `dblRate` DECIMAL(18,2) NOT NULL AFTER `strAdvBookingNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldtl`\n"
+	    sql = "ALTER TABLE `tblqbilldtl` "
 		    + "	ADD COLUMN `dblRate` DECIMAL(18,2) NOT NULL AFTER `strAdvBookingNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblbillmodifierdtl` "
 		    + "	ADD COLUMN `dblRate` DECIMAL(18,2) NOT NULL AFTER `strModifierName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblqbillmodifierdtl` "
 		    + "	ADD COLUMN `dblRate` DECIMAL(18,2) NOT NULL AFTER `strModifierName`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tbladvbookitemtemp` ALTER `dblItemQuantity` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookitemtemp`\n"
+	    sql = "ALTER TABLE `tbladvbookitemtemp` "
 		    + "	CHANGE COLUMN `dblItemQuantity` `dblItemQuantity` DECIMAL(18,2) NOT NULL AFTER `strItemName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblreasonmaster`\n"
+	    sql = "ALTER TABLE `tblreasonmaster` "
 		    + "	ADD COLUMN `strNCKOT` VARCHAR(1) NOT NULL AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblnonchargablekot`\n"
+	    sql = "ALTER TABLE `tblnonchargablekot` "
 		    + "	ADD COLUMN `dteNCKOTDate` DATETIME NOT NULL AFTER `strRemark`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblnonchargablekot`\n"
-		    + "	ADD COLUMN `strUserCreated` DATETIME NOT NULL AFTER `dteNCKOTDate`,\n"
+	    sql = "ALTER TABLE `tblnonchargablekot` "
+		    + "	ADD COLUMN `strUserCreated` DATETIME NOT NULL AFTER `dteNCKOTDate`, "
 		    + "	ADD COLUMN `strUserEdited` DATETIME NOT NULL AFTER `strUserCreated`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strSMSType` VARCHAR(50) NOT NULL AFTER `strSendBillSettlementSMS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strPrintShortNameOnKOT` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSMSType`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpspdtl`\n"
-		    + "	DROP INDEX `strItemCode`,\n"
+	    sql = "ALTER TABLE `tblpspdtl` "
+		    + "	DROP INDEX `strItemCode`, "
 		    + "	DROP INDEX `strPSPCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpsphd`\n"
-		    + "	DROP PRIMARY KEY,\n"
-		    + "	DROP INDEX `strPOSCode`,\n"
-		    + "	DROP INDEX `strStkInCode`,\n"
+	    sql = "ALTER TABLE `tblpsphd` "
+		    + "	DROP PRIMARY KEY, "
+		    + "	DROP INDEX `strPOSCode`, "
+		    + "	DROP INDEX `strStkInCode`, "
 		    + "	DROP INDEX `strStkOutCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpsphd`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(20) NOT NULL AFTER `dteDateEdited`,\n"
+	    sql = "ALTER TABLE `tblpsphd` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(20) NOT NULL AFTER `dteDateEdited`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpspdtl`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(20) NOT NULL AFTER `dblVairanceAmt`,\n"
+	    sql = "ALTER TABLE `tblpspdtl` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(20) NOT NULL AFTER `dblVairanceAmt`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1306,31 +1306,31 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblpsphd` CHANGE COLUMN `strPSPCode` `strPSPCode` VARCHAR(20) NOT NULL FIRST;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strShowCustHelp` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintShortNameOnKOT`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblreasonmaster`\n"
+	    sql = "ALTER TABLE `tblreasonmaster` "
 		    + "	CHANGE COLUMN `strNCKOT` `strNCKOT` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblrecipedtl`\n"
+	    sql = "ALTER TABLE `tblrecipedtl` "
 		    + "	ADD COLUMN `strPOSCode` VARCHAR(20) NOT NULL AFTER `dblQuantity`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblrecipehd`\n"
+	    sql = "ALTER TABLE `tblrecipehd` "
 		    + "	ADD COLUMN `strPOSCode` VARCHAR(20) NOT NULL AFTER `dteToDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strPrintOnVoidBill` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strShowCustHelp`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblstkouthd` ALTER `dtePurchaseBillDate` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkouthd`\n"
-		    + "	CHANGE COLUMN `strPurchaseBillNo` `strPurchaseBillNo` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strReasonCode`,\n"
+	    sql = "ALTER TABLE `tblstkouthd` "
+		    + "	CHANGE COLUMN `strPurchaseBillNo` `strPurchaseBillNo` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strReasonCode`, "
 		    + "	CHANGE COLUMN `dtePurchaseBillDate` `dtePurchaseBillDate` DATETIME NOT NULL AFTER `strPurchaseBillNo`;";
 	    i = ExecuteQuery(sql);
 
@@ -1340,11 +1340,11 @@ public class clsStructureUpdate
 	    sql = "update tblstkouthd set dtePurchaseBillDate=dteStkOutDate where dtePurchaseBillDate is NULL;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemmaster`\n"
+	    sql = "ALTER TABLE `tblitemmaster` "
 		    + "	CHANGE COLUMN `strShortName` `strShortName` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strDiscountApply`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strPostSalesDataToMMS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintOnVoidBill`;";
 	    i = ExecuteQuery(sql);
 
@@ -1354,34 +1354,34 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblbilltaxdtl` ADD PRIMARY KEY (`strBillNo`, `strTaxCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
+	    sql = "ALTER TABLE `tblbillhd` "
 		    + " CHANGE COLUMN `strAdvBookingNo` `strAdvBookingNo` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strBillNo`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "update tblbillhd set strAdvBookingNo='' where strAdvBookingNo='0';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + " ADD COLUMN `strCustAreaMasterCompulsory` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPostSalesDataToMMS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + "	ADD COLUMN `strOrderType` VARCHAR(10) NOT NULL AFTER `dblHomeDelCharges`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblproductionhd` (\n"
-		    + "	`strProductionCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strPOSCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteProductionDate` DATETIME NOT NULL,\n"
-		    + "	`strClose` VARCHAR(1) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`dtrDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblproductionhd` ( "
+		    + "	`strProductionCode` VARCHAR(20) NOT NULL, "
+		    + "	`strPOSCode` VARCHAR(10) NOT NULL, "
+		    + "	`dteProductionDate` DATETIME NOT NULL, "
+		    + "	`strClose` VARCHAR(1) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(20) NOT NULL, "
+		    + "	`dtrDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -1392,16 +1392,16 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblproductionhd`	ADD PRIMARY KEY (`strProductionCode`, `strClientCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblproductiondtl` (\n"
-		    + "	`strProductionCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strItemCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strItemName` VARCHAR(200) NOT NULL,\n"
-		    + "	`dblStock` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`dblReorderQty` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblproductiondtl` ( "
+		    + "	`strProductionCode` VARCHAR(20) NOT NULL, "
+		    + "	`strItemCode` VARCHAR(10) NOT NULL, "
+		    + "	`strItemName` VARCHAR(200) NOT NULL, "
+		    + "	`dblStock` DECIMAL(18,4) NOT NULL, "
+		    + "	`dblReorderQty` DECIMAL(18,4) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(20) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -1420,54 +1420,54 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblitemmaster` DROP COLUMN `dblItemRate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemmaster`\n"
+	    sql = "ALTER TABLE `tblitemmaster` "
 		    + "	ADD COLUMN `dblSalePrice` DECIMAL(18,4) NOT NULL DEFAULT '0.0000' AFTER `strRawMaterial`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strPriceFrom` VARCHAR(20) NOT NULL AFTER `strCustAreaMasterCompulsory`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemmaster`\n"
+	    sql = "ALTER TABLE `tblitemmaster` "
 		    + "	CHANGE COLUMN `strExternalCode` `strExternalCode` VARCHAR(100) NOT NULL DEFAULT '0.00' AFTER `intProcTimeMin`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup` ADD COLUMN `strShowPrinterErrorMessage` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strPriceFrom`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	CHANGE COLUMN `strPriceFrom` `strPriceFrom` VARCHAR(20) NOT NULL DEFAULT 'Menu Pricing' AFTER `strCustAreaMasterCompulsory`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup`	ADD COLUMN `strTouchScreenMode` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strShowPrinterErrorMessage`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	CHANGE COLUMN `strTouchScreenMode` `strTouchScreenMode` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strShowPrinterErrorMessage`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tbladvanceordertypemaster` (\n"
-		    + "	`strAdvOrderTypeCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strAdvOrderTypeName` VARCHAR(200) NOT NULL,\n"
-		    + "	`strOperational` VARCHAR(3) NOT NULL DEFAULT 'Yes',\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strAdvOrderTypeCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
+	    sql = "CREATE TABLE `tbladvanceordertypemaster` ( "
+		    + "	`strAdvOrderTypeCode` VARCHAR(15) NOT NULL, "
+		    + "	`strAdvOrderTypeName` VARCHAR(200) NOT NULL, "
+		    + "	`strOperational` VARCHAR(3) NOT NULL DEFAULT 'Yes', "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(20) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strAdvOrderTypeCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tbladvanceordertypemaster` ADD COLUMN `strPOSCode` VARCHAR(10) NOT NULL AFTER `strOperational`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcustomertypemaster`\n"
-		    + "	ADD COLUMN `dblDiscPer` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strCustType`,\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(50) NOT NULL AFTER `dteDateEdited`,\n"
+	    sql = "ALTER TABLE `tblcustomertypemaster` "
+		    + "	ADD COLUMN `dblDiscPer` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strCustType`, "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(50) NOT NULL AFTER `dteDateEdited`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1477,16 +1477,16 @@ public class clsStructureUpdate
 	    sql = "update tbladvancereceiptdtl set dteCheque='1980-01-01' where dteCheque='0000-00-00';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromotiondtl`\n"
-		    + "	CHANGE COLUMN `dblQuantity` `dblGetQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strOperator`,\n"
+	    sql = "ALTER TABLE `tblpromotiondtl` "
+		    + "	CHANGE COLUMN `dblQuantity` `dblGetQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strOperator`, "
 		    + "	DROP COLUMN `dblValue`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromotiondtl`\n"
+	    sql = "ALTER TABLE `tblpromotiondtl` "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromotionmaster`\n"
+	    sql = "ALTER TABLE `tblpromotionmaster` "
 		    + "	ADD COLUMN `dblBuyQty` DECIMAL(18,2) NOT NULL AFTER `strPromoItemCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1526,7 +1526,7 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbltaxhd`	ALTER `strTaxOnTaxCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltaxhd`\n"
+	    sql = "ALTER TABLE `tbltaxhd` "
 		    + "	CHANGE COLUMN `strTaxOnTaxCode` `strTaxOnTaxCode` VARCHAR(100) NOT NULL AFTER `strTaxOnTax`;";
 	    i = ExecuteQuery(sql);
 
@@ -1536,8 +1536,8 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbldebitcardmaster` CHANGE COLUMN `intPassword` `intPassword` INT(4) NOT NULL DEFAULT '0' AFTER `strCustomerCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldebitcardtype`\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(20) NOT NULL AFTER `strCustomerCompulsory`,\n"
+	    sql = "ALTER TABLE `tbldebitcardtype` "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(20) NOT NULL AFTER `strCustomerCompulsory`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1559,8 +1559,8 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbldebitcardrecharge` ADD COLUMN `strClientCode` VARCHAR(20) NOT NULL AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldebitcardrecharge`\n"
-		    + "	CHANGE COLUMN `dblRedeemableAmount` `dblRedeemableAmount` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblRechargeAmount`,\n"
+	    sql = "ALTER TABLE `tbldebitcardrecharge` "
+		    + "	CHANGE COLUMN `dblRedeemableAmount` `dblRedeemableAmount` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblRechargeAmount`, "
 		    + "	CHANGE COLUMN `strRechargeSettlmentMode` `strRechargeSettlmentMode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `dblRedeemableAmount`;";
 	    i = ExecuteQuery(sql);
 
@@ -1585,11 +1585,11 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblsetup` ADD COLUMN `strCMSWebServiceURL` VARCHAR(255) NOT NULL DEFAULT '' AFTER `strCMSIntegrationYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strChangeQtyForExternalCode` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCMSWebServiceURL`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strPointsOnBillPrint` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strChangeQtyForExternalCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1599,9 +1599,9 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblitemrtemp` ADD COLUMN `strCustomerName` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strNCKotYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemrtemp`\n"
-		    + "	ADD COLUMN `strActiveYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCustomerName`,\n"
-		    + "	ADD COLUMN `dblBalance` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strActiveYN`,\n"
+	    sql = "ALTER TABLE `tblitemrtemp` "
+		    + "	ADD COLUMN `strActiveYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCustomerName`, "
+		    + "	ADD COLUMN `dblBalance` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strActiveYN`, "
 		    + "	ADD COLUMN `dblCreditLimit` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblBalance`;";
 	    i = ExecuteQuery(sql);
 
@@ -1638,7 +1638,7 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblbilldtl` CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strAdvBookingNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblbillmodifierdtl` "
 		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strModifierName`;";
 	    i = ExecuteQuery(sql);
 
@@ -1704,37 +1704,37 @@ public class clsStructureUpdate
 	    sql = "grant all on *.* to 'root'@'%' identified by 'root' with grant option;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + "	ADD COLUMN `strImageName` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strManualAdvOrderNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + "ADD COLUMN `strSpecialsymbolImage` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strImageName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbluserhd`\n"
+	    sql = "ALTER TABLE `tbluserhd` "
 		    + " CHANGE COLUMN `strPOSAccess` `strPOSAccess` VARCHAR(255) NOT NULL AFTER `dteValidDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + " ADD COLUMN `strItemQtyNumpad` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strMultipleKOTPrintYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldayendprocess`\n"
+	    sql = "ALTER TABLE `tbldayendprocess` "
 		    + "	ADD COLUMN `intNoOfNCKOT` INT(50) NOT NULL DEFAULT '0' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldayendprocess`\n"
+	    sql = "ALTER TABLE `tbldayendprocess` "
 		    + "	ADD COLUMN `intNoOfComplimentaryKOT` INT(50) NOT NULL DEFAULT '0' AFTER `intNoOfNCKOT`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldayendprocess`\n"
+	    sql = "ALTER TABLE `tbldayendprocess` "
 		    + "	ADD COLUMN `intNoOfVoidKOT` INT(50) NOT NULL DEFAULT '0' AFTER `intNoOfComplimentaryKOT`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpsphd`\n"
-		    + "	CHANGE COLUMN `strStkInCode` `strStkInCode` VARCHAR(9) NOT NULL AFTER `strPOSCode`,\n"
-		    + "	CHANGE COLUMN `strStkOutCode` `strStkOutCode` VARCHAR(9) NOT NULL AFTER `strStkInCode`;\n"
+	    sql = "ALTER TABLE `tblpsphd` "
+		    + "	CHANGE COLUMN `strStkInCode` `strStkInCode` VARCHAR(9) NOT NULL AFTER `strPOSCode`, "
+		    + "	CHANGE COLUMN `strStkOutCode` `strStkOutCode` VARCHAR(9) NOT NULL AFTER `strStkInCode`; "
 		    + "";
 	    i = ExecuteQuery(sql);
 
@@ -1742,107 +1742,107 @@ public class clsStructureUpdate
 		    + "ADD COLUMN `strTreatMemberAsTable` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strItemQtyNumpad`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + " ADD COLUMN `strKOTToLocalPrinter` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strTreatMemberAsTable`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `blobReportImage` LONGBLOB NULL DEFAULT NULL AFTER `strKOTToLocalPrinter`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblareawisedelboywisecharges` (\n"
-		    + "	`strCustAreaCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strDeliveryBoyCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`dblValue` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblareawisedelboywisecharges` ( "
+		    + "	`strCustAreaCode` VARCHAR(20) NOT NULL, "
+		    + "	`strDeliveryBoyCode` VARCHAR(20) NOT NULL, "
+		    + "	`dblValue` DECIMAL(18,2) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tbldeliveryboycategorymaster` (\n"
-		    + "	`strDelBoyCategoryCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDelBoyCategoryName` VARCHAR(100) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tbldeliveryboycategorymaster` ( "
+		    + "	`strDelBoyCategoryCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDelBoyCategoryName` VARCHAR(100) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + " ADD COLUMN `dblIncentiveAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + "	ADD COLUMN `strDBCategoryCode` VARCHAR(10) NOT NULL AFTER `dblIncentiveAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliveryboycategorymaster`\n"
+	    sql = "ALTER TABLE `tbldeliveryboycategorymaster` "
 		    + "	CHANGE COLUMN `strDelBoyCategoryCode` `strDelBoyCategoryCode` VARCHAR(20) NOT NULL FIRST;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblareawisedc`\n"
+	    sql = "ALTER TABLE `tblareawisedc` "
 		    + "	ADD COLUMN `strDelBoyCategoryCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tbldebitcardbilldetails`	DROP COLUMN `strPSPCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblcustareatypemaster` (\n"
-		    + "	`strCustAreaTypeCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strCustAreaTypeName` VARCHAR(100) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblcustareatypemaster` ( "
+		    + "	`strCustAreaTypeCode` VARCHAR(10) NOT NULL, "
+		    + "	`strCustAreaTypeName` VARCHAR(100) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsubgrouphd`\n"
+	    sql = "ALTER TABLE `tblsubgrouphd` "
 		    + "	ADD COLUMN `strIncentives` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strSettleBtnForDirectBillerBill` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `blobReportImage`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strDelBoySelCompulsoryOnDirectBiller` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSettleBtnForDirectBillerBill`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "Create table IF NOT EXISTS tblitempricingauditdtl like tblmenuitempricingdtl;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldeliverypersonmaster`\n"
+	    sql = "ALTER TABLE `tbldeliverypersonmaster` "
 		    + " CHANGE COLUMN `strDBCategoryCode` `strDBCategoryCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `dblIncentiveAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsubgrouphd`\n"
+	    sql = "ALTER TABLE `tblsubgrouphd` "
 		    + " ADD COLUMN `strIncentives` VARCHAR(10) NOT NULL AFTER `strGroupCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemcurrentstk`\n"
-		    + " CHANGE COLUMN `intOpening` `intOpening` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `strPOSCode`,\n"
-		    + " CHANGE COLUMN `intOut` `intOut` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `intOpening`,\n"
-		    + " CHANGE COLUMN `intIn` `intIn` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `intOut`,\n"
-		    + " CHANGE COLUMN `intSale` `intSale` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `intIn`,\n"
+	    sql = "ALTER TABLE `tblitemcurrentstk` "
+		    + " CHANGE COLUMN `intOpening` `intOpening` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `strPOSCode`, "
+		    + " CHANGE COLUMN `intOut` `intOut` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `intOpening`, "
+		    + " CHANGE COLUMN `intIn` `intIn` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `intOut`, "
+		    + " CHANGE COLUMN `intSale` `intSale` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `intIn`, "
 		    + " CHANGE COLUMN `intBalance` `intBalance` DECIMAL(18,2) NOT NULL DEFAULT '0' AFTER `intSale`;";
 	    i = ExecuteQuery(sql);
 
@@ -1864,19 +1864,19 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblareawisedc`	DROP COLUMN `strDelBoyCategoryCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblareawisedc`\n"
+	    sql = "ALTER TABLE `tblareawisedc` "
 		    + "	ADD COLUMN `strCustAreaTypeCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strCMSMemberForKOTJPOS` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strDelBoySelCompulsoryOnDirectBiller`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strCMSMemberForKOTMPOS` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strCMSMemberForKOTJPOS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblareawisedc`\n"
+	    sql = "ALTER TABLE `tblareawisedc` "
 		    + "	ADD COLUMN `strCustTypeCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCustAreaTypeCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -1884,30 +1884,30 @@ public class clsStructureUpdate
 		    + "where strPOSCode=''";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
+	    sql = "ALTER TABLE `tblbillhd` "
 		    + " ADD COLUMN `strAreaCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCouponCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillhd`\n"
+	    sql = "ALTER TABLE `tblqbillhd` "
 		    + " ADD COLUMN `strAreaCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCouponCode`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblreasonmaster`	ADD COLUMN `strVoidAdvOrder` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strNCKOT`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcustomermaster`\n"
+	    sql = "ALTER TABLE `tblcustomermaster` "
 		    + "	CHANGE COLUMN `strGender` `strGender` VARCHAR(7) NOT NULL DEFAULT 'Male' AFTER `dteDOB`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash`\n"
+	    sql = "ALTER TABLE `tbltempsalesflash` "
 		    + "	ADD COLUMN `dblRate` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `struser`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbluserhd`\n"
+	    sql = "ALTER TABLE `tbluserhd` "
 		    + "	ADD COLUMN `imgUserIcon` LONGBLOB NOT NULL AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbluserhd`\n"
+	    sql = "ALTER TABLE `tbluserhd` "
 		    + "	ADD COLUMN `strImgUserIconPath` VARCHAR(500) NOT NULL AFTER `imgUserIcon`;";
 	    i = ExecuteQuery(sql);
 
@@ -1926,8 +1926,8 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblqbilldtl`	ADD COLUMN `strCounterCode` VARCHAR(3) NOT NULL DEFAULT '' AFTER `strPromoCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbuildingmaster`\n"
-		    + "	ADD COLUMN `dblDeliveryBoyPayOut` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strDataPostFlag`,\n"
+	    sql = "ALTER TABLE `tblbuildingmaster` "
+		    + "	ADD COLUMN `dblDeliveryBoyPayOut` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strDataPostFlag`, "
 		    + "	ADD COLUMN `dblHelperPayOut` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblDeliveryBoyPayOut`;";
 	    i = ExecuteQuery(sql);
 
@@ -1937,8 +1937,8 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblitempricingauditdtl` ALTER `longPricingId` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitempricingauditdtl`\n"
-		    + "	CHANGE COLUMN `longPricingId` `longPricingId` BIGINT(20) NOT NULL AFTER `strHourlyPricing`,\n"
+	    sql = "ALTER TABLE `tblitempricingauditdtl` "
+		    + "	CHANGE COLUMN `longPricingId` `longPricingId` BIGINT(20) NOT NULL AFTER `strHourlyPricing`, "
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
@@ -1963,55 +1963,55 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblareawisedc` DROP COLUMN `strCustAreaTypeCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblhomedeldtl` (\n"
-		    + "	`strBillNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDPCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblhomedeldtl` ( "
+		    + "	`strBillNo` VARCHAR(10) NOT NULL, "
+		    + "	`strDPCode` VARCHAR(10) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strDontShowAdvOrderInOtherPOS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCMSMemberForKOTMPOS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strPrintZeroAmtModifierInBill` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strDontShowAdvOrderInOtherPOS`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "Create table IF NOT EXISTS tblqadvordermodifierdtl like tbladvordermodifierdtl;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilldtl`\n"
+	    sql = "ALTER TABLE `tblbilldtl` "
 		    + "	ADD COLUMN `strWaiterNo` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCounterCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldtl`\n"
+	    sql = "ALTER TABLE `tblqbilldtl` "
 		    + "	ADD COLUMN `strWaiterNo` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCounterCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tbltempadvorderflash` (\n"
-		    + "	`strAdvBookingNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteAdvBookingDate` DATETIME NOT NULL,\n"
-		    + "	`dteOrderForDate` DATETIME NOT NULL,\n"
-		    + "	`strPOSCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strSettlementMode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblGrandTotal` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblAdvDeposite` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblBalance` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strWaiterName` VARCHAR(50) NOT NULL,\n"
-		    + "	`strAdvOrderType` VARCHAR(50) NOT NULL,\n"
-		    + "	`strOperationType` VARCHAR(50) NOT NULL,\n"
-		    + "	`strBillNo` VARCHAR(20) NOT NULL,\n"
-		    + "	`dblSettlementAmt` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strUserCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tbltempadvorderflash` ( "
+		    + "	`strAdvBookingNo` VARCHAR(10) NOT NULL, "
+		    + "	`dteAdvBookingDate` DATETIME NOT NULL, "
+		    + "	`dteOrderForDate` DATETIME NOT NULL, "
+		    + "	`strPOSCode` VARCHAR(10) NOT NULL, "
+		    + "	`strSettlementMode` VARCHAR(10) NOT NULL, "
+		    + "	`dblGrandTotal` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblAdvDeposite` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblBalance` DECIMAL(18,2) NOT NULL, "
+		    + "	`strWaiterName` VARCHAR(50) NOT NULL, "
+		    + "	`strAdvOrderType` VARCHAR(50) NOT NULL, "
+		    + "	`strOperationType` VARCHAR(50) NOT NULL, "
+		    + "	`strBillNo` VARCHAR(20) NOT NULL, "
+		    + "	`dblSettlementAmt` DECIMAL(18,2) NOT NULL, "
+		    + "	`strUserCode` VARCHAR(10) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -2021,10 +2021,10 @@ public class clsStructureUpdate
 		    + "ALTER `dblSettlementAmt` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempadvorderflash`\n"
-		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` VARCHAR(50) NOT NULL AFTER `strSettlementMode`,\n"
-		    + "	CHANGE COLUMN `dblAdvDeposite` `dblAdvDeposite` VARCHAR(50) NOT NULL AFTER `dblGrandTotal`,\n"
-		    + "	CHANGE COLUMN `dblBalance` `dblBalance` VARCHAR(50) NOT NULL AFTER `dblAdvDeposite`,\n"
+	    sql = "ALTER TABLE `tbltempadvorderflash` "
+		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` VARCHAR(50) NOT NULL AFTER `strSettlementMode`, "
+		    + "	CHANGE COLUMN `dblAdvDeposite` `dblAdvDeposite` VARCHAR(50) NOT NULL AFTER `dblGrandTotal`, "
+		    + "	CHANGE COLUMN `dblBalance` `dblBalance` VARCHAR(50) NOT NULL AFTER `dblAdvDeposite`, "
 		    + "	CHANGE COLUMN `dblSettlementAmt` `dblSettlementAmt` VARCHAR(50) NOT NULL AFTER `strBillNo`;";
 	    i = ExecuteQuery(sql);
 
@@ -2032,33 +2032,33 @@ public class clsStructureUpdate
 		    + "	ADD COLUMN `strAdvReceiptPrinterPort` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strBillPrinterPort`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblreservation` (\n"
-		    + "	`strResCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strCustomerCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`intPax` INT NOT NULL DEFAULT '0',\n"
-		    + "	`dteResDate` DATE NOT NULL,\n"
-		    + "	`tmeResTime` TIME NOT NULL,\n"
-		    + "	`strSpecialInfo` VARCHAR(500) NOT NULL DEFAULT '',\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strResCode`, `strClientCode`),\n"
-		    + "	INDEX `strCustomerCode` (`strCustomerCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblreservation` ( "
+		    + "	`strResCode` VARCHAR(10) NOT NULL, "
+		    + "	`strCustomerCode` VARCHAR(10) NOT NULL, "
+		    + "	`intPax` INT NOT NULL DEFAULT '0', "
+		    + "	`dteResDate` DATE NOT NULL, "
+		    + "	`tmeResTime` TIME NOT NULL, "
+		    + "	`strSpecialInfo` VARCHAR(500) NOT NULL DEFAULT '', "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strResCode`, `strClientCode`), "
+		    + "	INDEX `strCustomerCode` (`strCustomerCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblreservation`\n"
-		    + "	ADD COLUMN `strSmoking` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `intPax`,\n"
+	    sql = "ALTER TABLE `tblreservation` "
+		    + "	ADD COLUMN `strSmoking` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `intPax`, "
 		    + "	ADD COLUMN `strTableNo` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strSpecialInfo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcostcentermaster`\n"
+	    sql = "ALTER TABLE `tblcostcentermaster` "
 		    + " ADD COLUMN `strSecondaryPrinterPort` VARCHAR(100) NOT NULL AFTER `strPrinterPort`;";
 	    i = ExecuteQuery(sql);
 
@@ -2066,38 +2066,38 @@ public class clsStructureUpdate
 		    + " ADD COLUMN `strPrintKOTYN` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strPrintZeroAmtModifierInBill`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "	ADD COLUMN `strCreditCardSlipNoCompulsoryYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintKOTYN`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strCreditCardSlipNoCompulsoryYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintKOTYN`, "
 		    + "	ADD COLUMN `strCreditCardExpiryDateCompulsoryYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCreditCardSlipNoCompulsoryYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblwaitermaster`\n"
-		    + "	ADD COLUMN `strOperational` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strStatus`,\n"
+	    sql = "ALTER TABLE `tblwaitermaster` "
+		    + "	ADD COLUMN `strOperational` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strStatus`, "
 		    + "	ADD COLUMN `strDebitCardString` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strOperational`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblbillhd` ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemrtemp`\n"
+	    sql = "ALTER TABLE `tblitemrtemp` "
 		    + "	ADD COLUMN `strPromoCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strCounterCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
+	    sql = "ALTER TABLE `tblbillhd` "
 		    + " ADD COLUMN `strDiscountRemark` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strAreaCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillhd`\n"
+	    sql = "ALTER TABLE `tblqbillhd` "
 		    + " ADD COLUMN `strDiscountRemark` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strAreaCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidkot`\n"
+	    sql = "ALTER TABLE `tblvoidkot` "
 		    + "	ADD COLUMN `strRemark` VARCHAR(200) NOT NULL DEFAULT 'N' AFTER `strPrintKOT`;";
 	    i = ExecuteQuery(sql);
 
 	    // sql = "ALTER TABLE `tblsetup` DROP COLUMN `strSelectWaiterFromCardSwipe`;";
 	    // i = ExecuteQuery(sql);
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strSelectWaiterFromCardSwipe` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCreditCardExpiryDateCompulsoryYN`;";
 	    i = ExecuteQuery(sql);
 
@@ -2105,8 +2105,8 @@ public class clsStructureUpdate
 		    + " ADD COLUMN `strMultiWaiterSelectionOnMakeKOT` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSelectWaiterFromCardSwipe`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "	ADD COLUMN `strMoveTableToOtherPOS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strMultiWaiterSelectionOnMakeKOT`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strMoveTableToOtherPOS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strMultiWaiterSelectionOnMakeKOT`, "
 		    + "	ADD COLUMN `strMoveKOTToOtherPOS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strMoveTableToOtherPOS`;";
 	    i = ExecuteQuery(sql);
 
@@ -2114,15 +2114,15 @@ public class clsStructureUpdate
 		    + "ADD COLUMN `strAMPM` VARCHAR(2) NOT NULL AFTER `tmeResTime`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbillhd`\n"
+	    sql = "ALTER TABLE `tblvoidbillhd` "
 		    + " ADD COLUMN `strRemark` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strCalculateTaxOnMakeKOT` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strMoveKOTToOtherPOS`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblqbillmodifierdtl` "
 		    + "	ALTER `strModifierName` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
@@ -2133,55 +2133,55 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblsetup`	ADD COLUMN `strReceiverEmailId` VARCHAR(500) NOT NULL DEFAULT '' AFTER `strCalculateTaxOnMakeKOT`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "  ALTER TABLE `tblcostcentermaster`\n"
+	    sql = "  ALTER TABLE `tblcostcentermaster` "
 		    + "	ADD COLUMN `strPrintOnBothPrinters` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `strSecondaryPrinterPort`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tbltempsalesflash1` (\n"
-		    + "	`strbillno` VARCHAR(100) NOT NULL,\n"
-		    + "	`dtebilldate` VARCHAR(100) NOT NULL,\n"
-		    + "	`tmebilltime` VARCHAR(100) NOT NULL,\n"
-		    + "	`strtablename` VARCHAR(100) NOT NULL,\n"
-		    + "	`strposcode` VARCHAR(100) NOT NULL,\n"
-		    + "	`strpaymode` VARCHAR(100) NOT NULL,\n"
-		    + "	`dblsubtotal` VARCHAR(100) NOT NULL,\n"
-		    + "	`dbldiscper` VARCHAR(100) NOT NULL,\n"
-		    + "	`dbldiscamt` VARCHAR(100) NOT NULL,\n"
-		    + "	`dbltaxamt` VARCHAR(100) NOT NULL,\n"
-		    + "	`dblsettlementamt` VARCHAR(100) NOT NULL,\n"
-		    + "	`strusercreated` VARCHAR(100) NOT NULL,\n"
-		    + "	`struseredited` VARCHAR(100) NOT NULL,\n"
-		    + "	`dtedatecreated` VARCHAR(100) NOT NULL,\n"
-		    + "	`dtedateedited` VARCHAR(100) NOT NULL,\n"
-		    + "	`strclientcode` VARCHAR(100) NOT NULL,\n"
-		    + "	`strwaiterno` VARCHAR(100) NOT NULL,\n"
-		    + "	`strcustomercode` VARCHAR(100) NOT NULL,\n"
-		    + "	`dbldeliverycharges` VARCHAR(100) NOT NULL,\n"
-		    + "	`strremarks` VARCHAR(200) NOT NULL,\n"
-		    + "	`strcustomername` VARCHAR(100) NOT NULL,\n"
-		    + "	`dbltipamt` VARCHAR(100) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tbltempsalesflash1` ( "
+		    + "	`strbillno` VARCHAR(100) NOT NULL, "
+		    + "	`dtebilldate` VARCHAR(100) NOT NULL, "
+		    + "	`tmebilltime` VARCHAR(100) NOT NULL, "
+		    + "	`strtablename` VARCHAR(100) NOT NULL, "
+		    + "	`strposcode` VARCHAR(100) NOT NULL, "
+		    + "	`strpaymode` VARCHAR(100) NOT NULL, "
+		    + "	`dblsubtotal` VARCHAR(100) NOT NULL, "
+		    + "	`dbldiscper` VARCHAR(100) NOT NULL, "
+		    + "	`dbldiscamt` VARCHAR(100) NOT NULL, "
+		    + "	`dbltaxamt` VARCHAR(100) NOT NULL, "
+		    + "	`dblsettlementamt` VARCHAR(100) NOT NULL, "
+		    + "	`strusercreated` VARCHAR(100) NOT NULL, "
+		    + "	`struseredited` VARCHAR(100) NOT NULL, "
+		    + "	`dtedatecreated` VARCHAR(100) NOT NULL, "
+		    + "	`dtedateedited` VARCHAR(100) NOT NULL, "
+		    + "	`strclientcode` VARCHAR(100) NOT NULL, "
+		    + "	`strwaiterno` VARCHAR(100) NOT NULL, "
+		    + "	`strcustomercode` VARCHAR(100) NOT NULL, "
+		    + "	`dbldeliverycharges` VARCHAR(100) NOT NULL, "
+		    + "	`strremarks` VARCHAR(200) NOT NULL, "
+		    + "	`strcustomername` VARCHAR(100) NOT NULL, "
+		    + "	`dbltipamt` VARCHAR(100) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash1`\n"
+	    sql = "ALTER TABLE `tbltempsalesflash1` "
 		    + "	ADD COLUMN `strUser` VARCHAR(100) NOT NULL AFTER `dbltipamt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tbltempsalesflashtotals1` (\n"
-		    + "	`dblsubtotal` VARCHAR(100) NOT NULL,\n"
-		    + "	`dbltaxamt` VARCHAR(100) NOT NULL,\n"
-		    + "	`dbldiscamt` VARCHAR(100) NOT NULL,\n"
-		    + "	`dblsettlementamt` VARCHAR(100) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tbltempsalesflashtotals1` ( "
+		    + "	`dblsubtotal` VARCHAR(100) NOT NULL, "
+		    + "	`dbltaxamt` VARCHAR(100) NOT NULL, "
+		    + "	`dbldiscamt` VARCHAR(100) NOT NULL, "
+		    + "	`dblsettlementamt` VARCHAR(100) NOT NULL "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflashtotals1`\n"
+	    sql = "ALTER TABLE `tbltempsalesflashtotals1` "
 		    + "	ADD COLUMN `strUser` VARCHAR(100) NOT NULL AFTER `dblsettlementamt`;";
 	    i = ExecuteQuery(sql);
 
@@ -2209,44 +2209,44 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblqbillmodifierdtl` ADD INDEX `strBillNo` (`strBillNo`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash1`\n"
-		    + "	CHANGE COLUMN `strbillno` `strbillno` VARCHAR(100) NOT NULL DEFAULT '' FIRST,\n"
-		    + "	CHANGE COLUMN `dtebilldate` `dtebilldate` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strbillno`,\n"
-		    + "	CHANGE COLUMN `tmebilltime` `tmebilltime` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dtebilldate`,\n"
-		    + "	CHANGE COLUMN `strtablename` `strtablename` VARCHAR(100) NOT NULL DEFAULT '' AFTER `tmebilltime`,\n"
-		    + "	CHANGE COLUMN `strposcode` `strposcode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strtablename`,\n"
-		    + "	CHANGE COLUMN `strpaymode` `strpaymode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strposcode`,\n"
-		    + "	CHANGE COLUMN `dblsubtotal` `dblsubtotal` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strpaymode`,\n"
+	    sql = "ALTER TABLE `tbltempsalesflash1` "
+		    + "	CHANGE COLUMN `strbillno` `strbillno` VARCHAR(100) NOT NULL DEFAULT '' FIRST, "
+		    + "	CHANGE COLUMN `dtebilldate` `dtebilldate` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strbillno`, "
+		    + "	CHANGE COLUMN `tmebilltime` `tmebilltime` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dtebilldate`, "
+		    + "	CHANGE COLUMN `strtablename` `strtablename` VARCHAR(100) NOT NULL DEFAULT '' AFTER `tmebilltime`, "
+		    + "	CHANGE COLUMN `strposcode` `strposcode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strtablename`, "
+		    + "	CHANGE COLUMN `strpaymode` `strpaymode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strposcode`, "
+		    + "	CHANGE COLUMN `dblsubtotal` `dblsubtotal` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strpaymode`, "
 		    + "	CHANGE COLUMN `dbldiscper` `dbldiscper` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblsubtotal`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash1`\n"
-		    + "	CHANGE COLUMN `dbldiscamt` `dbldiscamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dbldiscper`,\n"
-		    + "	CHANGE COLUMN `dbltaxamt` `dbltaxamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dbldiscamt`,\n"
-		    + "	CHANGE COLUMN `dblsettlementamt` `dblsettlementamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dbltaxamt`,\n"
-		    + "	CHANGE COLUMN `strusercreated` `strusercreated` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblsettlementamt`,\n"
-		    + "	CHANGE COLUMN `struseredited` `struseredited` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strusercreated`,\n"
-		    + "	CHANGE COLUMN `dtedatecreated` `dtedatecreated` VARCHAR(100) NOT NULL DEFAULT '' AFTER `struseredited`,\n"
-		    + "	CHANGE COLUMN `dtedateedited` `dtedateedited` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dtedatecreated`,\n"
-		    + "	CHANGE COLUMN `strclientcode` `strclientcode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dtedateedited`,\n"
-		    + "	CHANGE COLUMN `strwaiterno` `strwaiterno` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strclientcode`,\n"
+	    sql = "ALTER TABLE `tbltempsalesflash1` "
+		    + "	CHANGE COLUMN `dbldiscamt` `dbldiscamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dbldiscper`, "
+		    + "	CHANGE COLUMN `dbltaxamt` `dbltaxamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dbldiscamt`, "
+		    + "	CHANGE COLUMN `dblsettlementamt` `dblsettlementamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dbltaxamt`, "
+		    + "	CHANGE COLUMN `strusercreated` `strusercreated` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblsettlementamt`, "
+		    + "	CHANGE COLUMN `struseredited` `struseredited` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strusercreated`, "
+		    + "	CHANGE COLUMN `dtedatecreated` `dtedatecreated` VARCHAR(100) NOT NULL DEFAULT '' AFTER `struseredited`, "
+		    + "	CHANGE COLUMN `dtedateedited` `dtedateedited` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dtedatecreated`, "
+		    + "	CHANGE COLUMN `strclientcode` `strclientcode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dtedateedited`, "
+		    + "	CHANGE COLUMN `strwaiterno` `strwaiterno` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strclientcode`, "
 		    + "	CHANGE COLUMN `strcustomercode` `strcustomercode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strwaiterno`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash1`\n"
-		    + "	CHANGE COLUMN `dbldeliverycharges` `dbldeliverycharges` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strcustomercode`,\n"
-		    + "	CHANGE COLUMN `strremarks` `strremarks` VARCHAR(200) NOT NULL DEFAULT '' AFTER `dbldeliverycharges`,\n"
-		    + "	CHANGE COLUMN `strcustomername` `strcustomername` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strremarks`,\n"
+	    sql = "ALTER TABLE `tbltempsalesflash1` "
+		    + "	CHANGE COLUMN `dbldeliverycharges` `dbldeliverycharges` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strcustomercode`, "
+		    + "	CHANGE COLUMN `strremarks` `strremarks` VARCHAR(200) NOT NULL DEFAULT '' AFTER `dbldeliverycharges`, "
+		    + "	CHANGE COLUMN `strcustomername` `strcustomername` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strremarks`, "
 		    + "	CHANGE COLUMN `dbltipamt` `dbltipamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strcustomername`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblshortcutkeysetup` (\n"
-		    + "	`strShortcutKey` VARCHAR(10) NOT NULL,\n"
-		    + "	`strModuleName` VARCHAR(500) NOT NULL,\n"
-		    + "	`strModuleType` VARCHAR(5) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblshortcutkeysetup` ( "
+		    + "	`strShortcutKey` VARCHAR(10) NOT NULL, "
+		    + "	`strModuleName` VARCHAR(500) NOT NULL, "
+		    + "	`strModuleType` VARCHAR(5) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -2263,13 +2263,13 @@ public class clsStructureUpdate
 	    i = ExecuteQuery(sql);
 
 	    sql = "CREATE TABLE `tbltruncationdtl` "
-		    + "(`strUser` VARCHAR(50) NOT NULL,\n"
-		    + "	`strTruncateForms` VARCHAR(200) NOT NULL DEFAULT '',\n"
-		    + "	`dteDate` DATETIME NOT NULL,\n"
-		    + "	`strModuleType` VARCHAR(50) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+		    + "(`strUser` VARCHAR(50) NOT NULL, "
+		    + "	`strTruncateForms` VARCHAR(200) NOT NULL DEFAULT '', "
+		    + "	`dteDate` DATETIME NOT NULL, "
+		    + "	`strModuleType` VARCHAR(50) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -2279,77 +2279,77 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblqbilldtl` ADD COLUMN `dblDiscountAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strWaiterNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strCalculateDiscItemWise` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strReceiverEmailId`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash`\n"
+	    sql = "ALTER TABLE `tbltempsalesflash` "
 		    + "	ALTER `strposcode` DROP DEFAULT; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash`\n"
+	    sql = "ALTER TABLE `tbltempsalesflash` "
 		    + " CHANGE COLUMN `strposcode` `strposcode` VARCHAR(100) NOT NULL AFTER `dblamount`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempadvorderflash`\n"
+	    sql = "ALTER TABLE `tbltempadvorderflash` "
 		    + " CHANGE COLUMN `strSettlementMode` `strSettlementMode` VARCHAR(100) NOT NULL AFTER `strPOSCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + " ADD COLUMN `strTakewayCustomerSelection` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCalculateDiscItemWise`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbluserhd`\n"
+	    sql = "ALTER TABLE `tbluserhd` "
 		    + " ADD COLUMN `strDebitCardString` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strImgUserIconPath`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash`\n"
-		    + "	ADD COLUMN `dblsubtotal` VARCHAR(100) NOT NULL AFTER `dblRate`,\n"
+	    sql = "ALTER TABLE `tbltempsalesflash` "
+		    + "	ADD COLUMN `dblsubtotal` VARCHAR(100) NOT NULL AFTER `dblRate`, "
 		    + "	ADD COLUMN `dbldiscamt` VARCHAR(100) NOT NULL AFTER `dblsubtotal`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblitemrtemp` ADD COLUMN `dblRate` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strPromoCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `StrShowItemStkColumnInDB` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strTakewayCustomerSelection`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblhomedeldtl`\n"
+	    sql = "ALTER TABLE `tblhomedeldtl` "
 		    + "	ADD COLUMN `strSettleYN` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
+	    sql = "ALTER TABLE `tblbillhd` "
 		    + "	ADD COLUMN `strTakeAwayRemarks` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strDiscountRemark`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillhd`\n"
+	    sql = "ALTER TABLE `tblqbillhd` "
 		    + "	ADD COLUMN `strTakeAwayRemarks` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strDiscountRemark`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup`	ADD COLUMN `strItemType` VARCHAR(10) NOT NULL DEFAULT 'Both' AFTER `StrShowItemStkColumnInDB`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "ADD COLUMN `strAllowNewAreaMasterFromCustMaster` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `strItemType`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup` ADD COLUMN `strCustAddressSelectionForBill` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strAllowNewAreaMasterFromCustMaster`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblposmaster`\n"
+	    sql = "ALTER TABLE `tblposmaster` "
 		    + "	ADD COLUMN `strOperationalYN` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `strAdvReceiptPrinterPort`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblpossettlementdtl` (\n"
-		    + "	`strPOSCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strSettlementCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strSettlementDesc` VARCHAR(100) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblpossettlementdtl` ( "
+		    + "	`strPOSCode` VARCHAR(10) NOT NULL, "
+		    + "	`strSettlementCode` VARCHAR(10) NOT NULL, "
+		    + "	`strSettlementDesc` VARCHAR(100) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -2357,7 +2357,7 @@ public class clsStructureUpdate
 		    + "CHANGE COLUMN `strPOSCode` `strPOSCode` VARCHAR(5) NOT NULL FIRST ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strGenrateMI` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strCustAddressSelectionForBill`;";
 	    i = ExecuteQuery(sql);
 
@@ -2369,11 +2369,11 @@ public class clsStructureUpdate
 		    + "ADD COLUMN `strFTPServerPass` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strFTPServerUserName`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemmaster`\n"
+	    sql = "ALTER TABLE `tblitemmaster` "
 		    + "ADD COLUMN `strItemWeight` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strRevenueHead`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "ADD COLUMN `strAllowToCalculateItemWeight` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `strFTPServerPass`;";
 	    i = ExecuteQuery(sql);
 
@@ -2386,12 +2386,12 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbldebitcardmaster` CHANGE COLUMN `intCardNo` `intCardNo` VARCHAR(50) NOT NULL AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "ADD COLUMN `strShowBillsDtlType` VARCHAR(20) NOT NULL AFTER `strAllowToCalculateItemWeight`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "ADD COLUMN `strPrintTaxInvoiceOnBill` VARCHAR(5) NOT NULL DEFAULT 'Y' AFTER `strShowBillsDtlType`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "ADD COLUMN `strPrintTaxInvoiceOnBill` VARCHAR(5) NOT NULL DEFAULT 'Y' AFTER `strShowBillsDtlType`, "
 		    + "ADD COLUMN `strPrintInclusiveOfAllTaxesOnBill` VARCHAR(5) NOT NULL DEFAULT 'Y' AFTER `strPrintTaxInvoiceOnBill`;";
 	    i = ExecuteQuery(sql);
 
@@ -2523,95 +2523,95 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblsetup`ADD COLUMN `strPrintBillYN` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strMemberCodeForKotInMposByCardSwipe`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblposmaster`\n"
-		    + "	ADD COLUMN `strPrintVatNo` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strOperationalYN`,\n"
+	    sql = "ALTER TABLE `tblposmaster` "
+		    + "	ADD COLUMN `strPrintVatNo` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strOperationalYN`, "
 		    + "	ADD COLUMN `strPrintServiceTaxNo` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strPrintVatNo`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup` ADD COLUMN `strVatAndServiceTaxFromPos` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strPrintBillYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblposmaster`\n"
-		    + "     ADD COLUMN `strVatNo` VARCHAR(20) NOT NULL AFTER `strPrintServiceTaxNo`,\n"
+	    sql = "ALTER TABLE `tblposmaster` "
+		    + "     ADD COLUMN `strVatNo` VARCHAR(20) NOT NULL AFTER `strPrintServiceTaxNo`, "
 		    + "     ADD COLUMN `strServiceTaxNo` VARCHAR(20) NOT NULL AFTER `strVatNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblarrangetransaction` (\n"
-		    + " `strModifierDB` VARCHAR(20) NULL,\n"
-		    + "`strPLUDB` VARCHAR(20) NULL,\n"
-		    + "`strHomeDeliveryDB` VARCHAR(20) NULL,\n"
-		    + "`strTakeAwayDB` VARCHAR(20) NULL,\n"
-		    + "`strsettleBillKot` VARCHAR(20) NULL,\n"
-		    + "`strPLUKot` VARCHAR(20) NULL,\n"
-		    + "`strModifierKot` VARCHAR(20) NULL,\n"
-		    + "`strHomeDeliveryKot` VARCHAR(20) NULL,\n"
-		    + "`strTransType` VARCHAR(20) NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblarrangetransaction` ( "
+		    + " `strModifierDB` VARCHAR(20) NULL, "
+		    + "`strPLUDB` VARCHAR(20) NULL, "
+		    + "`strHomeDeliveryDB` VARCHAR(20) NULL, "
+		    + "`strTakeAwayDB` VARCHAR(20) NULL, "
+		    + "`strsettleBillKot` VARCHAR(20) NULL, "
+		    + "`strPLUKot` VARCHAR(20) NULL, "
+		    + "`strModifierKot` VARCHAR(20) NULL, "
+		    + "`strHomeDeliveryKot` VARCHAR(20) NULL, "
+		    + "`strTransType` VARCHAR(20) NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
 	    sql = "drop table if exists tblarrangetransaction";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblarrangetransaction`\n"
-		    + "ADD COLUMN `strClientCode` VARCHAR(20) NULL DEFAULT NULL AFTER `strTransType`,\n"
-		    + "ADD COLUMN `strPosCode` VARCHAR(20) NULL DEFAULT NULL AFTER `strClientCode`,\n"
+	    sql = "ALTER TABLE `tblarrangetransaction` "
+		    + "ADD COLUMN `strClientCode` VARCHAR(20) NULL DEFAULT NULL AFTER `strTransType`, "
+		    + "ADD COLUMN `strPosCode` VARCHAR(20) NULL DEFAULT NULL AFTER `strClientCode`, "
 		    + "ADD COLUMN `strPosFlag` VARCHAR(20) NULL DEFAULT 'N' AFTER `strPosCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblbillcomplementrydtl` (\n"
-		    + "  `strItemCode` varchar(10) NOT NULL,\n"
-		    + "  `strItemName` varchar(50) NOT NULL,\n"
-		    + "  `strBillNo` varchar(10) NOT NULL,\n"
-		    + "  `strAdvBookingNo` varchar(10) NOT NULL DEFAULT '',\n"
-		    + "  `dblRate` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `dblQuantity` decimal(18,2) NOT NULL,\n"
-		    + "  `dblAmount` decimal(18,2) NOT NULL,\n"
-		    + "  `dblTaxAmount` decimal(18,2) NOT NULL,\n"
-		    + "  `dteBillDate` datetime NOT NULL,\n"
-		    + "  `strKOTNo` varchar(10) NOT NULL DEFAULT '',\n"
-		    + "  `strClientCode` varchar(10) NOT NULL,\n"
-		    + "  `strCustomerCode` varchar(10) NOT NULL DEFAULT '',\n"
-		    + "  `tmeOrderProcessing` time NOT NULL DEFAULT '00:00:00',\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  `strMMSDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  `strManualKOTNo` varchar(10) NOT NULL DEFAULT '',\n"
-		    + "  `tdhYN` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  `strPromoCode` varchar(20) NOT NULL DEFAULT '',\n"
-		    + "  `strCounterCode` varchar(5) NOT NULL DEFAULT '',\n"
-		    + "  `strWaiterNo` varchar(10) NOT NULL DEFAULT '',\n"
-		    + "  `dblDiscountAmt` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `dblDiscountPer` decimal(18,2) NOT NULL DEFAULT '0.00'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblbillcomplementrydtl` ( "
+		    + "  `strItemCode` varchar(10) NOT NULL, "
+		    + "  `strItemName` varchar(50) NOT NULL, "
+		    + "  `strBillNo` varchar(10) NOT NULL, "
+		    + "  `strAdvBookingNo` varchar(10) NOT NULL DEFAULT '', "
+		    + "  `dblRate` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `dblQuantity` decimal(18,2) NOT NULL, "
+		    + "  `dblAmount` decimal(18,2) NOT NULL, "
+		    + "  `dblTaxAmount` decimal(18,2) NOT NULL, "
+		    + "  `dteBillDate` datetime NOT NULL, "
+		    + "  `strKOTNo` varchar(10) NOT NULL DEFAULT '', "
+		    + "  `strClientCode` varchar(10) NOT NULL, "
+		    + "  `strCustomerCode` varchar(10) NOT NULL DEFAULT '', "
+		    + "  `tmeOrderProcessing` time NOT NULL DEFAULT '00:00:00', "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  `strMMSDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  `strManualKOTNo` varchar(10) NOT NULL DEFAULT '', "
+		    + "  `tdhYN` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  `strPromoCode` varchar(20) NOT NULL DEFAULT '', "
+		    + "  `strCounterCode` varchar(5) NOT NULL DEFAULT '', "
+		    + "  `strWaiterNo` varchar(10) NOT NULL DEFAULT '', "
+		    + "  `dblDiscountAmt` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `dblDiscountPer` decimal(18,2) NOT NULL DEFAULT '0.00' "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tbltransbtnsequence` (\n"
-		    + "	`strPLUButton` INT NOT NULL,\n"
-		    + "	`strSettleBillButton` INT NOT NULL,\n"
-		    + "	`strDeliveryBoyButton` INT NOT NULL,\n"
-		    + "	`strHomeDeliveryButton` INT NOT NULL,\n"
-		    + "	`strTakeAwayButton` INT NOT NULL,\n"
-		    + "	`strCheckKOTButton` INT NOT NULL,\n"
-		    + "	`strModifierButton` INT NOT NULL,\n"
-		    + "	`strNCKOTButton` INT NOT NULL,\n"
-		    + "	`strTransactionName` VARCHAR(50) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tbltransbtnsequence` ( "
+		    + "	`strPLUButton` INT NOT NULL, "
+		    + "	`strSettleBillButton` INT NOT NULL, "
+		    + "	`strDeliveryBoyButton` INT NOT NULL, "
+		    + "	`strHomeDeliveryButton` INT NOT NULL, "
+		    + "	`strTakeAwayButton` INT NOT NULL, "
+		    + "	`strCheckKOTButton` INT NOT NULL, "
+		    + "	`strModifierButton` INT NOT NULL, "
+		    + "	`strNCKOTButton` INT NOT NULL, "
+		    + "	`strTransactionName` VARCHAR(50) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(20) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup` ADD COLUMN `strMemberCodeForMakeBillInMPOS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strVatAndServiceTaxFromPos`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblposmaster`\n"
-		    + " CHANGE COLUMN `strPrintVatNo` `strPrintVatNo` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strOperationalYN`,\n"
-		    + " CHANGE COLUMN `strPrintServiceTaxNo` `strPrintServiceTaxNo` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintVatNo`,\n"
-		    + " CHANGE COLUMN `strVatNo` `strVatNo` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strPrintServiceTaxNo`,\n"
+	    sql = "ALTER TABLE `tblposmaster` "
+		    + " CHANGE COLUMN `strPrintVatNo` `strPrintVatNo` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strOperationalYN`, "
+		    + " CHANGE COLUMN `strPrintServiceTaxNo` `strPrintServiceTaxNo` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintVatNo`, "
+		    + " CHANGE COLUMN `strVatNo` `strVatNo` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strPrintServiceTaxNo`, "
 		    + " CHANGE COLUMN `strServiceTaxNo` `strServiceTaxNo` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strVatNo`;";
 	    i = ExecuteQuery(sql);
 
@@ -2635,43 +2635,43 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblitemmaster` ADD COLUMN `strOpenItem` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strItemWeight`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblbilldiscdtl` (\n"
-		    + "	`strBillNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strPOSCode` VARCHAR(5) NOT NULL,\n"
-		    + "	`dblDiscAmt` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblDiscPer` DECIMAL(10,2) NOT NULL,\n"
-		    + "	`dblDiscOnAmt` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strDiscOnType` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscOnValue` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscReasonCode` VARCHAR(10) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscRemarks` VARCHAR(100) NOT NULL DEFAULT '',\n"
-		    + "	`strUserCreated` VARCHAR(50) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblbilldiscdtl` ( "
+		    + "	`strBillNo` VARCHAR(10) NOT NULL, "
+		    + "	`strPOSCode` VARCHAR(5) NOT NULL, "
+		    + "	`dblDiscAmt` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblDiscPer` DECIMAL(10,2) NOT NULL, "
+		    + "	`dblDiscOnAmt` DECIMAL(18,2) NOT NULL, "
+		    + "	`strDiscOnType` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`strDiscOnValue` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`strDiscReasonCode` VARCHAR(10) NOT NULL DEFAULT '', "
+		    + "	`strDiscRemarks` VARCHAR(100) NOT NULL DEFAULT '', "
+		    + "	`strUserCreated` VARCHAR(50) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + "; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblqbilldiscdtl` (\n"
-		    + "	`strBillNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strPOSCode` VARCHAR(5) NOT NULL,\n"
-		    + "	`dblDiscAmt` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblDiscPer` DECIMAL(10,2) NOT NULL,\n"
-		    + "	`dblDiscOnAmt` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strDiscOnType` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscOnValue` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscReasonCode` VARCHAR(10) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscRemarks` VARCHAR(100) NOT NULL DEFAULT '',\n"
-		    + "	`strUserCreated` VARCHAR(50) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblqbilldiscdtl` ( "
+		    + "	`strBillNo` VARCHAR(10) NOT NULL, "
+		    + "	`strPOSCode` VARCHAR(5) NOT NULL, "
+		    + "	`dblDiscAmt` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblDiscPer` DECIMAL(10,2) NOT NULL, "
+		    + "	`dblDiscOnAmt` DECIMAL(18,2) NOT NULL, "
+		    + "	`strDiscOnType` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`strDiscOnValue` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`strDiscReasonCode` VARCHAR(10) NOT NULL DEFAULT '', "
+		    + "	`strDiscRemarks` VARCHAR(100) NOT NULL DEFAULT '', "
+		    + "	`strUserCreated` VARCHAR(50) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + "; ";
 	    i = ExecuteQuery(sql);
 
@@ -2682,7 +2682,7 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbldebitcardrecharge` ADD COLUMN `strMemberCode` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash1`\n"
+	    sql = "ALTER TABLE `tbltempsalesflash1` "
 		    + "	CHANGE COLUMN `strUser` `strUser` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dbltipamt`;";
 	    i = ExecuteQuery(sql);
 
@@ -2694,20 +2694,20 @@ public class clsStructureUpdate
 		    + " CHANGE COLUMN `strServiceTaxNo` `strServiceTaxNo` VARCHAR(50) NOT NULL AFTER `strPrintServiceTaxNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tbldebitcardrefundamt` (\n"
-		    + "	`strRefundNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strCardTypeCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strCardString` VARCHAR(50) NOT NULL,\n"
-		    + "	`strCardNo` VARCHAR(50) NOT NULL,\n"
-		    + "	`dblCardBalance` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`dblRefundAmt` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strRefundNo`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
+	    sql = "CREATE TABLE `tbldebitcardrefundamt` ( "
+		    + "	`strRefundNo` VARCHAR(10) NOT NULL, "
+		    + "	`strCardTypeCode` VARCHAR(10) NOT NULL, "
+		    + "	`strCardString` VARCHAR(50) NOT NULL, "
+		    + "	`strCardNo` VARCHAR(50) NOT NULL, "
+		    + "	`dblCardBalance` DECIMAL(18,4) NOT NULL, "
+		    + "	`dblRefundAmt` DECIMAL(18,4) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strRefundNo`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -2719,28 +2719,28 @@ public class clsStructureUpdate
 
 	    //sql="set global max_allowed_packet=32*1024*1024;";
 	    //i = ExecuteQuery(sql);
-	    sql = "ALTER TABLE `tblnonchargablekot`\n"
-		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(50) NOT NULL DEFAULT '' AFTER `dteNCKOTDate`,\n"
+	    sql = "ALTER TABLE `tblnonchargablekot` "
+		    + "	CHANGE COLUMN `strUserCreated` `strUserCreated` VARCHAR(50) NOT NULL DEFAULT '' AFTER `dteNCKOTDate`, "
 		    + "	CHANGE COLUMN `strUserEdited` `strUserEdited` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strUserCreated`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemmodofier`\n"
+	    sql = "ALTER TABLE `tblitemmodofier` "
 		    + " ADD COLUMN `strDefaultModifier` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strApplicable`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash`\n"
-		    + " CHANGE COLUMN `strcode` `strcode` VARCHAR(50) NOT NULL DEFAULT '' FIRST,\n"
-		    + " CHANGE COLUMN `strname` `strname` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strcode`,\n"
-		    + " CHANGE COLUMN `dblquantity` `dblquantity` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strname`,\n"
-		    + " CHANGE COLUMN `dblamount` `dblamount` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblquantity`,\n"
-		    + " CHANGE COLUMN `strposcode` `strposcode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblamount`,\n"
-		    + " CHANGE COLUMN `struser` `struser` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strposcode`,\n"
-		    + " CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `struser`,\n"
-		    + " CHANGE COLUMN `dblsubtotal` `dblsubtotal` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblRate`,\n"
+	    sql = "ALTER TABLE `tbltempsalesflash` "
+		    + " CHANGE COLUMN `strcode` `strcode` VARCHAR(50) NOT NULL DEFAULT '' FIRST, "
+		    + " CHANGE COLUMN `strname` `strname` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strcode`, "
+		    + " CHANGE COLUMN `dblquantity` `dblquantity` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strname`, "
+		    + " CHANGE COLUMN `dblamount` `dblamount` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblquantity`, "
+		    + " CHANGE COLUMN `strposcode` `strposcode` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblamount`, "
+		    + " CHANGE COLUMN `struser` `struser` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strposcode`, "
+		    + " CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `struser`, "
+		    + " CHANGE COLUMN `dblsubtotal` `dblsubtotal` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblRate`, "
 		    + " CHANGE COLUMN `dbldiscamt` `dbldiscamt` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblsubtotal`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbltempsalesflash`\n"
+	    sql = "ALTER TABLE `tbltempsalesflash` "
 		    + " CHANGE COLUMN `struser` `struser` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strposcode`; ";
 	    i = ExecuteQuery(sql);
 
@@ -2768,15 +2768,15 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbldebitcardrecharge` ADD COLUMN `strCardNo` VARCHAR(10) NOT NULL AFTER `strRechargeSlipNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tbldcrechargesettlementdtl` (\n"
-		    + "	`strRechargeNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strSettlementCode` VARCHAR(5) NOT NULL,\n"
-		    + "	`dblRechargeAmt` DECIMAL(18,4) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strRechargeNo`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
+	    sql = "CREATE TABLE `tbldcrechargesettlementdtl` ( "
+		    + "	`strRechargeNo` VARCHAR(10) NOT NULL, "
+		    + "	`strSettlementCode` VARCHAR(5) NOT NULL, "
+		    + "	`dblRechargeAmt` DECIMAL(18,4) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strRechargeNo`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -2811,11 +2811,11 @@ public class clsStructureUpdate
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = " ALTER TABLE `tblitemmaster`\n"
+	    sql = " ALTER TABLE `tblitemmaster` "
 		    + " ADD COLUMN `strItemWiseKOTYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strOpenItem`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = " ALTER TABLE `tblsetup`\n"
+	    sql = " ALTER TABLE `tblsetup` "
 		    + " ADD COLUMN `strItemWiseKOTYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strMemberCodeForMakeBillInMPOS`;";
 	    i = ExecuteQuery(sql);
 
@@ -2831,19 +2831,19 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblhomedelivery`	DROP PRIMARY KEY, ADD PRIMARY KEY (`strBillNo`, `strClientCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblkdsprocess` \n"
-		    + "(\n"
-		    + "`strBillNo` VARCHAR(20) NOT NULL,\n"
-		    + "`strBP` CHAR(1) NOT NULL,\n"
-		    + "`dteBookProcessTime` DATETIME NOT NULL,\n"
-		    + "`dteUserCreated` DATETIME NOT NULL,\n"
-		    + "`strUserCreated` VARCHAR(50) NOT NULL,\n"
-		    + "`dteUserEdited` DATETIME NOT NULL,\n"
-		    + "`strUserEdited` VARCHAR(50) NOT NULL,\n"
-		    + " PRIMARY KEY (`strBillNo`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblkdsprocess`  "
+		    + "( "
+		    + "`strBillNo` VARCHAR(20) NOT NULL, "
+		    + "`strBP` CHAR(1) NOT NULL, "
+		    + "`dteBookProcessTime` DATETIME NOT NULL, "
+		    + "`dteUserCreated` DATETIME NOT NULL, "
+		    + "`strUserCreated` VARCHAR(50) NOT NULL, "
+		    + "`dteUserEdited` DATETIME NOT NULL, "
+		    + "`strUserEdited` VARCHAR(50) NOT NULL, "
+		    + " PRIMARY KEY (`strBillNo`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + "                ;;";
 	    i = ExecuteQuery(sql);
 
@@ -2860,7 +2860,7 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblqbillhd` ADD COLUMN `strCardNo` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strDiscountOn`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = " ALTER TABLE `tblitemmodofier`\n"
+	    sql = " ALTER TABLE `tblitemmodofier` "
 		    + " CHANGE COLUMN `strDefaultModifier` `strDefaultModifier` VARCHAR(5) NOT NULL DEFAULT 'N' AFTER `strApplicable`;";
 	    i = ExecuteQuery(sql);
 
@@ -2875,22 +2875,22 @@ public class clsStructureUpdate
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblPrinterSetup` (\n"
-		    + "`strCostCenterCode` VARCHAR(4) NOT NULL,\n"
-		    + "`strCostCenterName` VARCHAR(100) NOT NULL,\n"
-		    + "`strPrimaryPrinterPort` VARCHAR(100) NOT NULL,\n"
-		    + "`strSecondaryPrinterPort` VARCHAR(100) NOT NULL,\n"
-		    + "`strPrintOnBothPrintersYN` VARCHAR(5) NOT NULL DEFAULT 'N',\n"
-		    + "`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "`strClientCode` VARCHAR(11) NOT NULL DEFAULT '',\n"
-		    + "`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "PRIMARY KEY (`strCostCenterCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblPrinterSetup` ( "
+		    + "`strCostCenterCode` VARCHAR(4) NOT NULL, "
+		    + "`strCostCenterName` VARCHAR(100) NOT NULL, "
+		    + "`strPrimaryPrinterPort` VARCHAR(100) NOT NULL, "
+		    + "`strSecondaryPrinterPort` VARCHAR(100) NOT NULL, "
+		    + "`strPrintOnBothPrintersYN` VARCHAR(5) NOT NULL DEFAULT 'N', "
+		    + "`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "`dteDateCreated` DATETIME NOT NULL, "
+		    + "`dteDateEdited` DATETIME NOT NULL, "
+		    + "`strClientCode` VARCHAR(11) NOT NULL DEFAULT '', "
+		    + "`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "PRIMARY KEY (`strCostCenterCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";;";
 	    i = ExecuteQuery(sql);
 
@@ -2974,59 +2974,59 @@ public class clsStructureUpdate
 		    + " ENGINE=InnoDB;  ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilldtl`\n"
+	    sql = "ALTER TABLE `tblbilldtl` "
 		    + "ADD COLUMN `strSequenceNo` VARCHAR(50) NOT NULL DEFAULT '0.00' AFTER `dblDiscountPer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldtl`\n"
+	    sql = "ALTER TABLE `tblqbilldtl` "
 		    + "ADD COLUMN `strSequenceNo` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `dblDiscountPer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblbillmodifierdtl` "
 		    + "ADD COLUMN `strSequenceNo` VARCHAR(50) NOT NULL DEFAULT '0.00' AFTER `strDefaultModifierDeselectedYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblqbillmodifierdtl` "
 		    + "ADD COLUMN `strSequenceNo` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `strDefaultModifierDeselectedYN`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillcomplementrydtl`\n"
+	    sql = "ALTER TABLE `tblbillcomplementrydtl` "
 		    + "ADD COLUMN `strSequenceNo` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `dblDiscountPer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillcomplementrydtl`\n"
+	    sql = "ALTER TABLE `tblqbillcomplementrydtl` "
 		    + "ADD COLUMN `strSequenceNo` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `dblDiscountPer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblorderanalysis` (\n"
-		    + "  `strField1` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField2` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField3` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField4` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField5` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField6` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField7` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField8` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField9` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField10` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField11` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField12` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strField13` varchar(100) NOT NULL DEFAULT ''\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblorderanalysis` ( "
+		    + "  `strField1` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField2` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField3` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField4` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField5` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField6` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField7` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField8` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField9` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField10` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField11` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField12` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strField13` varchar(100) NOT NULL DEFAULT '' "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblorderanalysis`	ADD COLUMN `strField14` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strField13`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblpromotiondaytimedtl` (\n"
-		    + "	`strPromoCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDay` VARCHAR(10) NOT NULL,\n"
-		    + "	`tmeFromTime` VARCHAR(10) NOT NULL,\n"
-		    + "	`tmeToTime` VARCHAR(10) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblpromotiondaytimedtl` ( "
+		    + "	`strPromoCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDay` VARCHAR(10) NOT NULL, "
+		    + "	`tmeFromTime` VARCHAR(10) NOT NULL, "
+		    + "	`tmeToTime` VARCHAR(10) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -3045,16 +3045,16 @@ public class clsStructureUpdate
 	    sql = " ALTER TABLE `tblposmaster` ADD COLUMN `strExciseLicenceCode` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strWSLocationCode`; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblitemmasterlinkupdtl` (\n"
-		    + "  `strItemCode` varchar(20) NOT NULL,\n"
-		    + "  `strPOSCode` varchar(20) NOT NULL,\n"
-		    + "  `strWSProductCode` varchar(20) NOT NULL,\n"
-		    + "  `strClientCode` varchar(20) NOT NULL,\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblitemmasterlinkupdtl` ( "
+		    + "  `strItemCode` varchar(20) NOT NULL, "
+		    + "  `strPOSCode` varchar(20) NOT NULL, "
+		    + "  `strWSProductCode` varchar(20) NOT NULL, "
+		    + "  `strClientCode` varchar(20) NOT NULL, "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillpromotiondtl`\n"
+	    sql = "ALTER TABLE `tblbillpromotiondtl` "
 		    + "	ALTER `dblQuantity` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
@@ -3062,7 +3062,7 @@ public class clsStructureUpdate
 		    + "CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,2) NOT NULL AFTER `strPromotionCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillpromotiondtl`\n"
+	    sql = "ALTER TABLE `tblqbillpromotiondtl` "
 		    + "	ALTER `dblQuantity` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
@@ -3090,14 +3090,14 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbldayendprocess` ADD COLUMN `strWSStockAdjustmentNo` VARCHAR(20) NOT NULL DEFAULT '' AFTER `dblUnusedDebitCardBalance`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblkottaxdtl` (\n"
-		    + "	`strTableNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strKOTNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblAmount` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblTaxAmt` DECIMAL(18,2) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblkottaxdtl` ( "
+		    + "	`strTableNo` VARCHAR(10) NOT NULL, "
+		    + "	`strKOTNo` VARCHAR(10) NOT NULL, "
+		    + "	`dblAmount` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblTaxAmt` DECIMAL(18,2) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -3123,29 +3123,29 @@ public class clsStructureUpdate
 		    + " 'N' AFTER `strCheckDebitCardBalOnTransactions`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblplaceorderhd` (\n"
-		    + "	`strSOCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`dteSODate` DATETIME NOT NULL,\n"
-		    + "	`dteFulmtDate` DATETIME NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strCloseSO` VARCHAR(1) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblplaceorderhd` ( "
+		    + "	`strSOCode` VARCHAR(20) NOT NULL, "
+		    + "	`dteSODate` DATETIME NOT NULL, "
+		    + "	`dteFulmtDate` DATETIME NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strCloseSO` VARCHAR(1) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblplaceorderdtl` (\n"
-		    + "	`strSOCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strProductCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`strItemCode` VARCHAR(20) NOT NULL,\n"
-		    + "	`dblQty` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblStockQty` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblplaceorderdtl` ( "
+		    + "	`strSOCode` VARCHAR(20) NOT NULL, "
+		    + "	`strProductCode` VARCHAR(20) NOT NULL, "
+		    + "	`strItemCode` VARCHAR(20) NOT NULL, "
+		    + "	`dblQty` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblStockQty` DECIMAL(18,2) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
 		    + "ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
@@ -3187,59 +3187,59 @@ public class clsStructureUpdate
 	    i = ExecuteQuery(sql);
 
 	    //Queries for Old Complimentary Settlement bills
-	    sql = "update tblbillhd a,tblbilldtl b,tblbillsettlementdtl c,tblsettelmenthd d\n"
-		    + "set a.dblSubTotal=0.00,a.dblGrandTotal=0.00,a.dblDiscountAmt=0.00,a.dblDiscountPer=0.00\n"
-		    + ",a.dblTaxAmt=0.00,b.dblAmount=0.00,b.dblTaxAmount=0.00,b.dblDiscountAmt=0.00,b.dblDiscountPer=0.00\n"
-		    + ",c.dblSettlementAmt=0.00,c.dblPaidAmt=0.00\n"
-		    + "where a.strBillNo=b.strBillNo\n"
-		    + "and a.strBillNo=c.strBillNo\n"
-		    + "and c.strSettlementCode=d.strSettelmentCode\n"
+	    sql = "update tblbillhd a,tblbilldtl b,tblbillsettlementdtl c,tblsettelmenthd d "
+		    + "set a.dblSubTotal=0.00,a.dblGrandTotal=0.00,a.dblDiscountAmt=0.00,a.dblDiscountPer=0.00 "
+		    + ",a.dblTaxAmt=0.00,b.dblAmount=0.00,b.dblTaxAmount=0.00,b.dblDiscountAmt=0.00,b.dblDiscountPer=0.00 "
+		    + ",c.dblSettlementAmt=0.00,c.dblPaidAmt=0.00 "
+		    + "where a.strBillNo=b.strBillNo "
+		    + "and a.strBillNo=c.strBillNo "
+		    + "and c.strSettlementCode=d.strSettelmentCode "
 		    + "and d.strSettelmentType='Complementary';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblbillmodifierdtl a,tblbillsettlementdtl b,tblsettelmenthd c\n"
-		    + "set a.dblAmount=0.00\n"
-		    + "where a.strBillNo=b.strBillNo\n"
-		    + "and b.strSettlementCode=c.strSettelmentCode\n"
+	    sql = "update tblbillmodifierdtl a,tblbillsettlementdtl b,tblsettelmenthd c "
+		    + "set a.dblAmount=0.00 "
+		    + "where a.strBillNo=b.strBillNo "
+		    + "and b.strSettlementCode=c.strSettelmentCode "
 		    + "and c.strSettelmentType='Complementary';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblbilltaxdtl a,tblbillsettlementdtl b,tblsettelmenthd c\n"
-		    + "set a.dblTaxableAmount=0.00,a.dblTaxAmount=0.00\n"
-		    + "where a.strBillNo=b.strBillNo\n"
-		    + "and b.strSettlementCode=c.strSettelmentCode\n"
+	    sql = "update tblbilltaxdtl a,tblbillsettlementdtl b,tblsettelmenthd c "
+		    + "set a.dblTaxableAmount=0.00,a.dblTaxAmount=0.00 "
+		    + "where a.strBillNo=b.strBillNo "
+		    + "and b.strSettlementCode=c.strSettelmentCode "
 		    + "and c.strSettelmentType='Complementary';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqbillhd a,tblqbilldtl b,tblqbillsettlementdtl c,tblsettelmenthd d\n"
-		    + "set a.dblSubTotal=0.00,a.dblGrandTotal=0.00,a.dblDiscountAmt=0.00,a.dblDiscountPer=0.00\n"
-		    + ",a.dblTaxAmt=0.00,b.dblAmount=0.00,b.dblTaxAmount=0.00,b.dblDiscountAmt=0.00,b.dblDiscountPer=0.00\n"
-		    + ",c.dblSettlementAmt=0.00,c.dblPaidAmt=0.00\n"
-		    + "where a.strBillNo=b.strBillNo\n"
-		    + "and a.strBillNo=c.strBillNo\n"
-		    + "and c.strSettlementCode=d.strSettelmentCode\n"
+	    sql = "update tblqbillhd a,tblqbilldtl b,tblqbillsettlementdtl c,tblsettelmenthd d "
+		    + "set a.dblSubTotal=0.00,a.dblGrandTotal=0.00,a.dblDiscountAmt=0.00,a.dblDiscountPer=0.00 "
+		    + ",a.dblTaxAmt=0.00,b.dblAmount=0.00,b.dblTaxAmount=0.00,b.dblDiscountAmt=0.00,b.dblDiscountPer=0.00 "
+		    + ",c.dblSettlementAmt=0.00,c.dblPaidAmt=0.00 "
+		    + "where a.strBillNo=b.strBillNo "
+		    + "and a.strBillNo=c.strBillNo "
+		    + "and c.strSettlementCode=d.strSettelmentCode "
 		    + "and d.strSettelmentType='Complementary';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqbillmodifierdtl a,tblqbillsettlementdtl b,tblsettelmenthd c\n"
-		    + "set a.dblAmount=0.00\n"
-		    + "where a.strBillNo=b.strBillNo\n"
-		    + "and b.strSettlementCode=c.strSettelmentCode\n"
+	    sql = "update tblqbillmodifierdtl a,tblqbillsettlementdtl b,tblsettelmenthd c "
+		    + "set a.dblAmount=0.00 "
+		    + "where a.strBillNo=b.strBillNo "
+		    + "and b.strSettlementCode=c.strSettelmentCode "
 		    + "and c.strSettelmentType='Complementary';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqbilltaxdtl a,tblqbillsettlementdtl b,tblsettelmenthd c\n"
-		    + "set a.dblTaxableAmount=0.00,a.dblTaxAmount=0.00\n"
-		    + "where a.strBillNo=b.strBillNo\n"
-		    + "and b.strSettlementCode=c.strSettelmentCode\n"
+	    sql = "update tblqbilltaxdtl a,tblqbillsettlementdtl b,tblsettelmenthd c "
+		    + "set a.dblTaxableAmount=0.00,a.dblTaxAmount=0.00 "
+		    + "where a.strBillNo=b.strBillNo "
+		    + "and b.strSettlementCode=c.strSettelmentCode "
 		    + "and c.strSettelmentType='Complementary';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "delete from tblbilldiscdtl \n"
+	    sql = "delete from tblbilldiscdtl  "
 		    + "where strBillNo IN (select strBillNo from tblbillhd  where dblGrandTotal=0);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "delete from tblqbilldiscdtl \n"
+	    sql = "delete from tblqbilldiscdtl  "
 		    + "where strBillNo IN (select strBillNo from tblqbillhd  where dblGrandTotal=0);";
 	    i = ExecuteQuery(sql);
 
@@ -3441,7 +3441,7 @@ public class clsStructureUpdate
 		    + " ENGINE=InnoDB; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "ADD COLUMN `strEnablePMSIntegrationYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strEnableBillSeries`;";
 	    i = ExecuteQuery(sql);
 
@@ -3450,7 +3450,7 @@ public class clsStructureUpdate
 		    + "ADD COLUMN `strRoomNo` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strFolioNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "ADD COLUMN `strEnablePMSIntegrationYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strEnableBillSeries`;";
 	    i = ExecuteQuery(sql);
 
@@ -3465,24 +3465,24 @@ public class clsStructureUpdate
 	    sql = " ALTER TABLE `tblitemmaster`ADD COLUMN `strUrgentOrder` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `dblMinWeight`; ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblreasonmaster`\n"
+	    sql = "ALTER TABLE `tblreasonmaster` "
 		    + "ADD COLUMN `strReprint` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strVoidAdvOrder`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE if not exists `tblAudit` (\n"
-		    + "	`strDocNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strFormName` VARCHAR(20) NOT NULL,\n"
-		    + "	`strTransactionName` VARCHAR(20) NOT NULL,\n"
-		    + "	`strReasonCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strRemarks` VARCHAR(50) NOT NULL,\n"
-		    + "	`dtePOSDate` DATETIME NOT NULL,\n"
-		    + "	`dteCreatedDate` DATETIME NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(10) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE if not exists `tblAudit` ( "
+		    + "	`strDocNo` VARCHAR(10) NOT NULL, "
+		    + "	`strFormName` VARCHAR(20) NOT NULL, "
+		    + "	`strTransactionName` VARCHAR(20) NOT NULL, "
+		    + "	`strReasonCode` VARCHAR(10) NOT NULL, "
+		    + "	`strRemarks` VARCHAR(50) NOT NULL, "
+		    + "	`dtePOSDate` DATETIME NOT NULL, "
+		    + "	`dteCreatedDate` DATETIME NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(10) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -3518,14 +3518,14 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblplaceorderdtl`	ADD COLUMN `strAdvOrderNo` VARCHAR(20) NOT NULL DEFAULT '' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE if not exists `tblplaceorderadvorderdtl` (\n"
-		    + "	`strAdvOrderNo` VARCHAR(20) NOT NULL,\n"
-		    + "	`dteOrderDate` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N'\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE if not exists `tblplaceorderadvorderdtl` ( "
+		    + "	`strAdvOrderNo` VARCHAR(20) NOT NULL, "
+		    + "	`dteOrderDate` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -3616,150 +3616,150 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblsetup`	ADD COLUMN `intDaysBeforeOrderToCancel` INT NOT NULL DEFAULT '0' AFTER `strPrintRemarkAndReasonForReprint`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = " CREATE TABLE IF NOT EXISTS `tblvoidadvancereceiptdtl` (\n"
-		    + "  `strReceiptNo` varchar(10) NOT NULL,\n"
-		    + "  `strSettlementCode` varchar(10) NOT NULL,\n"
-		    + "  `strCardNo` varchar(50) NOT NULL,\n"
-		    + "  `strExpirydate` varchar(50) NOT NULL,\n"
-		    + "  `strChequeNo` varchar(50) NOT NULL,\n"
-		    + "  `dteCheque` date NOT NULL,\n"
-		    + "  `strBankName` varchar(50) NOT NULL,\n"
-		    + "  `dblAdvDepositesettleAmt` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `strRemark` varchar(50) NOT NULL,\n"
-		    + "  `dblPaidAmt` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `strClientCode` varchar(10) NOT NULL,\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  `dteInstallment` datetime NOT NULL\n"
+	    sql = " CREATE TABLE IF NOT EXISTS `tblvoidadvancereceiptdtl` ( "
+		    + "  `strReceiptNo` varchar(10) NOT NULL, "
+		    + "  `strSettlementCode` varchar(10) NOT NULL, "
+		    + "  `strCardNo` varchar(50) NOT NULL, "
+		    + "  `strExpirydate` varchar(50) NOT NULL, "
+		    + "  `strChequeNo` varchar(50) NOT NULL, "
+		    + "  `dteCheque` date NOT NULL, "
+		    + "  `strBankName` varchar(50) NOT NULL, "
+		    + "  `dblAdvDepositesettleAmt` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `strRemark` varchar(50) NOT NULL, "
+		    + "  `dblPaidAmt` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `strClientCode` varchar(10) NOT NULL, "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  `dteInstallment` datetime NOT NULL "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvancereceipthd` (\n"
-		    + "  `strReceiptNo` varchar(15) NOT NULL,\n"
-		    + "  `strAdvBookingNo` varchar(15) NOT NULL,\n"
-		    + "  `strPOSCode` varchar(10) NOT NULL,\n"
-		    + "  `strSettelmentMode` varchar(15) NOT NULL,\n"
-		    + "  `dtReceiptDate` date NOT NULL,\n"
-		    + "  `dblAdvDeposite` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `intShiftCode` int(11) NOT NULL,\n"
-		    + "  `strUserCreated` varchar(10) NOT NULL,\n"
-		    + "  `strUserEdited` varchar(10) NOT NULL,\n"
-		    + "  `dtDateCreated` datetime NOT NULL,\n"
-		    + "  `dtDateEdited` datetime NOT NULL,\n"
-		    + "  `strClientCode` varchar(10) NOT NULL,\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  PRIMARY KEY (`strReceiptNo`,`strAdvBookingNo`,`strPOSCode`,`strClientCode`)\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvancereceipthd` ( "
+		    + "  `strReceiptNo` varchar(15) NOT NULL, "
+		    + "  `strAdvBookingNo` varchar(15) NOT NULL, "
+		    + "  `strPOSCode` varchar(10) NOT NULL, "
+		    + "  `strSettelmentMode` varchar(15) NOT NULL, "
+		    + "  `dtReceiptDate` date NOT NULL, "
+		    + "  `dblAdvDeposite` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `intShiftCode` int(11) NOT NULL, "
+		    + "  `strUserCreated` varchar(10) NOT NULL, "
+		    + "  `strUserEdited` varchar(10) NOT NULL, "
+		    + "  `dtDateCreated` datetime NOT NULL, "
+		    + "  `dtDateEdited` datetime NOT NULL, "
+		    + "  `strClientCode` varchar(10) NOT NULL, "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  PRIMARY KEY (`strReceiptNo`,`strAdvBookingNo`,`strPOSCode`,`strClientCode`) "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvbookbillchardtl` (\n"
-		    + "  `strItemCode` varchar(15) NOT NULL,\n"
-		    + "  `strAdvBookingNo` varchar(20) NOT NULL,\n"
-		    + "  `strCharCode` varchar(15) NOT NULL,\n"
-		    + "  `strCharValues` varchar(200) NOT NULL,\n"
-		    + "  `strClientCode` varchar(11) NOT NULL,\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  PRIMARY KEY (`strItemCode`,`strAdvBookingNo`,`strCharCode`,`strClientCode`)\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvbookbillchardtl` ( "
+		    + "  `strItemCode` varchar(15) NOT NULL, "
+		    + "  `strAdvBookingNo` varchar(20) NOT NULL, "
+		    + "  `strCharCode` varchar(15) NOT NULL, "
+		    + "  `strCharValues` varchar(200) NOT NULL, "
+		    + "  `strClientCode` varchar(11) NOT NULL, "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  PRIMARY KEY (`strItemCode`,`strAdvBookingNo`,`strCharCode`,`strClientCode`) "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvbookbilldtl` (\n"
-		    + "  `strItemCode` varchar(50) NOT NULL,\n"
-		    + "  `strItemName` varchar(50) NOT NULL,\n"
-		    + "  `strAdvBookingNo` varchar(50) NOT NULL,\n"
-		    + "  `dblQuantity` decimal(18,2) NOT NULL,\n"
-		    + "  `dblAmount` decimal(18,2) NOT NULL,\n"
-		    + "  `dblTaxAmount` decimal(18,2) NOT NULL,\n"
-		    + "  `dteAdvBookingDate` datetime NOT NULL,\n"
-		    + "  `dteOrderFor` date NOT NULL,\n"
-		    + "  `strClientCode` varchar(50) NOT NULL,\n"
-		    + "  `strCustomerCode` varchar(50) NOT NULL,\n"
-		    + "  `dblWeight` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  PRIMARY KEY (`strItemCode`,`strAdvBookingNo`,`strClientCode`)\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvbookbilldtl` ( "
+		    + "  `strItemCode` varchar(50) NOT NULL, "
+		    + "  `strItemName` varchar(50) NOT NULL, "
+		    + "  `strAdvBookingNo` varchar(50) NOT NULL, "
+		    + "  `dblQuantity` decimal(18,2) NOT NULL, "
+		    + "  `dblAmount` decimal(18,2) NOT NULL, "
+		    + "  `dblTaxAmount` decimal(18,2) NOT NULL, "
+		    + "  `dteAdvBookingDate` datetime NOT NULL, "
+		    + "  `dteOrderFor` date NOT NULL, "
+		    + "  `strClientCode` varchar(50) NOT NULL, "
+		    + "  `strCustomerCode` varchar(50) NOT NULL, "
+		    + "  `dblWeight` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  PRIMARY KEY (`strItemCode`,`strAdvBookingNo`,`strClientCode`) "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvbookbillhd` (\n"
-		    + "  `strAdvBookingNo` varchar(15) NOT NULL,\n"
-		    + "  `dteAdvBookingDate` datetime NOT NULL,\n"
-		    + "  `dteOrderFor` datetime NOT NULL,\n"
-		    + "  `strPOSCode` varchar(10) NOT NULL,\n"
-		    + "  `strSettelmentMode` varchar(10) NOT NULL,\n"
-		    + "  `dblDiscountAmt` decimal(18,2) NOT NULL,\n"
-		    + "  `dblDiscountPer` decimal(18,2) NOT NULL,\n"
-		    + "  `dblTaxAmt` decimal(18,2) NOT NULL,\n"
-		    + "  `dblSubTotal` decimal(18,2) NOT NULL,\n"
-		    + "  `dblGrandTotal` decimal(18,2) NOT NULL,\n"
-		    + "  `strUserCreated` varchar(10) NOT NULL,\n"
-		    + "  `strUserEdited` varchar(10) NOT NULL,\n"
-		    + "  `dteDateCreated` datetime NOT NULL,\n"
-		    + "  `dteDateEdited` datetime NOT NULL,\n"
-		    + "  `strClientCode` varchar(10) NOT NULL,\n"
-		    + "  `strCustomerCode` varchar(10) NOT NULL,\n"
-		    + "  `intShiftCode` int(11) NOT NULL,\n"
-		    + "  `strMessage` varchar(150) NOT NULL DEFAULT '',\n"
-		    + "  `strShape` varchar(100) NOT NULL DEFAULT '',\n"
-		    + "  `strNote` varchar(300) NOT NULL DEFAULT '',\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  `strDeliveryTime` varchar(10) NOT NULL,\n"
-		    + "  `strWaiterNo` varchar(10) NOT NULL DEFAULT '',\n"
-		    + "  `strHomeDelivery` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  `dblHomeDelCharges` decimal(18,2) NOT NULL DEFAULT '0.00',\n"
-		    + "  `strOrderType` varchar(10) NOT NULL,\n"
-		    + "  `strManualAdvOrderNo` varchar(20) NOT NULL DEFAULT '',\n"
-		    + "  `strImageName` varchar(50) NOT NULL DEFAULT '',\n"
-		    + "  `strSpecialsymbolImage` varchar(50) NOT NULL DEFAULT '',\n"
-		    + "  `strUrgentOrder` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  PRIMARY KEY (`strAdvBookingNo`,`strPOSCode`,`strClientCode`)\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvbookbillhd` ( "
+		    + "  `strAdvBookingNo` varchar(15) NOT NULL, "
+		    + "  `dteAdvBookingDate` datetime NOT NULL, "
+		    + "  `dteOrderFor` datetime NOT NULL, "
+		    + "  `strPOSCode` varchar(10) NOT NULL, "
+		    + "  `strSettelmentMode` varchar(10) NOT NULL, "
+		    + "  `dblDiscountAmt` decimal(18,2) NOT NULL, "
+		    + "  `dblDiscountPer` decimal(18,2) NOT NULL, "
+		    + "  `dblTaxAmt` decimal(18,2) NOT NULL, "
+		    + "  `dblSubTotal` decimal(18,2) NOT NULL, "
+		    + "  `dblGrandTotal` decimal(18,2) NOT NULL, "
+		    + "  `strUserCreated` varchar(10) NOT NULL, "
+		    + "  `strUserEdited` varchar(10) NOT NULL, "
+		    + "  `dteDateCreated` datetime NOT NULL, "
+		    + "  `dteDateEdited` datetime NOT NULL, "
+		    + "  `strClientCode` varchar(10) NOT NULL, "
+		    + "  `strCustomerCode` varchar(10) NOT NULL, "
+		    + "  `intShiftCode` int(11) NOT NULL, "
+		    + "  `strMessage` varchar(150) NOT NULL DEFAULT '', "
+		    + "  `strShape` varchar(100) NOT NULL DEFAULT '', "
+		    + "  `strNote` varchar(300) NOT NULL DEFAULT '', "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  `strDeliveryTime` varchar(10) NOT NULL, "
+		    + "  `strWaiterNo` varchar(10) NOT NULL DEFAULT '', "
+		    + "  `strHomeDelivery` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  `dblHomeDelCharges` decimal(18,2) NOT NULL DEFAULT '0.00', "
+		    + "  `strOrderType` varchar(10) NOT NULL, "
+		    + "  `strManualAdvOrderNo` varchar(20) NOT NULL DEFAULT '', "
+		    + "  `strImageName` varchar(50) NOT NULL DEFAULT '', "
+		    + "  `strSpecialsymbolImage` varchar(50) NOT NULL DEFAULT '', "
+		    + "  `strUrgentOrder` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  PRIMARY KEY (`strAdvBookingNo`,`strPOSCode`,`strClientCode`) "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidadvbookbillhd`\n"
-		    + "	ADD COLUMN `strReasonCode` VARCHAR(10) NOT NULL AFTER `strUrgentOrder`,\n"
+	    sql = "ALTER TABLE `tblvoidadvbookbillhd` "
+		    + "	ADD COLUMN `strReasonCode` VARCHAR(10) NOT NULL AFTER `strUrgentOrder`, "
 		    + "	ADD COLUMN `strRemark` VARCHAR(100) NOT NULL AFTER `strReasonCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvordermodifierdtl` (\n"
-		    + "  `strAdvOrderNo` varchar(15) NOT NULL,\n"
-		    + "  `strItemCode` varchar(10) NOT NULL,\n"
-		    + "  `strModifierCode` varchar(4) NOT NULL,\n"
-		    + "  `strModifierName` varchar(50) NOT NULL,\n"
-		    + "  `dblQuantity` decimal(18,2) NOT NULL,\n"
-		    + "  `dblAmount` decimal(18,2) NOT NULL,\n"
-		    + "  `strClientCode` varchar(10) NOT NULL,\n"
-		    + "  `strCustomerCode` varchar(10) NOT NULL,\n"
-		    + "  `strUserCreated` varchar(10) NOT NULL,\n"
-		    + "  `strUserEdited` varchar(10) NOT NULL,\n"
-		    + "  `dteDateCreated` datetime NOT NULL,\n"
-		    + "  `dteDateEdited` datetime NOT NULL,\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  PRIMARY KEY (`strAdvOrderNo`,`strItemCode`,`strModifierCode`,`strClientCode`)\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblvoidadvordermodifierdtl` ( "
+		    + "  `strAdvOrderNo` varchar(15) NOT NULL, "
+		    + "  `strItemCode` varchar(10) NOT NULL, "
+		    + "  `strModifierCode` varchar(4) NOT NULL, "
+		    + "  `strModifierName` varchar(50) NOT NULL, "
+		    + "  `dblQuantity` decimal(18,2) NOT NULL, "
+		    + "  `dblAmount` decimal(18,2) NOT NULL, "
+		    + "  `strClientCode` varchar(10) NOT NULL, "
+		    + "  `strCustomerCode` varchar(10) NOT NULL, "
+		    + "  `strUserCreated` varchar(10) NOT NULL, "
+		    + "  `strUserEdited` varchar(10) NOT NULL, "
+		    + "  `dteDateCreated` datetime NOT NULL, "
+		    + "  `dteDateEdited` datetime NOT NULL, "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  PRIMARY KEY (`strAdvOrderNo`,`strItemCode`,`strModifierCode`,`strClientCode`) "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "	ADD COLUMN `intNoOfDelDaysForAdvOrder` INT(11) NOT NULL DEFAULT '0' AFTER `intDaysBeforeOrderToCancel`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `intNoOfDelDaysForAdvOrder` INT(11) NOT NULL DEFAULT '0' AFTER `intDaysBeforeOrderToCancel`, "
 		    + "	ADD COLUMN `intNoOfDelDaysForUrgentOrder` INT(11) NOT NULL DEFAULT '0' AFTER `intNoOfDelDaysForAdvOrder`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
-		    + "	ADD COLUMN `strSetUpToTimeForAdvOrder` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `intNoOfDelDaysForUrgentOrder`,\n"
-		    + "	ADD COLUMN `strSetUpToTimeForUrgentOrder` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSetUpToTimeForAdvOrder`,\n"
-		    + "	ADD COLUMN `strUpToTimeForAdvOrder` VARCHAR(20) NOT NULL DEFAULT '00:00 AM' AFTER `strSetUpToTimeForUrgentOrder`,\n"
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strSetUpToTimeForAdvOrder` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `intNoOfDelDaysForUrgentOrder`, "
+		    + "	ADD COLUMN `strSetUpToTimeForUrgentOrder` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strSetUpToTimeForAdvOrder`, "
+		    + "	ADD COLUMN `strUpToTimeForAdvOrder` VARCHAR(20) NOT NULL DEFAULT '00:00 AM' AFTER `strSetUpToTimeForUrgentOrder`, "
 		    + "	ADD COLUMN `strUpToTimeForUrgentOrder` VARCHAR(20) NOT NULL DEFAULT '00:00 AM' AFTER `strUpToTimeForAdvOrder`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblsetup`	ADD COLUMN `strEnableBothPrintAndSettleBtnForDB` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strUpToTimeForUrgentOrder`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblqadvbookbillchardtl` (\n"
-		    + "  `strItemCode` varchar(15) NOT NULL,\n"
-		    + "  `strAdvBookingNo` varchar(20) NOT NULL,\n"
-		    + "  `strCharCode` varchar(15) NOT NULL,\n"
-		    + "  `strCharValues` varchar(200) NOT NULL,\n"
-		    + "  `strClientCode` varchar(11) NOT NULL,\n"
-		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N',\n"
-		    + "  PRIMARY KEY (`strItemCode`,`strAdvBookingNo`,`strCharCode`,`strClientCode`)\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblqadvbookbillchardtl` ( "
+		    + "  `strItemCode` varchar(15) NOT NULL, "
+		    + "  `strAdvBookingNo` varchar(20) NOT NULL, "
+		    + "  `strCharCode` varchar(15) NOT NULL, "
+		    + "  `strCharValues` varchar(200) NOT NULL, "
+		    + "  `strClientCode` varchar(11) NOT NULL, "
+		    + "  `strDataPostFlag` varchar(1) NOT NULL DEFAULT 'N', "
+		    + "  PRIMARY KEY (`strItemCode`,`strAdvBookingNo`,`strCharCode`,`strClientCode`) "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
@@ -3797,129 +3797,129 @@ public class clsStructureUpdate
 	    i = ExecuteQuery(sql);
 
 	    //customer code updation
-	    sql = "ALTER TABLE `tblcustomermaster`\n"
+	    sql = "ALTER TABLE `tblcustomermaster` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15) NOT NULL FIRST;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
+	    sql = "ALTER TABLE `tblbillhd` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillhd`\n"
+	    sql = "ALTER TABLE `tblqbillhd` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilldtl`\n"
+	    sql = "ALTER TABLE `tblbilldtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldtl`\n"
+	    sql = "ALTER TABLE `tblqbilldtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillsettlementdtl`\n"
+	    sql = "ALTER TABLE `tblbillsettlementdtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillsettlementdtl`\n"
+	    sql = "ALTER TABLE `tblqbillsettlementdtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbillhd`\n"
+	    sql = "ALTER TABLE `tbladvbookbillhd` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqadvbookbillhd`\n"
+	    sql = "ALTER TABLE `tblqadvbookbillhd` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvbookbilldtl`\n"
+	    sql = "ALTER TABLE `tbladvbookbilldtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqadvbookbilldtl`\n"
+	    sql = "ALTER TABLE `tblqadvbookbilldtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldebitcardmaster`\n"
+	    sql = "ALTER TABLE `tbldebitcardmaster` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblhomedelivery`\n"
+	    sql = "ALTER TABLE `tblhomedelivery` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblreservation`\n"
+	    sql = "ALTER TABLE `tblreservation` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblcustomermaster a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblcustomermaster a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblbillhd a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblbillhd a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqbillhd a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblqbillhd a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tbladvbookbillhd a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tbladvbookbillhd a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqadvbookbillhd a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblqadvbookbillhd a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tbladvbookbilldtl a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tbladvbookbilldtl a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqadvbookbilldtl a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblqadvbookbilldtl a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tbldebitcardmaster a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tbldebitcardmaster a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblhomedelivery a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblhomedelivery a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblreservation a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblreservation a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblbillsettlementdtl a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblbillsettlementdtl a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqbillsettlementdtl a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblqbillsettlementdtl a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblbilldtl a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblbilldtl a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblqbilldtl a\n"
-		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode)\n"
+	    sql = "update tblqbilldtl a "
+		    + "set a.strCustomerCode=CONCAT(right(a.strClientCode,3),a.strCustomerCode) "
 		    + "where LENGTH(a.strCustomerCode)=8;";
 	    i = ExecuteQuery(sql);
 
@@ -4018,14 +4018,14 @@ public class clsStructureUpdate
 		    + "ADD COLUMN `strPropertyWiseSalesOrderYN` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strOpenCashDrawerAfterBillPrintYN` ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblmasteroperationstatus` (\n"
-		    + "	`strTableName` VARCHAR(50) NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	PRIMARY KEY (`strTableName`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblmasteroperationstatus` ( "
+		    + "	`strTableName` VARCHAR(50) NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	PRIMARY KEY (`strTableName`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -4045,27 +4045,27 @@ public class clsStructureUpdate
 		    + "ADD COLUMN `strKDSName` VARCHAR(10) NOT NULL AFTER `strUserEdited` ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblpmspostingbilldtl` (\n"
-		    + "	`strBillNo` VARCHAR(50) NOT NULL,\n"
-		    + "	`strPOSCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strFolioNo` VARCHAR(10) NOT NULL,\n"
-		    + "	`strGuestCode` VARCHAR(15) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	PRIMARY KEY (`strBillNo`, `strPOSCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='latin1_swedish_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblpmspostingbilldtl` ( "
+		    + "	`strBillNo` VARCHAR(50) NOT NULL, "
+		    + "	`strPOSCode` VARCHAR(10) NOT NULL, "
+		    + "	`strFolioNo` VARCHAR(10) NOT NULL, "
+		    + "	`strGuestCode` VARCHAR(15) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	PRIMARY KEY (`strBillNo`, `strPOSCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='latin1_swedish_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpmspostingbilldtl`\n"
-		    + "	ADD COLUMN `dteBillDate` DATETIME NOT NULL AFTER `strPOSCode`,\n"
-		    + "	ADD COLUMN `dblSettleAmt` DECIMAL(18,2) NOT NULL AFTER `dteBillDate`,\n"
+	    sql = "ALTER TABLE `tblpmspostingbilldtl` "
+		    + "	ADD COLUMN `dteBillDate` DATETIME NOT NULL AFTER `strPOSCode`, "
+		    + "	ADD COLUMN `dblSettleAmt` DECIMAL(18,2) NOT NULL AFTER `dteBillDate`, "
 		    + "	ADD COLUMN `strRoomNo` VARCHAR(15) NOT NULL AFTER `strGuestCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpmspostingbilldtl`\n"
-		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`,\n"
+	    sql = "ALTER TABLE `tblpmspostingbilldtl` "
+		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`, "
 		    + "	ADD COLUMN `strPMSDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strDataPostFlag`;";
 	    i = ExecuteQuery(sql);
 
@@ -4077,14 +4077,14 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tbladvordermodifierdtl` ALTER `strCustomerCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbladvordermodifierdtl`\n"
+	    sql = "ALTER TABLE `tbladvordermodifierdtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15) NOT NULL AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblqadvordermodifierdtl` ALTER `strCustomerCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqadvordermodifierdtl`\n"
+	    sql = "ALTER TABLE `tblqadvordermodifierdtl` "
 		    + "	CHANGE COLUMN `strCustomerCode` `strCustomerCode` VARCHAR(15) NOT NULL AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -4823,21 +4823,21 @@ public class clsStructureUpdate
 		    + "ADD PRIMARY KEY (`strItemCode`, `strModifierCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE if not exists `tblsmssetup` (\n"
-		    + " `strPOSCode` VARCHAR(10) NOT NULL,\n"
-		    + " `strTransactionName` VARCHAR(50) NOT NULL,\n"
-		    + " `strSendSMSYN` VARCHAR(5) NOT NULL DEFAULT 'N',\n"
-		    + " `longMobileNo` BIGINT(20) NOT NULL ,\n"
-		    + " `strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + " `strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + " `dteDateCreated` DATETIME NOT NULL,\n"
-		    + " `dteDateEdited` DATETIME NOT NULL,\n"
-		    + " `strClientCode` VARCHAR(10) NOT NULL ,\n"
-		    + " `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + " INDEX `strTransactionName` (`strTransactionName`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE if not exists `tblsmssetup` ( "
+		    + " `strPOSCode` VARCHAR(10) NOT NULL, "
+		    + " `strTransactionName` VARCHAR(50) NOT NULL, "
+		    + " `strSendSMSYN` VARCHAR(5) NOT NULL DEFAULT 'N', "
+		    + " `longMobileNo` BIGINT(20) NOT NULL , "
+		    + " `strUserCreated` VARCHAR(10) NOT NULL, "
+		    + " `strUserEdited` VARCHAR(10) NOT NULL, "
+		    + " `dteDateCreated` DATETIME NOT NULL, "
+		    + " `dteDateEdited` DATETIME NOT NULL, "
+		    + " `strClientCode` VARCHAR(10) NOT NULL , "
+		    + " `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + " INDEX `strTransactionName` (`strTransactionName`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -4973,31 +4973,31 @@ public class clsStructureUpdate
 		    + " COLLATE='utf8_general_ci' ENGINE=InnoDB;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromogroupmaster`\n"
-		    + "	ADD COLUMN `strUserCreated` VARCHAR(10) NOT NULL AFTER `strClientCode`,\n"
-		    + "	ADD COLUMN `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`,\n"
-		    + "	ADD COLUMN `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`,\n"
-		    + "	ADD COLUMN `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`,\n"
+	    sql = "ALTER TABLE `tblpromogroupmaster` "
+		    + "	ADD COLUMN `strUserCreated` VARCHAR(10) NOT NULL AFTER `strClientCode`, "
+		    + "	ADD COLUMN `strUserEdited` VARCHAR(10) NOT NULL AFTER `strUserCreated`, "
+		    + "	ADD COLUMN `dteDateCreated` DATETIME NOT NULL AFTER `strUserEdited`, "
+		    + "	ADD COLUMN `dteDateEdited` DATETIME NOT NULL AFTER `dteDateCreated`, "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `dteDateEdited`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE if not exists `tblpromogroupdtl` (\n"
-		    + "	`strPromoGroupCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strItemCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strMenuCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE if not exists `tblpromogroupdtl` ( "
+		    + "	`strPromoGroupCode` VARCHAR(10) NOT NULL, "
+		    + "	`strItemCode` VARCHAR(10) NOT NULL, "
+		    + "	`strMenuCode` VARCHAR(10) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromogroupdtl`\n"
+	    sql = "ALTER TABLE `tblpromogroupdtl` "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpromotionmaster`\n"
-		    + "	ADD COLUMN `strPromoGroupType` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strAreaCode`,\n"
+	    sql = "ALTER TABLE `tblpromotionmaster` "
+		    + "	ADD COLUMN `strPromoGroupType` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strAreaCode`, "
 		    + "	ADD COLUMN `longKOTTimeBound` INT NOT NULL DEFAULT '0' AFTER `strPromoGroupType`;";
 	    i = ExecuteQuery(sql);
 
@@ -5080,90 +5080,90 @@ public class clsStructureUpdate
 		    + "and intBillSeriesPaxNo=0 ;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblsuppliermaster` (\n"
-		    + "	`strSupplierCode` VARCHAR(10) NOT NULL ,\n"
-		    + "	`strSupplierName` VARCHAR(50) NOT NULL,\n"
-		    + "	`strAddress1` VARCHAR(100) NOT NULL,\n"
-		    + "	`strAddress2` VARCHAR(100) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME  NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL,\n"
-		    + "		PRIMARY KEY (`strSupplierCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblsuppliermaster` ( "
+		    + "	`strSupplierCode` VARCHAR(10) NOT NULL , "
+		    + "	`strSupplierName` VARCHAR(50) NOT NULL, "
+		    + "	`strAddress1` VARCHAR(100) NOT NULL, "
+		    + "	`strAddress2` VARCHAR(100) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME  NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL, "
+		    + "		PRIMARY KEY (`strSupplierCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsuppliermaster`\n"
-		    + "	ADD COLUMN `intMobileNumber` VARCHAR(50) NOT NULL AFTER `strDataPostFlag`,\n"
-		    + "	ADD COLUMN `strEmailId` VARCHAR(50) NOT NULL AFTER `intMobileNumber`,\n"
-		    + "	ADD COLUMN `strGSTNo` VARCHAR(50) NOT NULL AFTER `strEmailId`,\n"
+	    sql = "ALTER TABLE `tblsuppliermaster` "
+		    + "	ADD COLUMN `intMobileNumber` VARCHAR(50) NOT NULL AFTER `strDataPostFlag`, "
+		    + "	ADD COLUMN `strEmailId` VARCHAR(50) NOT NULL AFTER `intMobileNumber`, "
+		    + "	ADD COLUMN `strGSTNo` VARCHAR(50) NOT NULL AFTER `strEmailId`, "
 		    + "	ADD COLUMN `strContactPerson` VARCHAR(100) NOT NULL AFTER `strGstNo`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblpurchaseorder` (\n"
-		    + "	`strPOCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dtePODate` DATETIME NOT NULL,\n"
-		    + "	`strSupplierCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strPOCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblpurchaseorder` ( "
+		    + "	`strPOCode` VARCHAR(10) NOT NULL, "
+		    + "	`dtePODate` DATETIME NOT NULL, "
+		    + "	`strSupplierCode` VARCHAR(10) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strPOCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
 	    sql = "RENAME TABLE `tblpurchaseorder` TO `tblpurchaseorderhd`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblpurchaseorderhd`\n"
-		    + "	ADD COLUMN `dblSubTotal` DECIMAL(18,2) NOT NULL AFTER `strSupplierCode`,\n"
-		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL AFTER `dblSubTotal`,\n"
-		    + "	ADD COLUMN `dblExtraAmt` DECIMAL(18,2) NOT NULL AFTER `dblTaxAmt`,\n"
+	    sql = "ALTER TABLE `tblpurchaseorderhd` "
+		    + "	ADD COLUMN `dblSubTotal` DECIMAL(18,2) NOT NULL AFTER `strSupplierCode`, "
+		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL AFTER `dblSubTotal`, "
+		    + "	ADD COLUMN `dblExtraAmt` DECIMAL(18,2) NOT NULL AFTER `dblTaxAmt`, "
 		    + "	ADD COLUMN `dblGrandTotal` DECIMAL(18,2) NOT NULL AFTER `dblExtraAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblpurchaseorderdtl` (\n"
-		    + "	`strPOCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strItemCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblOrderQty` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblPurchaseRate` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblAmount` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strRemarks` VARCHAR(100) NOT NULL,\n"
-		    + "	`strReasonCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strPOCode`, `strItemCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblpurchaseorderdtl` ( "
+		    + "	`strPOCode` VARCHAR(10) NOT NULL, "
+		    + "	`strItemCode` VARCHAR(10) NOT NULL, "
+		    + "	`dblOrderQty` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblPurchaseRate` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblAmount` DECIMAL(18,2) NOT NULL, "
+		    + "	`strRemarks` VARCHAR(100) NOT NULL, "
+		    + "	`strReasonCode` VARCHAR(10) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strPOCode`, `strItemCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblsuppliermaster` (\n"
-		    + "	`strSupplierCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strSupplierName` VARCHAR(50) NOT NULL,\n"
-		    + "	`strAddress1` VARCHAR(100) NOT NULL,\n"
-		    + "	`strAddress2` VARCHAR(100) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(10) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(10) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	PRIMARY KEY (`strSupplierCode`, `strClientCode`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblsuppliermaster` ( "
+		    + "	`strSupplierCode` VARCHAR(10) NOT NULL, "
+		    + "	`strSupplierName` VARCHAR(50) NOT NULL, "
+		    + "	`strAddress1` VARCHAR(100) NOT NULL, "
+		    + "	`strAddress2` VARCHAR(100) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(10) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(10) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	PRIMARY KEY (`strSupplierCode`, `strClientCode`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
@@ -5200,7 +5200,7 @@ public class clsStructureUpdate
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilldiscdtl`\n"
+	    sql = "ALTER TABLE `tblbilldiscdtl` "
 		    + "ALTER `strBillNo` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
@@ -5208,7 +5208,7 @@ public class clsStructureUpdate
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldiscdtl`\n"
+	    sql = "ALTER TABLE `tblqbilldiscdtl` "
 		    + "ALTER `strBillNo` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
@@ -5216,7 +5216,7 @@ public class clsStructureUpdate
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblbillmodifierdtl` "
 		    + "ALTER `strBillNo` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
@@ -5224,7 +5224,7 @@ public class clsStructureUpdate
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillmodifierdtl`\n"
+	    sql = "ALTER TABLE `tblqbillmodifierdtl` "
 		    + "ALTER `strBillNo` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
@@ -5256,47 +5256,47 @@ public class clsStructureUpdate
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillseries`\n"
+	    sql = "ALTER TABLE `tblbillseries` "
 		    + "ADD PRIMARY KEY (`strPOSCode`, `strType`, `strBillSeries`, `strClientCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcreditbillreceipthd`\n"
+	    sql = "ALTER TABLE `tblcreditbillreceipthd` "
 		    + "ADD PRIMARY KEY (`strReceiptNo`, `strBillNo`, `strClientCode`, `dteBillDate`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqcreditbillreceipthd`\n"
+	    sql = "ALTER TABLE `tblqcreditbillreceipthd` "
 		    + "ADD PRIMARY KEY (`strReceiptNo`, `strBillNo`, `strClientCode`, `dteBillDate`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcashiermanagement`\n"
+	    sql = "ALTER TABLE `tblcashiermanagement` "
 		    + "ADD PRIMARY KEY (`strTransactionId`, `dtDateEdited`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldayendprocess`\n"
+	    sql = "ALTER TABLE `tbldayendprocess` "
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldayendprocess`\n"
+	    sql = "ALTER TABLE `tbldayendprocess` "
 		    + "	ADD PRIMARY KEY (`strPOSCode`, `dtePOSDate`, `intShiftCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblforms`\n"
+	    sql = "ALTER TABLE `tblforms` "
 		    + "ADD PRIMARY KEY (`strFormName`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblforms`\n"
+	    sql = "ALTER TABLE `tblforms` "
 		    + "ADD INDEX `strModuleName` (`strModuleName`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsettlementtax`\n"
+	    sql = "ALTER TABLE `tblsettlementtax` "
 		    + "ADD PRIMARY KEY (`strTaxCode`, `strSettlementCode`, `strClientCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblshiftmaster`\n"
+	    sql = "ALTER TABLE `tblshiftmaster` "
 		    + "ADD PRIMARY KEY (`intShiftCode`, `strPOSCode`, `strClientCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbluserdtl`\n"
+	    sql = "ALTER TABLE `tbluserdtl` "
 		    + "ADD PRIMARY KEY (`strUserCode`, `strFormName`);";
 	    i = ExecuteQuery(sql);
 //            
@@ -5308,7 +5308,7 @@ public class clsStructureUpdate
 	    sql = "delete from tblcreditbillreceipthd;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidkot`\n"
+	    sql = "ALTER TABLE `tblvoidkot` "
 		    + "	ADD COLUMN `strItemProcessed` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strRemark`;";
 	    i = ExecuteQuery(sql);
 
@@ -5322,53 +5322,53 @@ public class clsStructureUpdate
 		    + "where strTransactionType='custtype' ";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblkdsprocess`\n"
-		    + "	ADD COLUMN `strItemCode` VARCHAR(20) NOT NULL AFTER `strKDSName`,\n"
-		    + "	ADD COLUMN `strCostCenterCode` VARCHAR(10) NOT NULL AFTER `strItemCode`,\n"
-		    + "	ADD COLUMN `strWaiterNo` VARCHAR(20) NOT NULL AFTER `strCostCenterCode`,\n"
+	    sql = "ALTER TABLE `tblkdsprocess` "
+		    + "	ADD COLUMN `strItemCode` VARCHAR(20) NOT NULL AFTER `strKDSName`, "
+		    + "	ADD COLUMN `strCostCenterCode` VARCHAR(10) NOT NULL AFTER `strItemCode`, "
+		    + "	ADD COLUMN `strWaiterNo` VARCHAR(20) NOT NULL AFTER `strCostCenterCode`, "
 		    + "	ADD COLUMN `dteKOTDateAndTime` DATETIME NOT NULL AFTER `strWaiterNo`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblkdsprocess` DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblkdsprocess`\n"
-		    + "	ADD INDEX `strDocNo` (`strDocNo`),\n"
-		    + "	ADD INDEX `strItemCode` (`strItemCode`),\n"
-		    + "	ADD INDEX `strCostCenterCode` (`strCostCenterCode`),\n"
+	    sql = "ALTER TABLE `tblkdsprocess` "
+		    + "	ADD INDEX `strDocNo` (`strDocNo`), "
+		    + "	ADD INDEX `strItemCode` (`strItemCode`), "
+		    + "	ADD INDEX `strCostCenterCode` (`strCostCenterCode`), "
 		    + "	ADD INDEX `strWaiterNo` (`strWaiterNo`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidkot`\n"
+	    sql = "ALTER TABLE `tblvoidkot` "
 		    + "	ADD COLUMN `strItemProcessed` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strRemark`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillcomplementrydtl`\n"
+	    sql = "ALTER TABLE `tblbillcomplementrydtl` "
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillcomplementrydtl`\n"
+	    sql = "ALTER TABLE `tblqbillcomplementrydtl` "
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblkdsprocess`\n"
-		    + " ADD COLUMN `strItemCode` VARCHAR(20) NOT NULL AFTER `strKDSName`,\n"
-		    + " ADD COLUMN `strCostCenterCode` VARCHAR(10) NOT NULL AFTER `strItemCode`,\n"
-		    + " ADD COLUMN `strWaiterNo` VARCHAR(20) NOT NULL AFTER `strCostCenterCode`,\n"
+	    sql = "ALTER TABLE `tblkdsprocess` "
+		    + " ADD COLUMN `strItemCode` VARCHAR(20) NOT NULL AFTER `strKDSName`, "
+		    + " ADD COLUMN `strCostCenterCode` VARCHAR(10) NOT NULL AFTER `strItemCode`, "
+		    + " ADD COLUMN `strWaiterNo` VARCHAR(20) NOT NULL AFTER `strCostCenterCode`, "
 		    + " ADD COLUMN `dteKOTDateAndTime` DATETIME NOT NULL AFTER `strWaiterNo`;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "ALTER TABLE `tblkdsprocess` DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblkdsprocess`\n"
-		    + " ADD INDEX `strDocNo` (`strDocNo`),\n"
-		    + " ADD INDEX `strItemCode` (`strItemCode`),\n"
-		    + " ADD INDEX `strCostCenterCode` (`strCostCenterCode`),\n"
+	    sql = "ALTER TABLE `tblkdsprocess` "
+		    + " ADD INDEX `strDocNo` (`strDocNo`), "
+		    + " ADD INDEX `strItemCode` (`strItemCode`), "
+		    + " ADD INDEX `strCostCenterCode` (`strCostCenterCode`), "
 		    + " ADD INDEX `strWaiterNo` (`strWaiterNo`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidkot`\n"
+	    sql = "ALTER TABLE `tblvoidkot` "
 		    + " ADD COLUMN `strItemProcessed` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strRemark`;";
 	    i = ExecuteQuery(sql);
 
@@ -5525,19 +5525,19 @@ public class clsStructureUpdate
 	    sql = "ALTER TABLE `tblitemrtemp_bck` ADD COLUMN `strItemPickedUp` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `tmeOrderPickup`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "	ALTER TABLE `tblbillcomplementrydtl`\n"
+	    sql = "	ALTER TABLE `tblbillcomplementrydtl` "
 		    + "	ADD COLUMN `dtBillDate` DATE NOT NULL AFTER `strType`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "	ALTER TABLE `tblbillcomplementrydtl`\n"
+	    sql = "	ALTER TABLE `tblbillcomplementrydtl` "
 		    + "	ADD COLUMN `tmeOrderPickup` TIME NOT NULL DEFAULT '00:00:00' AFTER `dtBillDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "	ALTER TABLE `tblqbillcomplementrydtl`\n"
+	    sql = "	ALTER TABLE `tblqbillcomplementrydtl` "
 		    + "	ADD COLUMN `dtBillDate` DATE NOT NULL AFTER `strType`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "	ALTER TABLE `tblqbillcomplementrydtl`\n"
+	    sql = "	ALTER TABLE `tblqbillcomplementrydtl` "
 		    + "	ADD COLUMN `tmeOrderPickup` TIME NOT NULL DEFAULT '00:00:00' AFTER `dtBillDate`;";
 	    i = ExecuteQuery(sql);
 
@@ -5564,90 +5564,90 @@ public class clsStructureUpdate
 	    i = ExecuteQuery(sql);
 
 	    //to update old data for Item Void or Bill Void
-	    sql = "update tblvoidbillhd d\n"
-		    + "join (select a.strBillNo,a.dteBillDate from tblbillhd a ,tblvoidbillhd b where a.strBillNo=b.strBillNo and date(a.dteBillDate)=date(b.dteBillDate) )c\n"
-		    + "set d.strVoidBillType='Item Void'\n"
+	    sql = "update tblvoidbillhd d "
+		    + "join (select a.strBillNo,a.dteBillDate from tblbillhd a ,tblvoidbillhd b where a.strBillNo=b.strBillNo and date(a.dteBillDate)=date(b.dteBillDate) )c "
+		    + "set d.strVoidBillType='Item Void' "
 		    + "where d.strVoidBillType=''"
 		    + "and d.strTransType='VB' "
-		    + "and d.strBillNo=c.strBillNo\n"
+		    + "and d.strBillNo=c.strBillNo "
 		    + "and date(d.dteBillDate)=date(c.dteBillDate);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblvoidbillhd d\n"
-		    + "join (select a.strBillNo,a.dteBillDate from tblqbillhd a ,tblvoidbillhd b where a.strBillNo=b.strBillNo and date(a.dteBillDate)=date(b.dteBillDate) )c\n"
-		    + "set d.strVoidBillType='Item Void'\n"
+	    sql = "update tblvoidbillhd d "
+		    + "join (select a.strBillNo,a.dteBillDate from tblqbillhd a ,tblvoidbillhd b where a.strBillNo=b.strBillNo and date(a.dteBillDate)=date(b.dteBillDate) )c "
+		    + "set d.strVoidBillType='Item Void' "
 		    + "where d.strVoidBillType='' "
-		    + "and d.strTransType='VB' \n"
-		    + "and d.strBillNo=c.strBillNo\n"
+		    + "and d.strTransType='VB'  "
+		    + "and d.strBillNo=c.strBillNo "
 		    + "and date(d.dteBillDate)=date(c.dteBillDate);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "update tblvoidbillhd  set strVoidBillType='Bill Void'\n"
+	    sql = "update tblvoidbillhd  set strVoidBillType='Bill Void' "
 		    + "where strVoidBillType='';";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblpropertyimage` (\n"
-		    + " `strPOSCode` VARCHAR(10) NOT NULL,\n"
-		    + " `blobReportImage` LONGBLOB NULL,\n"
-		    + " `strClientCode` VARCHAR(20) NOT NULL,\n"
-		    + " PRIMARY KEY (`strPOSCode`, `strClientCode`)\n"
-		    + " )\n"
-		    + " COLLATE='utf8_general_ci'\n"
-		    + " ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblpropertyimage` ( "
+		    + " `strPOSCode` VARCHAR(10) NOT NULL, "
+		    + " `blobReportImage` LONGBLOB NULL, "
+		    + " `strClientCode` VARCHAR(20) NOT NULL, "
+		    + " PRIMARY KEY (`strPOSCode`, `strClientCode`) "
+		    + " ) "
+		    + " COLLATE='utf8_general_ci' "
+		    + " ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbillhd`\n"
+	    sql = "ALTER TABLE `tblvoidbillhd` "
 		    + "	CHANGE COLUMN `strVoidBillType` `strVoidBillType` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strRemark`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblvoidbilldiscdtl` (\n"
-		    + "	`strBillNo` VARCHAR(15) NULL DEFAULT NULL,\n"
-		    + "	`strPOSCode` VARCHAR(5) NOT NULL,\n"
-		    + "	`dblDiscAmt` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblDiscPer` DECIMAL(10,2) NOT NULL,\n"
-		    + "	`dblDiscOnAmt` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strDiscOnType` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscOnValue` VARCHAR(100) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscReasonCode` VARCHAR(10) NOT NULL DEFAULT '',\n"
-		    + "	`strDiscRemarks` VARCHAR(100) NOT NULL DEFAULT '',\n"
-		    + "	`strUserCreated` VARCHAR(50) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(50) NOT NULL DEFAULT '',\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	`dteBillDate` DATE NOT NULL,\n"
-		    + "	`strTransType` CHAR(10) NOT NULL DEFAULT '',\n"
-		    + "	INDEX `strBillNo` (`strBillNo`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblvoidbilldiscdtl` ( "
+		    + "	`strBillNo` VARCHAR(15) NULL DEFAULT NULL, "
+		    + "	`strPOSCode` VARCHAR(5) NOT NULL, "
+		    + "	`dblDiscAmt` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblDiscPer` DECIMAL(10,2) NOT NULL, "
+		    + "	`dblDiscOnAmt` DECIMAL(18,2) NOT NULL, "
+		    + "	`strDiscOnType` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`strDiscOnValue` VARCHAR(100) NOT NULL DEFAULT '', "
+		    + "	`strDiscReasonCode` VARCHAR(10) NOT NULL DEFAULT '', "
+		    + "	`strDiscRemarks` VARCHAR(100) NOT NULL DEFAULT '', "
+		    + "	`strUserCreated` VARCHAR(50) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(50) NOT NULL DEFAULT '', "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	`dteBillDate` DATE NOT NULL, "
+		    + "	`strTransType` CHAR(10) NOT NULL DEFAULT '', "
+		    + "	INDEX `strBillNo` (`strBillNo`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tblvoidbilltaxdtl` (\n"
-		    + "	`strBillNo` VARCHAR(15) NOT NULL DEFAULT '',\n"
-		    + "	`strTaxCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblTaxableAmount` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`dblTaxAmount` DECIMAL(18,2) NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	`dteBillDate` DATE NOT NULL,\n"
-		    + "	`strTransType` CHAR(10) NOT NULL DEFAULT '',\n"
-		    + "	PRIMARY KEY (`strBillNo`, `strTaxCode`, `dteBillDate`, `strClientCode`),\n"
-		    + "	INDEX `strBillNo` (`strBillNo`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tblvoidbilltaxdtl` ( "
+		    + "	`strBillNo` VARCHAR(15) NOT NULL DEFAULT '', "
+		    + "	`strTaxCode` VARCHAR(10) NOT NULL, "
+		    + "	`dblTaxableAmount` DECIMAL(18,2) NOT NULL, "
+		    + "	`dblTaxAmount` DECIMAL(18,2) NOT NULL, "
+		    + "	`strClientCode` VARCHAR(10) NOT NULL, "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	`dteBillDate` DATE NOT NULL, "
+		    + "	`strTransType` CHAR(10) NOT NULL DEFAULT '', "
+		    + "	PRIMARY KEY (`strBillNo`, `strTaxCode`, `dteBillDate`, `strClientCode`), "
+		    + "	INDEX `strBillNo` (`strBillNo`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblvoidbilltaxdtl`\n"
+	    sql = "ALTER TABLE `tblvoidbilltaxdtl` "
 		    + "	DROP PRIMARY KEY;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcustomermaster`\n"
+	    sql = "ALTER TABLE `tblcustomermaster` "
 		    + "	CHANGE COLUMN `strEmailId` `strEmailId` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dteAnniversary`;";
 	    i = ExecuteQuery(sql);
 
@@ -5655,48 +5655,48 @@ public class clsStructureUpdate
 		    + " ADD COLUMN `strWaiterNo` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strDebitCardString`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcostcentermaster`\n"
-		    + "	ADD COLUMN `strWSLocationCode` VARCHAR(15) NOT NULL DEFAULT '' AFTER `strLabelOnKOT`,\n"
+	    sql = "ALTER TABLE `tblcostcentermaster` "
+		    + "	ADD COLUMN `strWSLocationCode` VARCHAR(15) NOT NULL DEFAULT '' AFTER `strLabelOnKOT`, "
 		    + "	ADD COLUMN `strWSLocationName` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strWSLocationCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tbldayendprocess`\n"
+	    sql = "ALTER TABLE `tbldayendprocess` "
 		    + "	CHANGE COLUMN `strWSStockAdjustmentNo` `strWSStockAdjustmentNo` VARCHAR(500) NOT NULL DEFAULT '' AFTER `dblUnusedDebitCardBalance`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
+	    sql = "ALTER TABLE `tblbillhd` "
 		    + "	ADD COLUMN `intOrderNo` INT NOT NULL DEFAULT '0' AFTER `dtBillDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillhd`\n"
+	    sql = "ALTER TABLE `tblqbillhd` "
 		    + "	ADD COLUMN `intOrderNo` INT NOT NULL DEFAULT '0' AFTER `dtBillDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemrtemp`\n"
+	    sql = "ALTER TABLE `tblitemrtemp` "
 		    + "	ADD COLUMN `strTableStatus` VARCHAR(20) NOT NULL DEFAULT 'Normal' AFTER `strItemPickedUp`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblitemrtemp_bck`\n"
+	    sql = "ALTER TABLE `tblitemrtemp_bck` "
 		    + "	ADD COLUMN `strTableStatus` VARCHAR(20) NOT NULL DEFAULT 'Normal' AFTER `strItemPickedUp`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkinhd`\n"
+	    sql = "ALTER TABLE `tblstkinhd` "
 		    + "	ALTER `strReasonCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkinhd`\n"
+	    sql = "ALTER TABLE `tblstkinhd` "
 		    + "	CHANGE COLUMN `strReasonCode` `strReasonCode` VARCHAR(5) NOT NULL AFTER `dteStkInDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkouthd`\n"
+	    sql = "ALTER TABLE `tblstkouthd` "
 		    + " ALTER `strReasonCode` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkouthd`\n"
+	    sql = "ALTER TABLE `tblstkouthd` "
 		    + " CHANGE COLUMN `strReasonCode` `strReasonCode` VARCHAR(5) NOT NULL AFTER `dteStkOutDate`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblatvreport`\n"
+	    sql = "ALTER TABLE `tblatvreport` "
 		    + "	ADD COLUMN `strWaiterName` VARCHAR(50) NULL DEFAULT '' AFTER `dblTAAvg`; ";
 
 	    i = ExecuteQuery(sql);
@@ -5708,15 +5708,15 @@ public class clsStructureUpdate
 		    + ",a.strAMPMTo=TRIM(a.strAMPMTo);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblcustomermaster`\n"
+	    sql = "ALTER TABLE `tblcustomermaster` "
 		    + "	ADD COLUMN `strGSTNo` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strTempLandmark`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strAutoShowPopItems` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strEnableTableReservationForCustomer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `intShowPopItemsOfDays` INT NOT NULL DEFAULT '1' AFTER `strAutoShowPopItems`;";
 	    i = ExecuteQuery(sql);
 
@@ -5771,28 +5771,28 @@ public class clsStructureUpdate
 		    + "	ADD COLUMN `strRecipeConversion` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strReceivedConversion`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE `tbluommaster` (\n"
-		    + "	`strUomName` VARCHAR(50) NOT NULL,\n"
-		    + "	`strUserCreated` VARCHAR(50) NOT NULL,\n"
-		    + "	`strUserEdited` VARCHAR(50) NOT NULL,\n"
-		    + "	`dteDateCreated` DATETIME NOT NULL,\n"
-		    + "	`dteDateEdited` DATETIME NOT NULL,\n"
-		    + "	`strClientCode` VARCHAR(11) NOT NULL DEFAULT '',\n"
-		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N',\n"
-		    + "	`strPosCode` VARCHAR(10) NOT NULL,\n"
-		    + "	PRIMARY KEY (`strUomName`, `strClientCode`),\n"
-		    + "	INDEX `intUomName` (`strUomName`)\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE `tbluommaster` ( "
+		    + "	`strUomName` VARCHAR(50) NOT NULL, "
+		    + "	`strUserCreated` VARCHAR(50) NOT NULL, "
+		    + "	`strUserEdited` VARCHAR(50) NOT NULL, "
+		    + "	`dteDateCreated` DATETIME NOT NULL, "
+		    + "	`dteDateEdited` DATETIME NOT NULL, "
+		    + "	`strClientCode` VARCHAR(11) NOT NULL DEFAULT '', "
+		    + "	`strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N', "
+		    + "	`strPosCode` VARCHAR(10) NOT NULL, "
+		    + "	PRIMARY KEY (`strUomName`, `strClientCode`), "
+		    + "	INDEX `intUomName` (`strUomName`) "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillcomplementrydtl`\n"
+	    sql = "ALTER TABLE `tblbillcomplementrydtl` "
 		    + "	CHANGE COLUMN `dteBillDate` `dteBillDate` DATETIME NOT NULL AFTER `dblTaxAmount`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "	ALTER TABLE `tblqbillcomplementrydtl`\n"
+	    sql = "	ALTER TABLE `tblqbillcomplementrydtl` "
 		    + "	CHANGE COLUMN `dteBillDate` `dteBillDate` DATETIME NOT NULL AFTER `dblTaxAmount`;";
 	    i = ExecuteQuery(sql);
 
@@ -5868,57 +5868,57 @@ public class clsStructureUpdate
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkinhd`\n"
-		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strInvoiceCode`,\n"
-		    + "	ADD COLUMN `dblExtraAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`,\n"
+	    sql = "ALTER TABLE `tblstkinhd` "
+		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strInvoiceCode`, "
+		    + "	ADD COLUMN `dblExtraAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`, "
 		    + "	ADD COLUMN `dblGrandTotal` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblExtraAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkouthd`\n"
-		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strNarration`,\n"
-		    + "	ADD COLUMN `dblExtraAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`,\n"
+	    sql = "ALTER TABLE `tblstkouthd` "
+		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strNarration`, "
+		    + "	ADD COLUMN `dblExtraAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`, "
 		    + "	ADD COLUMN `dblGrandTotal` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblExtraAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblstkintaxdtl` (\n"
-		    + "	`strStkInCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strTaxCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblTaxableAmt` DECIMAL(18,2) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblstkintaxdtl` ( "
+		    + "	`strStkInCode` VARCHAR(10) NOT NULL, "
+		    + "	`strTaxCode` VARCHAR(10) NOT NULL, "
+		    + "	`dblTaxableAmt` DECIMAL(18,2) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkintaxdtl`\n"
-		    + "	CHANGE COLUMN `dblTaxableAmt` `dblTaxableAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strTaxCode`,\n"
-		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxableAmt`,\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`,\n"
+	    sql = "ALTER TABLE `tblstkintaxdtl` "
+		    + "	CHANGE COLUMN `dblTaxableAmt` `dblTaxableAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strTaxCode`, "
+		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxableAmt`, "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`, "
 		    + "	ADD PRIMARY KEY (`strStkInCode`, `strTaxCode`, `strClientCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkintaxdtl`\n"
+	    sql = "ALTER TABLE `tblstkintaxdtl` "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblstkouttaxdtl` (\n"
-		    + "	`strStkOutCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`strTaxCode` VARCHAR(10) NOT NULL,\n"
-		    + "	`dblTaxableAmt` DECIMAL(18,2) NOT NULL\n"
-		    + ")\n"
-		    + "COLLATE='utf8_general_ci'\n"
-		    + "ENGINE=InnoDB\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblstkouttaxdtl` ( "
+		    + "	`strStkOutCode` VARCHAR(10) NOT NULL, "
+		    + "	`strTaxCode` VARCHAR(10) NOT NULL, "
+		    + "	`dblTaxableAmt` DECIMAL(18,2) NOT NULL "
+		    + ") "
+		    + "COLLATE='utf8_general_ci' "
+		    + "ENGINE=InnoDB "
 		    + ";";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkouttaxdtl`\n"
-		    + "	CHANGE COLUMN `dblTaxableAmt` `dblTaxableAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strTaxCode`,\n"
-		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxableAmt`,\n"
-		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`,\n"
+	    sql = "ALTER TABLE `tblstkouttaxdtl` "
+		    + "	CHANGE COLUMN `dblTaxableAmt` `dblTaxableAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strTaxCode`, "
+		    + "	ADD COLUMN `dblTaxAmt` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblTaxableAmt`, "
+		    + "	ADD COLUMN `strClientCode` VARCHAR(10) NOT NULL DEFAULT '0.00' AFTER `dblTaxAmt`, "
 		    + "	ADD PRIMARY KEY (`strStkOutCode`, `strTaxCode`, `strClientCode`);";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblstkouttaxdtl`\n"
+	    sql = "ALTER TABLE `tblstkouttaxdtl` "
 		    + "	ADD COLUMN `strDataPostFlag` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
@@ -6217,167 +6217,167 @@ public class clsStructureUpdate
 		    + "	CHANGE COLUMN `strOfficeAddress` `strOfficeAddress` VARCHAR(100) NOT NULL DEFAULT 'N' AFTER `strClientCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
-		    + "	ALTER `dblDiscountAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblDiscountPer` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblSubTotal` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblbillhd` "
+		    + "	ALTER `dblDiscountAmt` DROP DEFAULT, "
+		    + "	ALTER `dblDiscountPer` DROP DEFAULT, "
+		    + "	ALTER `dblTaxAmt` DROP DEFAULT, "
+		    + "	ALTER `dblSubTotal` DROP DEFAULT, "
 		    + "	ALTER `dblGrandTotal` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillhd`\n"
-		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL AFTER `strSettelmentMode`,\n"
-		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(10,4) NOT NULL AFTER `dblDiscountAmt`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,4) NOT NULL AFTER `dblDiscountPer`,\n"
-		    + "	CHANGE COLUMN `dblSubTotal` `dblSubTotal` DECIMAL(18,4) NOT NULL AFTER `dblTaxAmt`,\n"
-		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` DECIMAL(18,4) NOT NULL AFTER `dblSubTotal`,\n"
-		    + "	CHANGE COLUMN `dblTipAmount` `dblTipAmount` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strRemarks`,\n"
-		    + "	CHANGE COLUMN `dblDeliveryCharges` `dblDeliveryCharges` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCounterCode`,\n"
+	    sql = "ALTER TABLE `tblbillhd` "
+		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL AFTER `strSettelmentMode`, "
+		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(10,4) NOT NULL AFTER `dblDiscountAmt`, "
+		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,4) NOT NULL AFTER `dblDiscountPer`, "
+		    + "	CHANGE COLUMN `dblSubTotal` `dblSubTotal` DECIMAL(18,4) NOT NULL AFTER `dblTaxAmt`, "
+		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` DECIMAL(18,4) NOT NULL AFTER `dblSubTotal`, "
+		    + "	CHANGE COLUMN `dblTipAmount` `dblTipAmount` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strRemarks`, "
+		    + "	CHANGE COLUMN `dblDeliveryCharges` `dblDeliveryCharges` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCounterCode`, "
 		    + "	CHANGE COLUMN `dblRoundOff` `dblRoundOff` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strJioMoneyCardType`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillhd`\n"
-		    + "	ALTER `dblDiscountAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblDiscountPer` DROP DEFAULT,\n"
-		    + "	ALTER `dblTaxAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblSubTotal` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblqbillhd` "
+		    + "	ALTER `dblDiscountAmt` DROP DEFAULT, "
+		    + "	ALTER `dblDiscountPer` DROP DEFAULT, "
+		    + "	ALTER `dblTaxAmt` DROP DEFAULT, "
+		    + "	ALTER `dblSubTotal` DROP DEFAULT, "
 		    + "	ALTER `dblGrandTotal` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillhd`\n"
-		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL AFTER `strSettelmentMode`,\n"
-		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(10,4) NOT NULL AFTER `dblDiscountAmt`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,4) NOT NULL AFTER `dblDiscountPer`,\n"
-		    + "	CHANGE COLUMN `dblSubTotal` `dblSubTotal` DECIMAL(18,4) NOT NULL AFTER `dblTaxAmt`,\n"
-		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` DECIMAL(18,4) NOT NULL AFTER `dblSubTotal`,\n"
-		    + "	CHANGE COLUMN `dblTipAmount` `dblTipAmount` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strRemarks`,\n"
-		    + "	CHANGE COLUMN `dblDeliveryCharges` `dblDeliveryCharges` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCounterCode`,\n"
+	    sql = "ALTER TABLE `tblqbillhd` "
+		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL AFTER `strSettelmentMode`, "
+		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(10,4) NOT NULL AFTER `dblDiscountAmt`, "
+		    + "	CHANGE COLUMN `dblTaxAmt` `dblTaxAmt` DECIMAL(18,4) NOT NULL AFTER `dblDiscountPer`, "
+		    + "	CHANGE COLUMN `dblSubTotal` `dblSubTotal` DECIMAL(18,4) NOT NULL AFTER `dblTaxAmt`, "
+		    + "	CHANGE COLUMN `dblGrandTotal` `dblGrandTotal` DECIMAL(18,4) NOT NULL AFTER `dblSubTotal`, "
+		    + "	CHANGE COLUMN `dblTipAmount` `dblTipAmount` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strRemarks`, "
+		    + "	CHANGE COLUMN `dblDeliveryCharges` `dblDeliveryCharges` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCounterCode`, "
 		    + "	CHANGE COLUMN `dblRoundOff` `dblRoundOff` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strJioMoneyCardType`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilldtl`\n"
-		    + "	ALTER `dblQuantity` DROP DEFAULT,\n"
-		    + "	ALTER `dblAmount` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblbilldtl` "
+		    + "	ALTER `dblQuantity` DROP DEFAULT, "
+		    + "	ALTER `dblAmount` DROP DEFAULT, "
 		    + "	ALTER `dblTaxAmount` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilldtl`\n"
-		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strAdvBookingNo`,\n"
-		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,4) NOT NULL AFTER `dblAmount`,\n"
-		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strWaiterNo`,\n"
+	    sql = "ALTER TABLE `tblbilldtl` "
+		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strAdvBookingNo`, "
+		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`, "
+		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,4) NOT NULL AFTER `dblAmount`, "
+		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strWaiterNo`, "
 		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `dblDiscountAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldtl`\n"
-		    + "	ALTER `dblQuantity` DROP DEFAULT,\n"
-		    + "	ALTER `dblAmount` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblqbilldtl` "
+		    + "	ALTER `dblQuantity` DROP DEFAULT, "
+		    + "	ALTER `dblAmount` DROP DEFAULT, "
 		    + "	ALTER `dblTaxAmount` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldtl`\n"
-		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strAdvBookingNo`,\n"
-		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`,\n"
-		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,4) NOT NULL AFTER `dblAmount`,\n"
-		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strWaiterNo`,\n"
+	    sql = "ALTER TABLE `tblqbilldtl` "
+		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strAdvBookingNo`, "
+		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`, "
+		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,4) NOT NULL AFTER `dblAmount`, "
+		    + "	CHANGE COLUMN `dblDiscountAmt` `dblDiscountAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strWaiterNo`, "
 		    + "	CHANGE COLUMN `dblDiscountPer` `dblDiscountPer` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `dblDiscountAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldiscdtl`\n"
-		    + "	ALTER `dblDiscAmt` DROP DEFAULT,\n"
-		    + "	ALTER `dblDiscPer` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblqbilldiscdtl` "
+		    + "	ALTER `dblDiscAmt` DROP DEFAULT, "
+		    + "	ALTER `dblDiscPer` DROP DEFAULT, "
 		    + "	ALTER `dblDiscOnAmt` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilldiscdtl`\n"
-		    + "	CHANGE COLUMN `dblDiscAmt` `dblDiscAmt` DECIMAL(18,4) NOT NULL AFTER `strPOSCode`,\n"
-		    + "	CHANGE COLUMN `dblDiscPer` `dblDiscPer` DECIMAL(18,4) NOT NULL AFTER `dblDiscAmt`,\n"
+	    sql = "ALTER TABLE `tblqbilldiscdtl` "
+		    + "	CHANGE COLUMN `dblDiscAmt` `dblDiscAmt` DECIMAL(18,4) NOT NULL AFTER `strPOSCode`, "
+		    + "	CHANGE COLUMN `dblDiscPer` `dblDiscPer` DECIMAL(18,4) NOT NULL AFTER `dblDiscAmt`, "
 		    + "	CHANGE COLUMN `dblDiscOnAmt` `dblDiscOnAmt` DECIMAL(18,4) NOT NULL AFTER `dblDiscPer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillmodifierdtl`\n"
-		    + "	ALTER `dblQuantity` DROP DEFAULT,\n"
-		    + "	ALTER `dblAmount` DROP DEFAULT,\n"
-		    + "	ALTER `dblDiscPer` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblbillmodifierdtl` "
+		    + "	ALTER `dblQuantity` DROP DEFAULT, "
+		    + "	ALTER `dblAmount` DROP DEFAULT, "
+		    + "	ALTER `dblDiscPer` DROP DEFAULT, "
 		    + "	ALTER `dblDiscAmt` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillmodifierdtl`\n"
-		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strModifierName`,\n"
-		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`,\n"
-		    + "	CHANGE COLUMN `dblDiscPer` `dblDiscPer` DECIMAL(18,4) NOT NULL AFTER `strSequenceNo`,\n"
+	    sql = "ALTER TABLE `tblbillmodifierdtl` "
+		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strModifierName`, "
+		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`, "
+		    + "	CHANGE COLUMN `dblDiscPer` `dblDiscPer` DECIMAL(18,4) NOT NULL AFTER `strSequenceNo`, "
 		    + "	CHANGE COLUMN `dblDiscAmt` `dblDiscAmt` DECIMAL(18,4) NOT NULL AFTER `dblDiscPer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillmodifierdtl`\n"
-		    + "	ALTER `dblQuantity` DROP DEFAULT,\n"
-		    + "	ALTER `dblAmount` DROP DEFAULT,\n"
-		    + "	ALTER `dblDiscPer` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblqbillmodifierdtl` "
+		    + "	ALTER `dblQuantity` DROP DEFAULT, "
+		    + "	ALTER `dblAmount` DROP DEFAULT, "
+		    + "	ALTER `dblDiscPer` DROP DEFAULT, "
 		    + "	ALTER `dblDiscAmt` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillmodifierdtl`\n"
-		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strModifierName`,\n"
-		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`,\n"
-		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`,\n"
-		    + "	CHANGE COLUMN `dblDiscPer` `dblDiscPer` DECIMAL(18,4) NOT NULL AFTER `strSequenceNo`,\n"
+	    sql = "ALTER TABLE `tblqbillmodifierdtl` "
+		    + "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strModifierName`, "
+		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `dblRate`, "
+		    + "	CHANGE COLUMN `dblAmount` `dblAmount` DECIMAL(18,4) NOT NULL AFTER `dblQuantity`, "
+		    + "	CHANGE COLUMN `dblDiscPer` `dblDiscPer` DECIMAL(18,4) NOT NULL AFTER `strSequenceNo`, "
 		    + "	CHANGE COLUMN `dblDiscAmt` `dblDiscAmt` DECIMAL(18,4) NOT NULL AFTER `dblDiscPer`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillpromotiondtl`\n"
+	    sql = "ALTER TABLE `tblbillpromotiondtl` "
 		    + "	ALTER `dblQuantity` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillpromotiondtl`\n"
+	    sql = "ALTER TABLE `tblbillpromotiondtl` "
 		    + "	CHANGE COLUMN `dblQuantity` `dblQuantity` DECIMAL(18,4) NOT NULL AFTER `strPromotionCode`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillsettlementdtl`\n"
+	    sql = "ALTER TABLE `tblbillsettlementdtl` "
 		    + "	ALTER `dblSettlementAmt` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbillsettlementdtl`\n"
-		    + "	CHANGE COLUMN `dblSettlementAmt` `dblSettlementAmt` DECIMAL(18,4) NOT NULL AFTER `strSettlementCode`,\n"
-		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,4) NULL DEFAULT '0.00' AFTER `dblSettlementAmt`,\n"
-		    + "	CHANGE COLUMN `dblActualAmt` `dblActualAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCustomerCode`,\n"
+	    sql = "ALTER TABLE `tblbillsettlementdtl` "
+		    + "	CHANGE COLUMN `dblSettlementAmt` `dblSettlementAmt` DECIMAL(18,4) NOT NULL AFTER `strSettlementCode`, "
+		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,4) NULL DEFAULT '0.00' AFTER `dblSettlementAmt`, "
+		    + "	CHANGE COLUMN `dblActualAmt` `dblActualAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCustomerCode`, "
 		    + "	CHANGE COLUMN `dblRefundAmt` `dblRefundAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `dblActualAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillsettlementdtl`\n"
+	    sql = "ALTER TABLE `tblqbillsettlementdtl` "
 		    + "	ALTER `dblSettlementAmt` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbillsettlementdtl`\n"
-		    + "	CHANGE COLUMN `dblSettlementAmt` `dblSettlementAmt` DECIMAL(18,4) NOT NULL AFTER `strSettlementCode`,\n"
-		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,4) NULL DEFAULT '0.00' AFTER `dblSettlementAmt`,\n"
-		    + "	CHANGE COLUMN `dblActualAmt` `dblActualAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCustomerCode`,\n"
+	    sql = "ALTER TABLE `tblqbillsettlementdtl` "
+		    + "	CHANGE COLUMN `dblSettlementAmt` `dblSettlementAmt` DECIMAL(18,4) NOT NULL AFTER `strSettlementCode`, "
+		    + "	CHANGE COLUMN `dblPaidAmt` `dblPaidAmt` DECIMAL(18,4) NULL DEFAULT '0.00' AFTER `dblSettlementAmt`, "
+		    + "	CHANGE COLUMN `dblActualAmt` `dblActualAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `strCustomerCode`, "
 		    + "	CHANGE COLUMN `dblRefundAmt` `dblRefundAmt` DECIMAL(18,4) NOT NULL DEFAULT '0.00' AFTER `dblActualAmt`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilltaxdtl`\n"
-		    + "	ALTER `dblTaxableAmount` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblbilltaxdtl` "
+		    + "	ALTER `dblTaxableAmount` DROP DEFAULT, "
 		    + "	ALTER `dblTaxAmount` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblbilltaxdtl`\n"
-		    + "	CHANGE COLUMN `dblTaxableAmount` `dblTaxableAmount` DECIMAL(18,4) NOT NULL AFTER `strTaxCode`,\n"
+	    sql = "ALTER TABLE `tblbilltaxdtl` "
+		    + "	CHANGE COLUMN `dblTaxableAmount` `dblTaxableAmount` DECIMAL(18,4) NOT NULL AFTER `strTaxCode`, "
 		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,4) NOT NULL AFTER `dblTaxableAmount`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilltaxdtl`\n"
-		    + "	ALTER `dblTaxableAmount` DROP DEFAULT,\n"
+	    sql = "ALTER TABLE `tblqbilltaxdtl` "
+		    + "	ALTER `dblTaxableAmount` DROP DEFAULT, "
 		    + "	ALTER `dblTaxAmount` DROP DEFAULT;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblqbilltaxdtl`\n"
-		    + "	CHANGE COLUMN `dblTaxableAmount` `dblTaxableAmount` DECIMAL(18,4) NOT NULL AFTER `strTaxCode`,\n"
+	    sql = "ALTER TABLE `tblqbilltaxdtl` "
+		    + "	CHANGE COLUMN `dblTaxableAmount` `dblTaxableAmount` DECIMAL(18,4) NOT NULL AFTER `strTaxCode`, "
 		    + "	CHANGE COLUMN `dblTaxAmount` `dblTaxAmount` DECIMAL(18,4) NOT NULL AFTER `dblTaxableAmount`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "ALTER TABLE `tblsetup`\n"
+	    sql = "ALTER TABLE `tblsetup` "
 		    + "	ADD COLUMN `strRoundOffBillFinalAmt` VARCHAR(5) NOT NULL DEFAULT 'Y' AFTER `strTakeAwayAreaForDirectBiller`;";
 	    i = ExecuteQuery(sql);
 
@@ -6566,23 +6566,132 @@ public class clsStructureUpdate
 		    + ";";
 	    i = ExecuteQuery(sql);
 
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strWERAOnlineOrderIntegration` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strAreaWiseCostCenterKOTPrintingYN`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strWERAMerchantOutletId` VARCHAR(10) NOT NULL DEFAULT '' AFTER `strWERAOnlineOrderIntegration`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strWERAAuthenticationAPIKey` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strWERAMerchantOutletId`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "ALTER TABLE `tblbillhd` "
+		    + "	CHANGE COLUMN `strRemarks` `strRemarks` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strReasonCode`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "ALTER TABLE `tblqbillhd` "
+		    + "	CHANGE COLUMN `strRemarks` `strRemarks` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strReasonCode`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "CREATE TABLE `tblonlinemenuimport` (  "
+		    + "	`strItemName` VARCHAR(100) NOT NULL DEFAULT '',  "
+		    + "	`strItemCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strIsModifier` VARCHAR(5) NOT NULL DEFAULT 'N',  "
+		    + "	`strModifierOnItemName` VARCHAR(100) NOT NULL DEFAULT '',  "
+		    + "	`strModifierCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strModifierGroupName` VARCHAR(100) NOT NULL DEFAULT '',  "
+		    + "	`strModifierGroupCode` VARCHAR(100) NOT NULL DEFAULT '',  "
+		    + "	`strGroupName` VARCHAR(50) NOT NULL DEFAULT '',  "
+		    + "	`strGroupCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strCostCenterName` VARCHAR(50) NOT NULL DEFAULT '',  "
+		    + "	`strCostCenterCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strMenuHeadName` VARCHAR(50) NOT NULL DEFAULT '',  "
+		    + "	`strMenuHeadCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strPOSCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strSubGroupName` VARCHAR(50) NOT NULL DEFAULT '',  "
+		    + "	`strSubGroupCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strAreaName` VARCHAR(30) NOT NULL DEFAULT '',  "
+		    + "	`strAreaCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strSubMenuHeadName` VARCHAR(30) NOT NULL DEFAULT '',  "
+		    + "	`strSubMenuHeadCode` VARCHAR(10) NOT NULL DEFAULT '',  "
+		    + "	`strExternalCode` VARCHAR(30) NOT NULL DEFAULT '',  "
+		    + "	`dblRate` DECIMAL(18,2) NOT NULL DEFAULT '0.00',  "
+		    + "	`min` INT(10) NOT NULL DEFAULT '0',  "
+		    + "	`max` INT(10) NOT NULL DEFAULT '0',  "
+		    + "	INDEX `strItemName` (`strItemName`, `strItemCode`)  "
+		    + ")  "
+		    + "COLLATE='latin1_swedish_ci'  "
+		    + "ENGINE=InnoDB  "
+		    + ";";
+	    i = ExecuteQuery(sql);
+	    
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `strFireCommunication` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strWERAAuthenticationAPIKey`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "ALTER TABLE `tblitemrtemp` "
+		    + "	ADD COLUMN `dblFiredQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strCRMRewardId`, "
+		    + " ADD COLUMN `dblPrintQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblFiredQty`,"
+		    + "	ADD COLUMN `strBillNote` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblPrintQty`;";
+	    i = ExecuteQuery(sql);
+	    	    
+	    
+	     sql = "ALTER TABLE `tblitemrtemp_bck` "
+		    + "	ADD COLUMN `dblFiredQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `strCRMRewardId`, "
+		    + " ADD COLUMN `dblPrintQty` DECIMAL(18,2) NOT NULL DEFAULT '0.00' AFTER `dblFiredQty`,"
+		    + "	ADD COLUMN `strBillNote` VARCHAR(100) NOT NULL DEFAULT '' AFTER `dblPrintQty`;";
+	    i = ExecuteQuery(sql);
+	    	  
+	    sql = "ALTER TABLE `tblbillhd` "
+		    + "	ADD COLUMN `strKOTToBillNote` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strNSCTax`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "ALTER TABLE `tblqbillhd` "
+		    + "	ADD COLUMN `strKOTToBillNote` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strNSCTax`;";
+	    i = ExecuteQuery(sql);
+	    
+	    
+	    sql = "ALTER TABLE `tblsetup` "
+		    + "	ADD COLUMN `dblUSDConverionRate` DECIMAL(10,2) NOT NULL DEFAULT '0.00' AFTER `strFireCommunication`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "	ALTER TABLE `tblbillhd` "
+		    + "	ADD COLUMN `dblUSDConverionRate` DECIMAL(10,2) NOT NULL DEFAULT '0.00' AFTER `strKOTToBillNote`;";
+	    i = ExecuteQuery(sql);
+
+	    sql = "	ALTER TABLE `tblqbillhd` "
+		    + "	ADD COLUMN `dblUSDConverionRate` DECIMAL(10,2) NOT NULL DEFAULT '0.00' AFTER `strKOTToBillNote`;";
+	    i = ExecuteQuery(sql);
+	    
+	    sql = "ALTER TABLE `tbldebitcardtype` "
+		    + "	ADD COLUMN `strSetExpiryTime` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strAuthorizeMemberCard`, "
+		    + "	ADD COLUMN `intExpiryTime` INT NOT NULL DEFAULT '0' AFTER `strSetExpiryTime`;";
+	    i = ExecuteQuery(sql);
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+
 	    /**
 	     * updating tblForms table tblforms structure update
 	     */
 	    funUpdateTblForms();
 
-	    sql = "CREATE TABLE IF NOT EXISTS `tblsuperuserdtl` (\n"
-		    + "`strUserCode` varchar(10) NOT NULL,\n"
-		    + "`strFormName` varchar(50) NOT NULL,\n"
-		    + "`strButtonName` varchar(50) NOT NULL,\n"
-		    + "`intSequence` int(11) NOT NULL,\n"
-		    + "`strAdd` char(10) NOT NULL,\n"
-		    + "`strEdit` char(10) NOT NULL,\n"
-		    + "`strDelete` char(10) NOT NULL,\n"
-		    + "`strView` char(10) NOT NULL,\n"
-		    + "`strPrint` char(10) NOT NULL,\n"
-		    + "`strSave` varchar(5) NOT NULL,\n"
-		    + "`strGrant` varchar(5) NOT NULL\n"
+	    sql = "CREATE TABLE IF NOT EXISTS `tblsuperuserdtl` ( "
+		    + "`strUserCode` varchar(10) NOT NULL, "
+		    + "`strFormName` varchar(50) NOT NULL, "
+		    + "`strButtonName` varchar(50) NOT NULL, "
+		    + "`intSequence` int(11) NOT NULL, "
+		    + "`strAdd` char(10) NOT NULL, "
+		    + "`strEdit` char(10) NOT NULL, "
+		    + "`strDelete` char(10) NOT NULL, "
+		    + "`strView` char(10) NOT NULL, "
+		    + "`strPrint` char(10) NOT NULL, "
+		    + "`strSave` varchar(5) NOT NULL, "
+		    + "`strGrant` varchar(5) NOT NULL "
 		    + ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 	    i = ExecuteQuery(sql);
 
@@ -6592,82 +6701,82 @@ public class clsStructureUpdate
 	    {
 		if (rsSuper.getInt(1) == 0)
 		{
-		    sql = "INSERT INTO `tblsuperuserdtl` (`strUserCode`, `strFormName`, `strButtonName`, `intSequence`, `strAdd`, `strEdit`, `strDelete`, `strView`, `strPrint`, `strSave`, `strGrant`) VALUES\n"
-			    + "	('super', 'Settlement', 'Settlement copy', 2, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Price Menu', 'Price Menu-01', 3, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'User Registration', 'User Registration copy', 4, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Property Setup', 'Property Setup-01 copy', 5, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Building Master', 'BuildingMaster', 6, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Reason Master', 'Reason Master copy', 7, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Home Delivery Person', 'DeliveryBoy', 8, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Assign Home Delivery', 'AsignHomeDelivery', 9, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Cost Center', 'Cost Center', 10, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Menu Item', 'Menu Item-01 copy', 11, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Item Modifier', 'Item Modifier', 12, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Customer Master', 'CustomerMaster', 13, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Waiter Master', 'WaiterMaster', 14, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Group', 'Group copy', 15, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'SubGroup', 'Sub Group copy', 16, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Tax Master', 'Tax Master copy', 17, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Table Master', 'TableMaster', 18, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Menu Head', 'Menu Head copy', 19, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Area Master', 'AreaMaster', 20, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Shift Master', 'ShiftMaster', 21, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'DebitCardMaster', 'CardTypeMaster', 22, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'DebitCardRegister', 'RegisterDebitCard', 23, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'RechargeDebitCard', 'RechargeCard', 24, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'GiftVoucherMaster', 'giftvoucher', 25, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'TDH', 'TDH', 26, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'CustomerTypeMaster', 'CustomerTypeMaster', 27, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'ReOrderTime', 'reordertime', 28, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'CounterMaster', 'CounterMaster', 29, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Stock In', 'Settlement copy', 62, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Stock Out', 'Price Menu-01', 61, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'POS Master', 'User Registration copy', 60, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Void Bill', 'Property Setup-01 copy', 59, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Physical Stock Posting', 'BuildingMaster', 58, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Advance Order', 'Reason Master copy', 57, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Modify Bill', 'DeliveryBoy', 56, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Make KOT', 'AsignHomeDelivery', 55, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Direct Biller', 'Cost Center', 1, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Make Bill', 'Menu Item-01 copy', 54, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Advance Booking Receipt', 'Item Modifier', 63, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Stock Adujstment', 'CustomerMaster', 64, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'SettleBill', 'WaiterMaster', 74, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Cash Management', 'Group copy', 73, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Kitchen System', 'Sub Group copy', 72, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'VoidKot', 'Tax Master copy', 71, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'VoidStock', 'TableMaster', 70, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Move Table', 'Menu Head copy', 69, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Unsettle Bill', 'AreaMaster', 68, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'StructureUpdate', 'ShiftMaster', 67, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Move KOT', 'CardTypeMaster', 66, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'SplitBill', 'RegisterDebitCard', 65, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'ReOrder', 'RechargeCard', 53, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Sales Report', 'Settlement copy', 52, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Stock Flash Report', 'Price Menu-01', 39, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Day End', 'User Registration copy', 38, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Advance Order Flash', 'Property Setup-01 copy', 37, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Stock In Out Flash', 'BuildingMaster', 36, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Day End Flash', 'Reason Master copy', 35, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Reprint', 'DeliveryBoy', 34, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Bill Wise Report', 'Settlement copy', 33, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Item Wise Report', 'Price Menu-01', 32, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Group Wise Report', 'User Registration copy', 31, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'SubGroupWise Report', 'Property Setup-01 copy', 30, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'OperatorWise Report', 'BuildingMaster', 40, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'SettlementWise Report', 'Reason Master copy', 41, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Void Bill Report', 'DeliveryBoy', 51, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Cost Centre Report', 'AsignHomeDelivery', 50, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Tax Wise Report', 'Cost Center', 49, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Cash Mgmt Report', 'Menu Item-01 copy', 48, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'Audit Flash', 'Item Modifier', 47, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'AvgItemPerBill', 'CustomerMaster', 46, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'AvgPerCover', 'WaiterMaster', 45, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'AvgTicketValue', 'Group copy', 44, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'DebitCardFlashReports', 'Sub Group copy', 43, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'TableStatusReport', 'Tax Master copy', 42, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
-			    + "	('super', 'ImportExcel', 'ImportExcel', 75, 'true', 'true', 'true', 'true', 'true', 'true', 'true'),\n"
+		    sql = "INSERT INTO `tblsuperuserdtl` (`strUserCode`, `strFormName`, `strButtonName`, `intSequence`, `strAdd`, `strEdit`, `strDelete`, `strView`, `strPrint`, `strSave`, `strGrant`) VALUES "
+			    + "	('super', 'Settlement', 'Settlement copy', 2, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Price Menu', 'Price Menu-01', 3, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'User Registration', 'User Registration copy', 4, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Property Setup', 'Property Setup-01 copy', 5, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Building Master', 'BuildingMaster', 6, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Reason Master', 'Reason Master copy', 7, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Home Delivery Person', 'DeliveryBoy', 8, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Assign Home Delivery', 'AsignHomeDelivery', 9, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Cost Center', 'Cost Center', 10, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Menu Item', 'Menu Item-01 copy', 11, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Item Modifier', 'Item Modifier', 12, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Customer Master', 'CustomerMaster', 13, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Waiter Master', 'WaiterMaster', 14, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Group', 'Group copy', 15, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'SubGroup', 'Sub Group copy', 16, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Tax Master', 'Tax Master copy', 17, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Table Master', 'TableMaster', 18, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Menu Head', 'Menu Head copy', 19, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Area Master', 'AreaMaster', 20, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Shift Master', 'ShiftMaster', 21, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'DebitCardMaster', 'CardTypeMaster', 22, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'DebitCardRegister', 'RegisterDebitCard', 23, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'RechargeDebitCard', 'RechargeCard', 24, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'GiftVoucherMaster', 'giftvoucher', 25, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'TDH', 'TDH', 26, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'CustomerTypeMaster', 'CustomerTypeMaster', 27, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'ReOrderTime', 'reordertime', 28, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'CounterMaster', 'CounterMaster', 29, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Stock In', 'Settlement copy', 62, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Stock Out', 'Price Menu-01', 61, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'POS Master', 'User Registration copy', 60, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Void Bill', 'Property Setup-01 copy', 59, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Physical Stock Posting', 'BuildingMaster', 58, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Advance Order', 'Reason Master copy', 57, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Modify Bill', 'DeliveryBoy', 56, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Make KOT', 'AsignHomeDelivery', 55, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Direct Biller', 'Cost Center', 1, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Make Bill', 'Menu Item-01 copy', 54, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Advance Booking Receipt', 'Item Modifier', 63, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Stock Adujstment', 'CustomerMaster', 64, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'SettleBill', 'WaiterMaster', 74, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Cash Management', 'Group copy', 73, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Kitchen System', 'Sub Group copy', 72, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'VoidKot', 'Tax Master copy', 71, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'VoidStock', 'TableMaster', 70, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Move Table', 'Menu Head copy', 69, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Unsettle Bill', 'AreaMaster', 68, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'StructureUpdate', 'ShiftMaster', 67, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Move KOT', 'CardTypeMaster', 66, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'SplitBill', 'RegisterDebitCard', 65, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'ReOrder', 'RechargeCard', 53, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Sales Report', 'Settlement copy', 52, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Stock Flash Report', 'Price Menu-01', 39, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Day End', 'User Registration copy', 38, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Advance Order Flash', 'Property Setup-01 copy', 37, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Stock In Out Flash', 'BuildingMaster', 36, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Day End Flash', 'Reason Master copy', 35, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Reprint', 'DeliveryBoy', 34, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Bill Wise Report', 'Settlement copy', 33, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Item Wise Report', 'Price Menu-01', 32, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Group Wise Report', 'User Registration copy', 31, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'SubGroupWise Report', 'Property Setup-01 copy', 30, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'OperatorWise Report', 'BuildingMaster', 40, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'SettlementWise Report', 'Reason Master copy', 41, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Void Bill Report', 'DeliveryBoy', 51, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Cost Centre Report', 'AsignHomeDelivery', 50, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Tax Wise Report', 'Cost Center', 49, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Cash Mgmt Report', 'Menu Item-01 copy', 48, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'Audit Flash', 'Item Modifier', 47, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'AvgItemPerBill', 'CustomerMaster', 46, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'AvgPerCover', 'WaiterMaster', 45, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'AvgTicketValue', 'Group copy', 44, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'DebitCardFlashReports', 'Sub Group copy', 43, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'TableStatusReport', 'Tax Master copy', 42, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
+			    + "	('super', 'ImportExcel', 'ImportExcel', 75, 'true', 'true', 'true', 'true', 'true', 'true', 'true'), "
 			    + "	('super', 'PromotionGroupMaster', 'Promotion Group Master', 75, 'true', 'true', 'true', 'true', 'true', 'true', 'true');";
 
 		    i = ExecuteQuery(sql);
@@ -6734,52 +6843,52 @@ public class clsStructureUpdate
 	    sql = "DROP VIEW `vqbillhd`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqbillhd as\n"
-		    + "select * from tblbillhd \n"
-		    + "union all \n"
+	    sql = "create view vqbillhd as "
+		    + "select * from tblbillhd  "
+		    + "union all  "
 		    + "select * from tblqbillhd;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqbilldtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqbilldtl as\n"
-		    + "select * from tblbilldtl \n"
-		    + "union \n"
+	    sql = "create view vqbilldtl as "
+		    + "select * from tblbilldtl  "
+		    + "union  "
 		    + "select * from tblqbilldtl;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqbillsettlementdtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqbillsettlementdtl as\n"
-		    + "select * from tblbillsettlementdtl\n"
-		    + "union all \n"
+	    sql = "create view vqbillsettlementdtl as "
+		    + "select * from tblbillsettlementdtl "
+		    + "union all  "
 		    + "select * from tblqbillsettlementdtl;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqbillmodifierdtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqbillmodifierdtl as\n"
-		    + "select * from tblbillmodifierdtl\n"
-		    + "union \n"
+	    sql = "create view vqbillmodifierdtl as "
+		    + "select * from tblbillmodifierdtl "
+		    + "union  "
 		    + "select * from tblqbillmodifierdtl;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqbilltaxdtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqbilltaxdtl as\n"
-		    + "select * from tblbilltaxdtl\n"
-		    + "union \n"
+	    sql = "create view vqbilltaxdtl as "
+		    + "select * from tblbilltaxdtl "
+		    + "union  "
 		    + "select * from tblqbilltaxdtl;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqbillhddtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqbillhddtl as\n"
+	    sql = "create view vqbillhddtl as "
 		    + "select a.strBillNo,a.dteBillDate,a.strPOSCode,a.strCustomerCode,b.stritemcode "
 		    + ", b.strItemName,b.dblRate, b.dblquantity, b.dblamount,b.dblTaxAmount "
 		    + ",a.strOperationType,b.strKOTNo,a.strUserCreated,b.strCounterCode,b.strWaiterNo "
@@ -6799,59 +6908,59 @@ public class clsStructureUpdate
 	    sql = "DROP VIEW `vqbillhdsettlementdtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqbillhdsettlementdtl as \n"
-		    + "select a.strBillNo,a.dteBillDate,a.strPOSCode,b.strSettlementCode,b.dblSettlementAmt\n"
+	    sql = "create view vqbillhdsettlementdtl as  "
+		    + "select a.strBillNo,a.dteBillDate,a.strPOSCode,b.strSettlementCode,b.dblSettlementAmt "
 		    + ",a.strUserCreated,a.dteDateCreated,a.strOperationType,a.dblGrandTotal,a.dblDiscountAmt"
-		    + ",a.strCustomerCode  \n"
-		    + "from tblbillhd a, tblbillsettlementdtl b \n"
-		    + "where a.strBillNo = b.strBillNo \n"
-		    + "Union \n"
-		    + "select a.strBillNo,a.dteBillDate,a.strPOSCode,b.strSettlementCode,b.dblSettlementAmt\n"
-		    + ",a.strUserCreated,a.dteDateCreated,a.strOperationType,a.dblGrandTotal,a.dblDiscountAmt \n"
-		    + ",a.strCustomerCode  \n"
-		    + "from tblqbillhd a, tblqbillsettlementdtl b \n"
+		    + ",a.strCustomerCode   "
+		    + "from tblbillhd a, tblbillsettlementdtl b  "
+		    + "where a.strBillNo = b.strBillNo  "
+		    + "Union  "
+		    + "select a.strBillNo,a.dteBillDate,a.strPOSCode,b.strSettlementCode,b.dblSettlementAmt "
+		    + ",a.strUserCreated,a.dteDateCreated,a.strOperationType,a.dblGrandTotal,a.dblDiscountAmt  "
+		    + ",a.strCustomerCode   "
+		    + "from tblqbillhd a, tblqbillsettlementdtl b  "
 		    + "where a.strBillNo = b.strBillNo ";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqadvbookdtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqadvbookdtl as\n"
-		    + "select * from tbladvbookbilldtl \n"
-		    + "union \n"
+	    sql = "create view vqadvbookdtl as "
+		    + "select * from tbladvbookbilldtl  "
+		    + "union  "
 		    + "select * from tblqadvbookbilldtl";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqadvbookhd`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqadvbookhd as\n"
-		    + "select * from tbladvbookbillhd \n"
-		    + "union\n"
+	    sql = "create view vqadvbookhd as "
+		    + "select * from tbladvbookbillhd  "
+		    + "union "
 		    + "select * from tblqadvbookbillhd;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqadvreceiptdtl`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqadvreceiptdtl as\n"
-		    + "select * from tbladvancereceiptdtl \n"
-		    + "union\n"
+	    sql = "create view vqadvreceiptdtl as "
+		    + "select * from tbladvancereceiptdtl  "
+		    + "union "
 		    + "select * from tblqadvancereceiptdtl;";
 	    i = ExecuteQuery(sql);
 
 	    sql = "DROP VIEW `vqadvreceipthd`;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqadvreceipthd as\n"
-		    + "select * from tbladvancereceipthd \n"
-		    + "union\n"
+	    sql = "create view vqadvreceipthd as "
+		    + "select * from tbladvancereceipthd  "
+		    + "union "
 		    + "select * from tblqadvancereceipthd;";
 	    i = ExecuteQuery(sql);
 
-	    sql = "create view vqadvordermodifierdtl as\n"
-		    + "select * from tbladvordermodifierdtl \n"
-		    + "union \n"
+	    sql = "create view vqadvordermodifierdtl as "
+		    + "select * from tbladvordermodifierdtl  "
+		    + "union  "
 		    + "select * from tblqadvordermodifierdtl ";
 	    i = ExecuteQuery(sql);
 
@@ -7272,173 +7381,173 @@ public class clsStructureUpdate
 
     private void funAddIndexing()
     {
-	String sql = "ALTER TABLE `tblbillcomplementrydtl`\n"
+	String sql = "ALTER TABLE `tblbillcomplementrydtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	int i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblqbillcomplementrydtl`\n"
+	sql = "	ALTER TABLE `tblqbillcomplementrydtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblbilldiscdtl`\n"
+	sql = "	ALTER TABLE `tblbilldiscdtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblqbilldiscdtl`\n"
+	sql = "ALTER TABLE `tblqbilldiscdtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblbilldtl`\n"
+	sql = "	ALTER TABLE `tblbilldtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblqbilldtl`\n"
+	sql = "	ALTER TABLE `tblqbilldtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblbillpromotiondtl`\n"
+	sql = "	ALTER TABLE `tblbillpromotiondtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblqbillpromotiondtl`\n"
+	sql = "ALTER TABLE `tblqbillpromotiondtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblbillseries`\n"
+	sql = "	ALTER TABLE `tblbillseries` "
 		+ "	ADD INDEX `strBillSeries` (`strBillSeries`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblvoidbillhd`\n"
+	sql = "	ALTER TABLE `tblvoidbillhd` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblvoidbilldtl`\n"
+	sql = "	ALTER TABLE `tblvoidbilldtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblvoidbillsettlementdtl`\n"
+	sql = "	ALTER TABLE `tblvoidbillsettlementdtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblhomedeldtl`\n"
+	sql = "	ALTER TABLE `tblhomedeldtl` "
 		+ "	ADD INDEX `strBillNo` (`strBillNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbladvancereceiptdtl`\n"
+	sql = "	ALTER TABLE `tbladvancereceiptdtl` "
 		+ "	ADD INDEX `strReceiptNo` (`strReceiptNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbladvbooktaxdtl`\n"
+	sql = "	ALTER TABLE `tbladvbooktaxdtl` "
 		+ "	ADD INDEX `strAdvBookingNo` (`strAdvBookingNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tbltempomedelv`\n"
+	sql = "ALTER TABLE `tbltempomedelv` "
 		+ "	ADD INDEX `strCustomerCode` (`strCustomerCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbladvancebookingtemp`\n"
+	sql = "	ALTER TABLE `tbladvancebookingtemp` "
 		+ "	ADD INDEX `strCustomerCode` (`strCustomerCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbladvbooktaxtemp`\n"
-		+ "	ADD INDEX `strTaxCode` (`strTaxCode`);\n"
+	sql = "	ALTER TABLE `tbladvbooktaxtemp` "
+		+ "	ADD INDEX `strTaxCode` (`strTaxCode`); "
 		+ "	";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblareawisedelboywisecharges`\n"
+	sql = "	ALTER TABLE `tblareawisedelboywisecharges` "
 		+ "	ADD INDEX `strCustAreaCode` (`strCustAreaCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblatvreport`\n"
-		+ "	ADD INDEX `strPosCode` (`strPosCode`);\n"
+	sql = "	ALTER TABLE `tblatvreport` "
+		+ "	ADD INDEX `strPosCode` (`strPosCode`); "
 		+ "	";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblaudit`\n"
+	sql = "	ALTER TABLE `tblaudit` "
 		+ "	ADD INDEX `strDocNo` (`strDocNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblbuypromotiondtl`\n"
+	sql = "	ALTER TABLE `tblbuypromotiondtl` "
 		+ "	ADD INDEX `strPromoCode` (`strPromoCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblcashiermanagement`\n"
+	sql = "	ALTER TABLE `tblcashiermanagement` "
 		+ "	ADD INDEX `strTransactionId` (`strTransactionId`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblcharactersticsmaster`\n"
+	sql = "ALTER TABLE `tblcharactersticsmaster` "
 		+ "	ADD INDEX `strCharCode` (`strCharCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tblcharvalue`\n"
+	sql = "	ALTER TABLE `tblcharvalue` "
 		+ "	ADD INDEX `strCharCode` (`strCharCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbldayendprocess`\n"
+	sql = "	ALTER TABLE `tbldayendprocess` "
 		+ "	ADD INDEX `strPOSCode_dtePOSDate` (`strPOSCode`, `dtePOSDate`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbldebitcardbilldetails`\n"
+	sql = "	ALTER TABLE `tbldebitcardbilldetails` "
 		+ "	ADD INDEX `strBillNo_strCardNo` (`strBillNo`, `strCardNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tbldebitcardmaster`\n"
+	sql = "ALTER TABLE `tbldebitcardmaster` "
 		+ "	ADD INDEX `strCardTypeCode_strCardNo` (`strCardTypeCode`, `strCardNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbldebitcardrevenue`\n"
+	sql = "	ALTER TABLE `tbldebitcardrevenue` "
 		+ "	ADD INDEX `strCardNo` (`strCardNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tbldebitcardsettlementdtl`\n"
+	sql = "ALTER TABLE `tbldebitcardsettlementdtl` "
 		+ "	ADD INDEX `strSettlementCode` (`strSettlementCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbldebitcardtabletemp`\n"
+	sql = "	ALTER TABLE `tbldebitcardtabletemp` "
 		+ "	ADD INDEX `strCardNo` (`strCardNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tbldebitcardtype`\n"
+	sql = "ALTER TABLE `tbldebitcardtype` "
 		+ "	ADD INDEX `strCardTypeCode` (`strCardTypeCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbldeliveryboycategorymaster`\n"
+	sql = "	ALTER TABLE `tbldeliveryboycategorymaster` "
 		+ "	ADD INDEX `strDelBoyCategoryCode` (`strDelBoyCategoryCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblforms`\n"
+	sql = "ALTER TABLE `tblforms` "
 		+ "	ADD INDEX `strFormName` (`strFormName`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblimportexcel`\n"
+	sql = "ALTER TABLE `tblimportexcel` "
 		+ "	ADD INDEX `strItemName` (`strItemName`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblinternal`\n"
+	sql = "ALTER TABLE `tblinternal` "
 		+ "	ADD INDEX `strTransactionType` (`strTransactionType`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblkottaxdtl`\n"
+	sql = "ALTER TABLE `tblkottaxdtl` "
 		+ "	ADD INDEX `strKOTNo` (`strKOTNo`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbllaststoreadvbookingbill`\n"
+	sql = "	ALTER TABLE `tbllaststoreadvbookingbill` "
 		+ "	ADD INDEX `strPosCode` (`strPosCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tbllinevoid`\n"
+	sql = "ALTER TABLE `tbllinevoid` "
 		+ "	ADD INDEX `strPosCode` (`strPosCode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tblorderanalysis`\n"
+	sql = "ALTER TABLE `tblorderanalysis` "
 		+ "	ADD INDEX `strField1` (`strField1`);";
 	i = ExecuteQuery(sql);
 
-	sql = "	ALTER TABLE `tbltempsalesflash`\n"
+	sql = "	ALTER TABLE `tbltempsalesflash` "
 		+ "	ADD INDEX `strcode` (`strcode`);";
 	i = ExecuteQuery(sql);
 
-	sql = "ALTER TABLE `tbltempsalesflash1`\n"
+	sql = "ALTER TABLE `tbltempsalesflash1` "
 		+ "	ADD INDEX `strbillno` (`strbillno`);";
 	i = ExecuteQuery(sql);
 
@@ -7446,86 +7555,86 @@ public class clsStructureUpdate
 
     private void funUpdateBillDate()
     {
-	String sql = "  update tblbilldiscdtl a \n"
-		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	String sql = "  update tblbilldiscdtl a  "
+		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	int i = ExecuteQuery(sql);
 
-	sql = "  update tblbillmodifierdtl a \n"
-		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblbillmodifierdtl a  "
+		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblbillpromotiondtl a \n"
-		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblbillpromotiondtl a  "
+		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblbilltaxdtl a \n"
-		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblbilltaxdtl a  "
+		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblbillsettlementdtl a \n"
-		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblbillsettlementdtl a  "
+		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblhomedeldtl a \n"
-		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblhomedeldtl a  "
+		+ " join tblbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "update tblqbilldiscdtl a \n"
-		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "update tblqbilldiscdtl a  "
+		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblqbillmodifierdtl a \n"
-		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblqbillmodifierdtl a  "
+		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = " update tblqbillpromotiondtl a \n"
-		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = " update tblqbillpromotiondtl a  "
+		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblqbilltaxdtl a \n"
-		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblqbilltaxdtl a  "
+		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblqbillsettlementdtl a \n"
-		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblqbillsettlementdtl a  "
+		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblhomedeldtl a \n"
-		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblhomedeldtl a  "
+		+ " join tblqbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "  update tblvoidmodifierdtl a \n"
-		+ " join tblvoidbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "  update tblvoidmodifierdtl a  "
+		+ " join tblvoidbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
 
-	sql = "   update tblvoidbillsettlementdtl a \n"
-		+ " join tblvoidbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode \n"
+	sql = "   update tblvoidbillsettlementdtl a  "
+		+ " join tblvoidbillhd b on a.strBillNo=b.strBillNo and a.strClientCode=b.strClientCode  "
 		+ " set a.dteBillDate=b.dteBillDate "
 		+ " where a.dteBillDate='0000-00-00 00:00:00' ;";
 	i = ExecuteQuery(sql);
@@ -7541,12 +7650,12 @@ public class clsStructureUpdate
 		if (clsGlobalVarClass.gPrintVatNoPOS.equals("Y"))
 		{
 		    billNote += "  Vat No. : " + clsGlobalVarClass.gPOSVatNo;
-		    billNote += "\n";
+		    billNote += " ";
 		}
 		if (clsGlobalVarClass.gPrintServiceTaxNoPOS.equals("Y"))
 		{
 		    billNote += "  Service Tax No. : " + clsGlobalVarClass.gPOSServiceTaxNo;
-		    billNote += "\n";
+		    billNote += " ";
 		}
 	    }
 	    else
@@ -7554,12 +7663,12 @@ public class clsStructureUpdate
 		if (clsGlobalVarClass.gPrintVatNo)
 		{
 		    billNote += "  Vat No. : " + clsGlobalVarClass.gVatNo;
-		    billNote += "\n";
+		    billNote += " ";
 		}
 		if (clsGlobalVarClass.gPrintServiceTaxNo)
 		{
 		    billNote += "  Service Tax No. : " + clsGlobalVarClass.gServiceTaxNo;
-		    billNote += "\n";
+		    billNote += " ";
 		}
 	    }
 
@@ -7646,158 +7755,158 @@ public class clsStructureUpdate
 	    //AU for Authentication For Utility                        
 	    if (clsGlobalVarClass.gPOSVerion.equalsIgnoreCase("Lite"))
 	    {
-		sql = "INSERT INTO `tblforms` (`strFormName`, `strModuleName`, `strModuleType`, `strImageName`, `intSequence`, `strColorImageName`,`strRequestMapping`) VALUES\n"
-			//+ "	('frmAddKOTToBill', 'Add KOT To Bill', 'T', 'imgKOTToBill', 85, 'imgKOTToBill1','frmPOSAddKOTToBill.html'),\n"
-			+ "	('frmAdvanceBooking', 'Advance Order', 'T', 'imgAdvanceOrder', 24, 'imgAdvanceOrder1','frmPOSAdvanceBooking.html'),\n"
-			+ "	('frmAdvanceOrderFlash', 'Advance Order Flash', 'R', 'imgAdvanceOrderFlash', 47, 'imgAdvanceOrderFlash1','frmPOSAdvanceOrderFlash.html'),\n"
-			+ "	('frmAdvanceOrderTypeMaster', 'Advance Order Type Master', 'M', 'imgAdvanceOrderTypeMaster', 86, 'imgAdvanceOrderTypeMaster','frmPOSAdvanceOrderTypeMaster.html'),\n"
-			+ "	('frmAIPB', 'AvgItemPerBill', 'R', 'imgAvgItemsPerBill', 63, 'imgAvgItemsPerBill1','frmPOSAIPB.html'),\n"
-			+ "	('frmAPC', 'AvgPerCover', 'R', 'imgAveragePC', 64, 'imgAveragePC1','frmPOSAPC.html'),\n"
-			+ "	('frmAreaMaster', 'Area Master', 'M', 'imgAreaMaster', 54, 'imgAreaMaster1','frmPOSAreaMaster.html'),\n"
-			//+ "	('frmAssignHomeDelivery', 'AssignHomeDelivery', 'T', 'imgAsignHomeDelivery', 99, 'imgAsignHomeDelivery1','frmPOSAssignHomeDelivery.html'),\n"
-			+ "	('frmATV', 'AvgTicketValue', 'R', 'imgAvgValue', 65, 'imgAvgValue1','frmPOSATV.html'),\n"
-			+ "	('frmAuditFlash', 'Audit Flash', 'R', 'imgAuditFlash', 46, 'imgAuditFlash1','frmPOSAuditFlash.html'),\n"
-			+ "	('frmAuditorReport', 'Auditor Report', 'R', 'imgAuditorReport', 97, 'imgAuditorReport','frmPOSAuditorReport.html'),\n"
-			+ "	('frmAvdBookReceipt', 'Advance Booking Receipt', 'T', 'imgAdvanceBookingReceipt', 31, 'imgAdvanceBookingReceipt1','frmPOSAvdBookReceipt.html'),\n"
-			//+ "	('frmBillFromKOTs', 'BillFromKOTs', 'T', 'imgMakeBillFromKOT', 76, 'imgMakeBillFromKOT1','frmPOSBillFromKOTs.html'),\n"
-			+ "	('frmBillReport', 'Bill Wise Report', 'R', 'imgBillWiseReport', 9, 'imgBillWiseReport','frmPOSBillReport.html'),\n"
-			//+ "	('frmBulkMenuItemPricing', 'Bulk Menu Item Pricing', 'M', 'imgBulkMenuItemPricing', 88, 'imgBulkMenuItemPricing1','frmPOSBulkMenuItemPricing.html'),\n"
-			//+ "	('frmCashManagement', 'Cash Management', 'T', 'imgCashManagement', 43, 'imgCashManagement1','frmPOSCashManagement.html'),\n"
-			//+ "	('frmCashMgmtReport', 'Cash Mgmt Report', 'R', 'imgCashMgmtFlashReport', 44, 'imgCashMgmtFlashReport1','frmPOSCashMgmtReport.html'),\n"
-			//+ "	('frmCloseProductionOrder', 'Close Producion Order', 'T', 'imgProductionOrder', 84, 'imgProductionOrder1','frmPOSCloseProductionOrder.html'),\n"
-			+ "	('frmComplimentarySettlement', 'Complimentary Settlement Report', 'R', 'imgComplimentarySettlementReport', 93, 'imgComplimentarySettlementReport','frmPOSComplimentarySettlement.html'),\n"
-			+ "	('frmCostCenter', 'Cost Center', 'M', 'imgCostCenter', 22, 'imgCostCenter1','frmPOSCostCenter.html'),\n"
-			+ "	('frmCostCenterWiseReport', 'Cost Centre Report', 'R', 'imgCostCenterReport', 39, 'imgCostCenterReport1','frmPOSCostCenterWiseReport.html'),\n"
-			+ "	('frmCounterMaster', 'CounterMaster', 'M', 'imgCounterMaster', 73, 'imgCounterMaster1','frmPOSCounterMaster.html'),\n"
-			+ "	('frmCounterWiseSalesReport', 'Counter Wise Sales Report', 'R', 'imgCounterWiseSalesReport', 94, 'imgCounterWiseSalesReport','frmPOSCounterWiseSalesReport.html'),\n"
-			+ "	('frmCustAreaMaster', 'Customer Area Master', 'M', 'imgCustAreaMaster', 11, 'imgCustAreaMaster1','frmPOSCustAreaMaster.html'),\n"
-			+ "	('frmCustomerMaster', 'Customer Master', 'M', 'imgCustomerMaster', 30, 'imgCustomerMaster1','frmPOSCustomerMaster.html'),\n"
-			+ "	('frmCustomerTypeMaster', 'CustomerTypeMaster', 'M', 'imgCustomerTypeMaster', 68, 'imgCustomerTypeMaster1','frmPOSCustomerTypeMaster.html'),\n"
-			+ "	('frmDayEndFlash', 'Day End Flash', 'R', 'imgDayEndFlash', 49, 'imgDayEndFlash1','frmPOSDayEndFlash.html'),\n"
-			+ "	('frmDayEndProcess', 'Day End', 'T', 'imgDayEnd', 20, 'imgDayEnd1','frmPOSDayEndProcess.html'),\n"
-			+ "	('frmDayEndWithoutDetails', 'DayEndWithoutDetails', 'T', 'imgDayEndwithoutDetails', 80, 'imgDayEndwithoutDetails1','frmPOSDayEndWithoutDetails.html'),\n"
-			//+ "	('frmDebitCardFlashReports', 'DebitCardFlashReports', 'R', 'imgDebitCardFlash', 66, 'imgDebitCardFlash1','frmPOSDebitCardFlashReports.html'),\n"
-			//+ "	('frmDebitCardMaster', 'DebitCardMaster', 'M', 'imgCardTypeMaster', 58, 'imgCardTypeMaster1','frmPOSDebitCardMaster.html'),\n"
-			+ "	('frmDeliveryboyIncentive', 'DeliveryboyIncentive', 'R', 'imgDeliveryboyIncentive', 105, 'imgDeliveryboyIncentive1','frmPOSDeliveryboyIncentive.html'),\n"
-			+ "	('frmDeliveryPersonMaster', 'Home Delivery Person', 'M', 'imgDeliveryBoy', 19, 'imgDeliveryBoy1','frmPOSDeliveryPersonMaster.html'),\n"
-			+ "	('frmDirectBiller', 'Direct Biller', 'T', 'imgDirectBiller', 28, 'imgDirectBiller1','frmPOSDirectBiller.html'),\n"
-			+ "	('frmDiscountReport', 'Discount Report', 'R', 'imgDiscountReport', 89, 'imgDiscountReport1','frmPOSDiscountReport.html'),\n"
-			//+ "	('frmGiftVoucherIssue', 'GiftVoucherIssue', 'T', 'imgGiftVoucherIssue', 78, 'imgGiftVoucherIssue1','frmPOSGiftVoucherIssue.html'),\n"
-			//+ "	('frmGiftVoucherMaster', 'GiftVoucherMaster', 'M', 'imgGiftVoucher', 61, 'imgGiftVoucher1','frmPOSGiftVoucherMaster.html'),\n"
-			+ "	('frmGroup', 'Group', 'M', 'imgGroup', 34, 'imgGroup1','frmGroup.html'),\n"
-			+ "	('frmGroupSubGroupWiseReport', 'Group-SubGroup Wise Report', 'R', 'imgGrpSubGrpWise', 90, 'imgGrpSubGrpWise1','frmPOSGroupSubGroupWiseReport.html'),\n"
-			+ "	('frmGroupWiseReport', 'Group Wise Report', 'R', 'imgGroupWiseReport', 13, 'imgGroupWiseReport','frmPOSGroupWiseReport.html'),\n"
-			+ "	('frmImportExcelFile', 'ImportExcel', 'T', 'imgImportData', 74, 'imgImportData1','frmPOSImportExcelFile.html'),\n"
-			+ "	('frmItemModifier', 'Item Modifier', 'M', 'imgItemModifier', 27, 'imgItemModifier1','frmPOSItemModifier.html'),\n"
-			+ "	('frmItemWiseReport', 'Item Wise Report', 'R', 'imgItemWiseReport', 10, 'imgItemWiseReport1','frmPOSItemWiseReport.html'),\n"
-			//+ "	('frmKitchenDisplaySystem', 'Kitchen System', 'T', 'imgKitchenDisplaySystem', 45, 'imgKitchenDisplaySystem1','frmPOSKitchenDisplaySystem.html'),\n"
-			//+ "	('frmLoyaltyPointMaster', 'LoyaltyPoints', 'M', 'imgLoyaltyMaster', 75, 'imgLoyaltyMaster','frmPOSLoyaltyPointMaster.html'),\n"
-			//+ "	('frmLoyaltyPointReport', 'Loyalty Point Report', 'R', 'imgLoyaltyPointReport', 91, 'imgLoyaltyPointReport1','frmPOSLoyaltyPointReport.html'),\n"
-			//+ "	('frmMakeBill', 'Make Bill', 'T', 'imgMakeBill', 29, 'imgMakeBill1','frmPOSMakeBill.html'),\n"
-			+ "	('frmMenuHead', 'Menu Head', 'M', 'imgMenuHead', 38, 'imgMenuHead1','frmPOSMenuHead.html'),\n"
-			+ "	('frmMenuHeadWiseReport', 'Menu Head Wise', 'R', 'imgMenuHeadWiseReport', 100, 'imgMenuHeadWiseReport','frmPOSMenuHeadWiseReport.html'),\n"
-			+ "	('frmMenuItem', 'Menu Item', 'M', 'imgMenuItem', 23, 'imgMenuItem1','frmPOSMenuItem.html'),\n"
-			+ "	('frmModifierGroupMaster', 'ModifierGroupMaster', 'M', 'imgModifierGroupMaster', 77, 'imgModifierGroupMaster1','frmPOSModifierGroupMaster.html'),\n"
-			+ "	('frmModifyBill', 'Modify Bill', 'T', 'imgModifyBill', 25, 'imgModifyBill1','frmPOSModifyBill.html'),\n"
-			//+ "	('frmMoveKOT', 'Move KOT', 'T', 'imgMoveKOT', 62, 'imgMoveKOT1','frmPOSMoveKOT.html'),\n"
-			//+ "	('frmMoveTable', 'Move Table', 'T', 'imgMoveTable', 53, 'imgMoveTable1','frmPOSMoveTable.html'),\n"
-			//+ "	('frmMultiCostCenterKDS', 'MultiCostCenterKDS', 'T', 'imgMultiCostCenterKDS', 82, 'imgMultiCostCenterKDS1','frmPOSMultiCostCenterKDS.html'),\n"
-			+ "	('frmNonChargableSettlementReport', 'Non Chargable KOT Report', 'R', 'imgNonChargableKOTReport', 95, 'imgNonChargableKOTReport','frmPOSNonChargableSettlementReport.html'),\n"
-			+ "	('frmOperatorWiseReport', 'OperatorWise Report', 'R', 'imgOperatorWiseReport', 15, 'imgOperatorWiseReport','frmPOSOperatorWiseReport.html'),\n"
-			+ "	('frmOrderAnalysisReport', 'Order Analysis Report', 'R', 'imgOrderAnalysisReport', 96, 'imgOrderAnalysisReport','frmPOSOrderAnalysisReport.html'),\n"
-			+ "	('frmPhysicalStkPosting', 'Physical Stock Posting', 'T', 'imgPhysicalStockPosting', 21, 'imgPhysicalStockPosting1','frmPOSPhysicalStkPosting.html'),\n"
-			+ "	('frmPosMaster', 'POS Master', 'M', 'imgPOSMaster', 5, 'imgPOSMaster1','frmPosMaster.html'),\n"
-			//+ "	('frmPostDataToHO', 'Post Sale Data', 'T', 'imgPostPOSDataToHO', 83, 'imgPostPOSDataToHO1','frmPostDataToHO.html'),\n"
-			//+ "	('frmPostPOSDataToCMS', 'Post POS Data To CMS', 'T', 'imgPostPOSDataToCMS', 98, 'imgPostPOSDataToCMS1','frmPostPOSDataToCMS.html'),\n"
-			+ "	('frmPrice', 'Price Menu', 'M', 'imgPriceMenu', 4, 'imgPriceMenu1','frmPOSPrice.html'),\n"
-			+ "	('frmPromationFlash', 'Promotion Flash', 'R', 'imgPromotionReport', 87, 'imgPromotionReport','frmPOSPromationFlash.html'),\n"
-			+ "	('frmPromationMaster', 'Promotion Master', 'M', 'imgPromotionMaster', 81, 'imgPromotionMaster','frmPOSPromationMaster.html'),\n"
-			+ "	('frmPropertySetup', 'Property Setup', 'U', 'imgPropertySetup', 8, 'imgPropertySetup1','frmPOSPropertySetup.html'),\n"
-			+ "	('frmReasonMaster', 'Reason Master', 'M', 'imgReasonMaster', 18, 'imgReasonMaster1','frmPOSReasonMaster.html'),\n"
-			//+ "	('frmRechargeDebitCard', 'RechargeDebitCard', 'T', 'imgRechargeCard', 60, 'imgRechargeCard1','frmPOSRechargeDebitCard.html'),\n"
-			+ "	('frmRecipeMaster', 'RecipeMaster', 'M', 'imgRecipeMaster', 79, 'imgRecipeMaster1','frmPOSRecipeMaster.html'),\n"
-			//+ "	('frmRegisterDebitCard', 'DebitCardRegister', 'M', 'imgRegisterDebitCard', 59, 'imgRegisterDebitCard1','frmPOSRegisterDebitCard.html'),\n"
-			//+ "	('frmReOrderTime', 'ReOrderTime', 'M', 'imgReorderTime', 72, 'imgReorderTime1','frmPOSReOrderTime.html'),\n"
-			+ "	('frmReprint', 'Reprint', 'T', 'imgReprintDocs', 50, 'imgReprintDocs1','frmPOSReprint.html'),\n"
-			+ "	('frmRestaurantBill', 'Make KOT', 'T', 'imgMakeKOT', 26, 'imgMakeKOT1','frmPOSRestaurantBill.html'),\n"
-			+ "	('frmRestaurantDtl', 'SettleBill', 'T', 'imgSettleBill', 42, 'imgSettleBill1','frmPOSRestaurantDtl.html'),\n"
-			+ "	('frmSalesReport', 'Sales Report', 'U', 'imgSalesReport', 6, 'imgSalesReport1','frmPOSSalesReport.html'),\n"
-			+ "	('frmSettlement', 'Settlement', 'M', 'imgSettlement', 3, 'imgSettlement1','frmPOSSettlement.html'),\n"
-			+ "	('frmSettlementWiseReport', 'SettlementWise Report', 'R', 'imgSettlementWiseReport', 16, 'imgSettlementWiseReport','frmPOSSettlementWiseReport.html'),\n"
-			+ "	('frmShiftMaster', 'Shift Master', 'M', 'imgShiftMaster', 56, 'imgShiftMaster1','frmPOSShiftMaster.html'),\n"
-			+ "	('frmSplitBill', 'SplitBill', 'T', 'imgSplitBill', 69, 'imgSplitBill1','frmPOSSplitBill.html'),\n"
-			+ "	('frmStkAdjustment', 'Stock Adujstment', 'T', 'imgStockAdjustment', 40, 'imgStockAdjustment1','frmPOSStkAdjustment.html'),\n"
-			+ "	('frmStkIn', 'Stock In', 'T', 'imgStockIn', 1, 'imgStockIn1','frmPOSStkIn.html'),\n"
-			+ "	('frmStkInOutFlash', 'Stock In Out Flash', 'R', 'imgStockInOutFlash', 48, 'imgStockInOutFlash1','frmPOSStkInOutFlash.html'),\n"
-			+ "	('frmStkOut', 'Stock Out', 'T', 'imgStockOut', 2, 'imgStockOut1','frmPOSStkOut.html'),\n"
-			+ "	('frmStockFlashReport', 'Stock Flash Report', 'U', 'imgStockFlashReport', 17, 'imgStockFlashReport1','frmPOSStockFlashReport.html'),\n"
-			+ "	('frmSubGroup', 'SubGroup', 'M', 'imgSubGroup', 35, 'imgSubGroup1','frmPOSSubGroup.html'),\n"
-			+ "	('frmSubGroupWiseReport', 'SubGroupWise Report', 'R', 'imgSubGroupWiseReport', 14, 'imgSubGroupWiseReport','frmPOSSubGroupWiseReport.html'),\n"
-			+ "	('frmTableMaster', 'Table Master', 'M', 'imgTableMaster', 37, 'imgTableMaster1','frmPOSTableMaster.html'),\n"
-			+ "	('frmTableStatusReport', 'TableStatusReport', 'T', 'imgTableStatusReport', 70, 'imgTableStatusReport1','frmPOSTableStatusReport.html'),\n"
-			+ "	('frmTaxMaster', 'Tax Master', 'M', 'imgTaxMaster', 36, 'imgTaxMaster1','frmPOSTaxMaster.html'),\n"
-			//+ "	('frmTaxRegeneration', 'Tax Regeneration', 'T', 'imgTaxReGeneration', 92, 'imgTaxReGeneration1','frmPOSTaxRegeneration.html'),\n"
-			+ "	('frmTaxWiseReport', 'Tax Wise Report', 'R', 'imgTaxWiseReport', 41, 'imgTaxWiseReport','frmPOSTaxWiseReport.html'),\n"
-			//+ "	('frmTDH', 'TDH', 'M', 'imgTDH', 67, 'imgTDH1','frmPOSTDH.html'),\n"
-			+ "	('frmTools', 'Tools', 'U', 'imgTools', 57, 'imgTools1','frmPOSTools.html'),\n"
-			+ "	('frmUnsettleBill', 'Unsettle Bill', 'T', 'imgUnsettleBill', 55, 'imgUnsettleBill1','frmUnsettleBill.html'),\n"
-			+ "	('frmUserRegistration', 'User Registration', 'M', 'imgUserRegistration', 7, 'imgUserRegistration1','frmPOSUserRegistration.html'),\n"
-			+ "	('frmVoidAdvanceOrder', 'VoidAdvanceOrder', 'T', 'imgVoidAdvOrder', 104, 'imgVoidAdvOrder1','frmPOSVoidAdvanceOrder.html'),\n"
-			+ "	('frmVoidBill', 'Void Bill', 'T', 'imgVoidBill', 12, 'imgVoidBill1','frmPOSVoidBill.html'),\n"
-			+ "	('frmVoidBillReport', 'Void Bill Report', 'R', 'imgVoidBillReport', 32, 'imgVoidBillReport','frmPOSVoidBillReport.html'),\n"
-			+ "	('frmVoidKot', 'VoidKot', 'T', 'imgVoidKOT', 51, 'imgVoidKOT1','frmPOSVoidKot.html'),\n"
-			+ "	('frmVoidStock', 'VoidStock', 'T', 'imgVoidStock', 52, 'imgVoidStock1','frmPOSVoidStock.html'),\n"
-			+ "	('frmWaiterMaster', 'Waiter Master', 'M', 'imgWaiterMaster', 33, 'imgWaiterMaster1','frmPOSWaiterMaster.html'),\n"
-			+ "	('frmWaiterWiseIncentiveReport', 'WaiterWiseIncentivesReport', 'R', 'imgWaiterIncentivesReports', 103, 'imgWaiterIncentivesReports1','frmPOSWaiterWiseIncentiveReport.html'),\n"
-			+ "	('frmWaiterWiseItemReport', 'WaiterWiseItemReport', 'R', 'imgWaiterWiseItemReport', 102, 'imgWaiterWiseItemReport1','frmPOSWaiterWiseItemReport.html'),\n"
-			+ "	('frmZoneMaster', 'Zone Master', 'M', 'imgZoneMaster', 101, 'imgZoneMaster1','frmPOSZoneMaster.html'),\n"
-			+ "	('frmSalesSummaryFlash', 'Sales Summary Flash', 'R', 'imgSalesSummaryFlash', 106, 'imgSalesSummaryFlash1','frmPOSSalesSummaryFlash.html'),\n"
-			+ "	('frmPOSWiseSalesComparison', 'POS Wise Sales', 'R', 'imgPOSWiseSales', 107, 'imgPOSWiseSales1','frmPOSWiseSalesComparison.html'),\n"
-			//+ "	('frmTableReservation', 'Table Reservation', 'T', 'imgTableReservation', 108, 'imgTableReservation1','frmPOSTableReservation.html'),\n"
-			+ "	('frmStatistics', 'Statistics', 'T', 'imgStatistics', 109, 'imgStatistics1','frmPOSStatistics.html'),\n"
-			+ "	('frmDailyCollectionReport', 'Daily Collection Report', 'R', 'imgDailyCollectionReport', 110,'imgDailyCollectionReport1','frmPOSDailyCollectionReport.html'),\n"
-			+ "	('frmDailySalesReport', 'Daily Sales Report', 'R', 'imgDailySalesReport', 111, 'imgDailySalesReport1','frmPOSDailySalesReport.html'),\n"
-			+ "	('frmVoidKOTReport', 'Void KOT Report', 'R', 'imgVoidKOTReport', 112,'imgVoidKOTReport1','frmPOSVoidKOTReport.html'),\n"
-			+ "	('funTaxBreakupSummaryReport', 'Tax Breakup Summary Report', 'R', 'imgTaxBreakupSummaryReport', 98, 'imgTaxBreakupSummaryReport','funPOSTaxBreakupSummaryReport.html'),\n"
-			+ " ('frmShortcutKeySetup', 'Shortcut Key Setup', 'U', 'imgShortcutKeySetup', 113, 'imgShortcutKeySetup','frmPOSShortcutKeySetup.html'),\n"
-			+ " ('frmGuestCreditReport', 'Guest Credit Report', 'R', 'imgGuestCreditReport', 114, 'imgGuestCreditReport1','frmPOSGuestCreditReport.html'),\n "
-			//+ " ('frmUserCardSwipe', 'UserCardSwipe', 'M', 'imgUserCards', 115, 'imgUserCards','frmPOSUserCardSwipe.html'),\n "
-			//+ " ('frmChangeCustomerOnBill', 'ChangeCustomerOnBill', 'T', 'imgChangeCustomerOnBill', 116, 'imgChangeCustomerOnBill1','frmPOSChangeCustomerOnBill.html'),\n"
-			//+ " ('frmPostPOSSalesDataToMMS', 'PostPOSSalesDataToMMS', 'T', 'imgPostPOSSalesDataToMMS', 117, 'imgPostPOSSalesDataToMMS','frmPOSPostPOSSalesDataToMMS.html'),\n"
-			+ " ('frmShiftEndProcessConsolidate', 'ShiftEndProcessConsolidate', 'T', 'imgDayEndConsolidate', 118, 'imgDayEndConsolidate','frmPOSShiftEndProcessConsolidate.html'),\n"
-			//+ " ('frmCustomerDisplaySystem', 'CustomerDisplaySystem', 'T', 'imgCustomerDisplaySystem', 119, 'imgCustomerDisplaySystem1','frmPOSCustomerDisplaySystem.html'),\n"
-			//+ " ('frmGenrateMallInterfaceText', 'GenrateMallInterfaceText', 'T', 'imgGenrateMIText', 120, 'imgGenrateMIText1','frmPOSGenrateMallInterfaceText.html'),\n "
-			//+ " ('frmSendBulkSMS', 'SendBulkSMS', 'T', 'imgSendBulkSMS', 121, 'imgSendBulkSMS1','frmPOSSendBulkSMS.html'),\n "
-			//+ " ('frmShowCard', 'ShowCard', 'T', 'imgShowCard', 122, 'imgShowCard','frmPOSShowCard.html'),\n"
-			+ " ('frmSubGroupWiseSummaryReport', 'SubGroupWiseSummaryReport', 'R', 'imgSubGroupWiseSummaryReport', 123, 'imgSubGroupWiseSummaryReport1','frmPOSSubGroupWiseSummaryReport.html'),\n "
-			+ " ('frmArrangeTransaction', 'Arrange Transaction', 'M', 'imgArrangeTransaction', 124, 'imgArrangeTransaction','frmPOSArrangeTransaction.html'),\n"
-			+ " ('frmNCKOT', 'NCKOT', 'T', 'imgNCKOT', 125, 'imgNCKOT1','frmPOSNCKOT.html'),\n"
-			//+ " ('frmKDSBookAndProcess', 'KDSBookAndProcess', 'T', 'imgKDSBookAndProcess', 126, 'imgKDSBookAndProcess','frmPOSKDSBookAndProcess.html'),\n "
-			//+ " ('frmUnusedCardBalanceReport', 'UnusedCardBalanceReport', 'R', 'imgUnusedCardBalance', 127, 'imgUnusedCardBalanceReport1','frmPOSUnusedCardBalanceReport.html'),\n"
-			+ " ('frmImportDatabase', 'Import Database', 'T', 'imgImportDatabase', 128, 'imgImportDatabase1','frmPOSImportDatabase.html'),\n "
-			+ " ('frmTakeAway', 'Take Away', 'T', 'imgTakeAway', 129, 'imgTakeAway','frmPOSTakeAway.html'),\n "
-			+ " ('frmDayWiseSalesSummaryFlash', 'DayWiseSalesSummaryFlash', 'R', 'imgDayWiseSalesSummary', 130, 'imgDayWiseSalesSummary','frmPOSDayWiseSalesSummaryFlash.html'),\n "
-			+ " ('frmBillWiseSettlementSalesSummaryFlash', 'BillWiseSettlementSalesSummaryFlash', 'R', 'imgBillWiseSttlementSalesSummary', 131, 'imgBillWiseSttlementSalesSummary','frmPOSBillWiseSettlementSalesSummaryFlash.html'),\n "
-			+ " ('frmRevenueHeadWiseItemSalesReport', 'Revenue Head Wise Item Sales', 'R', 'imgRevenueHeadWiseItemSales', 132, 'imgRevenueHeadWiseItemSales','frmPOSRevenueHeadWiseItemSalesReport.html'),\n "
-			//+ " ('frmPlaceOrder', 'Place Order', 'T', 'imgPlaceOrder', 133, 'imgPlaceOrder','frmPOSPlaceOrder.html'),\n "
-			//+ " ('frmPullOrder', 'Pull Order', 'T', 'imgPullOrder', 134, 'imgPullOrder','frmPOSPullOrder.html'),\n"
-			//+ " ('frmCocktailWorldInterface', 'CW Interface', 'T', 'imgCWInterface', 135, '','frmPOSCocktailWorldInterface.html'),\n"
-			//+ " ('frmManagersReport', 'Managers Report', 'R', 'imgManagersReport', 136, 'imgManagersReport','frmPOSManagersReport.html'),\n"
-			+ "	('frmItemWiseConsumption', 'Item Wise Consumption', 'R', 'imgItemWiseConsumption', 137, 'imgItemWiseConsumption','frmPOSItemWiseConsumption.html'),\n"
-			//+ " ('frmOrderMaster', 'Order Master', 'M', 'imgOrderMaster', 138, 'imgOrderMaster','frmPOSOrderMaster.html'),\n"
-			//+ " ('frmCharactersticsMaster', 'Characterstics Master', 'M', 'imgCharactersticsMaster', 139, 'imgCharactersticsMaster','frmPOSCharactersticsMaster.html'),\n"
-			+ " ('frmTableWisePaxReport', 'Table Wise Pax Report', 'R', 'imgTableWisePaxReport', 140,'imgTablewisePaxReport','frmPOSTableWisePaxReport.html'),\n"
-			//+ " ('frmPostingReport', 'Posting Report', 'R', 'imgPostingReport', 141,'imgPostingReport','frmPOSPostingReport.html'),\n"
-			//+ " ('frmPlacedOrderReport', 'Placed Order Report', 'R', 'imgPlacedOrderReport', 142,'imgPlacedOrderReport','frmPOSPlacedOrderReport.html'),\n"
-			+ " ('ComplimentrySettlement', 'Complimentry Settlement', 'T', 'imgPlacedOrderReport', 143,'imgPlacedOrderReport','POSComplimentrySettlement.html'),\n"
-			+ " ('DiscountOnBill', 'Discount On Bill', 'T', 'imgPlacedOrderReport', 144,'imgPlacedOrderReport','POSDiscountOnBill.html'),\n"
-			+ " ('frmAdvanceOrderReport', 'Advance Order Report', 'R', 'imgAdvanceOrderReport', 145, 'imgAdvanceOrderReport1','frmPOSAdvanceOrderReport.html'),\n"
-			+ " ('frmVoidAdvanceOrderReport', 'Void Advance Order Report', 'R', 'imgVoidAdvanceOrderReport', 146, 'imgVoidAdvanceOrderReport1','frmPOSVoidAdvanceOrderReport.html'),\n"
-			+ " ('frmPhysicalStockFlash', 'PhysicalStockFlash', 'R', 'imgPhysicalStockPosting', 147, 'imgPhysicalStockPosting','frmPOSPhysicalStockFlash.html'),\n"
-			+ " ('frmReprintDocsReport', 'Reprint Docs Report', 'R', 'imgReprintDocsReport', 148, 'imgReprintDocsReport1','frmPOSReprintDocsReport.html'),\n"
-			//+ " ('frmMoveKOTItemToTable', 'Move KOT Items', 'T', 'imgMoveKOTItemsToTable', 149, 'imgMoveKOTItemsToTable','frmPOSMoveKOTItemToTable.html'),\n"
-			+ " ('frmPOSWiseItemIncentive', 'Item Wise Incentives', 'M', 'imgPOSWiseItemIncentive', 150, 'imgPOSWiseItemIncentive','frmPOSWiseItemIncentive.html'),\n"
-			+ " ('frmWaiterWiseItemWiseIncentiveReport', 'Waiter Wise Item Wise Incentives Report', 'R', 'imgWaiterWiseItemWiseIncentivesReports', 151, 'imgWaiterWiseItemWiseIncentivesReports','frmPOSWaiterWiseItemWiseIncentiveReport.html'),\n"
+		sql = "INSERT INTO `tblforms` (`strFormName`, `strModuleName`, `strModuleType`, `strImageName`, `intSequence`, `strColorImageName`,`strRequestMapping`) VALUES "
+			//+ "	('frmAddKOTToBill', 'Add KOT To Bill', 'T', 'imgKOTToBill', 85, 'imgKOTToBill1','frmPOSAddKOTToBill.html'), "
+			+ "	('frmAdvanceBooking', 'Advance Order', 'T', 'imgAdvanceOrder', 24, 'imgAdvanceOrder1','frmPOSAdvanceBooking.html'), "
+			+ "	('frmAdvanceOrderFlash', 'Advance Order Flash', 'R', 'imgAdvanceOrderFlash', 47, 'imgAdvanceOrderFlash1','frmPOSAdvanceOrderFlash.html'), "
+			+ "	('frmAdvanceOrderTypeMaster', 'Advance Order Type Master', 'M', 'imgAdvanceOrderTypeMaster', 86, 'imgAdvanceOrderTypeMaster','frmPOSAdvanceOrderTypeMaster.html'), "
+			+ "	('frmAIPB', 'AvgItemPerBill', 'R', 'imgAvgItemsPerBill', 63, 'imgAvgItemsPerBill1','frmPOSAIPB.html'), "
+			+ "	('frmAPC', 'AvgPerCover', 'R', 'imgAveragePC', 64, 'imgAveragePC1','frmPOSAPC.html'), "
+			+ "	('frmAreaMaster', 'Area Master', 'M', 'imgAreaMaster', 54, 'imgAreaMaster1','frmPOSAreaMaster.html'), "
+			//+ "	('frmAssignHomeDelivery', 'AssignHomeDelivery', 'T', 'imgAsignHomeDelivery', 99, 'imgAsignHomeDelivery1','frmPOSAssignHomeDelivery.html'), "
+			+ "	('frmATV', 'AvgTicketValue', 'R', 'imgAvgValue', 65, 'imgAvgValue1','frmPOSATV.html'), "
+			+ "	('frmAuditFlash', 'Audit Flash', 'R', 'imgAuditFlash', 46, 'imgAuditFlash1','frmPOSAuditFlash.html'), "
+			+ "	('frmAuditorReport', 'Auditor Report', 'R', 'imgAuditorReport', 97, 'imgAuditorReport','frmPOSAuditorReport.html'), "
+			+ "	('frmAvdBookReceipt', 'Advance Booking Receipt', 'T', 'imgAdvanceBookingReceipt', 31, 'imgAdvanceBookingReceipt1','frmPOSAvdBookReceipt.html'), "
+			//+ "	('frmBillFromKOTs', 'BillFromKOTs', 'T', 'imgMakeBillFromKOT', 76, 'imgMakeBillFromKOT1','frmPOSBillFromKOTs.html'), "
+			+ "	('frmBillReport', 'Bill Wise Report', 'R', 'imgBillWiseReport', 9, 'imgBillWiseReport','frmPOSBillReport.html'), "
+			//+ "	('frmBulkMenuItemPricing', 'Bulk Menu Item Pricing', 'M', 'imgBulkMenuItemPricing', 88, 'imgBulkMenuItemPricing1','frmPOSBulkMenuItemPricing.html'), "
+			//+ "	('frmCashManagement', 'Cash Management', 'T', 'imgCashManagement', 43, 'imgCashManagement1','frmPOSCashManagement.html'), "
+			//+ "	('frmCashMgmtReport', 'Cash Mgmt Report', 'R', 'imgCashMgmtFlashReport', 44, 'imgCashMgmtFlashReport1','frmPOSCashMgmtReport.html'), "
+			//+ "	('frmCloseProductionOrder', 'Close Producion Order', 'T', 'imgProductionOrder', 84, 'imgProductionOrder1','frmPOSCloseProductionOrder.html'), "
+			+ "	('frmComplimentarySettlement', 'Complimentary Settlement Report', 'R', 'imgComplimentarySettlementReport', 93, 'imgComplimentarySettlementReport','frmPOSComplimentarySettlement.html'), "
+			+ "	('frmCostCenter', 'Cost Center', 'M', 'imgCostCenter', 22, 'imgCostCenter1','frmPOSCostCenter.html'), "
+			+ "	('frmCostCenterWiseReport', 'Cost Centre Report', 'R', 'imgCostCenterReport', 39, 'imgCostCenterReport1','frmPOSCostCenterWiseReport.html'), "
+			+ "	('frmCounterMaster', 'CounterMaster', 'M', 'imgCounterMaster', 73, 'imgCounterMaster1','frmPOSCounterMaster.html'), "
+			+ "	('frmCounterWiseSalesReport', 'Counter Wise Sales Report', 'R', 'imgCounterWiseSalesReport', 94, 'imgCounterWiseSalesReport','frmPOSCounterWiseSalesReport.html'), "
+			+ "	('frmCustAreaMaster', 'Customer Area Master', 'M', 'imgCustAreaMaster', 11, 'imgCustAreaMaster1','frmPOSCustAreaMaster.html'), "
+			+ "	('frmCustomerMaster', 'Customer Master', 'M', 'imgCustomerMaster', 30, 'imgCustomerMaster1','frmPOSCustomerMaster.html'), "
+			+ "	('frmCustomerTypeMaster', 'CustomerTypeMaster', 'M', 'imgCustomerTypeMaster', 68, 'imgCustomerTypeMaster1','frmPOSCustomerTypeMaster.html'), "
+			+ "	('frmDayEndFlash', 'Day End Flash', 'R', 'imgDayEndFlash', 49, 'imgDayEndFlash1','frmPOSDayEndFlash.html'), "
+			+ "	('frmDayEndProcess', 'Day End', 'T', 'imgDayEnd', 20, 'imgDayEnd1','frmPOSDayEndProcess.html'), "
+			+ "	('frmDayEndWithoutDetails', 'DayEndWithoutDetails', 'T', 'imgDayEndwithoutDetails', 80, 'imgDayEndwithoutDetails1','frmPOSDayEndWithoutDetails.html'), "
+			//+ "	('frmDebitCardFlashReports', 'DebitCardFlashReports', 'R', 'imgDebitCardFlash', 66, 'imgDebitCardFlash1','frmPOSDebitCardFlashReports.html'), "
+			//+ "	('frmDebitCardMaster', 'DebitCardMaster', 'M', 'imgCardTypeMaster', 58, 'imgCardTypeMaster1','frmPOSDebitCardMaster.html'), "
+			+ "	('frmDeliveryboyIncentive', 'DeliveryboyIncentive', 'R', 'imgDeliveryboyIncentive', 105, 'imgDeliveryboyIncentive1','frmPOSDeliveryboyIncentive.html'), "
+			+ "	('frmDeliveryPersonMaster', 'Home Delivery Person', 'M', 'imgDeliveryBoy', 19, 'imgDeliveryBoy1','frmPOSDeliveryPersonMaster.html'), "
+			+ "	('frmDirectBiller', 'Direct Biller', 'T', 'imgDirectBiller', 28, 'imgDirectBiller1','frmPOSDirectBiller.html'), "
+			+ "	('frmDiscountReport', 'Discount Report', 'R', 'imgDiscountReport', 89, 'imgDiscountReport1','frmPOSDiscountReport.html'), "
+			//+ "	('frmGiftVoucherIssue', 'GiftVoucherIssue', 'T', 'imgGiftVoucherIssue', 78, 'imgGiftVoucherIssue1','frmPOSGiftVoucherIssue.html'), "
+			//+ "	('frmGiftVoucherMaster', 'GiftVoucherMaster', 'M', 'imgGiftVoucher', 61, 'imgGiftVoucher1','frmPOSGiftVoucherMaster.html'), "
+			+ "	('frmGroup', 'Group', 'M', 'imgGroup', 34, 'imgGroup1','frmGroup.html'), "
+			+ "	('frmGroupSubGroupWiseReport', 'Group-SubGroup Wise Report', 'R', 'imgGrpSubGrpWise', 90, 'imgGrpSubGrpWise1','frmPOSGroupSubGroupWiseReport.html'), "
+			+ "	('frmGroupWiseReport', 'Group Wise Report', 'R', 'imgGroupWiseReport', 13, 'imgGroupWiseReport','frmPOSGroupWiseReport.html'), "
+			+ "	('frmImportExcelFile', 'ImportExcel', 'T', 'imgImportData', 74, 'imgImportData1','frmPOSImportExcelFile.html'), "
+			+ "	('frmItemModifier', 'Item Modifier', 'M', 'imgItemModifier', 27, 'imgItemModifier1','frmPOSItemModifier.html'), "
+			+ "	('frmItemWiseReport', 'Item Wise Report', 'R', 'imgItemWiseReport', 10, 'imgItemWiseReport1','frmPOSItemWiseReport.html'), "
+			//+ "	('frmKitchenDisplaySystem', 'Kitchen System', 'T', 'imgKitchenDisplaySystem', 45, 'imgKitchenDisplaySystem1','frmPOSKitchenDisplaySystem.html'), "
+			//+ "	('frmLoyaltyPointMaster', 'LoyaltyPoints', 'M', 'imgLoyaltyMaster', 75, 'imgLoyaltyMaster','frmPOSLoyaltyPointMaster.html'), "
+			//+ "	('frmLoyaltyPointReport', 'Loyalty Point Report', 'R', 'imgLoyaltyPointReport', 91, 'imgLoyaltyPointReport1','frmPOSLoyaltyPointReport.html'), "
+			//+ "	('frmMakeBill', 'Make Bill', 'T', 'imgMakeBill', 29, 'imgMakeBill1','frmPOSMakeBill.html'), "
+			+ "	('frmMenuHead', 'Menu Head', 'M', 'imgMenuHead', 38, 'imgMenuHead1','frmPOSMenuHead.html'), "
+			+ "	('frmMenuHeadWiseReport', 'Menu Head Wise', 'R', 'imgMenuHeadWiseReport', 100, 'imgMenuHeadWiseReport','frmPOSMenuHeadWiseReport.html'), "
+			+ "	('frmMenuItem', 'Menu Item', 'M', 'imgMenuItem', 23, 'imgMenuItem1','frmPOSMenuItem.html'), "
+			+ "	('frmModifierGroupMaster', 'ModifierGroupMaster', 'M', 'imgModifierGroupMaster', 77, 'imgModifierGroupMaster1','frmPOSModifierGroupMaster.html'), "
+			+ "	('frmModifyBill', 'Modify Bill', 'T', 'imgModifyBill', 25, 'imgModifyBill1','frmPOSModifyBill.html'), "
+			//+ "	('frmMoveKOT', 'Move KOT', 'T', 'imgMoveKOT', 62, 'imgMoveKOT1','frmPOSMoveKOT.html'), "
+			//+ "	('frmMoveTable', 'Move Table', 'T', 'imgMoveTable', 53, 'imgMoveTable1','frmPOSMoveTable.html'), "
+			//+ "	('frmMultiCostCenterKDS', 'MultiCostCenterKDS', 'T', 'imgMultiCostCenterKDS', 82, 'imgMultiCostCenterKDS1','frmPOSMultiCostCenterKDS.html'), "
+			+ "	('frmNonChargableSettlementReport', 'Non Chargable KOT Report', 'R', 'imgNonChargableKOTReport', 95, 'imgNonChargableKOTReport','frmPOSNonChargableSettlementReport.html'), "
+			+ "	('frmOperatorWiseReport', 'OperatorWise Report', 'R', 'imgOperatorWiseReport', 15, 'imgOperatorWiseReport','frmPOSOperatorWiseReport.html'), "
+			+ "	('frmOrderAnalysisReport', 'Order Analysis Report', 'R', 'imgOrderAnalysisReport', 96, 'imgOrderAnalysisReport','frmPOSOrderAnalysisReport.html'), "
+			+ "	('frmPhysicalStkPosting', 'Physical Stock Posting', 'T', 'imgPhysicalStockPosting', 21, 'imgPhysicalStockPosting1','frmPOSPhysicalStkPosting.html'), "
+			+ "	('frmPosMaster', 'POS Master', 'M', 'imgPOSMaster', 5, 'imgPOSMaster1','frmPosMaster.html'), "
+			//+ "	('frmPostDataToHO', 'Post Sale Data', 'T', 'imgPostPOSDataToHO', 83, 'imgPostPOSDataToHO1','frmPostDataToHO.html'), "
+			//+ "	('frmPostPOSDataToCMS', 'Post POS Data To CMS', 'T', 'imgPostPOSDataToCMS', 98, 'imgPostPOSDataToCMS1','frmPostPOSDataToCMS.html'), "
+			+ "	('frmPrice', 'Price Menu', 'M', 'imgPriceMenu', 4, 'imgPriceMenu1','frmPOSPrice.html'), "
+			+ "	('frmPromationFlash', 'Promotion Flash', 'R', 'imgPromotionReport', 87, 'imgPromotionReport','frmPOSPromationFlash.html'), "
+			+ "	('frmPromationMaster', 'Promotion Master', 'M', 'imgPromotionMaster', 81, 'imgPromotionMaster','frmPOSPromationMaster.html'), "
+			+ "	('frmPropertySetup', 'Property Setup', 'U', 'imgPropertySetup', 8, 'imgPropertySetup1','frmPOSPropertySetup.html'), "
+			+ "	('frmReasonMaster', 'Reason Master', 'M', 'imgReasonMaster', 18, 'imgReasonMaster1','frmPOSReasonMaster.html'), "
+			//+ "	('frmRechargeDebitCard', 'RechargeDebitCard', 'T', 'imgRechargeCard', 60, 'imgRechargeCard1','frmPOSRechargeDebitCard.html'), "
+			+ "	('frmRecipeMaster', 'RecipeMaster', 'M', 'imgRecipeMaster', 79, 'imgRecipeMaster1','frmPOSRecipeMaster.html'), "
+			//+ "	('frmRegisterDebitCard', 'DebitCardRegister', 'M', 'imgRegisterDebitCard', 59, 'imgRegisterDebitCard1','frmPOSRegisterDebitCard.html'), "
+			//+ "	('frmReOrderTime', 'ReOrderTime', 'M', 'imgReorderTime', 72, 'imgReorderTime1','frmPOSReOrderTime.html'), "
+			+ "	('frmReprint', 'Reprint', 'T', 'imgReprintDocs', 50, 'imgReprintDocs1','frmPOSReprint.html'), "
+			+ "	('frmRestaurantBill', 'Make KOT', 'T', 'imgMakeKOT', 26, 'imgMakeKOT1','frmPOSRestaurantBill.html'), "
+			+ "	('frmRestaurantDtl', 'SettleBill', 'T', 'imgSettleBill', 42, 'imgSettleBill1','frmPOSRestaurantDtl.html'), "
+			+ "	('frmSalesReport', 'Sales Report', 'U', 'imgSalesReport', 6, 'imgSalesReport1','frmPOSSalesReport.html'), "
+			+ "	('frmSettlement', 'Settlement', 'M', 'imgSettlement', 3, 'imgSettlement1','frmPOSSettlement.html'), "
+			+ "	('frmSettlementWiseReport', 'SettlementWise Report', 'R', 'imgSettlementWiseReport', 16, 'imgSettlementWiseReport','frmPOSSettlementWiseReport.html'), "
+			+ "	('frmShiftMaster', 'Shift Master', 'M', 'imgShiftMaster', 56, 'imgShiftMaster1','frmPOSShiftMaster.html'), "
+			+ "	('frmSplitBill', 'SplitBill', 'T', 'imgSplitBill', 69, 'imgSplitBill1','frmPOSSplitBill.html'), "
+			+ "	('frmStkAdjustment', 'Stock Adujstment', 'T', 'imgStockAdjustment', 40, 'imgStockAdjustment1','frmPOSStkAdjustment.html'), "
+			+ "	('frmStkIn', 'Stock In', 'T', 'imgStockIn', 1, 'imgStockIn1','frmPOSStkIn.html'), "
+			+ "	('frmStkInOutFlash', 'Stock In Out Flash', 'R', 'imgStockInOutFlash', 48, 'imgStockInOutFlash1','frmPOSStkInOutFlash.html'), "
+			+ "	('frmStkOut', 'Stock Out', 'T', 'imgStockOut', 2, 'imgStockOut1','frmPOSStkOut.html'), "
+			+ "	('frmStockFlashReport', 'Stock Flash Report', 'U', 'imgStockFlashReport', 17, 'imgStockFlashReport1','frmPOSStockFlashReport.html'), "
+			+ "	('frmSubGroup', 'SubGroup', 'M', 'imgSubGroup', 35, 'imgSubGroup1','frmPOSSubGroup.html'), "
+			+ "	('frmSubGroupWiseReport', 'SubGroupWise Report', 'R', 'imgSubGroupWiseReport', 14, 'imgSubGroupWiseReport','frmPOSSubGroupWiseReport.html'), "
+			+ "	('frmTableMaster', 'Table Master', 'M', 'imgTableMaster', 37, 'imgTableMaster1','frmPOSTableMaster.html'), "
+			+ "	('frmTableStatusReport', 'TableStatusReport', 'T', 'imgTableStatusReport', 70, 'imgTableStatusReport1','frmPOSTableStatusReport.html'), "
+			+ "	('frmTaxMaster', 'Tax Master', 'M', 'imgTaxMaster', 36, 'imgTaxMaster1','frmPOSTaxMaster.html'), "
+			//+ "	('frmTaxRegeneration', 'Tax Regeneration', 'T', 'imgTaxReGeneration', 92, 'imgTaxReGeneration1','frmPOSTaxRegeneration.html'), "
+			+ "	('frmTaxWiseReport', 'Tax Wise Report', 'R', 'imgTaxWiseReport', 41, 'imgTaxWiseReport','frmPOSTaxWiseReport.html'), "
+			//+ "	('frmTDH', 'TDH', 'M', 'imgTDH', 67, 'imgTDH1','frmPOSTDH.html'), "
+			+ "	('frmTools', 'Tools', 'U', 'imgTools', 57, 'imgTools1','frmPOSTools.html'), "
+			+ "	('frmUnsettleBill', 'Unsettle Bill', 'T', 'imgUnsettleBill', 55, 'imgUnsettleBill1','frmUnsettleBill.html'), "
+			+ "	('frmUserRegistration', 'User Registration', 'M', 'imgUserRegistration', 7, 'imgUserRegistration1','frmPOSUserRegistration.html'), "
+			+ "	('frmVoidAdvanceOrder', 'VoidAdvanceOrder', 'T', 'imgVoidAdvOrder', 104, 'imgVoidAdvOrder1','frmPOSVoidAdvanceOrder.html'), "
+			+ "	('frmVoidBill', 'Void Bill', 'T', 'imgVoidBill', 12, 'imgVoidBill1','frmPOSVoidBill.html'), "
+			+ "	('frmVoidBillReport', 'Void Bill Report', 'R', 'imgVoidBillReport', 32, 'imgVoidBillReport','frmPOSVoidBillReport.html'), "
+			+ "	('frmVoidKot', 'VoidKot', 'T', 'imgVoidKOT', 51, 'imgVoidKOT1','frmPOSVoidKot.html'), "
+			+ "	('frmVoidStock', 'VoidStock', 'T', 'imgVoidStock', 52, 'imgVoidStock1','frmPOSVoidStock.html'), "
+			+ "	('frmWaiterMaster', 'Waiter Master', 'M', 'imgWaiterMaster', 33, 'imgWaiterMaster1','frmPOSWaiterMaster.html'), "
+			+ "	('frmWaiterWiseIncentiveReport', 'WaiterWiseIncentivesReport', 'R', 'imgWaiterIncentivesReports', 103, 'imgWaiterIncentivesReports1','frmPOSWaiterWiseIncentiveReport.html'), "
+			+ "	('frmWaiterWiseItemReport', 'WaiterWiseItemReport', 'R', 'imgWaiterWiseItemReport', 102, 'imgWaiterWiseItemReport1','frmPOSWaiterWiseItemReport.html'), "
+			+ "	('frmZoneMaster', 'Zone Master', 'M', 'imgZoneMaster', 101, 'imgZoneMaster1','frmPOSZoneMaster.html'), "
+			+ "	('frmSalesSummaryFlash', 'Sales Summary Flash', 'R', 'imgSalesSummaryFlash', 106, 'imgSalesSummaryFlash1','frmPOSSalesSummaryFlash.html'), "
+			+ "	('frmPOSWiseSalesComparison', 'POS Wise Sales', 'R', 'imgPOSWiseSales', 107, 'imgPOSWiseSales1','frmPOSWiseSalesComparison.html'), "
+			//+ "	('frmTableReservation', 'Table Reservation', 'T', 'imgTableReservation', 108, 'imgTableReservation1','frmPOSTableReservation.html'), "
+			+ "	('frmStatistics', 'Statistics', 'T', 'imgStatistics', 109, 'imgStatistics1','frmPOSStatistics.html'), "
+			+ "	('frmDailyCollectionReport', 'Daily Collection Report', 'R', 'imgDailyCollectionReport', 110,'imgDailyCollectionReport1','frmPOSDailyCollectionReport.html'), "
+			+ "	('frmDailySalesReport', 'Daily Sales Report', 'R', 'imgDailySalesReport', 111, 'imgDailySalesReport1','frmPOSDailySalesReport.html'), "
+			+ "	('frmVoidKOTReport', 'Void KOT Report', 'R', 'imgVoidKOTReport', 112,'imgVoidKOTReport1','frmPOSVoidKOTReport.html'), "
+			+ "	('funTaxBreakupSummaryReport', 'Tax Breakup Summary Report', 'R', 'imgTaxBreakupSummaryReport', 98, 'imgTaxBreakupSummaryReport','funPOSTaxBreakupSummaryReport.html'), "
+			+ " ('frmShortcutKeySetup', 'Shortcut Key Setup', 'U', 'imgShortcutKeySetup', 113, 'imgShortcutKeySetup','frmPOSShortcutKeySetup.html'), "
+			+ " ('frmGuestCreditReport', 'Guest Credit Report', 'R', 'imgGuestCreditReport', 114, 'imgGuestCreditReport1','frmPOSGuestCreditReport.html'),  "
+			//+ " ('frmUserCardSwipe', 'UserCardSwipe', 'M', 'imgUserCards', 115, 'imgUserCards','frmPOSUserCardSwipe.html'),  "
+			//+ " ('frmChangeCustomerOnBill', 'ChangeCustomerOnBill', 'T', 'imgChangeCustomerOnBill', 116, 'imgChangeCustomerOnBill1','frmPOSChangeCustomerOnBill.html'), "
+			//+ " ('frmPostPOSSalesDataToMMS', 'PostPOSSalesDataToMMS', 'T', 'imgPostPOSSalesDataToMMS', 117, 'imgPostPOSSalesDataToMMS','frmPOSPostPOSSalesDataToMMS.html'), "
+			+ " ('frmShiftEndProcessConsolidate', 'ShiftEndProcessConsolidate', 'T', 'imgDayEndConsolidate', 118, 'imgDayEndConsolidate','frmPOSShiftEndProcessConsolidate.html'), "
+			//+ " ('frmCustomerDisplaySystem', 'CustomerDisplaySystem', 'T', 'imgCustomerDisplaySystem', 119, 'imgCustomerDisplaySystem1','frmPOSCustomerDisplaySystem.html'), "
+			//+ " ('frmGenrateMallInterfaceText', 'GenrateMallInterfaceText', 'T', 'imgGenrateMIText', 120, 'imgGenrateMIText1','frmPOSGenrateMallInterfaceText.html'),  "
+			//+ " ('frmSendBulkSMS', 'SendBulkSMS', 'T', 'imgSendBulkSMS', 121, 'imgSendBulkSMS1','frmPOSSendBulkSMS.html'),  "
+			//+ " ('frmShowCard', 'ShowCard', 'T', 'imgShowCard', 122, 'imgShowCard','frmPOSShowCard.html'), "
+			+ " ('frmSubGroupWiseSummaryReport', 'SubGroupWiseSummaryReport', 'R', 'imgSubGroupWiseSummaryReport', 123, 'imgSubGroupWiseSummaryReport1','frmPOSSubGroupWiseSummaryReport.html'),  "
+			+ " ('frmArrangeTransaction', 'Arrange Transaction', 'M', 'imgArrangeTransaction', 124, 'imgArrangeTransaction','frmPOSArrangeTransaction.html'), "
+			+ " ('frmNCKOT', 'NCKOT', 'T', 'imgNCKOT', 125, 'imgNCKOT1','frmPOSNCKOT.html'), "
+			//+ " ('frmKDSBookAndProcess', 'KDSBookAndProcess', 'T', 'imgKDSBookAndProcess', 126, 'imgKDSBookAndProcess','frmPOSKDSBookAndProcess.html'),  "
+			//+ " ('frmUnusedCardBalanceReport', 'UnusedCardBalanceReport', 'R', 'imgUnusedCardBalance', 127, 'imgUnusedCardBalanceReport1','frmPOSUnusedCardBalanceReport.html'), "
+			+ " ('frmImportDatabase', 'Import Database', 'T', 'imgImportDatabase', 128, 'imgImportDatabase1','frmPOSImportDatabase.html'),  "
+			+ " ('frmTakeAway', 'Take Away', 'T', 'imgTakeAway', 129, 'imgTakeAway','frmPOSTakeAway.html'),  "
+			+ " ('frmDayWiseSalesSummaryFlash', 'DayWiseSalesSummaryFlash', 'R', 'imgDayWiseSalesSummary', 130, 'imgDayWiseSalesSummary','frmPOSDayWiseSalesSummaryFlash.html'),  "
+			+ " ('frmBillWiseSettlementSalesSummaryFlash', 'BillWiseSettlementSalesSummaryFlash', 'R', 'imgBillWiseSttlementSalesSummary', 131, 'imgBillWiseSttlementSalesSummary','frmPOSBillWiseSettlementSalesSummaryFlash.html'),  "
+			+ " ('frmRevenueHeadWiseItemSalesReport', 'Revenue Head Wise Item Sales', 'R', 'imgRevenueHeadWiseItemSales', 132, 'imgRevenueHeadWiseItemSales','frmPOSRevenueHeadWiseItemSalesReport.html'),  "
+			//+ " ('frmPlaceOrder', 'Place Order', 'T', 'imgPlaceOrder', 133, 'imgPlaceOrder','frmPOSPlaceOrder.html'),  "
+			//+ " ('frmPullOrder', 'Pull Order', 'T', 'imgPullOrder', 134, 'imgPullOrder','frmPOSPullOrder.html'), "
+			//+ " ('frmCocktailWorldInterface', 'CW Interface', 'T', 'imgCWInterface', 135, '','frmPOSCocktailWorldInterface.html'), "
+			//+ " ('frmManagersReport', 'Managers Report', 'R', 'imgManagersReport', 136, 'imgManagersReport','frmPOSManagersReport.html'), "
+			+ "	('frmItemWiseConsumption', 'Item Wise Consumption', 'R', 'imgItemWiseConsumption', 137, 'imgItemWiseConsumption','frmPOSItemWiseConsumption.html'), "
+			//+ " ('frmOrderMaster', 'Order Master', 'M', 'imgOrderMaster', 138, 'imgOrderMaster','frmPOSOrderMaster.html'), "
+			//+ " ('frmCharactersticsMaster', 'Characterstics Master', 'M', 'imgCharactersticsMaster', 139, 'imgCharactersticsMaster','frmPOSCharactersticsMaster.html'), "
+			+ " ('frmTableWisePaxReport', 'Table Wise Pax Report', 'R', 'imgTableWisePaxReport', 140,'imgTablewisePaxReport','frmPOSTableWisePaxReport.html'), "
+			//+ " ('frmPostingReport', 'Posting Report', 'R', 'imgPostingReport', 141,'imgPostingReport','frmPOSPostingReport.html'), "
+			//+ " ('frmPlacedOrderReport', 'Placed Order Report', 'R', 'imgPlacedOrderReport', 142,'imgPlacedOrderReport','frmPOSPlacedOrderReport.html'), "
+			+ " ('ComplimentrySettlement', 'Complimentry Settlement', 'T', 'imgPlacedOrderReport', 143,'imgPlacedOrderReport','POSComplimentrySettlement.html'), "
+			+ " ('DiscountOnBill', 'Discount On Bill', 'T', 'imgPlacedOrderReport', 144,'imgPlacedOrderReport','POSDiscountOnBill.html'), "
+			+ " ('frmAdvanceOrderReport', 'Advance Order Report', 'R', 'imgAdvanceOrderReport', 145, 'imgAdvanceOrderReport1','frmPOSAdvanceOrderReport.html'), "
+			+ " ('frmVoidAdvanceOrderReport', 'Void Advance Order Report', 'R', 'imgVoidAdvanceOrderReport', 146, 'imgVoidAdvanceOrderReport1','frmPOSVoidAdvanceOrderReport.html'), "
+			+ " ('frmPhysicalStockFlash', 'PhysicalStockFlash', 'R', 'imgPhysicalStockPosting', 147, 'imgPhysicalStockPosting','frmPOSPhysicalStockFlash.html'), "
+			+ " ('frmReprintDocsReport', 'Reprint Docs Report', 'R', 'imgReprintDocsReport', 148, 'imgReprintDocsReport1','frmPOSReprintDocsReport.html'), "
+			//+ " ('frmMoveKOTItemToTable', 'Move KOT Items', 'T', 'imgMoveKOTItemsToTable', 149, 'imgMoveKOTItemsToTable','frmPOSMoveKOTItemToTable.html'), "
+			+ " ('frmPOSWiseItemIncentive', 'Item Wise Incentives', 'M', 'imgPOSWiseItemIncentive', 150, 'imgPOSWiseItemIncentive','frmPOSWiseItemIncentive.html'), "
+			+ " ('frmWaiterWiseItemWiseIncentiveReport', 'Waiter Wise Item Wise Incentives Report', 'R', 'imgWaiterWiseItemWiseIncentivesReports', 151, 'imgWaiterWiseItemWiseIncentivesReports','frmPOSWaiterWiseItemWiseIncentiveReport.html'), "
 			//+ " ('frmFactoryMaster', 'Factory Master', 'M', 'imgFactoryMaster', 152, 'imgFactoryMaster1','frmFactoryMaster.html'),"
 			//+ " ('frmKDSForKOTBookAndProcess', 'KDSForKOTBookAndProcess', 'T', 'imgKDSForKOTBookAndProcess', '153', 'imgKDSForKOTBookAndProcess1','frmPOSKDSForKOTBookAndProcess.html'), "
 			+ " ('frmItemMasterListingReport', 'Item Master Listing Report', 'R', 'imgItemMasterListingReport', '154', 'imgItemMasterListingReport','frmPOSItemMasterListingReport.html'),"
@@ -7808,162 +7917,163 @@ public class clsStructureUpdate
 			//+ " ('frmBarcodeGeneration', 'Barcode Generation', 'T', 'imgBarcodeGeneration', 159, 'imgBarcodeGeneration1', 'frmPOSBarcodeGeneration.html'),"
 			//+ " ('frmPostPOSSalesDataToExcise', 'PostPOSSalesDataToExcise', 'T', 'imgPostPOSSalesDataToExcise', '160', 'imgPostPOSSalesDataToExcise', 'frmPOSPostPOSSalesDataToExcise.html'),"
 			+ " ('OpenItems', 'Open Items', 'AT', 'imgOpenItems', '161', 'imgOpenItems', 'frmPOSOpenItems.html'),"//AT for Authentication For Transaction 
-			+ " ('frmMultiBillSettle', 'Multi Bill Settle', 'T', 'imgMultiBillSettle', '162', 'imgMultiBillSettle1', 'frmPOSMultiBillSettle.html'); ";
+			+ " ('frmMultiBillSettle', 'Multi Bill Settle', 'T', 'imgMultiBillSettle', '162', 'imgMultiBillSettle1', 'frmPOSMultiBillSettle.html') ";
+
 	    }
 	    else //Enterprise
 	    {
-		sql = "INSERT INTO `tblforms` (`strFormName`, `strModuleName`, `strModuleType`, `strImageName`, `intSequence`, `strColorImageName`,`strRequestMapping`) VALUES\n"
-			+ "('frmAddKOTToBill', 'Add KOT To Bill', 'T', 'imgKOTToBill', 85, 'imgKOTToBill1','frmPOSAddKOTToBill.html'),\n"
-			+ "('frmAdvanceBooking', 'Advance Order', 'T', 'imgAdvanceOrder', 24, 'imgAdvanceOrder1','frmPOSAdvanceBooking.html'),\n"
-			+ "('frmAdvanceOrderFlash', 'Advance Order Flash', 'R', 'imgAdvanceOrderFlash', 47, 'imgAdvanceOrderFlash1','frmPOSAdvanceOrderFlash.html'),\n"
-			+ "('frmAdvanceOrderTypeMaster', 'Advance Order Type Master', 'M', 'imgAdvanceOrderTypeMaster', 86, 'imgAdvanceOrderTypeMaster','frmPOSAdvanceOrderTypeMaster.html'),\n"
-			+ "('frmAIPB', 'AvgItemPerBill', 'R', 'imgAvgItemsPerBill', 63, 'imgAvgItemsPerBill1','frmPOSAIPB.html'),\n"
-			+ "('frmAPC', 'AvgPerCover', 'R', 'imgAveragePC', 64, 'imgAveragePC1','frmPOSAPC.html'),\n"
-			+ "('frmAreaMaster', 'Area Master', 'M', 'imgAreaMaster', 54, 'imgAreaMaster1','frmPOSAreaMaster.html'),\n"
-			+ "('frmAssignHomeDelivery', 'AssignHomeDelivery', 'T', 'imgAsignHomeDelivery', 99, 'imgAsignHomeDelivery1','frmPOSAssignHomeDelivery.html'),\n"
-			+ "('frmATV', 'AvgTicketValue', 'R', 'imgAvgValue', 65, 'imgAvgValue1','frmPOSATV.html'),\n"
-			+ "('frmAuditFlash', 'Audit Flash', 'R', 'imgAuditFlash', 46, 'imgAuditFlash1','frmPOSAuditFlash.html'),\n"
-			+ "('frmAuditorReport', 'Auditor Report', 'R', 'imgAuditorReport', 97, 'imgAuditorReport','frmPOSAuditorReport.html'),\n"
-			+ "('frmAvdBookReceipt', 'Advance Booking Receipt', 'T', 'imgAdvanceBookingReceipt', 31, 'imgAdvanceBookingReceipt1','frmPOSAvdBookReceipt.html'),\n"
-			+ "('frmBillFromKOTs', 'BillFromKOTs', 'T', 'imgMakeBillFromKOT', 76, 'imgMakeBillFromKOT1','frmPOSBillFromKOTs.html'),\n"
-			+ "('frmBillReport', 'Bill Wise Report', 'R', 'imgBillWiseReport', 9, 'imgBillWiseReport','frmPOSBillReport.html'),\n"
-			+ "('frmBulkMenuItemPricing', 'Bulk Menu Item Pricing', 'M', 'imgBulkMenuItemPricing', 88, 'imgBulkMenuItemPricing1','frmPOSBulkMenuItemPricing.html'),\n"
-			+ "('frmCashManagement', 'Cash Management', 'T', 'imgCashManagement', 43, 'imgCashManagement1','frmPOSCashManagement.html'),\n"
-			+ "('frmCashMgmtReport', 'Cash Mgmt Report', 'R', 'imgCashMgmtFlashReport', 44, 'imgCashMgmtFlashReport1','frmPOSCashMgmtReport.html'),\n"
-			+ "('frmCloseProductionOrder', 'Close Producion Order', 'T', 'imgProductionOrder', 84, 'imgProductionOrder1','frmPOSCloseProductionOrder.html'),\n"
-			+ "('frmComplimentarySettlement', 'Complimentary Settlement Report', 'R', 'imgComplimentarySettlementReport', 93, 'imgComplimentarySettlementReport','frmPOSComplimentarySettlement.html'),\n"
-			+ "('frmCostCenter', 'Cost Center', 'M', 'imgCostCenter', 22, 'imgCostCenter1','frmPOSCostCenter.html'),\n"
-			+ "('frmCostCenterWiseReport', 'Cost Centre Report', 'R', 'imgCostCenterReport', 39, 'imgCostCenterReport1','frmPOSCostCenterWiseReport.html'),\n"
-			+ "('frmCounterMaster', 'CounterMaster', 'M', 'imgCounterMaster', 73, 'imgCounterMaster1','frmPOSCounterMaster.html'),\n"
-			+ "('frmCounterWiseSalesReport', 'Counter Wise Sales Report', 'R', 'imgCounterWiseSalesReport', 94, 'imgCounterWiseSalesReport','frmPOSCounterWiseSalesReport.html'),\n"
-			+ "('frmCustAreaMaster', 'Customer Area Master', 'M', 'imgCustAreaMaster', 11, 'imgCustAreaMaster1','frmPOSCustAreaMaster.html'),\n"
-			+ "('frmCustomerMaster', 'Customer Master', 'M', 'imgCustomerMaster', 30, 'imgCustomerMaster1','frmPOSCustomerMaster.html'),\n"
-			+ "('frmCustomerTypeMaster', 'CustomerTypeMaster', 'M', 'imgCustomerTypeMaster', 68, 'imgCustomerTypeMaster1','frmPOSCustomerTypeMaster.html'),\n"
-			+ "('frmDayEndFlash', 'Day End Flash', 'R', 'imgDayEndFlash', 49, 'imgDayEndFlash1','frmPOSDayEndFlash.html'),\n"
-			+ "('frmDayEndProcess', 'Day End', 'T', 'imgDayEnd', 20, 'imgDayEnd1','frmPOSDayEndProcess.html'),\n"
-			+ "('frmDayEndWithoutDetails', 'DayEndWithoutDetails', 'T', 'imgDayEndwithoutDetails', 80, 'imgDayEndwithoutDetails1','frmPOSDayEndWithoutDetails.html'),\n"
-			+ "('frmDebitCardFlashReports', 'DebitCardFlashReports', 'R', 'imgDebitCardFlash', 66, 'imgDebitCardFlash1','frmPOSDebitCardFlashReports.html'),\n"
-			+ "('frmDebitCardMaster', 'DebitCardMaster', 'M', 'imgCardTypeMaster', 58, 'imgCardTypeMaster1','frmPOSDebitCardMaster.html'),\n"
-			+ "('frmDeliveryboyIncentive', 'DeliveryboyIncentive', 'R', 'imgDeliveryboyIncentive', 105, 'imgDeliveryboyIncentive1','frmPOSDeliveryboyIncentive.html'),\n"
-			+ "('frmDeliveryPersonMaster', 'Home Delivery Person', 'M', 'imgDeliveryBoy', 19, 'imgDeliveryBoy1','frmPOSDeliveryPersonMaster.html'),\n"
-			+ "('frmDirectBiller', 'Direct Biller', 'T', 'imgDirectBiller', 28, 'imgDirectBiller1','frmPOSDirectBiller.html'),\n"
-			+ "('frmDiscountReport', 'Discount Report', 'R', 'imgDiscountReport', 89, 'imgDiscountReport1','frmPOSDiscountReport.html'),\n"
-			+ "('frmGiftVoucherIssue', 'GiftVoucherIssue', 'T', 'imgGiftVoucherIssue', 78, 'imgGiftVoucherIssue1','frmPOSGiftVoucherIssue.html'),\n"
-			+ "('frmGiftVoucherMaster', 'GiftVoucherMaster', 'M', 'imgGiftVoucher', 61, 'imgGiftVoucher1','frmPOSGiftVoucherMaster.html'),\n"
-			+ "('frmGroup', 'Group', 'M', 'imgGroup', 34, 'imgGroup1','frmGroup.html'),\n"
-			+ "('frmGroupSubGroupWiseReport', 'Group-SubGroup Wise Report', 'R', 'imgGrpSubGrpWise', 90, 'imgGrpSubGrpWise1','frmPOSGroupSubGroupWiseReport.html'),\n"
-			+ "('frmGroupWiseReport', 'Group Wise Report', 'R', 'imgGroupWiseReport', 13, 'imgGroupWiseReport','frmPOSGroupWiseReport.html'),\n"
-			+ "('frmImportExcelFile', 'ImportExcel', 'T', 'imgImportData', 74, 'imgImportData1','frmPOSImportExcelFile.html'),\n"
-			+ "('frmItemModifier', 'Item Modifier', 'M', 'imgItemModifier', 27, 'imgItemModifier1','frmPOSItemModifier.html'),\n"
-			+ "('frmItemWiseReport', 'Item Wise Report', 'R', 'imgItemWiseReport', 10, 'imgItemWiseReport1','frmPOSItemWiseReport.html'),\n"
-			+ "('frmKitchenDisplaySystem', 'Kitchen System', 'T', 'imgKitchenDisplaySystem', 45, 'imgKitchenDisplaySystem1','frmPOSKitchenDisplaySystem.html'),\n"
-			+ "('frmLoyaltyPointMaster', 'LoyaltyPoints', 'M', 'imgLoyaltyMaster', 75, 'imgLoyaltyMaster','frmPOSLoyaltyPointMaster.html'),\n"
-			+ "('frmLoyaltyPointReport', 'Loyalty Point Report', 'R', 'imgLoyaltyPointReport', 91, 'imgLoyaltyPointReport1','frmPOSLoyaltyPointReport.html'),\n"
-			+ "('frmMakeBill', 'Make Bill', 'T', 'imgMakeBill', 29, 'imgMakeBill1','frmPOSMakeBill.html'),\n"
-			+ "('frmMenuHead', 'Menu Head', 'M', 'imgMenuHead', 38, 'imgMenuHead1','frmPOSMenuHead.html'),\n"
-			+ "('frmMenuHeadWiseReport', 'Menu Head Wise', 'R', 'imgMenuHeadWiseReport', 100, 'imgMenuHeadWiseReport','frmPOSMenuHeadWiseReport.html'),\n"
-			+ "('frmMenuItem', 'Menu Item', 'M', 'imgMenuItem', 23, 'imgMenuItem1','frmPOSMenuItem.html'),\n"
-			+ "('frmModifierGroupMaster', 'ModifierGroupMaster', 'M', 'imgModifierGroupMaster', 77, 'imgModifierGroupMaster1','frmPOSModifierGroupMaster.html'),\n"
-			+ "('frmModifyBill', 'Modify Bill', 'T', 'imgModifyBill', 25, 'imgModifyBill1','frmPOSModifyBill.html'),\n"
-			+ "('frmMoveKOT', 'Move KOT', 'T', 'imgMoveKOT', 62, 'imgMoveKOT1','frmPOSMoveKOT.html'),\n"
-			+ "('frmMoveTable', 'Move Table', 'T', 'imgMoveTable', 53, 'imgMoveTable1','frmPOSMoveTable.html'),\n"
-			+ "('frmMultiCostCenterKDS', 'MultiCostCenterKDS', 'T', 'imgMultiCostCenterKDS', 82, 'imgMultiCostCenterKDS1','frmPOSMultiCostCenterKDS.html'),\n"
-			+ "('frmNonChargableSettlementReport', 'Non Chargable KOT Report', 'R', 'imgNonChargableKOTReport', 95, 'imgNonChargableKOTReport','frmPOSNonChargableSettlementReport.html'),\n"
-			+ "('frmOperatorWiseReport', 'OperatorWise Report', 'R', 'imgOperatorWiseReport', 15, 'imgOperatorWiseReport','frmPOSOperatorWiseReport.html'),\n"
-			+ "('frmOrderAnalysisReport', 'Order Analysis Report', 'R', 'imgOrderAnalysisReport', 96, 'imgOrderAnalysisReport','frmPOSOrderAnalysisReport.html'),\n"
-			+ "('frmPhysicalStkPosting', 'Physical Stock Posting', 'T', 'imgPhysicalStockPosting', 21, 'imgPhysicalStockPosting1','frmPOSPhysicalStkPosting.html'),\n"
-			+ "('frmPosMaster', 'POS Master', 'M', 'imgPOSMaster', 5, 'imgPOSMaster1','frmPosMaster.html'),\n"
-			+ "('frmPostDataToHO', 'Post Sale Data', 'T', 'imgPostPOSDataToHO', 83, 'imgPostPOSDataToHO1','frmPostDataToHO.html'),\n"
-			+ "('frmPostPOSDataToCMS', 'Post POS Data To CMS', 'T', 'imgPostPOSDataToCMS', 98, 'imgPostPOSDataToCMS1','frmPostPOSDataToCMS.html'),\n"
-			+ "('frmPrice', 'Price Menu', 'M', 'imgPriceMenu', 4, 'imgPriceMenu1','frmPOSPrice.html'),\n"
-			+ "('frmPromationFlash', 'Promotion Flash', 'R', 'imgPromotionReport', 87, 'imgPromotionReport','frmPOSPromationFlash.html'),\n"
-			+ "('frmPromationMaster', 'Promotion Master', 'M', 'imgPromotionMaster', 81, 'imgPromotionMaster','frmPOSPromationMaster.html'),\n"
-			+ "('frmPropertySetup', 'Property Setup', 'U', 'imgPropertySetup', 8, 'imgPropertySetup1','frmPOSPropertySetup.html'),\n"
-			+ "('frmReasonMaster', 'Reason Master', 'M', 'imgReasonMaster', 18, 'imgReasonMaster1','frmPOSReasonMaster.html'),\n"
-			+ "('frmRechargeDebitCard', 'RechargeDebitCard', 'T', 'imgRechargeCard', 60, 'imgRechargeCard1','frmPOSRechargeDebitCard.html'),\n"
-			+ "('frmRecipeMaster', 'RecipeMaster', 'M', 'imgRecipeMaster', 79, 'imgRecipeMaster1','frmPOSRecipeMaster.html'),\n"
-			+ "('frmRegisterDebitCard', 'DebitCardRegister', 'M', 'imgRegisterDebitCard', 59, 'imgRegisterDebitCard1','frmPOSRegisterDebitCard.html'),\n"
-			+ "('frmReOrderTime', 'ReOrderTime', 'M', 'imgReorderTime', 72, 'imgReorderTime1','frmPOSReOrderTime.html'),\n"
-			+ "('frmReprint', 'Reprint', 'T', 'imgReprintDocs', 50, 'imgReprintDocs1','frmPOSReprint.html'),\n"
-			+ "('frmRestaurantBill', 'Make KOT', 'T', 'imgMakeKOT', 26, 'imgMakeKOT1','frmPOSRestaurantBill.html'),\n"
-			+ "('frmRestaurantDtl', 'SettleBill', 'T', 'imgSettleBill', 42, 'imgSettleBill1','frmPOSRestaurantDtl.html'),\n"
-			+ "('frmSalesReport', 'Sales Report', 'U', 'imgSalesReport', 6, 'imgSalesReport1','frmPOSSalesReport.html'),\n"
-			+ "('frmSettlement', 'Settlement', 'M', 'imgSettlement', 3, 'imgSettlement1','frmPOSSettlement.html'),\n"
-			+ "('frmSettlementWiseReport', 'SettlementWise Report', 'R', 'imgSettlementWiseReport', 16, 'imgSettlementWiseReport','frmPOSSettlementWiseReport.html'),\n"
-			+ "('frmShiftMaster', 'Shift Master', 'M', 'imgShiftMaster', 56, 'imgShiftMaster1','frmPOSShiftMaster.html'),\n"
-			+ "('frmSplitBill', 'SplitBill', 'T', 'imgSplitBill', 69, 'imgSplitBill1','frmPOSSplitBill.html'),\n"
-			+ "('frmStkAdjustment', 'Stock Adujstment', 'T', 'imgStockAdjustment', 40, 'imgStockAdjustment1','frmPOSStkAdjustment.html'),\n"
-			+ "('frmStkIn', 'Stock In', 'T', 'imgStockIn', 1, 'imgStockIn1','frmPOSStkIn.html'),\n"
-			+ "('frmStkInOutFlash', 'Stock In Out Flash', 'R', 'imgStockInOutFlash', 48, 'imgStockInOutFlash1','frmPOSStkInOutFlash.html'),\n"
-			+ "('frmStkOut', 'Stock Out', 'T', 'imgStockOut', 2, 'imgStockOut1','frmPOSStkOut.html'),\n"
-			+ "('frmStockFlashReport', 'Stock Flash Report', 'U', 'imgStockFlashReport', 17, 'imgStockFlashReport1','frmPOSStockFlashReport.html'),\n"
-			+ "('frmSubGroup', 'SubGroup', 'M', 'imgSubGroup', 35, 'imgSubGroup1','frmPOSSubGroup.html'),\n"
-			+ "('frmSubGroupWiseReport', 'SubGroupWise Report', 'R', 'imgSubGroupWiseReport', 14, 'imgSubGroupWiseReport','frmPOSSubGroupWiseReport.html'),\n"
-			+ "('frmTableMaster', 'Table Master', 'M', 'imgTableMaster', 37, 'imgTableMaster1','frmPOSTableMaster.html'),\n"
-			+ "('frmTableStatusReport', 'TableStatusReport', 'T', 'imgTableStatusReport', 70, 'imgTableStatusReport1','frmPOSTableStatusReport.html'),\n"
-			+ "('frmTaxMaster', 'Tax Master', 'M', 'imgTaxMaster', 36, 'imgTaxMaster1','frmPOSTaxMaster.html'),\n"
-			+ "('frmTaxRegeneration', 'Tax Regeneration', 'T', 'imgTaxReGeneration', 92, 'imgTaxReGeneration1','frmPOSTaxRegeneration.html'),\n"
-			+ "('frmTaxWiseReport', 'Tax Wise Report', 'R', 'imgTaxWiseReport', 41, 'imgTaxWiseReport','frmPOSTaxWiseReport.html'),\n"
-			+ "('frmTDH', 'TDH', 'M', 'imgTDH', 67, 'imgTDH1','frmPOSTDH.html'),\n"
-			+ "('frmTools', 'Tools', 'U', 'imgTools', 57, 'imgTools1','frmPOSTools.html'),\n"
-			+ "('frmUnsettleBill', 'Unsettle Bill', 'T', 'imgUnsettleBill', 55, 'imgUnsettleBill1','frmUnsettleBill.html'),\n"
-			+ "('frmUserRegistration', 'User Registration', 'M', 'imgUserRegistration', 7, 'imgUserRegistration1','frmPOSUserRegistration.html'),\n"
-			+ "('frmVoidAdvanceOrder', 'VoidAdvanceOrder', 'T', 'imgVoidAdvOrder', 104, 'imgVoidAdvOrder1','frmPOSVoidAdvanceOrder.html'),\n"
-			+ "('frmVoidBill', 'Void Bill', 'T', 'imgVoidBill', 12, 'imgVoidBill1','frmPOSVoidBill.html'),\n"
-			+ "('frmVoidBillReport', 'Void Bill Report', 'R', 'imgVoidBillReport', 32, 'imgVoidBillReport','frmPOSVoidBillReport.html'),\n"
-			+ "('frmVoidKot', 'VoidKot', 'T', 'imgVoidKOT', 51, 'imgVoidKOT1','frmPOSVoidKot.html'),\n"
-			+ "('frmVoidStock', 'VoidStock', 'T', 'imgVoidStock', 52, 'imgVoidStock1','frmPOSVoidStock.html'),\n"
-			+ "('frmWaiterMaster', 'Waiter Master', 'M', 'imgWaiterMaster', 33, 'imgWaiterMaster1','frmPOSWaiterMaster.html'),\n"
-			+ "('frmWaiterWiseIncentiveReport', 'WaiterWiseIncentivesReport', 'R', 'imgWaiterIncentivesReports', 103, 'imgWaiterIncentivesReports1','frmPOSWaiterWiseIncentiveReport.html'),\n"
-			+ "('frmWaiterWiseItemReport', 'WaiterWiseItemReport', 'R', 'imgWaiterWiseItemReport', 102, 'imgWaiterWiseItemReport1','frmPOSWaiterWiseItemReport.html'),\n"
-			+ "('frmZoneMaster', 'Zone Master', 'M', 'imgZoneMaster', 101, 'imgZoneMaster1','frmPOSZoneMaster.html'),\n"
-			+ "('frmSalesSummaryFlash', 'Sales Summary Flash', 'R', 'imgSalesSummaryFlash', 106, 'imgSalesSummaryFlash1','frmPOSSalesSummaryFlash.html'),\n"
-			+ "('frmPOSWiseSalesComparison', 'POS Wise Sales', 'R', 'imgPOSWiseSales', 107, 'imgPOSWiseSales1','frmPOSWiseSalesComparison.html'),\n"
-			+ "('frmTableReservation', 'Table Reservation', 'T', 'imgTableReservation', 108, 'imgTableReservation1','frmPOSTableReservation.html'),\n"
-			+ "('frmStatistics', 'Statistics', 'T', 'imgStatistics', 109, 'imgStatistics1','frmPOSStatistics.html'),\n"
-			+ "('frmDailyCollectionReport', 'Daily Collection Report', 'R', 'imgDailyCollectionReport', 110,'imgDailyCollectionReport1','frmPOSDailyCollectionReport.html'),\n"
-			+ "('frmDailySalesReport', 'Daily Sales Report', 'R', 'imgDailySalesReport', 111, 'imgDailySalesReport1','frmPOSDailySalesReport.html'),\n"
-			+ "('frmVoidKOTReport', 'Void KOT Report', 'R', 'imgVoidKOTReport', 112,'imgVoidKOTReport1','frmPOSVoidKOTReport.html'),\n"
-			+ "('funTaxBreakupSummaryReport', 'Tax Breakup Summary Report', 'R', 'imgTaxBreakupSummaryReport', 98, 'imgTaxBreakupSummaryReport','funPOSTaxBreakupSummaryReport.html'),\n"
-			+ "('frmShortcutKeySetup', 'Shortcut Key Setup', 'U', 'imgShortcutKeySetup', 113, 'imgShortcutKeySetup','frmPOSShortcutKeySetup.html'),\n"
-			+ "('frmGuestCreditReport', 'Guest Credit Report', 'R', 'imgGuestCreditReport', 114, 'imgGuestCreditReport1','frmPOSGuestCreditReport.html'),\n "
-			+ "('frmUserCardSwipe', 'UserCardSwipe', 'M', 'imgUserCards', 115, 'imgUserCards','frmPOSUserCardSwipe.html'),\n "
-			+ "('frmChangeCustomerOnBill', 'ChangeCustomerOnBill', 'T', 'imgChangeCustomerOnBill', 116, 'imgChangeCustomerOnBill1','frmPOSChangeCustomerOnBill.html'),\n"
-			+ "('frmPostPOSSalesDataToMMS', 'PostPOSSalesDataToMMS', 'T', 'imgPostPOSSalesDataToMMS', 117, 'imgPostPOSSalesDataToMMS','frmPOSPostPOSSalesDataToMMS.html'),\n"
-			+ "('frmShiftEndProcessConsolidate', 'ShiftEndProcessConsolidate', 'T', 'imgDayEndConsolidate', 118, 'imgDayEndConsolidate','frmPOSShiftEndProcessConsolidate.html'),\n"
-			+ "('frmCustomerDisplaySystem', 'CustomerDisplaySystem', 'T', 'imgCustomerDisplaySystem', 119, 'imgCustomerDisplaySystem1','frmPOSCustomerDisplaySystem.html'),\n"
-			+ "('frmGenrateMallInterfaceText', 'GenrateMallInterfaceText', 'T', 'imgGenrateMIText', 120, 'imgGenrateMIText1','frmPOSGenrateMallInterfaceText.html'),\n "
-			+ "('frmSendBulkSMS', 'SendBulkSMS', 'T', 'imgSendBulkSMS', 121, 'imgSendBulkSMS1','frmPOSSendBulkSMS.html'),\n "
-			+ "('frmShowCard', 'ShowCard', 'T', 'imgShowCard', 122, 'imgShowCard','frmPOSShowCard.html'),\n"
-			+ "('frmSubGroupWiseSummaryReport', 'SubGroupWiseSummaryReport', 'R', 'imgSubGroupWiseSummaryReport', 123, 'imgSubGroupWiseSummaryReport1','frmPOSSubGroupWiseSummaryReport.html'),\n "
-			+ "('frmArrangeTransaction', 'Arrange Transaction', 'M', 'imgArrangeTransaction', 124, 'imgArrangeTransaction','frmPOSArrangeTransaction.html'),\n"
-			+ "('frmNCKOT', 'NCKOT', 'T', 'imgNCKOT', 125, 'imgNCKOT1','frmPOSNCKOT.html'),\n"
-			+ "('frmKDSBookAndProcess', 'KDSBookAndProcess', 'T', 'imgKDSBookAndProcess', 126, 'imgKDSBookAndProcess','frmPOSKDSBookAndProcess.html'),\n "
-			+ "('frmUnusedCardBalanceReport', 'UnusedCardBalanceReport', 'R', 'imgUnusedCardBalance', 127, 'imgUnusedCardBalanceReport1','frmPOSUnusedCardBalanceReport.html'),\n"
-			+ "('frmImportDatabase', 'Import Database', 'T', 'imgImportDatabase', 128, 'imgImportDatabase1','frmPOSImportDatabase.html'),\n "
-			+ "('frmTakeAway', 'Take Away', 'T', 'imgTakeAway', 129, 'imgTakeAway','frmPOSTakeAway.html'),\n "
-			+ "('frmDayWiseSalesSummaryFlash', 'DayWiseSalesSummaryFlash', 'R', 'imgDayWiseSalesSummary', 130, 'imgDayWiseSalesSummary','frmPOSDayWiseSalesSummaryFlash.html'),\n "
-			+ "('frmBillWiseSettlementSalesSummaryFlash', 'BillWiseSettlementSalesSummaryFlash', 'R', 'imgBillWiseSttlementSalesSummary', 131, 'imgBillWiseSttlementSalesSummary','frmPOSBillWiseSettlementSalesSummaryFlash.html'),\n "
-			+ "('frmRevenueHeadWiseItemSalesReport', 'Revenue Head Wise Item Sales', 'R', 'imgRevenueHeadWiseItemSales', 132, 'imgRevenueHeadWiseItemSales','frmPOSRevenueHeadWiseItemSalesReport.html'),\n "
-			+ "('frmPlaceOrder', 'Place Order', 'T', 'imgPlaceOrder', 133, 'imgPlaceOrder','frmPOSPlaceOrder.html'),\n "
-			+ "('frmPullOrder', 'Pull Order', 'T', 'imgPullOrder', 134, 'imgPullOrder','frmPOSPullOrder.html'),\n"
-			+ "('frmCocktailWorldInterface', 'CW Interface', 'T', 'imgCWInterface', 135, '','frmPOSCocktailWorldInterface.html'),\n"
-			+ "('frmManagersReport', 'Managers Report', 'R', 'imgManagersReport', 136, 'imgManagersReport','frmPOSManagersReport.html'),\n"
-			+ "('frmItemWiseConsumption', 'Item Wise Consumption', 'R', 'imgItemWiseConsumption', 137, 'imgItemWiseConsumption','frmPOSItemWiseConsumption.html'),\n"
-			+ "('frmOrderMaster', 'Order Master', 'M', 'imgOrderMaster', 138, 'imgOrderMaster','frmPOSOrderMaster.html'),\n"
-			+ "('frmCharactersticsMaster', 'Characterstics Master', 'M', 'imgCharactersticsMaster', 139, 'imgCharactersticsMaster','frmPOSCharactersticsMaster.html'),\n"
-			+ "('frmTableWisePaxReport', 'Table Wise Pax Report', 'R', 'imgTableWisePaxReport', 140,'imgTablewisePaxReport','frmPOSTableWisePaxReport.html'),\n"
-			+ "('frmPostingReport', 'Posting Report', 'R', 'imgPostingReport', 141,'imgPostingReport','frmPOSPostingReport.html'),\n"
-			+ "('frmPlacedOrderReport', 'Placed Order Report', 'R', 'imgPlacedOrderReport', 142,'imgPlacedOrderReport','frmPOSPlacedOrderReport.html'),\n"
-			+ "('ComplimentrySettlement', 'Complimentry Settlement', 'T', 'imgPlacedOrderReport', 143,'imgPlacedOrderReport','POSComplimentrySettlement.html'),\n"
-			+ "('DiscountOnBill', 'Discount On Bill', 'T', 'imgPlacedOrderReport', 144,'imgPlacedOrderReport','POSDiscountOnBill.html'),\n"
-			+ "('frmAdvanceOrderReport', 'Advance Order Report', 'R', 'imgAdvanceOrderReport', 145, 'imgAdvanceOrderReport1','frmPOSAdvanceOrderReport.html'),\n"
-			+ "('frmVoidAdvanceOrderReport', 'Void Advance Order Report', 'R', 'imgVoidAdvanceOrderReport', 146, 'imgVoidAdvanceOrderReport1','frmPOSVoidAdvanceOrderReport.html'),\n"
-			+ "('frmPhysicalStockFlash', 'PhysicalStockFlash', 'R', 'imgPhysicalStockPosting', 147, 'imgPhysicalStockPosting','frmPOSPhysicalStockFlash.html'),\n"
-			+ "('frmReprintDocsReport', 'Reprint Docs Report', 'R', 'imgReprintDocsReport', 148, 'imgReprintDocsReport1','frmPOSReprintDocsReport.html'),\n"
-			+ "('frmMoveKOTItemToTable', 'Move KOT Items', 'T', 'imgMoveKOTItemsToTable', 149, 'imgMoveKOTItemsToTable','frmPOSMoveKOTItemToTable.html'),\n"
-			+ "('frmPOSWiseItemIncentive', 'Item Wise Incentives', 'M', 'imgPOSWiseItemIncentive', 150, 'imgPOSWiseItemIncentive','frmPOSWiseItemIncentive.html'),\n"
-			+ "('frmWaiterWiseItemWiseIncentiveReport', 'Waiter Wise Item Wise Incentives Report', 'R', 'imgWaiterWiseItemWiseIncentivesReports', 151, 'imgWaiterWiseItemWiseIncentivesReports','frmPOSWaiterWiseItemWiseIncentiveReport.html'),\n"
+		sql = "INSERT INTO `tblforms` (`strFormName`, `strModuleName`, `strModuleType`, `strImageName`, `intSequence`, `strColorImageName`,`strRequestMapping`) VALUES "
+			+ "('frmAddKOTToBill', 'Add KOT To Bill', 'T', 'imgKOTToBill', 85, 'imgKOTToBill1','frmPOSAddKOTToBill.html'), "
+			+ "('frmAdvanceBooking', 'Advance Order', 'T', 'imgAdvanceOrder', 24, 'imgAdvanceOrder1','frmPOSAdvanceBooking.html'), "
+			+ "('frmAdvanceOrderFlash', 'Advance Order Flash', 'R', 'imgAdvanceOrderFlash', 47, 'imgAdvanceOrderFlash1','frmPOSAdvanceOrderFlash.html'), "
+			+ "('frmAdvanceOrderTypeMaster', 'Advance Order Type Master', 'M', 'imgAdvanceOrderTypeMaster', 86, 'imgAdvanceOrderTypeMaster','frmPOSAdvanceOrderTypeMaster.html'), "
+			+ "('frmAIPB', 'AvgItemPerBill', 'R', 'imgAvgItemsPerBill', 63, 'imgAvgItemsPerBill1','frmPOSAIPB.html'), "
+			+ "('frmAPC', 'AvgPerCover', 'R', 'imgAveragePC', 64, 'imgAveragePC1','frmPOSAPC.html'), "
+			+ "('frmAreaMaster', 'Area Master', 'M', 'imgAreaMaster', 54, 'imgAreaMaster1','frmPOSAreaMaster.html'), "
+			+ "('frmAssignHomeDelivery', 'AssignHomeDelivery', 'T', 'imgAsignHomeDelivery', 99, 'imgAsignHomeDelivery1','frmPOSAssignHomeDelivery.html'), "
+			+ "('frmATV', 'AvgTicketValue', 'R', 'imgAvgValue', 65, 'imgAvgValue1','frmPOSATV.html'), "
+			+ "('frmAuditFlash', 'Audit Flash', 'R', 'imgAuditFlash', 46, 'imgAuditFlash1','frmPOSAuditFlash.html'), "
+			+ "('frmAuditorReport', 'Auditor Report', 'R', 'imgAuditorReport', 97, 'imgAuditorReport','frmPOSAuditorReport.html'), "
+			+ "('frmAvdBookReceipt', 'Advance Booking Receipt', 'T', 'imgAdvanceBookingReceipt', 31, 'imgAdvanceBookingReceipt1','frmPOSAvdBookReceipt.html'), "
+			+ "('frmBillFromKOTs', 'BillFromKOTs', 'T', 'imgMakeBillFromKOT', 76, 'imgMakeBillFromKOT1','frmPOSBillFromKOTs.html'), "
+			+ "('frmBillReport', 'Bill Wise Report', 'R', 'imgBillWiseReport', 9, 'imgBillWiseReport','frmPOSBillReport.html'), "
+			+ "('frmBulkMenuItemPricing', 'Bulk Menu Item Pricing', 'M', 'imgBulkMenuItemPricing', 88, 'imgBulkMenuItemPricing1','frmPOSBulkMenuItemPricing.html'), "
+			+ "('frmCashManagement', 'Cash Management', 'T', 'imgCashManagement', 43, 'imgCashManagement1','frmPOSCashManagement.html'), "
+			+ "('frmCashMgmtReport', 'Cash Mgmt Report', 'R', 'imgCashMgmtFlashReport', 44, 'imgCashMgmtFlashReport1','frmPOSCashMgmtReport.html'), "
+			+ "('frmCloseProductionOrder', 'Close Producion Order', 'T', 'imgProductionOrder', 84, 'imgProductionOrder1','frmPOSCloseProductionOrder.html'), "
+			+ "('frmComplimentarySettlement', 'Complimentary Settlement Report', 'R', 'imgComplimentarySettlementReport', 93, 'imgComplimentarySettlementReport','frmPOSComplimentarySettlement.html'), "
+			+ "('frmCostCenter', 'Cost Center', 'M', 'imgCostCenter', 22, 'imgCostCenter1','frmPOSCostCenter.html'), "
+			+ "('frmCostCenterWiseReport', 'Cost Centre Report', 'R', 'imgCostCenterReport', 39, 'imgCostCenterReport1','frmPOSCostCenterWiseReport.html'), "
+			+ "('frmCounterMaster', 'CounterMaster', 'M', 'imgCounterMaster', 73, 'imgCounterMaster1','frmPOSCounterMaster.html'), "
+			+ "('frmCounterWiseSalesReport', 'Counter Wise Sales Report', 'R', 'imgCounterWiseSalesReport', 94, 'imgCounterWiseSalesReport','frmPOSCounterWiseSalesReport.html'), "
+			+ "('frmCustAreaMaster', 'Customer Area Master', 'M', 'imgCustAreaMaster', 11, 'imgCustAreaMaster1','frmPOSCustAreaMaster.html'), "
+			+ "('frmCustomerMaster', 'Customer Master', 'M', 'imgCustomerMaster', 30, 'imgCustomerMaster1','frmPOSCustomerMaster.html'), "
+			+ "('frmCustomerTypeMaster', 'CustomerTypeMaster', 'M', 'imgCustomerTypeMaster', 68, 'imgCustomerTypeMaster1','frmPOSCustomerTypeMaster.html'), "
+			+ "('frmDayEndFlash', 'Day End Flash', 'R', 'imgDayEndFlash', 49, 'imgDayEndFlash1','frmPOSDayEndFlash.html'), "
+			+ "('frmDayEndProcess', 'Day End', 'T', 'imgDayEnd', 20, 'imgDayEnd1','frmPOSDayEndProcess.html'), "
+			+ "('frmDayEndWithoutDetails', 'DayEndWithoutDetails', 'T', 'imgDayEndwithoutDetails', 80, 'imgDayEndwithoutDetails1','frmPOSDayEndWithoutDetails.html'), "
+			+ "('frmDebitCardFlashReports', 'DebitCardFlashReports', 'R', 'imgDebitCardFlash', 66, 'imgDebitCardFlash1','frmPOSDebitCardFlashReports.html'), "
+			+ "('frmDebitCardMaster', 'DebitCardMaster', 'M', 'imgCardTypeMaster', 58, 'imgCardTypeMaster1','frmPOSDebitCardMaster.html'), "
+			+ "('frmDeliveryboyIncentive', 'DeliveryboyIncentive', 'R', 'imgDeliveryboyIncentive', 105, 'imgDeliveryboyIncentive1','frmPOSDeliveryboyIncentive.html'), "
+			+ "('frmDeliveryPersonMaster', 'Home Delivery Person', 'M', 'imgDeliveryBoy', 19, 'imgDeliveryBoy1','frmPOSDeliveryPersonMaster.html'), "
+			+ "('frmDirectBiller', 'Direct Biller', 'T', 'imgDirectBiller', 28, 'imgDirectBiller1','frmPOSDirectBiller.html'), "
+			+ "('frmDiscountReport', 'Discount Report', 'R', 'imgDiscountReport', 89, 'imgDiscountReport1','frmPOSDiscountReport.html'), "
+			+ "('frmGiftVoucherIssue', 'GiftVoucherIssue', 'T', 'imgGiftVoucherIssue', 78, 'imgGiftVoucherIssue1','frmPOSGiftVoucherIssue.html'), "
+			+ "('frmGiftVoucherMaster', 'GiftVoucherMaster', 'M', 'imgGiftVoucher', 61, 'imgGiftVoucher1','frmPOSGiftVoucherMaster.html'), "
+			+ "('frmGroup', 'Group', 'M', 'imgGroup', 34, 'imgGroup1','frmGroup.html'), "
+			+ "('frmGroupSubGroupWiseReport', 'Group-SubGroup Wise Report', 'R', 'imgGrpSubGrpWise', 90, 'imgGrpSubGrpWise1','frmPOSGroupSubGroupWiseReport.html'), "
+			+ "('frmGroupWiseReport', 'Group Wise Report', 'R', 'imgGroupWiseReport', 13, 'imgGroupWiseReport','frmPOSGroupWiseReport.html'), "
+			+ "('frmImportExcelFile', 'ImportExcel', 'T', 'imgImportData', 74, 'imgImportData1','frmPOSImportExcelFile.html'), "
+			+ "('frmItemModifier', 'Item Modifier', 'M', 'imgItemModifier', 27, 'imgItemModifier1','frmPOSItemModifier.html'), "
+			+ "('frmItemWiseReport', 'Item Wise Report', 'R', 'imgItemWiseReport', 10, 'imgItemWiseReport1','frmPOSItemWiseReport.html'), "
+			+ "('frmKitchenDisplaySystem', 'Kitchen System', 'T', 'imgKitchenDisplaySystem', 45, 'imgKitchenDisplaySystem1','frmPOSKitchenDisplaySystem.html'), "
+			+ "('frmLoyaltyPointMaster', 'LoyaltyPoints', 'M', 'imgLoyaltyMaster', 75, 'imgLoyaltyMaster','frmPOSLoyaltyPointMaster.html'), "
+			+ "('frmLoyaltyPointReport', 'Loyalty Point Report', 'R', 'imgLoyaltyPointReport', 91, 'imgLoyaltyPointReport1','frmPOSLoyaltyPointReport.html'), "
+			+ "('frmMakeBill', 'Make Bill', 'T', 'imgMakeBill', 29, 'imgMakeBill1','frmPOSMakeBill.html'), "
+			+ "('frmMenuHead', 'Menu Head', 'M', 'imgMenuHead', 38, 'imgMenuHead1','frmPOSMenuHead.html'), "
+			+ "('frmMenuHeadWiseReport', 'Menu Head Wise', 'R', 'imgMenuHeadWiseReport', 100, 'imgMenuHeadWiseReport','frmPOSMenuHeadWiseReport.html'), "
+			+ "('frmMenuItem', 'Menu Item', 'M', 'imgMenuItem', 23, 'imgMenuItem1','frmPOSMenuItem.html'), "
+			+ "('frmModifierGroupMaster', 'ModifierGroupMaster', 'M', 'imgModifierGroupMaster', 77, 'imgModifierGroupMaster1','frmPOSModifierGroupMaster.html'), "
+			+ "('frmModifyBill', 'Modify Bill', 'T', 'imgModifyBill', 25, 'imgModifyBill1','frmPOSModifyBill.html'), "
+			+ "('frmMoveKOT', 'Move KOT', 'T', 'imgMoveKOT', 62, 'imgMoveKOT1','frmPOSMoveKOT.html'), "
+			+ "('frmMoveTable', 'Move Table', 'T', 'imgMoveTable', 53, 'imgMoveTable1','frmPOSMoveTable.html'), "
+			+ "('frmMultiCostCenterKDS', 'MultiCostCenterKDS', 'T', 'imgMultiCostCenterKDS', 82, 'imgMultiCostCenterKDS1','frmPOSMultiCostCenterKDS.html'), "
+			+ "('frmNonChargableSettlementReport', 'Non Chargable KOT Report', 'R', 'imgNonChargableKOTReport', 95, 'imgNonChargableKOTReport','frmPOSNonChargableSettlementReport.html'), "
+			+ "('frmOperatorWiseReport', 'OperatorWise Report', 'R', 'imgOperatorWiseReport', 15, 'imgOperatorWiseReport','frmPOSOperatorWiseReport.html'), "
+			+ "('frmOrderAnalysisReport', 'Order Analysis Report', 'R', 'imgOrderAnalysisReport', 96, 'imgOrderAnalysisReport','frmPOSOrderAnalysisReport.html'), "
+			+ "('frmPhysicalStkPosting', 'Physical Stock Posting', 'T', 'imgPhysicalStockPosting', 21, 'imgPhysicalStockPosting1','frmPOSPhysicalStkPosting.html'), "
+			+ "('frmPosMaster', 'POS Master', 'M', 'imgPOSMaster', 5, 'imgPOSMaster1','frmPosMaster.html'), "
+			+ "('frmPostDataToHO', 'Post Sale Data', 'T', 'imgPostPOSDataToHO', 83, 'imgPostPOSDataToHO1','frmPostDataToHO.html'), "
+			+ "('frmPostPOSDataToCMS', 'Post POS Data To CMS', 'T', 'imgPostPOSDataToCMS', 98, 'imgPostPOSDataToCMS1','frmPostPOSDataToCMS.html'), "
+			+ "('frmPrice', 'Price Menu', 'M', 'imgPriceMenu', 4, 'imgPriceMenu1','frmPOSPrice.html'), "
+			+ "('frmPromationFlash', 'Promotion Flash', 'R', 'imgPromotionReport', 87, 'imgPromotionReport','frmPOSPromationFlash.html'), "
+			+ "('frmPromationMaster', 'Promotion Master', 'M', 'imgPromotionMaster', 81, 'imgPromotionMaster','frmPOSPromationMaster.html'), "
+			+ "('frmPropertySetup', 'Property Setup', 'U', 'imgPropertySetup', 8, 'imgPropertySetup1','frmPOSPropertySetup.html'), "
+			+ "('frmReasonMaster', 'Reason Master', 'M', 'imgReasonMaster', 18, 'imgReasonMaster1','frmPOSReasonMaster.html'), "
+			+ "('frmRechargeDebitCard', 'RechargeDebitCard', 'T', 'imgRechargeCard', 60, 'imgRechargeCard1','frmPOSRechargeDebitCard.html'), "
+			+ "('frmRecipeMaster', 'RecipeMaster', 'M', 'imgRecipeMaster', 79, 'imgRecipeMaster1','frmPOSRecipeMaster.html'), "
+			+ "('frmRegisterDebitCard', 'DebitCardRegister', 'M', 'imgRegisterDebitCard', 59, 'imgRegisterDebitCard1','frmPOSRegisterDebitCard.html'), "
+			+ "('frmReOrderTime', 'ReOrderTime', 'M', 'imgReorderTime', 72, 'imgReorderTime1','frmPOSReOrderTime.html'), "
+			+ "('frmReprint', 'Reprint', 'T', 'imgReprintDocs', 50, 'imgReprintDocs1','frmPOSReprint.html'), "
+			+ "('frmRestaurantBill', 'Make KOT', 'T', 'imgMakeKOT', 26, 'imgMakeKOT1','frmPOSRestaurantBill.html'), "
+			+ "('frmRestaurantDtl', 'SettleBill', 'T', 'imgSettleBill', 42, 'imgSettleBill1','frmPOSRestaurantDtl.html'), "
+			+ "('frmSalesReport', 'Sales Report', 'U', 'imgSalesReport', 6, 'imgSalesReport1','frmPOSSalesReport.html'), "
+			+ "('frmSettlement', 'Settlement', 'M', 'imgSettlement', 3, 'imgSettlement1','frmPOSSettlement.html'), "
+			+ "('frmSettlementWiseReport', 'SettlementWise Report', 'R', 'imgSettlementWiseReport', 16, 'imgSettlementWiseReport','frmPOSSettlementWiseReport.html'), "
+			+ "('frmShiftMaster', 'Shift Master', 'M', 'imgShiftMaster', 56, 'imgShiftMaster1','frmPOSShiftMaster.html'), "
+			+ "('frmSplitBill', 'SplitBill', 'T', 'imgSplitBill', 69, 'imgSplitBill1','frmPOSSplitBill.html'), "
+			+ "('frmStkAdjustment', 'Stock Adujstment', 'T', 'imgStockAdjustment', 40, 'imgStockAdjustment1','frmPOSStkAdjustment.html'), "
+			+ "('frmStkIn', 'Stock In', 'T', 'imgStockIn', 1, 'imgStockIn1','frmPOSStkIn.html'), "
+			+ "('frmStkInOutFlash', 'Stock In Out Flash', 'R', 'imgStockInOutFlash', 48, 'imgStockInOutFlash1','frmPOSStkInOutFlash.html'), "
+			+ "('frmStkOut', 'Stock Out', 'T', 'imgStockOut', 2, 'imgStockOut1','frmPOSStkOut.html'), "
+			+ "('frmStockFlashReport', 'Stock Flash Report', 'U', 'imgStockFlashReport', 17, 'imgStockFlashReport1','frmPOSStockFlashReport.html'), "
+			+ "('frmSubGroup', 'SubGroup', 'M', 'imgSubGroup', 35, 'imgSubGroup1','frmPOSSubGroup.html'), "
+			+ "('frmSubGroupWiseReport', 'SubGroupWise Report', 'R', 'imgSubGroupWiseReport', 14, 'imgSubGroupWiseReport','frmPOSSubGroupWiseReport.html'), "
+			+ "('frmTableMaster', 'Table Master', 'M', 'imgTableMaster', 37, 'imgTableMaster1','frmPOSTableMaster.html'), "
+			+ "('frmTableStatusReport', 'TableStatusReport', 'T', 'imgTableStatusReport', 70, 'imgTableStatusReport1','frmPOSTableStatusReport.html'), "
+			+ "('frmTaxMaster', 'Tax Master', 'M', 'imgTaxMaster', 36, 'imgTaxMaster1','frmPOSTaxMaster.html'), "
+			+ "('frmTaxRegeneration', 'Tax Regeneration', 'T', 'imgTaxReGeneration', 92, 'imgTaxReGeneration1','frmPOSTaxRegeneration.html'), "
+			+ "('frmTaxWiseReport', 'Tax Wise Report', 'R', 'imgTaxWiseReport', 41, 'imgTaxWiseReport','frmPOSTaxWiseReport.html'), "
+			+ "('frmTDH', 'TDH', 'M', 'imgTDH', 67, 'imgTDH1','frmPOSTDH.html'), "
+			+ "('frmTools', 'Tools', 'U', 'imgTools', 57, 'imgTools1','frmPOSTools.html'), "
+			+ "('frmUnsettleBill', 'Unsettle Bill', 'T', 'imgUnsettleBill', 55, 'imgUnsettleBill1','frmUnsettleBill.html'), "
+			+ "('frmUserRegistration', 'User Registration', 'M', 'imgUserRegistration', 7, 'imgUserRegistration1','frmPOSUserRegistration.html'), "
+			+ "('frmVoidAdvanceOrder', 'VoidAdvanceOrder', 'T', 'imgVoidAdvOrder', 104, 'imgVoidAdvOrder1','frmPOSVoidAdvanceOrder.html'), "
+			+ "('frmVoidBill', 'Void Bill', 'T', 'imgVoidBill', 12, 'imgVoidBill1','frmPOSVoidBill.html'), "
+			+ "('frmVoidBillReport', 'Void Bill Report', 'R', 'imgVoidBillReport', 32, 'imgVoidBillReport','frmPOSVoidBillReport.html'), "
+			+ "('frmVoidKot', 'VoidKot', 'T', 'imgVoidKOT', 51, 'imgVoidKOT1','frmPOSVoidKot.html'), "
+			+ "('frmVoidStock', 'VoidStock', 'T', 'imgVoidStock', 52, 'imgVoidStock1','frmPOSVoidStock.html'), "
+			+ "('frmWaiterMaster', 'Waiter Master', 'M', 'imgWaiterMaster', 33, 'imgWaiterMaster1','frmPOSWaiterMaster.html'), "
+			+ "('frmWaiterWiseIncentiveReport', 'WaiterWiseIncentivesReport', 'R', 'imgWaiterIncentivesReports', 103, 'imgWaiterIncentivesReports1','frmPOSWaiterWiseIncentiveReport.html'), "
+			+ "('frmWaiterWiseItemReport', 'WaiterWiseItemReport', 'R', 'imgWaiterWiseItemReport', 102, 'imgWaiterWiseItemReport1','frmPOSWaiterWiseItemReport.html'), "
+			+ "('frmZoneMaster', 'Zone Master', 'M', 'imgZoneMaster', 101, 'imgZoneMaster1','frmPOSZoneMaster.html'), "
+			+ "('frmSalesSummaryFlash', 'Sales Summary Flash', 'R', 'imgSalesSummaryFlash', 106, 'imgSalesSummaryFlash1','frmPOSSalesSummaryFlash.html'), "
+			+ "('frmPOSWiseSalesComparison', 'POS Wise Sales', 'R', 'imgPOSWiseSales', 107, 'imgPOSWiseSales1','frmPOSWiseSalesComparison.html'), "
+			+ "('frmTableReservation', 'Table Reservation', 'T', 'imgTableReservation', 108, 'imgTableReservation1','frmPOSTableReservation.html'), "
+			+ "('frmStatistics', 'Statistics', 'T', 'imgStatistics', 109, 'imgStatistics1','frmPOSStatistics.html'), "
+			+ "('frmDailyCollectionReport', 'Daily Collection Report', 'R', 'imgDailyCollectionReport', 110,'imgDailyCollectionReport1','frmPOSDailyCollectionReport.html'), "
+			+ "('frmDailySalesReport', 'Daily Sales Report', 'R', 'imgDailySalesReport', 111, 'imgDailySalesReport1','frmPOSDailySalesReport.html'), "
+			+ "('frmVoidKOTReport', 'Void KOT Report', 'R', 'imgVoidKOTReport', 112,'imgVoidKOTReport1','frmPOSVoidKOTReport.html'), "
+			+ "('funTaxBreakupSummaryReport', 'Tax Breakup Summary Report', 'R', 'imgTaxBreakupSummaryReport', 98, 'imgTaxBreakupSummaryReport','funPOSTaxBreakupSummaryReport.html'), "
+			+ "('frmShortcutKeySetup', 'Shortcut Key Setup', 'U', 'imgShortcutKeySetup', 113, 'imgShortcutKeySetup','frmPOSShortcutKeySetup.html'), "
+			+ "('frmGuestCreditReport', 'Guest Credit Report', 'R', 'imgGuestCreditReport', 114, 'imgGuestCreditReport1','frmPOSGuestCreditReport.html'),  "
+			+ "('frmUserCardSwipe', 'UserCardSwipe', 'M', 'imgUserCards', 115, 'imgUserCards','frmPOSUserCardSwipe.html'),  "
+			+ "('frmChangeCustomerOnBill', 'ChangeCustomerOnBill', 'T', 'imgChangeCustomerOnBill', 116, 'imgChangeCustomerOnBill1','frmPOSChangeCustomerOnBill.html'), "
+			+ "('frmPostPOSSalesDataToMMS', 'PostPOSSalesDataToMMS', 'T', 'imgPostPOSSalesDataToMMS', 117, 'imgPostPOSSalesDataToMMS','frmPOSPostPOSSalesDataToMMS.html'), "
+			+ "('frmShiftEndProcessConsolidate', 'ShiftEndProcessConsolidate', 'T', 'imgDayEndConsolidate', 118, 'imgDayEndConsolidate','frmPOSShiftEndProcessConsolidate.html'), "
+			+ "('frmCustomerDisplaySystem', 'CustomerDisplaySystem', 'T', 'imgCustomerDisplaySystem', 119, 'imgCustomerDisplaySystem1','frmPOSCustomerDisplaySystem.html'), "
+			+ "('frmGenrateMallInterfaceText', 'GenrateMallInterfaceText', 'T', 'imgGenrateMIText', 120, 'imgGenrateMIText1','frmPOSGenrateMallInterfaceText.html'),  "
+			+ "('frmSendBulkSMS', 'SendBulkSMS', 'T', 'imgSendBulkSMS', 121, 'imgSendBulkSMS1','frmPOSSendBulkSMS.html'),  "
+			+ "('frmShowCard', 'ShowCard', 'T', 'imgShowCard', 122, 'imgShowCard','frmPOSShowCard.html'), "
+			+ "('frmSubGroupWiseSummaryReport', 'SubGroupWiseSummaryReport', 'R', 'imgSubGroupWiseSummaryReport', 123, 'imgSubGroupWiseSummaryReport1','frmPOSSubGroupWiseSummaryReport.html'),  "
+			+ "('frmArrangeTransaction', 'Arrange Transaction', 'M', 'imgArrangeTransaction', 124, 'imgArrangeTransaction','frmPOSArrangeTransaction.html'), "
+			+ "('frmNCKOT', 'NCKOT', 'T', 'imgNCKOT', 125, 'imgNCKOT1','frmPOSNCKOT.html'), "
+			+ "('frmKDSBookAndProcess', 'KDSBookAndProcess', 'T', 'imgKDSBookAndProcess', 126, 'imgKDSBookAndProcess','frmPOSKDSBookAndProcess.html'),  "
+			+ "('frmUnusedCardBalanceReport', 'UnusedCardBalanceReport', 'R', 'imgUnusedCardBalance', 127, 'imgUnusedCardBalanceReport1','frmPOSUnusedCardBalanceReport.html'), "
+			+ "('frmImportDatabase', 'Import Database', 'T', 'imgImportDatabase', 128, 'imgImportDatabase1','frmPOSImportDatabase.html'),  "
+			+ "('frmTakeAway', 'Take Away', 'T', 'imgTakeAway', 129, 'imgTakeAway','frmPOSTakeAway.html'),  "
+			+ "('frmDayWiseSalesSummaryFlash', 'DayWiseSalesSummaryFlash', 'R', 'imgDayWiseSalesSummary', 130, 'imgDayWiseSalesSummary','frmPOSDayWiseSalesSummaryFlash.html'),  "
+			+ "('frmBillWiseSettlementSalesSummaryFlash', 'BillWiseSettlementSalesSummaryFlash', 'R', 'imgBillWiseSttlementSalesSummary', 131, 'imgBillWiseSttlementSalesSummary','frmPOSBillWiseSettlementSalesSummaryFlash.html'),  "
+			+ "('frmRevenueHeadWiseItemSalesReport', 'Revenue Head Wise Item Sales', 'R', 'imgRevenueHeadWiseItemSales', 132, 'imgRevenueHeadWiseItemSales','frmPOSRevenueHeadWiseItemSalesReport.html'),  "
+			+ "('frmPlaceOrder', 'Place Order', 'T', 'imgPlaceOrder', 133, 'imgPlaceOrder','frmPOSPlaceOrder.html'),  "
+			+ "('frmPullOrder', 'Pull Order', 'T', 'imgPullOrder', 134, 'imgPullOrder','frmPOSPullOrder.html'), "
+			+ "('frmCocktailWorldInterface', 'CW Interface', 'T', 'imgCWInterface', 135, '','frmPOSCocktailWorldInterface.html'), "
+			+ "('frmManagersReport', 'Managers Report', 'R', 'imgManagersReport', 136, 'imgManagersReport','frmPOSManagersReport.html'), "
+			+ "('frmItemWiseConsumption', 'Item Wise Consumption', 'R', 'imgItemWiseConsumption', 137, 'imgItemWiseConsumption','frmPOSItemWiseConsumption.html'), "
+			+ "('frmOrderMaster', 'Order Master', 'M', 'imgOrderMaster', 138, 'imgOrderMaster','frmPOSOrderMaster.html'), "
+			+ "('frmCharactersticsMaster', 'Characterstics Master', 'M', 'imgCharactersticsMaster', 139, 'imgCharactersticsMaster','frmPOSCharactersticsMaster.html'), "
+			+ "('frmTableWisePaxReport', 'Table Wise Pax Report', 'R', 'imgTableWisePaxReport', 140,'imgTablewisePaxReport','frmPOSTableWisePaxReport.html'), "
+			+ "('frmPostingReport', 'Posting Report', 'R', 'imgPostingReport', 141,'imgPostingReport','frmPOSPostingReport.html'), "
+			+ "('frmPlacedOrderReport', 'Placed Order Report', 'R', 'imgPlacedOrderReport', 142,'imgPlacedOrderReport','frmPOSPlacedOrderReport.html'), "
+			+ "('ComplimentrySettlement', 'Complimentry Settlement', 'T', 'imgPlacedOrderReport', 143,'imgPlacedOrderReport','POSComplimentrySettlement.html'), "
+			+ "('DiscountOnBill', 'Discount On Bill', 'T', 'imgPlacedOrderReport', 144,'imgPlacedOrderReport','POSDiscountOnBill.html'), "
+			+ "('frmAdvanceOrderReport', 'Advance Order Report', 'R', 'imgAdvanceOrderReport', 145, 'imgAdvanceOrderReport1','frmPOSAdvanceOrderReport.html'), "
+			+ "('frmVoidAdvanceOrderReport', 'Void Advance Order Report', 'R', 'imgVoidAdvanceOrderReport', 146, 'imgVoidAdvanceOrderReport1','frmPOSVoidAdvanceOrderReport.html'), "
+			+ "('frmPhysicalStockFlash', 'PhysicalStockFlash', 'R', 'imgPhysicalStockPosting', 147, 'imgPhysicalStockPosting','frmPOSPhysicalStockFlash.html'), "
+			+ "('frmReprintDocsReport', 'Reprint Docs Report', 'R', 'imgReprintDocsReport', 148, 'imgReprintDocsReport1','frmPOSReprintDocsReport.html'), "
+			+ "('frmMoveKOTItemToTable', 'Move KOT Items', 'T', 'imgMoveKOTItemsToTable', 149, 'imgMoveKOTItemsToTable','frmPOSMoveKOTItemToTable.html'), "
+			+ "('frmPOSWiseItemIncentive', 'Item Wise Incentives', 'M', 'imgPOSWiseItemIncentive', 150, 'imgPOSWiseItemIncentive','frmPOSWiseItemIncentive.html'), "
+			+ "('frmWaiterWiseItemWiseIncentiveReport', 'Waiter Wise Item Wise Incentives Report', 'R', 'imgWaiterWiseItemWiseIncentivesReports', 151, 'imgWaiterWiseItemWiseIncentivesReports','frmPOSWaiterWiseItemWiseIncentiveReport.html'), "
 			+ "('frmFactoryMaster', 'Factory Master', 'M', 'imgFactoryMaster', 152, 'imgFactoryMaster1','frmFactoryMaster.html'),"
 			+ "('frmKDSForKOTBookAndProcess', 'KDSForKOTBookAndProcess', 'T', 'imgKDSForKOTBookAndProcess', '153', 'imgKDSForKOTBookAndProcess1','frmPOSKDSForKOTBookAndProcess.html'), "
 			+ "('frmItemMasterListingReport', 'Item Master Listing Report', 'R', 'imgItemMasterListingReport', '154', 'imgItemMasterListingReport','frmPOSItemMasterListingReport.html'),"
@@ -8020,8 +8130,11 @@ public class clsStructureUpdate
 			+ ",('frmPaymentReceiptReport', 'Payment Receipt Report', 'R', 'imgPaymentReceiptReport', '205', 'imgPaymentReceiptReport1', 'frmPaymentReceiptReport.html') "
 			+ ",('frmCreditReport', 'Credit Report', 'R', 'imgCreditReport', '206', 'imgCreditReport1', 'frmCreditReport.html' )"
 			+ ",('frmPrinterSetup', 'Printer Setup', 'M', 'imgPrinterSetup', '207', 'imgPrinterSetup1', 'frmPrinterSetup.html')"
-			+ ",('frmRegisterInOutPlayZone', 'RegisterInOutPlayZone', 'T', 'imgRegisterInOutPlayZone', '208', 'imgRegisterInOutPlayZone1', 'frmRegisterInOutPlayZone.html'); ";
-
+			+ ",('frmRegisterInOutPlayZone', 'RegisterInOutPlayZone', 'T', 'imgRegisterInOutPlayZone', '208', 'imgRegisterInOutPlayZone1', 'frmRegisterInOutPlayZone.html') "
+			+ ",('frmConsolidatedDiscountReport', 'Consolidated Discount Report', 'R', 'imgConsolidatedDiscountReport', '209', 'imgConsolidatedDiscountReport1', 'frmConsolidatedDiscountReport.html') "
+			+ ",('frmWeraFoodOrders', 'Wera Food Online Orders', 'T', 'imgWeraFoodOrders', '210', 'imgWeraFoodOrders1', 'frmWeraFoodOrders.html')"
+			+ ",('frmCustomerLedger', 'Customer Ledger', 'R', 'imgCustomerLedger', '211', 'imgCustomerLedger1', 'frmCustomerLedger.html') "
+			+ ",('frmAreaWiseGroupWiseSales', 'Area Wise Group Wise Sales', 'R', 'imgAreaWiseGroupWiseSales', '212', 'imgAreaWiseGroupWiseSales', 'frmCustomerLedger.html') ";
 	    }
 	    i = executeUpdateQuery(sql);
 
