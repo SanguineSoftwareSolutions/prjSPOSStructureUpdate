@@ -3,7 +3,7 @@ package com.POSGlobal.controller;
 import com.POSGlobal.view.frmOkPopUp;
 import java.sql.ResultSet;
 
-public class clsStructureUpdate
+public class clsStructureUpdateDeprecated 
 {
 
     private int uc = 121;
@@ -6660,6 +6660,22 @@ public class clsStructureUpdate
 		    + "	ADD COLUMN `strSetExpiryTime` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strAuthorizeMemberCard`, "
 		    + "	ADD COLUMN `intExpiryTime` INT NOT NULL DEFAULT '0' AFTER `strSetExpiryTime`;";
 	    i = ExecuteQuery(sql);
+	    
+	    sql = "ALTER TABLE `tblitemmaster` "
+		    + "ADD COLUMN `strOperationalYN` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strHSNNo`;";
+	    i = ExecuteQuery(sql);
+	    
+	    sql ="ALTER TABLE `tblsetup` "
+		+"ADD COLUMN `strDBBackupMailReceiver` VARCHAR(500) NOT NULL DEFAULT '' AFTER `dblUSDConverionRate`;";
+	    i = ExecuteQuery(sql);
+	    
+	    sql ="ALTER TABLE `tblnonchargablekot` "
+		+"ADD COLUMN `strItemName` VARCHAR(200) NOT NULL AFTER `strPOSCode`, "
+		+"ADD COLUMN `strBillNote` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strItemName` ";
+	    i = ExecuteQuery(sql);
+	    
+	    
+	    
 	    
 	    
 	    
