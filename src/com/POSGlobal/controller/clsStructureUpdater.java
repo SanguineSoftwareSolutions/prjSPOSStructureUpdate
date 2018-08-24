@@ -1,4 +1,5 @@
 /*
+ * This is at package level description.
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -6,6 +7,7 @@
 package com.POSGlobal.controller;
 
 /**
+ * This is at import level description.
  *
  * @author Ajim
  */
@@ -18,6 +20,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This is at class level description.
+ *
+ * @author Ajim
+ */
 public class clsStructureUpdater
 {
 
@@ -33,6 +40,11 @@ public class clsStructureUpdater
     private clsFillSuperUserTableStructureUpdate objFillSuperUserTableStructureUpdate;
     private clsFillViewTableStructureUpdate objFillViewTableStructureUpdate;
 
+    /**
+     * This is at constructor level description.
+     *
+     * @author Ajim
+     */
     public clsStructureUpdater()
     {
 	objStructureUpdater = this;
@@ -72,6 +84,11 @@ public class clsStructureUpdater
 
     }
 
+    /**
+     * This is at function level description.
+     *
+     * @author Ajim
+     */
     public int structup()
     {
 	try
@@ -220,8 +237,7 @@ public class clsStructureUpdater
 		}
 		else
 		{
-		    System.out.println("Recursion while in Structure Update.");
-		    throw e;
+		    throw new Exception("Recursion while in Structure Update.", e);
 		}
 	    }
 	}

@@ -9,8 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Add all your table level structure update quries here. @see
+ * clsFillFormsTableStructureUpdate ,to add new forms (forms structure update).
  *
  * @author Ajim
+ *
  */
 public class clsFillDatabaseTablesStructureUpdate
 {
@@ -22,6 +25,14 @@ public class clsFillDatabaseTablesStructureUpdate
 	this.mapStructureUpdater = mapStructureUpdater;
     }
 
+    /**
+     * Add all your table level structure update quries here. @see
+     * clsFillFormsTableStructureUpdate ,to add new forms (forms structure
+     * update).
+     *
+     * @author Ajim
+     *
+     */
     public void funFillDatabaseTablesStructureUpdate()
     {
 	String sql = "CREATE TABLE IF NOT EXISTS `tblpromotionmaster` ( "
@@ -6674,6 +6685,22 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "ADD COLUMN `strItemName` VARCHAR(200) NOT NULL AFTER `strPOSCode`, "
 		+ "ADD COLUMN `strBillNote` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strItemName` ";
 	mapStructureUpdater.get("tblStructure").add(sql);
+
+	sql = "ALTER TABLE `tblimportexcel`"
+		+ "	ADD COLUMN `strHourlyPricing` VARCHAR(3) NOT NULL DEFAULT 'No' AFTER `strRecipeUOM`, "
+		+ "	ADD COLUMN `tmeTimeFrom` VARCHAR(50) NOT NULL DEFAULT 'HH:MM:S' AFTER `strHourlyPricing`, "
+		+ "	ADD COLUMN `tmeTimeTo` VARCHAR(50) NOT NULL DEFAULT 'HH:MM:S' AFTER `tmeTimeFrom`; ";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	
+	sql = "ALTER TABLE `tblsetup`"
+		+ "	ADD COLUMN `strPrintMoveTableMoveKOTYN` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strDBBackupMailReceiver`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+
+	sql = "ALTER TABLE `tblsetup` "
+		+ "	ADD COLUMN `strPrintQtyTotal` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintMoveTableMoveKOTYN`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+
     }
 
 }

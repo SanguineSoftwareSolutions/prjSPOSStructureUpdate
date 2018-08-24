@@ -3,6 +3,16 @@ package com.POSGlobal.controller;
 import com.POSGlobal.view.frmOkPopUp;
 import java.sql.ResultSet;
 
+/**
+ * This class is no longer used.
+ * Instead of this, we are using {@link clsStructureUpdater} . 
+ * Don't add your structure Updated queries to this class.
+ * @author Ajim
+ * @deprecated
+ * 
+ *  
+ */
+@Deprecated
 public class clsStructureUpdateDeprecated 
 {
 

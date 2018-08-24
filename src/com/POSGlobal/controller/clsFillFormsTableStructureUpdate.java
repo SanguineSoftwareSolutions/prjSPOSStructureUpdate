@@ -476,6 +476,14 @@ public class clsFillFormsTableStructureUpdate
 	    //strucure update for tblforms
 	    sql = "update tblforms set strColorImageName=CONCAT(strImageName,'1') ";
 	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql = "UPDATE `tblforms` "
+		    + "SET `strFormName`='frmWebPOSBilling', `strModuleName`='Billing',`strRequestMapping`='frmWebPOSBilling.html' , `strShortName`='Billing' "
+		    + "WHERE  `strFormName`='frmBillSettlementTemp'  "
+		    + "AND `strModuleName`='Bill Settlement'  "
+		    + "AND `strModuleType`='T'  "
+		    + "AND `intSequence`=199 ; ";
+	    mapStructureUpdater.get("frmStructure").add(sql);
 
 	}
 	catch (Exception e)
