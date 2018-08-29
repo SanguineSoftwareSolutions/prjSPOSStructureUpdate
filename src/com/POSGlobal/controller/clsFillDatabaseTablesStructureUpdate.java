@@ -6700,6 +6700,16 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql = "ALTER TABLE `tblsetup` "
 		+ "	ADD COLUMN `strPrintQtyTotal` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintMoveTableMoveKOTYN`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "update tblmenuitempricingdtl "
+		+ "set tmeTimeFrom='HH:MM:S',tmeTimeTo='HH:MM:S' "
+		+ "where tmeTimeFrom='HH:MM' or tmeTimeTo='HH:MM';";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "update tblmenuitempricingdtl "
+		+ "set tmeTimeFrom=CONCAT(tmeTimeFrom,':','00'),tmeTimeTo=CONCAT(tmeTimeTo,':','00') "
+		+ "where length(tmeTimeFrom)<7 or length(tmeTimeTo)<7;";
+	mapStructureUpdater.get("tblStructure").add(sql);
 
     }
 
