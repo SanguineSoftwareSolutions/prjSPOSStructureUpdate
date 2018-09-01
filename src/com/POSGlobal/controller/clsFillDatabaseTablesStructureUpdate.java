@@ -6701,6 +6701,8 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "	ADD COLUMN `strPrintQtyTotal` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintMoveTableMoveKOTYN`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
 	
+	
+	
 	sql = "update tblmenuitempricingdtl "
 		+ "set tmeTimeFrom='HH:MM:S',tmeTimeTo='HH:MM:S' "
 		+ "where tmeTimeFrom='HH:MM' or tmeTimeTo='HH:MM';";

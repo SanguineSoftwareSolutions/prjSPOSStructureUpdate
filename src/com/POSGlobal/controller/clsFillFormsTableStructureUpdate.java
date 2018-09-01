@@ -484,6 +484,15 @@ public class clsFillFormsTableStructureUpdate
 		    + "AND `strModuleType`='T'  "
 		    + "AND `intSequence`=199 ; ";
 	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql = "UPDATE `tblforms` SET `strShortName`='Move KOT Items To Table' WHERE  `strFormName`='frmMoveKOTItemToTable' AND `strModuleName`='Move KOT Items' ";
+	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql = "UPDATE `tblforms` SET `strShortName`='Reprint Documents' WHERE  `strFormName`='frmReprint' AND `strModuleName`='Reprint' ";
+	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql = "UPDATE `tblforms` SET `strShortName`='Delivery Boy' WHERE  `strFormName`='frmDeliveryPersonMaster';";
+	    mapStructureUpdater.get("frmStructure").add(sql);	   	  
 
 	}
 	catch (Exception e)
