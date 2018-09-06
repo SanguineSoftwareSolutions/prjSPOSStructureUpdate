@@ -492,8 +492,13 @@ public class clsFillFormsTableStructureUpdate
 	    mapStructureUpdater.get("frmStructure").add(sql);
 	    
 	    sql = "UPDATE `tblforms` SET `strShortName`='Delivery Boy' WHERE  `strFormName`='frmDeliveryPersonMaster';";
-	    mapStructureUpdater.get("frmStructure").add(sql);	   	  
-
+	    mapStructureUpdater.get("frmStructure").add(sql);	
+	    
+	    sql="UPDATE `tblforms` SET `strShortName`='Import Export Master' WHERE  `strFormName`='frmImportExcelFile';";
+	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql="UPDATE `tblforms` SET `strRequestMapping`='frmMoveItemsToTable.html' WHERE `strFormName`='frmMoveItemsToTable';";
+	    mapStructureUpdater.get("frmStructure").add(sql);
 	}
 	catch (Exception e)
 	{

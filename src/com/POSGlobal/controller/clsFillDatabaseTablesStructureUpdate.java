@@ -6713,6 +6713,7 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "where length(tmeTimeFrom)<7 or length(tmeTimeTo)<7;";
 	mapStructureUpdater.get("tblStructure").add(sql);
 
+	
     }
 
 }
