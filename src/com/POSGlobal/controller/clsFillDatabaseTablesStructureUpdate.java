@@ -6727,6 +6727,11 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql = "	ALTER TABLE `tblitemmodofier` "
 		+ "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL AFTER `strChargable`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	
+	sql = "ALTER TABLE `tblsetup` "
+		+ "	ADD COLUMN `strShowReportsInUSD` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintQtyTotal`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
 
 	
     }
