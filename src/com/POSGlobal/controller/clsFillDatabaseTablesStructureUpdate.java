@@ -6712,6 +6712,21 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "set tmeTimeFrom=CONCAT(tmeTimeFrom,':','00'),tmeTimeTo=CONCAT(tmeTimeTo,':','00') "
 		+ "where length(tmeTimeFrom)<7 or length(tmeTimeTo)<7;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tblmenuitempricingdtl` "
+		+ "	CHANGE COLUMN `strPriceMonday` `strPriceMonday` DECIMAL(18,4) NOT NULL AFTER `strPopular`, "
+		+ "	CHANGE COLUMN `strPriceTuesday` `strPriceTuesday` DECIMAL(18,4) NOT NULL AFTER `strPriceMonday`, "
+		+ "	CHANGE COLUMN `strPriceWednesday` `strPriceWednesday` DECIMAL(18,4) NOT NULL AFTER `strPriceTuesday`, "
+		+ "	CHANGE COLUMN `strPriceThursday` `strPriceThursday` DECIMAL(18,4) NOT NULL AFTER `strPriceWednesday`, "
+		+ "	CHANGE COLUMN `strPriceFriday` `strPriceFriday` DECIMAL(18,4) NOT NULL AFTER `strPriceThursday`, "
+		+ "	CHANGE COLUMN `strPriceSaturday` `strPriceSaturday` DECIMAL(18,4) NOT NULL AFTER `strPriceFriday`, "
+		+ "	CHANGE COLUMN `strPriceSunday` `strPriceSunday` DECIMAL(18,4) NOT NULL AFTER `strPriceSaturday`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	
+	sql = "	ALTER TABLE `tblitemmodofier` "
+		+ "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL AFTER `strChargable`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
 
 	
     }
