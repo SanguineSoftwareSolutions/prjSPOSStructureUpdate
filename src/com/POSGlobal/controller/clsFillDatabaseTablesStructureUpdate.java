@@ -6732,6 +6732,17 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql = "ALTER TABLE `tblsetup` "
 		+ "	ADD COLUMN `strShowReportsInUSD` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintQtyTotal`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tblsetup` "
+		+ "	CHANGE COLUMN `strShowReportsInUSD` `strShowReportsInCurrency` VARCHAR(20) NOT NULL DEFAULT 'BASE' AFTER `strPrintQtyTotal`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+
+	sql = "ALTER TABLE `tblsetup` "
+		+ "	ADD COLUMN `strPOSToMMSPostingCurrency` VARCHAR(20) NOT NULL DEFAULT 'BASE' AFTER `strShowReportsInCurrency`, "
+		+ "	ADD COLUMN `strPOSToWebBooksPostingCurrency` VARCHAR(20) NOT NULL DEFAULT 'BASE' AFTER `strPOSToMMSPostingCurrency`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	
 
 	
     }
