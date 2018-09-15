@@ -6742,6 +6742,20 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "	ADD COLUMN `strPOSToWebBooksPostingCurrency` VARCHAR(20) NOT NULL DEFAULT 'BASE' AFTER `strPOSToMMSPostingCurrency`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
 	
+	sql = "update  "
+		+ "tblbillsettlementdtl a "
+		+ "join tblbillhd b on a.strBillNo=b.strBillNo and date(a.dteBillDate)=date(b.dteBillDate) and a.strClientCode=b.strClientCode "
+		+ "set a.strRemark=b.strRemarks "
+		+ "where a.strRemark='';";
+	mapStructureUpdater.get("tblStructure").add(sql);
+
+	sql = "update  "
+		+ "tblqbillsettlementdtl a "
+		+ "join tblqbillhd b on a.strBillNo=b.strBillNo and date(a.dteBillDate)=date(b.dteBillDate) and a.strClientCode=b.strClientCode "
+		+ "set a.strRemark=b.strRemarks "
+		+ "where a.strRemark='';";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
 	
 
 	

@@ -470,8 +470,7 @@ public class clsFillFormsTableStructureUpdate
 	    else//Enterprise
 	    {
 		sql = sqlInsertSyntax + "('frmAreaWiseGroupWiseSales', 'Area Wise Group Wise Sales', 'R', 'imgAreaWiseGroupWiseSales', '212', 'imgAreaWiseGroupWiseSales', 'frmCustomerLedger.html','Area Wise Group Wise Sales') ";
-		mapStructureUpdater.get("frmStructure").add(sql);
-
+		mapStructureUpdater.get("frmStructure").add(sql);		
 	    }
 	    //strucure update for tblforms
 	    sql = "update tblforms set strColorImageName=CONCAT(strImageName,'1') ";

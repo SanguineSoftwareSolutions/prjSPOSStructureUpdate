@@ -94,8 +94,6 @@ public class clsStructureUpdater
 	try
 	{
 
-	    
-	    
 	    recursionCount++;
 
 	    try
@@ -157,6 +155,12 @@ public class clsStructureUpdater
 				    }
 				}
 			    }
+
+			    if (key.equalsIgnoreCase("frmStructure"))
+			    {
+				noOfQueriesInList=8;
+			    }
+
 			    //update, structure update table for new updates
 			    queryBuilder.setLength(0);
 			    queryBuilder.append("update  tblstructureupdate "
