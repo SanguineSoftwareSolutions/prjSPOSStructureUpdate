@@ -161,7 +161,7 @@ public class clsStructureUpdater
 			    queryBuilder.setLength(0);
 			    queryBuilder.append("update  tblstructureupdate "
 				    + "set intQueryNo='" + noOfQueriesInList + "' "
-				    + ",strUserEdited='" + clsGlobalVarClass.gClientCode + "' "
+				    + ",strUserEdited='" + clsGlobalVarClass.gUserCode + "' "
 				    + ",dteDateEdited='" + clsGlobalVarClass.getCurrentDateTime() + "' "
 				    + "where strStructureCode='" + key + "' ");
 			    funExecuteUpdateQuery(queryBuilder.toString());
