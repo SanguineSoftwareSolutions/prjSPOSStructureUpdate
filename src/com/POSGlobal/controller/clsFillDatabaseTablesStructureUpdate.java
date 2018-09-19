@@ -6757,8 +6757,6 @@ public class clsFillDatabaseTablesStructureUpdate
 	mapStructureUpdater.get("tblStructure").add(sql);
 	
 	
-
-	
     }
 
 }
