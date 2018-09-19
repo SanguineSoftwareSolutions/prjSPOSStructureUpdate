@@ -6756,6 +6756,10 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "where a.strRemark='';";
 	mapStructureUpdater.get("tblStructure").add(sql);
 	
+	sql = "ALTER TABLE `tblsetup` "
+	    + "ADD COLUMN `strLockTableForWaiter` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPOSToWebBooksPostingCurrency`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
 	
     }
 
