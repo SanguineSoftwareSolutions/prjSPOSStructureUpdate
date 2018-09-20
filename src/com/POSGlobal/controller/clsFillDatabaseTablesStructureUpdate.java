@@ -6691,8 +6691,7 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "	ADD COLUMN `tmeTimeFrom` VARCHAR(50) NOT NULL DEFAULT 'HH:MM:S' AFTER `strHourlyPricing`, "
 		+ "	ADD COLUMN `tmeTimeTo` VARCHAR(50) NOT NULL DEFAULT 'HH:MM:S' AFTER `tmeTimeFrom`; ";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
-	
+
 	sql = "ALTER TABLE `tblsetup`"
 		+ "	ADD COLUMN `strPrintMoveTableMoveKOTYN` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strDBBackupMailReceiver`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
@@ -6700,19 +6699,17 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql = "ALTER TABLE `tblsetup` "
 		+ "	ADD COLUMN `strPrintQtyTotal` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintMoveTableMoveKOTYN`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
-	
-	
+
 	sql = "update tblmenuitempricingdtl "
 		+ "set tmeTimeFrom='HH:MM:S',tmeTimeTo='HH:MM:S' "
 		+ "where tmeTimeFrom='HH:MM' or tmeTimeTo='HH:MM';";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
+
 	sql = "update tblmenuitempricingdtl "
 		+ "set tmeTimeFrom=CONCAT(tmeTimeFrom,':','00'),tmeTimeTo=CONCAT(tmeTimeTo,':','00') "
 		+ "where length(tmeTimeFrom)<7 or length(tmeTimeTo)<7;";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
+
 	sql = "ALTER TABLE `tblmenuitempricingdtl` "
 		+ "	CHANGE COLUMN `strPriceMonday` `strPriceMonday` DECIMAL(18,4) NOT NULL AFTER `strPopular`, "
 		+ "	CHANGE COLUMN `strPriceTuesday` `strPriceTuesday` DECIMAL(18,4) NOT NULL AFTER `strPriceMonday`, "
@@ -6722,17 +6719,15 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "	CHANGE COLUMN `strPriceSaturday` `strPriceSaturday` DECIMAL(18,4) NOT NULL AFTER `strPriceFriday`, "
 		+ "	CHANGE COLUMN `strPriceSunday` `strPriceSunday` DECIMAL(18,4) NOT NULL AFTER `strPriceSaturday`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
-	
+
 	sql = "	ALTER TABLE `tblitemmodofier` "
 		+ "	CHANGE COLUMN `dblRate` `dblRate` DECIMAL(18,4) NOT NULL AFTER `strChargable`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
-	
+
 	sql = "ALTER TABLE `tblsetup` "
 		+ "	ADD COLUMN `strShowReportsInUSD` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPrintQtyTotal`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
+
 	sql = "ALTER TABLE `tblsetup` "
 		+ "	CHANGE COLUMN `strShowReportsInUSD` `strShowReportsInCurrency` VARCHAR(20) NOT NULL DEFAULT 'BASE' AFTER `strPrintQtyTotal`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
@@ -6741,7 +6736,7 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "	ADD COLUMN `strPOSToMMSPostingCurrency` VARCHAR(20) NOT NULL DEFAULT 'BASE' AFTER `strShowReportsInCurrency`, "
 		+ "	ADD COLUMN `strPOSToWebBooksPostingCurrency` VARCHAR(20) NOT NULL DEFAULT 'BASE' AFTER `strPOSToMMSPostingCurrency`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
+
 	sql = "update  "
 		+ "tblbillsettlementdtl a "
 		+ "join tblbillhd b on a.strBillNo=b.strBillNo and date(a.dteBillDate)=date(b.dteBillDate) and a.strClientCode=b.strClientCode "
@@ -6755,12 +6750,15 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "set a.strRemark=b.strRemarks "
 		+ "where a.strRemark='';";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
+
 	sql = "ALTER TABLE `tblsetup` "
-	    + "ADD COLUMN `strLockTableForWaiter` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPOSToWebBooksPostingCurrency`;";
+		+ "ADD COLUMN `strLockTableForWaiter` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPOSToWebBooksPostingCurrency`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
-	
-	
+
+	sql = "ALTER TABLE `tblreservation` "
+		+ "ADD COLUMN `strCancelReservation` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPosCode`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+
     }
 
 }
