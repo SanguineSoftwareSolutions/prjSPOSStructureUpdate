@@ -6759,6 +6759,10 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "ADD COLUMN `strCancelReservation` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strPosCode`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
 
+	sql = "ALTER TABLE `tbldebitcardmaster` "
+		+ "ADD COLUMN `strManualNo` VARCHAR(100) NOT NULL DEFAULT 'NA' AFTER `strRefMemberCode`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+
     }
 
 }
