@@ -6762,6 +6762,12 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql = "ALTER TABLE `tbldebitcardmaster` "
 		+ "ADD COLUMN `strManualNo` VARCHAR(100) NOT NULL DEFAULT 'NA' AFTER `strRefMemberCode`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tbldischd` "
+		+ "ADD COLUMN `strDineIn` VARCHAR(1) NOT NULL DEFAULT 'Y' AFTER `strDataPostFlag`, "
+		+ "ADD COLUMN `strHomeDelivery` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strDineIn`, "
+		+ "ADD COLUMN `strTakeAway` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strHomeDelivery` ";
+	mapStructureUpdater.get("tblStructure").add(sql);
 
     }
 
