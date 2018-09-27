@@ -460,6 +460,12 @@ public class clsFillFormsTableStructureUpdate
 	    //AM for Authentication For Masters 
 	    //AR for Authentication For Reports 
 	    //AU for Authentication For Utility   
+	    //to delete forms which sequence no is greater than '211'
+	    sql = "delete  "
+		    + "from tblforms "
+		    + "where intSequence>211 ";
+	    mapStructureUpdater.get("frmStructure").add(sql);
+
 	    String sqlInsertSyntax = "INSERT INTO `tblforms`  "
 		    + "(`strFormName`, `strModuleName`, `strModuleType`, `strImageName`, `intSequence`, `strColorImageName`, `strRequestMapping`,`strShortName`)  "
 		    + "VALUES ";
@@ -469,16 +475,18 @@ public class clsFillFormsTableStructureUpdate
 	    }
 	    else//Enterprise
 	    {
-		sql = sqlInsertSyntax + "('frmAreaWiseGroupWiseSales', 'Area Wise Group Wise Sales', 'R', 'imgAreaWiseGroupWiseSales', '212', 'imgAreaWiseGroupWiseSales', 'frmCustomerLedger.html','Area Wise Group Wise Sales') ";
+		sql = sqlInsertSyntax + "('frmAreaWiseGroupWiseSales', 'Area Wise Group Wise Sales', 'R', 'imgAreaWiseGroupWiseSales', '212', 'imgAreaWiseGroupWiseSales'"
+			+ ", 'frmCustomerLedger.html','Area Wise Group Wise Sales') ";
 		mapStructureUpdater.get("frmStructure").add(sql);
 
-
-		
+		sql = sqlInsertSyntax + "('frmDebitCardBulkRecharge', 'Debit Card Bulk Recharge', 'T', 'imgDebitCardBulkRecharge', '213', 'imgDebitCardBulkRecharge1' "
+			+ ", 'frmDebitCardBulkRecharge.html', 'Bulk Recharge') ";
+		mapStructureUpdater.get("frmStructure").add(sql);
 	    }
 	    //strucure update for tblforms
 	    sql = "update tblforms set strColorImageName=CONCAT(strImageName,'1') ";
 	    mapStructureUpdater.get("frmStructure").add(sql);
-	    
+
 	    sql = "UPDATE `tblforms` "
 		    + "SET `strFormName`='frmWebPOSBilling', `strModuleName`='Billing',`strRequestMapping`='frmWebPOSBilling.html' , `strShortName`='Billing' "
 		    + "WHERE  `strFormName`='frmBillSettlementTemp'  "
@@ -486,20 +494,20 @@ public class clsFillFormsTableStructureUpdate
 		    + "AND `strModuleType`='T'  "
 		    + "AND `intSequence`=199 ; ";
 	    mapStructureUpdater.get("frmStructure").add(sql);
-	    
+
 	    sql = "UPDATE `tblforms` SET `strShortName`='Move KOT Items To Table' WHERE  `strFormName`='frmMoveKOTItemToTable' AND `strModuleName`='Move KOT Items' ";
 	    mapStructureUpdater.get("frmStructure").add(sql);
-	    
+
 	    sql = "UPDATE `tblforms` SET `strShortName`='Reprint Documents' WHERE  `strFormName`='frmReprint' AND `strModuleName`='Reprint' ";
 	    mapStructureUpdater.get("frmStructure").add(sql);
-	    
+
 	    sql = "UPDATE `tblforms` SET `strShortName`='Delivery Boy' WHERE  `strFormName`='frmDeliveryPersonMaster';";
-	    mapStructureUpdater.get("frmStructure").add(sql);	
-	    
-	    sql="UPDATE `tblforms` SET `strShortName`='Import Export Master' WHERE  `strFormName`='frmImportExcelFile';";
 	    mapStructureUpdater.get("frmStructure").add(sql);
-	    
-	    sql="UPDATE `tblforms` SET `strRequestMapping`='frmMoveItemsToTable.html' WHERE `strFormName`='frmMoveItemsToTable';";
+
+	    sql = "UPDATE `tblforms` SET `strShortName`='Import Export Master' WHERE  `strFormName`='frmImportExcelFile';";
+	    mapStructureUpdater.get("frmStructure").add(sql);
+
+	    sql = "UPDATE `tblforms` SET `strRequestMapping`='frmMoveItemsToTable.html' WHERE `strFormName`='frmMoveItemsToTable';";
 	    mapStructureUpdater.get("frmStructure").add(sql);
 	}
 	catch (Exception e)
