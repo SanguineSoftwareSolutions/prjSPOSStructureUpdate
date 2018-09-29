@@ -6773,6 +6773,10 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ "CHANGE COLUMN `strReachrgeRemark` `strReachrgeRemark` VARCHAR(100) NOT NULL DEFAULT '' AFTER `strCardString`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
 
+	sql = "ALTER TABLE `tblreservation` " 
+	    + "	ADD COLUMN `strReservationType` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strCancelReservation`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
     }
 
 }
