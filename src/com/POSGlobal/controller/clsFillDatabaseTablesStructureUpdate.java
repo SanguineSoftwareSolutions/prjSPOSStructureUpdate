@@ -6777,6 +6777,13 @@ public class clsFillDatabaseTablesStructureUpdate
 	    + "	ADD COLUMN `strReservationType` VARCHAR(50) NOT NULL DEFAULT '' AFTER `strCancelReservation`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
 	
+	sql = "ALTER TABLE `tblcostcentermaster`" 
+	    + " ADD COLUMN `intCostCenterWiseNoOfCopies` INT(11) NOT NULL DEFAULT '0' AFTER `strWSLocationName`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tblsetup`" 
+	    + " ADD COLUMN `strReprintOnSettleBill` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strLockTableForWaiter`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
     }
 
 }
