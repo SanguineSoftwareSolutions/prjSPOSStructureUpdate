@@ -6784,6 +6784,9 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql = "ALTER TABLE `tblsetup`" 
 	    + " ADD COLUMN `strReprintOnSettleBill` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strLockTableForWaiter`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "update tblcostcentermaster  set intCostCenterWiseNoOfCopies=1;";
+	mapStructureUpdater.get("tblStructure").add(sql);
     }
 
 }
