@@ -509,6 +509,15 @@ public class clsFillFormsTableStructureUpdate
 
 	    sql = "UPDATE `tblforms` SET `strRequestMapping`='frmMoveItemsToTable.html' WHERE `strFormName`='frmMoveItemsToTable';";
 	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql = "UPDATE `tblforms` SET `strShortName`='Consolidate Day End' WHERE `strFormName`='frmShiftendprocessconsolidate';";
+	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql = "UPDATE `tblforms` SET `strShortName`='Blank Day End' WHERE `strFormName`='frmDayEndWithoutDetails';";
+	    mapStructureUpdater.get("frmStructure").add(sql);
+	    
+	    sql = "UPDATE `tblforms` SET `strRequestMapping`='frmAreaWiseGroupWiseSales.html' WHERE  `strFormName`='frmAreaWiseGroupWiseSales';";
+	    mapStructureUpdater.get("frmStructure").add(sql);
 	}
 	catch (Exception e)
 	{
