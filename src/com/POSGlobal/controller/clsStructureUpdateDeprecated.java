@@ -6684,7 +6684,7 @@ public class clsStructureUpdateDeprecated
 		+"ADD COLUMN `strBillNote` VARCHAR(200) NOT NULL DEFAULT '' AFTER `strItemName` ";
 	    i = ExecuteQuery(sql);
 	    
-	    
+	   
 	    
 	    
 	    

@@ -6787,6 +6787,11 @@ public class clsFillDatabaseTablesStructureUpdate
 	
 	sql = "update tblcostcentermaster  set intCostCenterWiseNoOfCopies=1;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql ="ALTER TABLE `tblcostcentermaster` " 
+		+ " CHANGE COLUMN `intCostCenterWiseNoOfCopies` `intPrimaryPrinterNoOfCopies` INT(11) NOT NULL DEFAULT '1' AFTER `strWSLocationName`," 
+		+ " ADD COLUMN `intSecondaryPrinterNoOfCopies` INT(11) NOT NULL DEFAULT '0' AFTER `intPrimaryPrinterNoOfCopies`; ";
+	mapStructureUpdater.get("tblStructure").add(sql);
     }
 
 }

@@ -482,6 +482,7 @@ public class clsFillFormsTableStructureUpdate
 		sql = sqlInsertSyntax + "('frmDebitCardBulkRecharge', 'Debit Card Bulk Recharge', 'T', 'imgDebitCardBulkRecharge', '213', 'imgDebitCardBulkRecharge1' "
 			+ ", 'frmDebitCardBulkRecharge.html', 'Bulk Recharge') ";
 		mapStructureUpdater.get("frmStructure").add(sql);
+		
 	    }
 	    //strucure update for tblforms
 	    sql = "update tblforms set strColorImageName=CONCAT(strImageName,'1') ";
