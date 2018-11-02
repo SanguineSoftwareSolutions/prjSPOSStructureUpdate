@@ -6792,6 +6792,10 @@ public class clsFillDatabaseTablesStructureUpdate
 		+ " CHANGE COLUMN `intCostCenterWiseNoOfCopies` `intPrimaryPrinterNoOfCopies` INT(11) NOT NULL DEFAULT '1' AFTER `strWSLocationName`," 
 		+ " ADD COLUMN `intSecondaryPrinterNoOfCopies` INT(11) NOT NULL DEFAULT '0' AFTER `intPrimaryPrinterNoOfCopies`; ";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql= " ALTER TABLE `tblitemmaster` " +
+	" ADD COLUMN `strItemVoiceCaptureText` VARCHAR(500) NOT NULL DEFAULT '' AFTER `strOperationalYN`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
     }
 
 }
