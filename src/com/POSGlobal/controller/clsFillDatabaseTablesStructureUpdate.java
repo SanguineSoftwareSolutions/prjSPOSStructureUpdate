@@ -6796,6 +6796,9 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql= " ALTER TABLE `tblitemmaster` " +
 	" ADD COLUMN `strItemVoiceCaptureText` VARCHAR(500) NOT NULL DEFAULT '' AFTER `strOperationalYN`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = " ALTER TABLE `tblvoidbillhd` DROP PRIMARY KEY; " ;
+	mapStructureUpdater.get("tblStructure").add(sql);
     }
 
 }
