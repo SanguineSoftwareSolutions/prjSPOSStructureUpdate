@@ -6799,6 +6799,22 @@ public class clsFillDatabaseTablesStructureUpdate
 	
 	sql = " ALTER TABLE `tblvoidbillhd` DROP PRIMARY KEY; " ;
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tblcustomermaster` " 
+	    + "	ADD COLUMN `strAccountCode` VARCHAR(20) NOT NULL DEFAULT 'NA' AFTER `strDebtorCode`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tbltaxhd` " 
+	    + "	CHANGE COLUMN `strAccountCode` `strAccountCode` VARCHAR(20) NOT NULL AFTER `strDataPostFlag`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tblsubgrouphd` " 
+	    + "	CHANGE COLUMN `strAccountCode` `strAccountCode` VARCHAR(20) NOT NULL DEFAULT 'NA' AFTER `strIncentives`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tblsettelmenthd` " 
+	    + "	CHANGE COLUMN `strAccountCode` `strAccountCode` VARCHAR(20) NOT NULL AFTER `strDataPostFlag`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
     }
 
 }
