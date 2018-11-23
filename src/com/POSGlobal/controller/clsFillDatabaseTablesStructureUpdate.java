@@ -5,6 +5,8 @@
  */
 package com.POSGlobal.controller;
 
+import static com.POSGlobal.controller.clsGlobalVarClass.gSystemDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -6815,6 +6817,12 @@ public class clsFillDatabaseTablesStructureUpdate
 	sql = "ALTER TABLE `tblsettelmenthd` " 
 	    + "	CHANGE COLUMN `strAccountCode` `strAccountCode` VARCHAR(20) NOT NULL AFTER `strDataPostFlag`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql = "ALTER TABLE `tblsettelmenthd` " 
+	    + " ADD COLUMN `strCustomerSelectionOnBillSettlement` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strComissionOn`;";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	
     }
 
 }
