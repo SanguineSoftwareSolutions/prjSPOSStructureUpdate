@@ -6822,7 +6822,17 @@ public class clsFillDatabaseTablesStructureUpdate
 	    + " ADD COLUMN `strCustomerSelectionOnBillSettlement` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strComissionOn`;";
 	mapStructureUpdater.get("tblStructure").add(sql);
 	
-	
+	sql="CREATE TABLE `tblsubgroupmasterlinkupdtl` (" 
+	    + "	`strSubGrooupCode` VARCHAR(20) NOT NULL," 
+	    + "	`strWSSubGroupCode` VARCHAR(20) NOT NULL," 
+	    + "	`strWSSubGroupName` VARCHAR(20) NOT NULL," 
+	    + "	`strClientCode` VARCHAR(20) NOT NULL," 
+	    + "	`strDataPostFlag` VARCHAR(1) NOT NULL," 
+	    + "	INDEX `strSubGrooupCode_strWSSubGroupCode_strClientCode` (`strSubGrooupCode`,`strWSSubGroupCode`, `strClientCode`)" 
+	    + ")" 
+	    + "COLLATE='latin1_swedish_ci'" 
+	    + "ENGINE=InnoDB ;";
+	mapStructureUpdater.get("tblStructure").add(sql);
     }
 
 }
