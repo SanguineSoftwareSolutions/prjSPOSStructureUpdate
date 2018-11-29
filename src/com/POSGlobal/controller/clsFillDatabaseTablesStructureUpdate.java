@@ -6833,6 +6833,15 @@ public class clsFillDatabaseTablesStructureUpdate
 	    + "COLLATE='latin1_swedish_ci'" 
 	    + "ENGINE=InnoDB ;";
 	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql="ALTER TABLE `tblsetup` " 
+	   +" ADD COLUMN `strTableReservationSMS` VARCHAR(300) NOT NULL AFTER `strReprintOnSettleBill`";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
+	sql="ALTER TABLE `tblsetup` "
+	    +" ADD COLUMN `strSendTableReservationSMS` VARCHAR(1) NOT NULL DEFAULT 'N' AFTER `strTableReservationSMS`";
+	mapStructureUpdater.get("tblStructure").add(sql);
+	
     }
 
 }
